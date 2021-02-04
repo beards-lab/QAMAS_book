@@ -172,6 +172,19 @@
 </div>
         <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://ebenjaminrandall.github.io/QAMAS_book/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -179,28 +192,6 @@
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Principles.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/Principles.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
 
     </div>
 
@@ -272,14 +263,14 @@
 </div>
 <div class="section" id="mitochondrial-anatomy">
 <h2>Mitochondrial anatomy<a class="headerlink" href="#mitochondrial-anatomy" title="Permalink to this headline">¶</a></h2>
-<p>The mitochondrion is a membrane-bound, rod-shaped organelle that is responsible for generating most of the chemical energy needed to power the cell’s biochemical reactions by respiration <a class="bibtex reference internal" href="References.html#nicholls2013" id="id1">[12]</a>. Mitochondria are comprised of an outer and inner membrane that are separated by the intermembrane space (IMS) (<a class="reference internal" href="#mitofig"><span class="std std-numref">Fig. 1</span></a>). The outer mitochondrial membrane is freely permeable to small molecules and ions. The IMM folds inward to make cristae that extend into the matrix. Transmembrane channels called porins and the respiratory complexes involved in oxidative phosphorylation and ATP synthesis allow for more selective IMM permeability. The IMM encloses the mitochondrial matrix, which contains mitochondrial deoxyribonucleic acid (DNA), the majority of mitochondrial proteins, soluble metabolic intermediates including ATP, ADP, and Pi, and the enzymes catalyzing the tricarboxylic acid (TCA) cycle and <span class="math notranslate nohighlight">\(\beta\)</span>-oxidation.</p>
+<p>The mitochondrion is a membrane-bound, rod-shaped organelle that is responsible for generating most of the chemical energy needed to power the cell’s biochemical reactions by respiration <a class="bibtex reference internal" href="References.html#nicholls2013" id="id1">[11]</a>. Mitochondria are comprised of an outer and inner membrane that are separated by the intermembrane space (IMS) (<a class="reference internal" href="#mitofig"><span class="std std-numref">Fig. 1</span></a>). The outer mitochondrial membrane is freely permeable to small molecules and ions. The IMM folds inward to make cristae that extend into the matrix. Transmembrane channels called porins and the respiratory complexes involved in oxidative phosphorylation and ATP synthesis allow for more selective IMM permeability. The IMM encloses the mitochondrial matrix, which contains mitochondrial deoxyribonucleic acid (DNA), the majority of mitochondrial proteins, soluble metabolic intermediates including ATP, ADP, and Pi, and the enzymes catalyzing the tricarboxylic acid (TCA) cycle and <span class="math notranslate nohighlight">\(\beta\)</span>-oxidation.</p>
 </div>
 <div class="section" id="imm-capacitance">
 <h2>IMM capacitance<a class="headerlink" href="#imm-capacitance" title="Permalink to this headline">¶</a></h2>
 <p>The IMM acts as an electrical capacitor to store energy in an electrostatic potential difference between the milieu on each side. Electrical capacitance of a membrane (<span class="math notranslate nohighlight">\(C_m\)</span>) is the proportionality between the rate of charge transport across the membrane, i.e. current (<span class="math notranslate nohighlight">\(I\)</span>), to the rate of membrane potential (<span class="math notranslate nohighlight">\(\Delta \Psi\)</span>) change, that is,</p>
 <div class="math notranslate nohighlight">
 \[    C_m \dfrac{ {\rm d} {\Delta\Psi}}{{\rm d} t} = I.\]</div>
-<p>In the model and associated calculations presented below, we express fluxes in units of moles per unit time per unit volume of mitochondria. Thus, it is convenient to obtain an estimate of <span class="math notranslate nohighlight">\(C_m\)</span> in units of mole per volt per volume of mitochondria. Approximating a mitochondrion as a sphere with radius <span class="math notranslate nohighlight">\(r = 1 \ \mu\text{m}\)</span>, we obtain a surface area-to-volume ratio of <span class="math notranslate nohighlight">\(3 \ \mu\text{m}^{-1}\)</span>. Furthermore, we estimate that the IMM has ten-fold greater surface area than the outer membrane, yielding a surface area to volume ratio of <span class="math notranslate nohighlight">\(30 \ \mu\text{m}^{-1}\)</span> for the IMM. Since the capacitance density of biological membranes ranges from <span class="math notranslate nohighlight">\(0.5\text{-}1.0 \mu\text{F cm}^{-2}\)</span>, or <span class="math notranslate nohighlight">\(0.5 \text{-} 1.0 \times \ 10^{-8} \ \mu\text{F} \ \mu\text{m}^{-2}\)</span> <a class="bibtex reference internal" href="References.html#nicholls2013" id="id2">[12]</a>, <span class="math notranslate nohighlight">\(C_m\)</span> is approximately <span class="math notranslate nohighlight">\(3 \times 10^{-8} \ \mu\text{F} \ \mu\text{m}^{-3} = 300 \ \text{F (L mito)}^{-1}\)</span>. To convert to the units used in the calculations below, we have</p>
+<p>In the model and associated calculations presented below, we express fluxes in units of moles per unit time per unit volume of mitochondria. Thus, it is convenient to obtain an estimate of <span class="math notranslate nohighlight">\(C_m\)</span> in units of mole per volt per volume of mitochondria. Approximating a mitochondrion as a sphere with radius <span class="math notranslate nohighlight">\(r = 1 \ \mu\text{m}\)</span>, we obtain a surface area-to-volume ratio of <span class="math notranslate nohighlight">\(3 \ \mu\text{m}^{-1}\)</span>. Furthermore, we estimate that the IMM has ten-fold greater surface area than the outer membrane, yielding a surface area to volume ratio of <span class="math notranslate nohighlight">\(30 \ \mu\text{m}^{-1}\)</span> for the IMM. Since the capacitance density of biological membranes ranges from <span class="math notranslate nohighlight">\(0.5\text{-}1.0 \mu\text{F cm}^{-2}\)</span>, or <span class="math notranslate nohighlight">\(0.5 \text{-} 1.0 \times \ 10^{-8} \ \mu\text{F} \ \mu\text{m}^{-2}\)</span> <a class="bibtex reference internal" href="References.html#nicholls2013" id="id2">[11]</a>, <span class="math notranslate nohighlight">\(C_m\)</span> is approximately <span class="math notranslate nohighlight">\(3 \times 10^{-8} \ \mu\text{F} \ \mu\text{m}^{-3} = 300 \ \text{F (L mito)}^{-1}\)</span>. To convert to the units used in the calculations below, we have</p>
 <div class="math notranslate nohighlight">
 \[  C_m = 300 \ \frac{\rm F}{\rm L \ mito} = 300 \ \frac{\rm C}{\rm V \cdot L \, mito}\cdot
   \frac{1}{F}\, \frac{\rm mol}{\rm C} =
@@ -289,7 +280,7 @@
 </div>
 <div class="section" id="gibbs-free-energy">
 <h2>Gibbs free energy<a class="headerlink" href="#gibbs-free-energy" title="Permalink to this headline">¶</a></h2>
-<p>A <em>free energy</em> is a thermodynamic quantity that relates a change in the thermodynamic state of a system to an associated change in total entropy of the system plus its environment. Chemical reaction processes necessarily proceed in the direction associated with a reduction in free energy <a class="bibtex reference internal" href="References.html#nicholls2013" id="id3">[12]</a>. When free energy of a system is reduced, total entropy (of the universe) is increased. The form of free energy that is operative in constant-temperature and constant-pressure systems (most relevant for biochemistry) is the Gibbs free energy, or simply the <em>Gibbs energy</em>.</p>
+<p>A <em>free energy</em> is a thermodynamic quantity that relates a change in the thermodynamic state of a system to an associated change in total entropy of the system plus its environment. Chemical reaction processes necessarily proceed in the direction associated with a reduction in free energy <a class="bibtex reference internal" href="References.html#nicholls2013" id="id3">[11]</a>. When free energy of a system is reduced, total entropy (of the universe) is increased. The form of free energy that is operative in constant-temperature and constant-pressure systems (most relevant for biochemistry) is the Gibbs free energy, or simply the <em>Gibbs energy</em>.</p>
 <p>For a chemical reaction of reactants <span class="math notranslate nohighlight">\(A_i\)</span> and products <span class="math notranslate nohighlight">\(B_j\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[    \sum_{i = 1}^M m_i A_i \rightleftharpoons \sum_{j = 1}^N n_j B_j\]</div>
@@ -304,11 +295,11 @@
 </div>
 <div class="section" id="membrane-potential-and-proton-motive-force">
 <h2>Membrane potential and proton motive force<a class="headerlink" href="#membrane-potential-and-proton-motive-force" title="Permalink to this headline">¶</a></h2>
-<p>Free energy associated with the oxidation of primary fuels is transduced to generate the chemical potential across the IMM known as the <em>proton motive force</em>, which is used to synthesize ATP in the matrix and transport ATP out of the matrix to the cytosol <a class="bibtex reference internal" href="References.html#nicholls2013" id="id4">[12]</a>. The thermodynamic driving force for translocation of hydrogen ions (<span class="math notranslate nohighlight">\(\text{H}^{+}\)</span>) across the IMM has two components: the difference in electrostatic potential across the membrane, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> (V), and the difference in <span class="math notranslate nohighlight">\(\text{H}^{+}\)</span> concentration (or activity) between the media on either side of the membrane, <span class="math notranslate nohighlight">\(\Delta\text{pH}\)</span>, that is</p>
+<p>Free energy associated with the oxidation of primary fuels is transduced to generate the chemical potential across the IMM known as the <em>proton motive force</em>, which is used to synthesize ATP in the matrix and transport ATP out of the matrix to the cytosol <a class="bibtex reference internal" href="References.html#nicholls2013" id="id4">[11]</a>. The thermodynamic driving force for translocation of hydrogen ions (<span class="math notranslate nohighlight">\(\text{H}^{+}\)</span>) across the IMM has two components: the difference in electrostatic potential across the membrane, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> (V), and the difference in <span class="math notranslate nohighlight">\(\text{H}^{+}\)</span> concentration (or activity) between the media on either side of the membrane, <span class="math notranslate nohighlight">\(\Delta\text{pH}\)</span>, that is</p>
 <div class="math notranslate nohighlight" id="equation-dg-h">
 <span class="eqno">(3)<a class="headerlink" href="#equation-dg-h" title="Permalink to this equation">¶</a></span>\[\begin{split}    \Delta G_{\rm H} &amp;=&amp; -F\Delta\Psi + R{\rm T}\ln\left( [{\rm H}^+]_x/[{\rm H}^+]_c \right)  \nonumber \\
     &amp;=&amp;  -F\Delta\Psi - 2.3 R{\rm T} \, \Delta{\rm pH},\end{split}\]</div>
-<p>where the subscripts <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(c\)</span> indicate matrix and external (cytosol) spaces. <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> is defined as the cytosolic potential minus matrix potential, yielding a negative change in free energy for a positive potential. Membrane potential in respiring mitochondria is approximately <span class="math notranslate nohighlight">\(150 \text{-} 200 \ \text{mV}\)</span>, yielding a contribution to <span class="math notranslate nohighlight">\(\Delta G_{\rm H}\)</span> on the order of <span class="math notranslate nohighlight">\(15 \text{-} 20 \ \text{kJ mol}^{-1}\)</span> <a class="bibtex reference internal" href="References.html#bazil2016" id="id5">[18]</a>. Under in vitro conditions, <span class="math notranslate nohighlight">\(\Delta\text{pH}\)</span> between the matrix and external buffer is on the order of <span class="math notranslate nohighlight">\(0.1 \ \text{pH}\)</span> units <a class="bibtex reference internal" href="References.html#bazil2016" id="id6">[18]</a>. Thus, the contribution to proton motive force from a pH difference is less than <span class="math notranslate nohighlight">\(1 \ \text{kJ mol}^{-1}\)</span> and substantially smaller than that from <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>.</p>
+<p>where the subscripts <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(c\)</span> indicate matrix and external (cytosol) spaces. <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> is defined as the cytosolic potential minus matrix potential, yielding a negative change in free energy for a positive potential. Membrane potential in respiring mitochondria is approximately <span class="math notranslate nohighlight">\(150 \text{-} 200 \ \text{mV}\)</span>, yielding a contribution to <span class="math notranslate nohighlight">\(\Delta G_{\rm H}\)</span> on the order of <span class="math notranslate nohighlight">\(15 \text{-} 20 \ \text{kJ mol}^{-1}\)</span> <a class="bibtex reference internal" href="References.html#bazil2016" id="id5">[15]</a>. Under in vitro conditions, <span class="math notranslate nohighlight">\(\Delta\text{pH}\)</span> between the matrix and external buffer is on the order of <span class="math notranslate nohighlight">\(0.1 \ \text{pH}\)</span> units <a class="bibtex reference internal" href="References.html#bazil2016" id="id6">[15]</a>. Thus, the contribution to proton motive force from a pH difference is less than <span class="math notranslate nohighlight">\(1 \ \text{kJ mol}^{-1}\)</span> and substantially smaller than that from <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>.</p>
 </div>
 <div class="section" id="thermodynamics-of-atp-synthesis-hydrolysis">
 <h2>Thermodynamics of ATP synthesis/hydrolysis<a class="headerlink" href="#thermodynamics-of-atp-synthesis-hydrolysis" title="Permalink to this headline">¶</a></h2>
@@ -321,7 +312,7 @@
 <span class="eqno">(5)<a class="headerlink" href="#equation-drg-atp" title="Permalink to this equation">¶</a></span>\[	\Delta_r G_{\rm ATP} = \Delta_r G^o_\text{ATP} + R{\rm T} \ln 
 	\left( \frac{ [\text{ADP}^{3-}] [\text{HPO}_4^{2-}] [{\rm H}^{+}] }
 	{ [\text{ATP}^{4-}] }\right),\]</div>
-<p>where the Gibbs energy for ATP hydrolysis under physiological conditions is approximately <span class="math notranslate nohighlight">\(\Delta_r G^o_\text{ATP} = 4.99 \ \text{kJ mol}^{-1}\)</span> <a class="bibtex reference internal" href="References.html#li2011" id="id7">[8]</a>.</p>
+<p>where the Gibbs energy for ATP hydrolysis under physiological conditions is approximately <span class="math notranslate nohighlight">\(\Delta_r G^o_\text{ATP} = 4.99 \ \text{kJ mol}^{-1}\)</span> <a class="bibtex reference internal" href="References.html#li2011" id="id7">[7]</a>.</p>
 <div class="section" id="calculation-of-the-atp-hydrolysis-potential">
 <h3>Calculation of the ATP hydrolysis potential<a class="headerlink" href="#calculation-of-the-atp-hydrolysis-potential" title="Permalink to this headline">¶</a></h3>
 <p>Equation <a class="reference internal" href="#equation-drg-atp">(5)</a> expresses the Gibbs energy of chemical Equation <a class="reference internal" href="#equation-atp1">(4)</a> in terms of its <em>chemical species</em>. In practice, biochemistry typically deals with biochemical <em>reactants</em>, which are comprised of sums of rapidly interconverting chemical species. We calculate the total ATP concentration, <span class="math notranslate nohighlight">\([\Sigma \text{ATP}]\)</span>, in terms of its bound and unbound species, that is,</p>
@@ -330,7 +321,7 @@
 	&amp;=&amp; [\text{ATP}^{4-}] + \frac{[\text{Mg}^{2+}] [\text{ATP}^{4-}]}{K_{\text{MgATP}}} + \frac{ [\text{H}^{+}] [\text{ATP}^{4-}]}{K_{\text{HATP}}} + \frac{ [\text{K}^{+}] [\text{ATP}^{4-}]}{K_{\text{KATP}}} \nonumber \\
 	&amp;=&amp; [\text{ATP}^{4-}] \left( 1 + \frac{[\text{Mg}^{2+}]}{K_{\text{MgATP}}} + \frac{ [\text{H}^{+}]}{K_{\text{HATP}}} + \frac{ [\text{K}^{+}]}{K_{\text{KATP}}} \right) \nonumber \\
 	&amp;=&amp; [\text{ATP}^{4-}] P_{\text{ATP}},\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(P_{\text{ATP}}\)</span> is a <em>binding polynomial</em>. Here, we we account for only the single cation-bound species. (Free <span class="math notranslate nohighlight">\(\text{H}^+\)</span> in solution associates with water to form <span class="math notranslate nohighlight">\(\text{H}_3\text{O}^+\)</span>. Here we use [<span class="math notranslate nohighlight">\(\text{H}^+\)</span>] to indicate hydrogen ion activity, which is equal to <span class="math notranslate nohighlight">\(10^{-\text{pH}}\)</span>.)  <a class="reference internal" href="#table-dissociationconstants"><span class="std std-numref">Table 1</span></a> lists the dissociation constants used in this study from <a class="bibtex reference internal" href="References.html#li2011" id="id8">[8]</a>. Similarly, total ADP, [<span class="math notranslate nohighlight">\(\Sigma \text{ADP}\)</span>], and inorganic phosphate, [<span class="math notranslate nohighlight">\(\Sigma \text{Pi}\)</span>], concentrations are</p>
+<p>where <span class="math notranslate nohighlight">\(P_{\text{ATP}}\)</span> is a <em>binding polynomial</em>. Here, we we account for only the single cation-bound species. (Free <span class="math notranslate nohighlight">\(\text{H}^+\)</span> in solution associates with water to form <span class="math notranslate nohighlight">\(\text{H}_3\text{O}^+\)</span>. Here we use [<span class="math notranslate nohighlight">\(\text{H}^+\)</span>] to indicate hydrogen ion activity, which is equal to <span class="math notranslate nohighlight">\(10^{-\text{pH}}\)</span>.)  <a class="reference internal" href="#table-dissociationconstants"><span class="std std-numref">Table 1</span></a> lists the dissociation constants used in this study from <a class="bibtex reference internal" href="References.html#li2011" id="id8">[7]</a>. Similarly, total ADP, [<span class="math notranslate nohighlight">\(\Sigma \text{ADP}\)</span>], and inorganic phosphate, [<span class="math notranslate nohighlight">\(\Sigma \text{Pi}\)</span>], concentrations are</p>
 <div class="math notranslate nohighlight" id="equation-sumadp">
 <span class="eqno">(7)<a class="headerlink" href="#equation-sumadp" title="Permalink to this equation">¶</a></span>\[\begin{split}    [\Sigma {\rm ADP} ] &amp;=&amp; [{\rm ADP}^{3-}]\left( 1 + \frac{[{\rm Mg}^{2+}]}{K_{\rm MgADP}} + \frac{ [{\rm H}^{+}]}{K_{\rm HADP}} + \frac{ [{\rm K}^{+}]}{K_{\rm KADP}} \right) \nonumber \\
     &amp;=&amp; [{\rm ADP}^{3-}]P_{\rm ADP} \end{split}\]</div>
@@ -427,7 +418,7 @@
 <span class="n">P_ADP</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H</span><span class="o">/</span><span class="n">K_HADP</span> <span class="o">+</span> <span class="n">K</span><span class="o">/</span><span class="n">K_KADP</span> <span class="o">+</span> <span class="n">Mg</span><span class="o">/</span><span class="n">K_MgADP</span> <span class="c1"># equation 7 </span>
 <span class="n">P_Pi</span>  <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H</span><span class="o">/</span><span class="n">K_HPi</span>  <span class="o">+</span> <span class="n">K</span><span class="o">/</span><span class="n">K_KPi</span>  <span class="o">+</span> <span class="n">Mg</span><span class="o">/</span><span class="n">K_MgPi</span>  <span class="c1"># equation 8 </span>
 
-<span class="c1"># Total measureable concentrations </span>
+<span class="c1"># Total concentrations </span>
 <span class="n">sumATP</span> <span class="o">=</span> <span class="mf">0.5e-3</span>         <span class="c1"># Molar</span>
 <span class="n">sumADP</span> <span class="o">=</span> <span class="mf">9.5e-3</span>         <span class="c1"># Molar</span>
 <span class="n">sumPi</span>  <span class="o">=</span> <span class="mf">1.0e-3</span>         <span class="c1"># Molar</span>
@@ -453,7 +444,7 @@
 </div>
 </div>
 </div>
-<p>The reactant concentrations used in the above calculation represent reasonable values for concentrations in the mitochondrial matrix. In the cytosol, the ATP/ADP ratio is on the order of 100:1, yielding a <span class="math notranslate nohighlight">\(\Delta_r G_\text{ATP}\)</span> of approximately <span class="math notranslate nohighlight">\(\text{-}45 \ \text{kJ mol}^{-1}\)</span>.</p>
+<p>The reactant concentrations used in the above calculation represent reasonable values for concentrations in the mitochondrial matrix. In the cytosol, the ATP/ADP ratio is on the order of 100:1, yielding a <span class="math notranslate nohighlight">\(\Delta_r G_\text{ATP}\)</span> of approximately <span class="math notranslate nohighlight">\(\text{-}64 \ \text{kJ mol}^{-1}\)</span>.</p>
 </div>
 <div class="section" id="atp-synthesis-in-the-mitochondrial-matrix">
 <h3>ATP synthesis in the mitochondrial matrix<a class="headerlink" href="#atp-synthesis-in-the-mitochondrial-matrix" title="Permalink to this headline">¶</a></h3>
@@ -520,7 +511,7 @@
 <td></td>
 <td><p>Protons translocated</p></td>
 <td><p><span class="math notranslate nohighlight">\(8/3 \)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#nicholls2013" id="id9">[12]</a></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#nicholls2013" id="id9">[11]</a></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(X_\text{F}\)</span></p></td>
 <td><p>mol s<span class="math notranslate nohighlight">\(^{-1}\)</span> (L mito)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
@@ -532,7 +523,7 @@
 <td><p>kJ mol<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Reference Gibbs energy</p></td>
 <td><p><span class="math notranslate nohighlight">\(4.99 \)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#li2011" id="id10">[8]</a></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#li2011" id="id10">[7]</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Biophysical constants</p></td>
 <td></td>
@@ -562,7 +553,7 @@
 <td><p>mol V<span class="math notranslate nohighlight">\(^{-1}\)</span> (L mito)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>IMM capacitance</p></td>
 <td><p><span class="math notranslate nohighlight">\(3.1\text{e-}3\)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#beard2005" id="id11">[2]</a></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#beard2005" id="id11">[1]</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Volume ratios</p></td>
 <td></td>
@@ -574,13 +565,13 @@
 <td><p>(L cyto) (L cell)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Cyto to cell ratio</p></td>
 <td><p><span class="math notranslate nohighlight">\(0.6601\)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id12">[18]</a></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id12">[15]</a></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(V_m\)</span></p></td>
 <td><p>(L mito) (L cell)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Mito to cell ratio</p></td>
 <td><p><span class="math notranslate nohighlight">\(0.2882\)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id13">[18]</a></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id13">[15]</a></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(V_{m2c}\)</span></p></td>
 <td><p>(L mito) (L cyto)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
@@ -592,25 +583,25 @@
 <td><p>(L cyto water) (L cyto)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Cyto water space ratio</p></td>
 <td><p><span class="math notranslate nohighlight">\(0.8425\)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id14">[18]</a></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id14">[15]</a></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(W_m\)</span></p></td>
 <td><p>(L mito water) (L mito)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Mito water space ratio</p></td>
 <td><p><span class="math notranslate nohighlight">\(0.7238 \)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id15">[18]</a></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id15">[15]</a></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(W_x\)</span></p></td>
 <td><p>(L matrix water) (L mito)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Mito matrix water space ratio</p></td>
 <td><p><span class="math notranslate nohighlight">\(0.9\)</span> <span class="math notranslate nohighlight">\(W_m\)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id16">[18]</a></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id16">[15]</a></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(W_i\)</span></p></td>
 <td><p>(L IM water) (L mito)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>IMS water space ratio</p></td>
 <td><p><span class="math notranslate nohighlight">\(0.1\)</span> <span class="math notranslate nohighlight">\(W_m\)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id17">[18]</a></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id17">[15]</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -718,7 +709,7 @@
 </div>
 </div>
 <p>The above simulation shows that under the clamped pH and <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> conditions simulated here, the model is nearly in equilibrium at the initial conditions of ATP, ADP, and Pi concentrations. Most of the adenine nucleotide remains in the form of ADP and the ATP/ADP ratio in the matrix is approximately <span class="math notranslate nohighlight">\(1\)</span>:<span class="math notranslate nohighlight">\(20\)</span>, with the inorganic phosphate concentration of approximately <span class="math notranslate nohighlight">\(1 \ \text{mM}\)</span>.</p>
-<p>To explore how the equilibrium changes with membrane potential, the following code computes the predicted equilibrium steady-state over a ranges of <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> from <span class="math notranslate nohighlight">\(100\)</span> to <span class="math notranslate nohighlight">\(250 \ \text{mV}\)</span> and over a range of matrix pH from <span class="math notranslate nohighlight">\(6.5\)</span> to <span class="math notranslate nohighlight">\(8\)</span>.</p>
+<p>To explore how the equilibrium changes with membrane potential, the following code computes the predicted equilibrium steady-state over a ranges of <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> from <span class="math notranslate nohighlight">\(100\)</span> to <span class="math notranslate nohighlight">\(250 \ \text{mV}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Simulate over a range of Membrane potential from 100 mV to 250 mV ###</span>

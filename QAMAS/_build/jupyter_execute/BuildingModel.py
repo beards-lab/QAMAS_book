@@ -96,7 +96,7 @@
 
 # Here, we clamp the matrix phosphate concentration at a constant value since the equation {eq}`system-ATP_ANT` does not account for phosphate transport between the matrix and the cytosol.  
 
-# In[19]:
+# In[1]:
 
 
 import numpy as np
@@ -277,17 +277,19 @@ ax[0].plot(t, sumPi_x*1000, label = '[$\Sigma$Pi]$_x$')
 ax[0].legend(loc="right")
 ax[0].set_ylim((-.5,10.5))
 ax[0].set_xlabel('Time (s)')
+ax[0].set_xticks([0,1,2])
 ax[0].set_ylabel('Concentration (mM)')
 
 ax[1].plot(t, sumATP_c*1000, label = '[$\Sigma$ATP]$_c$')
 ax[1].plot(t, sumADP_c*1000, label = '[$\Sigma$ADP]$_c$')
 ax[1].set_ylim((-0.5,10.5))
+ax[1].set_xticks([0,1,2])
 ax[1].legend(loc="right")
 ax[1].set_xlabel('Time (s)')
 plt.show()
 
 
-# The above simulations of the system of Equation {eq}`system-ATP_ANT` show how the electrogenic nature of the ANT transport results in markedly different ATP/ADP ratios in the cytosol compared to the matrix. As we saw in the previous chapter, the ATP hydrolysis potential in the matrix is approximately $\text{-}45 \ \text{kJ mol}^{-1}$. The roughly $100$:$1$ ratio of ATP to ADP in the cytosol is associated with a hydrolysis potential of approximately $\text{-}65 \ \text{kJ mol}^{-1}$. The difference of $20 \ \text{kJ mol}^{-1}$ between the matrix and the cytosolic space is driven primarily by the membrane potential, which is equivalent to $20 \ \text{kJ mol}^{-1}$.
+# The above simulations of the system of Equation {eq}`system-ATP_ANT` show how the electrogenic nature of the ANT transport results in markedly different ATP/ADP ratios in the cytosol compared to the matrix. As we saw in the previous chapter, the ATP hydrolysis potential in the matrix is approximately $\text{-}45 \ \text{kJ mol}^{-1}$. The roughly $50$:$1$ ratio of ATP to ADP in the cytosol is associated with a hydrolysis potential of approximately $\text{-}65 \ \text{kJ mol}^{-1}$. The difference of $20 \ \text{kJ mol}^{-1}$ between the matrix and the cytosolic space is driven primarily by the membrane potential, which is equivalent to $20 \ \text{kJ mol}^{-1}$.
 
 # ## Inorganic phosphate transport
 # 
@@ -320,7 +322,7 @@ plt.show()
 
 # The following code simulates the synthesis of ATP from ADP and Pi and their translocation across the IMM under physiological conditions.
 
-# In[4]:
+# In[2]:
 
 
 import numpy as np
@@ -537,9 +539,11 @@ ax[1].set_xlabel('Time (s)')
 plt.show()
 
 
-# For the above simulations, cytosolic inorganic phosphate is set to $10 \ \text{mM}$ initially, and all other initial conditions remain unchanged. Driven by $\Delta \text{pH}$, a gradient in phosphate concentration is established, with a steady-state ratio of matrix-to-cytosol concentration of approximately $2.2$. As seen in the previous section, with a constant membrane potential of $175 \ \text{mV}$, the ATP/ADP ratio is maintained at a much higher level in the cytosol than in the matrix. To explore how these steady states depend on $\Delta\Psi$, the following code simulates the steady-state behavior of this system for a range of $\Delta\Psi$ from $100$ to $200 \ \text{mV}$.
+# For the above simulations, cytosolic inorganic phosphate is set to $10 \ \text{mM}$ initially, and all other initial conditions remain unchanged. Driven by $\Delta \text{pH}$, a gradient in phosphate concentration is established, with a steady-state ratio of matrix-to-cytosol concentration of approximately $2.2$. As seen in the previous section, with a constant membrane potential of $175 \ \text{mV}$, the ATP/ADP ratio is maintained at a much higher level in the cytosol than in the matrix. 
+# 
+# The final matrix and cytosol ATP and ADP concentrations depend not only on the membrane potential, but also on the total amount of exchangeable phosphate in the system. Here these simulations start with $[\text{Pi}]_c = 10 \ \text{mM}$ and $[\text{Pi}]_x = 1 \ \text{mM}$. The initial $10 \ \text{mM}$ of ADP in the cytosol becomes almost entirely phosphorylated to ATP, leaving $0.32 \ \text{mM}$ of inorganic phosphate in the cytosol in the final steady state. To explore how these steady states depend on $\Delta\Psi$, the following code simulates the steady-state behavior of this system for a range of $\Delta\Psi$ from $100$ to $200 \ \text{mV}$.
 
-# In[58]:
+# In[3]:
 
 
 ### Simulate over a range of Membrane potential from 100 mV to 250 mV ###
@@ -562,7 +566,7 @@ Pi_c_steady  = np.zeros(len(membrane_potential))
 # Iterate through range of membrane potentials 
 for i in range(len(membrane_potential)):
     DPsi = membrane_potential[i] / 1000      # convert to V
-    temp_results = solve_ivp(dXdt, [0, 100], X_0, method = 'Radau', args=(activity_array,)).y*1000  # Concentration in mM
+    temp_results = solve_ivp(dXdt, [0, 200], X_0, method = 'Radau', args=(activity_array,)).y*1000  # Concentration in mM
     ATP_x_steady[i] = temp_results[0,-1] 
     ADP_x_steady[i] = temp_results[1,-1] 
     Pi_x_steady[i]  = temp_results[2,-1] 
@@ -579,16 +583,16 @@ ax[0].legend(loc = "right")
 ax[0].set_xlabel('Membrane potential (mV)')
 ax[0].set_ylabel('Concentration (mM)')
 ax[0].set_xlim([100, 250])
-ax[0].set_ylim([-0.5,10.5])
+ax[0].set_ylim([-0.5,13])
 
-ax[1].plot(membrane_potential, ATP_c_steady, label = '[$\Sigma$ATP]$_x$')
-ax[1].plot(membrane_potential, ADP_c_steady, label = '[$\Sigma$ADP]$_x$')
-ax[1].plot(membrane_potential, Pi_c_steady, label = '[$\Sigma$Pi]$_x$')
+ax[1].plot(membrane_potential, ATP_c_steady, label = '[$\Sigma$ATP]$_c$')
+ax[1].plot(membrane_potential, ADP_c_steady, label = '[$\Sigma$ADP]$_c$')
+ax[1].plot(membrane_potential, Pi_c_steady, label = '[$\Sigma$Pi]$_c$')
 ax[1].legend(loc = "right")
 ax[1].set_xlabel('Membrane potential (mV)')
 ax[1].set_ylabel('Concentration (mM)')
 ax[1].set_xlim([100, 250])
-ax[1].set_ylim([-0.5,10.5])
+ax[1].set_ylim([-0.5,13])
 
 plt.show()
 
@@ -857,7 +861,7 @@ plt.show()
 # The pools are $[\text{NAD}]_{tot} = 2.97 \ \text{mmol (L matrix water)}^{-1}$, $[\text{c}]_{tot} = 2.7 \ \text{mmol (L IMS water)}^{-1}$, and $[\text{Q}]_{tot} = 1.35 \ \text{mmol (L matrix water)}^{-1}$. Initial conditions are set under the assumption that the TAN for both the matrix and cytosol is $10 \ \text{mM}$, but the ATP/ADP ratio is $<$$1$ in the matrix and $\sim$$100$ in the cytosol. The following code simulates in vitro mitochondrial function without ATP consumption in the external (cytosolic space).  
 # 
 
-# In[65]:
+# In[4]:
 
 
 import numpy as np
@@ -918,17 +922,17 @@ DPsi_0 = 175/1000      # V
 # Matrix species
 sumATP_x_0 = 0.5e-3         # mol (L matrix water)**(-1)
 sumADP_x_0 = 9.5e-3         # mol (L matrix water)**(-1)
-sumPi_x_0  = 0.3e-3         # mol (L matrix water)**(-1)
+sumPi_x_0  = 1.0e-3         # mol (L matrix water)**(-1)
 NADH_x_0   = 2/3 * NAD_tot  # mol (L matrix water)**(-1)
-QH2_x_0    = 0.1  * Q_tot   # mol (L matrix water)**(-1)
+QH2_x_0    = 0.1 * Q_tot    # mol (L matrix water)**(-1)
 
 # IMS species
 cred_i_0 = 0.1 * c_tot # mol (L IMS water)**(-1)
 
 # Cytosolic species
-sumATP_c_0 = 0.05e-3  # mol (L cyto water)**(-1)
-sumADP_c_0 = 9.95e-3  # mol (L cyto water)**(-1)
-sumPi_c_0  = 5.0e-3   # mol (L cyto water)**(-1)
+sumATP_c_0 = 0       # mol (L cyto water)**(-1)
+sumADP_c_0 = 10e-3   # mol (L cyto water)**(-1)
+sumPi_c_0  = 10e-3   # mol (L cyto water)**(-1)
 
 X_0 = np.array([DPsi_0, sumATP_x_0, sumADP_x_0, sumPi_x_0, NADH_x_0, QH2_x_0, cred_i_0, sumATP_c_0, sumADP_c_0, sumPi_c_0])
 
@@ -1141,9 +1145,10 @@ def dXdt(t, X, activity_array, solve_ode):
     if solve_ode == 1:
         return dX
     else:
-        J = np.array([PATP_x, PADP_x, PPi_x, PATP_c, PADP_c, PPi_c, J_DH, J_C1, J_C3, J_C4, J_F, J_ANT, J_PiC])
+        J = np.array([PATP_x, PADP_x, PPi_x, PATP_c, PADP_c, PPi_c, J_DH, J_C1, J_C3, J_C4, J_F, J_ANT, J_PiC, DrGapp_F])
         return dX, J
-
+   
+    
 # Time vector 
 t = np.linspace(0,5,100)
     
@@ -1168,7 +1173,7 @@ ax[0,1].set_ylabel('Concentration (mM)')
 ax[0,1].set_ylim((-.5,10.5))
 
 ax[1,0].plot(t, DPsi*1000, label = '$\Delta\Psi$')
-ax[1,0].set_ylim((150, 190))
+ax[1,0].set_ylim((140, 190))
 ax[1,0].legend(loc="right")
 ax[1,0].set_xlabel('Time (s)')
 ax[1,0].set_ylabel('Membrane potential (V)')
@@ -1184,4 +1189,25 @@ ax[1,1].set_ylim((0, 1))
 plt.show()
 
 
-# *Dan - Are these the plots you'd like to see? Should we say something here?*
+# The above simulations reach a final steady state where the phophate metabolite concentrations are $[\text{Pi}]_c = 0.2 \ \text{mM}$ and $[\text{Pi}]_x = 0.4 \ \text{mM}$, and the membrane potential is $186 \ \text{mV}$. This state represents a *resting* energetic state with no ATP hydrolyis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is $\Delta G_{\rm ATP} = \text{-}51 \ \text{kJ mol}^{-1}$, as calculated below.
+# 
+# *Dan - Did you want to include the ratios for NAD, Q, and c?* 
+
+# In[5]:
+
+
+### Find Gibbs energy of ATP hydrolysis ### 
+dX, J_new = dXdt(t[-1],results.y[:,-1],activity_array,0)
+DrGapp_F  = J_new[-1]
+
+DrG_ATP = DrGapp_F + 8.314 * 310.15 * np.log((sumADP_x[-1] * sumPi_x[-1] / sumATP_x[-1]))
+
+print('Gibbs energy of ATP hydrolysis (kJ mol^(-1))')
+print(DrG_ATP/1000)
+
+
+# In[ ]:
+
+
+
+

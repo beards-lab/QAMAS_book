@@ -185,7 +185,7 @@ P_ATP = 1 + H/K_HATP + K/K_KATP + Mg/K_MgATP # equation 6
 P_ADP = 1 + H/K_HADP + K/K_KADP + Mg/K_MgADP # equation 7 
 P_Pi  = 1 + H/K_HPi  + K/K_KPi  + Mg/K_MgPi  # equation 8 
 
-# Total measureable concentrations 
+# Total concentrations 
 sumATP = 0.5e-3         # Molar
 sumADP = 9.5e-3         # Molar
 sumPi  = 1.0e-3         # Molar
@@ -203,7 +203,7 @@ print('Gibbs energy of ATP hydrolysis (kJ mol^(-1))')
 print(DrG_ATP / 1000) 
 
 
-# The reactant concentrations used in the above calculation represent reasonable values for concentrations in the mitochondrial matrix. In the cytosol, the ATP/ADP ratio is on the order of 100:1, yielding a $\Delta_r G_\text{ATP}$ of approximately $\text{-}45 \ \text{kJ mol}^{-1}$. 
+# The reactant concentrations used in the above calculation represent reasonable values for concentrations in the mitochondrial matrix. In the cytosol, the ATP/ADP ratio is on the order of 100:1, yielding a $\Delta_r G_\text{ATP}$ of approximately $\text{-}64 \ \text{kJ mol}^{-1}$. 
 
 # ### ATP synthesis in the mitochondrial matrix
 # 
@@ -450,7 +450,7 @@ plt.show()
 
 # The above simulation shows that under the clamped pH and $\Delta\Psi$ conditions simulated here, the model is nearly in equilibrium at the initial conditions of ATP, ADP, and Pi concentrations. Most of the adenine nucleotide remains in the form of ADP and the ATP/ADP ratio in the matrix is approximately $1$:$20$, with the inorganic phosphate concentration of approximately $1 \ \text{mM}$.
 # 
-# To explore how the equilibrium changes with membrane potential, the following code computes the predicted equilibrium steady-state over a ranges of $\Delta\Psi$ from $100$ to $250 \ \text{mV}$ and over a range of matrix pH from $6.5$ to $8$. 
+# To explore how the equilibrium changes with membrane potential, the following code computes the predicted equilibrium steady-state over a ranges of $\Delta\Psi$ from $100$ to $250 \ \text{mV}$. 
 
 # In[3]:
 

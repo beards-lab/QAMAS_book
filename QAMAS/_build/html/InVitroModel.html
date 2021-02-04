@@ -172,6 +172,19 @@
 </div>
         <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://ebenjaminrandall.github.io/QAMAS_book/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -179,28 +192,6 @@
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/InVitroModel.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/InVitroModel.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
 
     </div>
 
@@ -221,8 +212,8 @@
                 
   <div class="section" id="simulation-of-respiratory-control-in-vitro">
 <h1>Simulation of respiratory control in vitro<a class="headerlink" href="#simulation-of-respiratory-control-in-vitro" title="Permalink to this headline">¶</a></h1>
-<p>The integrated model developed in the previous section can be adapted to simulate in vitro experiments performed using suspensions of mitochondria purified from primary tissues. To simulate in vitro experiments, the major change that we make to the model is to replace the cytosolic components of the model with variables and associated volumes of distribution representing experimental buffers used in specific experiments. Here, we set <span class="math notranslate nohighlight">\(V_c = 1\)</span>, <span class="math notranslate nohighlight">\(V_m = 5\text{e-}4\)</span>, and <span class="math notranslate nohighlight">\(W_c = 1\)</span> to represent mitochondria suspended in a buffer solution.</p>
-<p>The following code simulates an experiment in which the non-energized mitochondrial state (state 1), is followed by a leak state (state 2), followed by oxidative phosphorylation state (state 3), followed by another leak state (state 4) <a class="bibtex reference internal" href="References.html#gnaiger2020" id="id1">[11]</a>. The virtual experiment represents a real experiment in which a purified suspension of mitochondria is introduced to a buffer containing no fuel substrates at time <span class="math notranslate nohighlight">\(t=0\)</span>. This non-energized state is simulated by setting the dehydrogenase activity in the model to <span class="math notranslate nohighlight">\(X_{\rm DH} = 0\)</span> for <span class="math notranslate nohighlight">\(0 \leq t &lt; 25 \ \text{s}\)</span>. State 2 is achieved by setting <span class="math notranslate nohighlight">\(X_{\rm DH}\)</span> to <span class="math notranslate nohighlight">\(0.1732\)</span> for <span class="math notranslate nohighlight">\(25 \leq t &lt; 75 \ \text{s}\)</span> to represent the addision of substrates (such as pyruvate and malate) to fuel NADH production. At time <span class="math notranslate nohighlight">\(t = 75 \ \text{s}\)</span>, <span class="math notranslate nohighlight">\(0.375 \ \mu\text{M}\)</span> of ADP is introduced into the respiration buffer to initiate the active oxidative phosphorylation state, or state 3. State 4 occurs when the ADP is nearly fully phosphorylated at approximately <span class="math notranslate nohighlight">\(t = 170 \ \text{s}\)</span>, and the system returns to a leak state. Note that this experiment is conducted under high external inorganic phosphate conditions (i.e., <span class="math notranslate nohighlight">\([\text{Pi}]_c = 5 \ \text{mM}\)</span>).</p>
+<p>The integrated model developed in the previous section can be adapted to simulate in vitro experiments performed using suspensions of mitochondria purified from primary tissues. To simulate in vitro experiments, the major change that we make to the model is to replace the cytosolic components of the model with variables and associated volumes of distribution representing experimental buffers used in specific experiments. Here, we set <span class="math notranslate nohighlight">\(V_c = 1\)</span>, <span class="math notranslate nohighlight">\(V_m = 5\text{e-}4\)</span>, and <span class="math notranslate nohighlight">\(W_c = 1\)</span> to represent mitochondria suspended in a buffer solution (i.e., in this virtual experiment, the mitochondria take up <span class="math notranslate nohighlight">\(0.05\%\)</span> of the volume of the experimental media).</p>
+<p>The following code simulates an experiment in which the non-energized mitochondrial state (state 1), is followed by a leak state (state 2), followed by oxidative phosphorylation state (state 3), followed by another leak state (state 4) <a class="bibtex reference internal" href="References.html#gnaiger2020" id="id1">[10]</a>. The virtual experiment represents a real experiment in which a purified suspension of mitochondria is introduced to a buffer containing no fuel substrates at time <span class="math notranslate nohighlight">\(t=0\)</span>. This non-energized state is simulated by setting the dehydrogenase activity in the model to <span class="math notranslate nohighlight">\(X_{\rm DH} = 0\)</span> for <span class="math notranslate nohighlight">\(0 \leq t &lt; 25 \ \text{s}\)</span>. State 2 is achieved by setting <span class="math notranslate nohighlight">\(X_{\rm DH}\)</span> to <span class="math notranslate nohighlight">\(0.1732\)</span> for <span class="math notranslate nohighlight">\(25 \leq t &lt; 75 \ \text{s}\)</span> to represent the addision of substrates (such as pyruvate and malate) to fuel NADH production. At time <span class="math notranslate nohighlight">\(t = 75 \ \text{s}\)</span>, <span class="math notranslate nohighlight">\(0.375 \ \mu\text{M}\)</span> of ADP is introduced into the respiration buffer to initiate the active oxidative phosphorylation state, or state 3. State 4 occurs when the ADP is nearly fully phosphorylated at approximately <span class="math notranslate nohighlight">\(t = 170 \ \text{s}\)</span>, and the system returns to a leak state. Note that this experiment is conducted under high external inorganic phosphate conditions (i.e., <span class="math notranslate nohighlight">\([\text{Pi}]_c = 5 \ \text{mM}\)</span>).</p>
 <table class="table" id="table-invitro">
 <caption><span class="caption-number">Table 5 </span><span class="caption-text">Isolated mitochondria in silico experiment.</span><a class="headerlink" href="#table-invitro" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -648,8 +639,8 @@
 <img alt="_images/InVitroModel_3_0.png" src="_images/InVitroModel_3_0.png" />
 </div>
 </div>
-<p>During the leak states, NADH and <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> are maintained at a maximal values while the OCR represents the oxidative flux necessary to balance proton leak across the IMM. During state 3 (oxidative phosphorylation), the OCR markedly increases while the magnitudes of NADH and <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> are temporarily decreased.</p>
-<p>Predictions of the in vitro model may also be compared to quasi-steady state data on OCRs, phosphate metabolite levels, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, NADH, and cytochrome c redox state, analyzed by Bazil et al. <a class="bibtex reference internal" href="References.html#bazil2016" id="id2">[18]</a>. In their experiments, several steady state ATP demand levels were achieved by titrating ATP hydrolyzing enzymes into the respiration buffer. We simulate this experiment with our model by varying the rate of the external ATP consuming process, <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span>. We vary <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span> by adusting the ATP consumption rate <span class="math notranslate nohighlight">\(X_\text{AtC}\)</span> from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(60 \ \text{mol s}^{-1} \ \text{(L cell)}^{-1}\)</span>. Experiments were conducted under conditions of two different approximately constant external phosphate concentrations (1 and 5 mM) and with external <span class="math notranslate nohighlight">\(\text{TAN} = 5 \ \text{mM}\)</span>. The following code computes the steady state of the in vitro model at different levels of <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span> and compares the measured data on OCR, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, NADH, cytochrome c redox state, and buffer ADP concentration to data.</p>
+<p>During the leak states, NADH and <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> are maintained at a maximal values while the OCR represents the oxidative flux necessary to balance proton leak across the IMM. During state 3 (oxidative phosphorylation), the OCR markedly increases while the magnitudes of NADH and <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> are temporarily decreased. This simple model overestimates the degree to which the NADH becomes depleted during state 3.</p>
+<p>Predictions of the in vitro model may also be compared to quasi-steady state data on OCRs, phosphate metabolite levels, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, NADH, and cytochrome c redox state, analyzed by Bazil et al. <a class="bibtex reference internal" href="References.html#bazil2016" id="id2">[15]</a>. In their experiments, several steady state ATP demand levels were achieved by titrating ATP hydrolyzing enzymes into the respiration buffer. We simulate this experiment with our model by varying the rate of the external ATP consuming process, <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span>. We vary <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span> by adusting the ATP consumption rate <span class="math notranslate nohighlight">\(X_\text{AtC}\)</span> from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(60 \ \text{mol s}^{-1} \ \text{(L cell)}^{-1}\)</span>. Experiments were conducted under conditions of two different approximately constant external phosphate concentrations (1 and 5 mM) and with external <span class="math notranslate nohighlight">\(\text{TAN} = 5 \ \text{mM}\)</span>. The following code computes the steady state of the in vitro model at different levels of <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span> and compares the measured data on OCR, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, NADH, cytochrome c redox state, and buffer ADP concentration to data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1099,7 +1090,7 @@
 <img alt="_images/InVitroModel_5_0.png" src="_images/InVitroModel_5_0.png" />
 </div>
 </div>
-<p>The match to the data is remarkably good considering how much simpler the model developed here is compared to the model of Bazil et al. <a class="bibtex reference internal" href="References.html#bazil2016" id="id3">[18]</a>. The Bazil et al. model accounts for the mechanisms underlying oxidative phosphorylation and associated side reactions at a deeper level of detail, and thus, finds broader applications. Yet the basic frameworks of our models is equivalent.</p>
+<p>The match to the data is remarkably good considering how much simpler the model developed here is compared to the model of Bazil et al. <a class="bibtex reference internal" href="References.html#bazil2016" id="id3">[15]</a>. The Bazil et al. model accounts for the mechanisms underlying oxidative phosphorylation and associated side reactions at a deeper level of detail, and thus, finds broader applications. Yet the basic frameworks of our models are equivalent.</p>
 </div>
 
     <script type="text/x-thebe-config">
