@@ -6,7 +6,7 @@
 #######################################################################################
 # Book settings
 title                       : Quantitative analysis of mitochondrial ATP synthesis  # The title of the book. Will be placed in the left navbar.
-author                      : E. Benjamin Randall, Marcus Hock, Rachel Lopez, Bahador Marzban, Collin Marshall, Daniel A. Beard  # The author of the book
+author                      : Randall, Hock, Lopez, Marzban, Marshall, & Beard  # The author of the book
 copyright                   : "2021"  # Copyright year to be placed in the footer
 logo                        : mito.png  # A path to the book logo
 

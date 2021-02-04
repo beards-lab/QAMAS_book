@@ -1157,41 +1157,25 @@ results = solve_ivp(dXdt, [0, 5], X_0, method = 'Radau', t_eval=t, args=(activit
 DPsi, sumATP_x,sumADP_x, sumPi_x, NADH_x, QH2_x, cred_i, sumATP_c, sumADP_c, sumPi_c = results.y
 
 # Plot figures 
-fig, ax = plt.subplots(2,2, figsize = (10,10))
-ax[0,0].plot(t, sumATP_x*1000, label = '[$\Sigma$ATP]$_x$')
-ax[0,0].plot(t, sumADP_x*1000, label = '[$\Sigma$ADP]$_x$')
-ax[0,0].plot(t, sumPi_x*1000, label = '[$\Sigma$Pi]$_x$')
-ax[0,0].legend(loc="right")
-ax[0,0].set_ylabel('Concentration (mM)')
-ax[0,0].set_ylim((-.5,10.5))
+fig, ax = plt.subplots(1,2, figsize = (10,5))
+ax[0].plot(t, sumATP_x*1000, label = '[$\Sigma$ATP]$_x$')
+ax[0].plot(t, sumADP_x*1000, label = '[$\Sigma$ADP]$_x$')
+ax[0].plot(t, sumPi_x*1000, label = '[$\Sigma$Pi]$_x$')
+ax[0].legend(loc="right")
+ax[0].set_ylabel('Concentration (mM)')
+ax[0].set_ylim((-.5,10.5))
 
-ax[0,1].plot(t, sumATP_c*1000, label = '[$\Sigma$ATP]$_c$')
-ax[0,1].plot(t, sumADP_c*1000, label = '[$\Sigma$ADP]$_c$')
-ax[0,1].plot(t, sumPi_c*1000, label = '[$\Sigma$Pi]$_c$')
-ax[0,1].legend(loc="right")
-ax[0,1].set_ylabel('Concentration (mM)')
-ax[0,1].set_ylim((-.5,10.5))
-
-ax[1,0].plot(t, DPsi*1000, label = '$\Delta\Psi$')
-ax[1,0].set_ylim((140, 190))
-ax[1,0].legend(loc="right")
-ax[1,0].set_xlabel('Time (s)')
-ax[1,0].set_ylabel('Membrane potential (V)')
-
-ax[1,1].plot(t, NADH_x/NAD_tot, label = '[NADH]$_x$/[NAD]$_{tot}$')
-ax[1,1].plot(t, QH2_x/Q_tot, label = '[QH$_2$]$_x$/[Q]$_{tot}$')
-ax[1,1].plot(t, cred_i/c_tot, label = '[c$^{2+}_{red}$]$_x$/[c]$_{tot}$')
-ax[1,1].legend(loc="right")
-ax[1,1].set_xlabel('Time (s)')
-ax[1,1].set_ylabel('Relative concentration')
-ax[1,1].set_ylim((0, 1))
+ax[1].plot(t, sumATP_c*1000, label = '[$\Sigma$ATP]$_c$')
+ax[1].plot(t, sumADP_c*1000, label = '[$\Sigma$ADP]$_c$')
+ax[1].plot(t, sumPi_c*1000, label = '[$\Sigma$Pi]$_c$')
+ax[1].legend(loc="right")
+ax[1].set_ylabel('Concentration (mM)')
+ax[1].set_ylim((-.5,10.5))
 
 plt.show()
 
 
 # The above simulations reach a final steady state where the phophate metabolite concentrations are $[\text{Pi}]_c = 0.2 \ \text{mM}$ and $[\text{Pi}]_x = 0.4 \ \text{mM}$, and the membrane potential is $186 \ \text{mV}$. This state represents a *resting* energetic state with no ATP hydrolyis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is $\Delta G_{\rm ATP} = \text{-}51 \ \text{kJ mol}^{-1}$, as calculated below.
-# 
-# *Dan - Did you want to include the ratios for NAD, Q, and c?* 
 
 # In[5]:
 
