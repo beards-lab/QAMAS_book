@@ -74,7 +74,7 @@
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Abstract.html">
-   Abstract
+   Authors
   </a>
  </li>
 </ul>
@@ -172,6 +172,19 @@
 </div>
         <!-- Source interaction buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://ebenjaminrandall.github.io/QAMAS_book/"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        
+        
+    </div>
+</div>
+
 
         <!-- Full screen (wrap in <a> to have style consistency -->
         <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
@@ -179,28 +192,6 @@
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
-
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/Principles.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/executablebooks/jupyter-book/blob/master/Principles.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        
-    </div>
-</div>
 
     </div>
 
@@ -427,7 +418,7 @@
 <span class="n">P_ADP</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H</span><span class="o">/</span><span class="n">K_HADP</span> <span class="o">+</span> <span class="n">K</span><span class="o">/</span><span class="n">K_KADP</span> <span class="o">+</span> <span class="n">Mg</span><span class="o">/</span><span class="n">K_MgADP</span> <span class="c1"># equation 7 </span>
 <span class="n">P_Pi</span>  <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H</span><span class="o">/</span><span class="n">K_HPi</span>  <span class="o">+</span> <span class="n">K</span><span class="o">/</span><span class="n">K_KPi</span>  <span class="o">+</span> <span class="n">Mg</span><span class="o">/</span><span class="n">K_MgPi</span>  <span class="c1"># equation 8 </span>
 
-<span class="c1"># Total measureable concentrations </span>
+<span class="c1"># Total concentrations </span>
 <span class="n">sumATP</span> <span class="o">=</span> <span class="mf">0.5e-3</span>         <span class="c1"># Molar</span>
 <span class="n">sumADP</span> <span class="o">=</span> <span class="mf">9.5e-3</span>         <span class="c1"># Molar</span>
 <span class="n">sumPi</span>  <span class="o">=</span> <span class="mf">1.0e-3</span>         <span class="c1"># Molar</span>
@@ -453,7 +444,7 @@
 </div>
 </div>
 </div>
-<p>The reactant concentrations used in the above calculation represent reasonable values for concentrations in the mitochondrial matrix. In the cytosol, the ATP/ADP ratio is on the order of 100:1, yielding a <span class="math notranslate nohighlight">\(\Delta_r G_\text{ATP}\)</span> of approximately <span class="math notranslate nohighlight">\(\text{-}45 \ \text{kJ mol}^{-1}\)</span>.</p>
+<p>The reactant concentrations used in the above calculation represent reasonable values for concentrations in the mitochondrial matrix. In the cytosol, the ATP/ADP ratio is on the order of 100:1, yielding a <span class="math notranslate nohighlight">\(\Delta_r G_\text{ATP}\)</span> of approximately <span class="math notranslate nohighlight">\(\text{-}64 \ \text{kJ mol}^{-1}\)</span>.</p>
 </div>
 <div class="section" id="atp-synthesis-in-the-mitochondrial-matrix">
 <h3>ATP synthesis in the mitochondrial matrix<a class="headerlink" href="#atp-synthesis-in-the-mitochondrial-matrix" title="Permalink to this headline">¶</a></h3>
@@ -718,7 +709,7 @@
 </div>
 </div>
 <p>The above simulation shows that under the clamped pH and <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> conditions simulated here, the model is nearly in equilibrium at the initial conditions of ATP, ADP, and Pi concentrations. Most of the adenine nucleotide remains in the form of ADP and the ATP/ADP ratio in the matrix is approximately <span class="math notranslate nohighlight">\(1\)</span>:<span class="math notranslate nohighlight">\(20\)</span>, with the inorganic phosphate concentration of approximately <span class="math notranslate nohighlight">\(1 \ \text{mM}\)</span>.</p>
-<p>To explore how the equilibrium changes with membrane potential, the following code computes the predicted equilibrium steady-state over a ranges of <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> from <span class="math notranslate nohighlight">\(100\)</span> to <span class="math notranslate nohighlight">\(250 \ \text{mV}\)</span> and over a range of matrix pH from <span class="math notranslate nohighlight">\(6.5\)</span> to <span class="math notranslate nohighlight">\(8\)</span>.</p>
+<p>To explore how the equilibrium changes with membrane potential, the following code computes the predicted equilibrium steady-state over a ranges of <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> from <span class="math notranslate nohighlight">\(100\)</span> to <span class="math notranslate nohighlight">\(250 \ \text{mV}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Simulate over a range of Membrane potential from 100 mV to 250 mV ###</span>
@@ -801,7 +792,7 @@
     <div class="container">
       <p>
         
-          By E. Benjamin Randall, Marcus Hock, Rachel Lopez, Bahador Marzban, Collin Marshall, Daniel A. Beard<br/>
+          By Randall, Hock, Lopez, Marzban, Marshall, & Beard<br/>
         
             &copy; Copyright 2021.<br/>
       </p>
