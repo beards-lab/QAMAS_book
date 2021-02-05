@@ -74,7 +74,7 @@
   <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Abstract.html">
-   Authors
+   Title Page
   </a>
  </li>
 </ul>
@@ -1439,27 +1439,7 @@
 <img alt="_images/BuildingModel_21_0.png" src="_images/BuildingModel_21_0.png" />
 </div>
 </div>
-<p>The above simulations reach a final steady state where the phophate metabolite concentrations are <span class="math notranslate nohighlight">\([\text{Pi}]_c = 0.2 \ \text{mM}\)</span> and <span class="math notranslate nohighlight">\([\text{Pi}]_x = 0.4 \ \text{mM}\)</span>, and the membrane potential is <span class="math notranslate nohighlight">\(186 \ \text{mV}\)</span>. This state represents a <em>resting</em> energetic state with no ATP hydrolyis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is <span class="math notranslate nohighlight">\(\Delta G_{\rm ATP} = \text{-}51 \ \text{kJ mol}^{-1}\)</span>, as calculated below.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Find Gibbs energy of ATP hydrolysis ### </span>
-<span class="n">dX</span><span class="p">,</span> <span class="n">J_new</span> <span class="o">=</span> <span class="n">dXdt</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">results</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">activity_array</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">DrGapp_F</span>  <span class="o">=</span> <span class="n">J_new</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="n">DrG_ATP</span> <span class="o">=</span> <span class="n">DrGapp_F</span> <span class="o">+</span> <span class="mf">8.314</span> <span class="o">*</span> <span class="mf">310.15</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="n">sumADP_x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">*</span> <span class="n">sumPi_x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="n">sumATP_x</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Gibbs energy of ATP hydrolysis (kJ mol^(-1))&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">DrG_ATP</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Gibbs energy of ATP hydrolysis (kJ mol^(-1))
--51.07498014437706
-</pre></div>
-</div>
-</div>
-</div>
+<p>The above simulations reach a final steady state where the phophate metabolite concentrations are <span class="math notranslate nohighlight">\([\text{ATP}]_x = 0.9 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{ADP}]_x = 9.1 \ \text{mM} \)</span>, <span class="math notranslate nohighlight">\([\text{Pi}]_x = 0.4 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{ATP}]_c = 9.9 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{ADP}]_c = 0.9 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{Pi}]_c = 0.2 \ \text{mM}\)</span>, and the membrane potential is <span class="math notranslate nohighlight">\(186 \ \text{mV}\)</span>. This state represents a <em>resting</em> energetic state with no ATP hydrolyis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is <span class="math notranslate nohighlight">\(\Delta G_{\rm ATP} = \text{-}64 \ \text{kJ mol}^{-1}\)</span>, as calculated below.</p>
 </div>
 </div>
 
@@ -1499,7 +1479,7 @@
     <div class="container">
       <p>
         
-          By Randall, Hock, Lopez, Marzban, Marshall, & Beard<br/>
+          By Randall, Hock, Lopez, Marzban, Marshall, & Beard supported by NIH grant HL144657<br/>
         
             &copy; Copyright 2021.<br/>
       </p>
