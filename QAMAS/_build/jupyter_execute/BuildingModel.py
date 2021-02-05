@@ -1175,7 +1175,46 @@ ax[1].set_ylim((-.5,10.5))
 plt.show()
 
 
-# The above simulations reach a final steady state where the phophate metabolite concentrations are $[\text{ATP}]_x = 0.9 \ \text{mM}$, $[\text{ADP}]_x = 9.1 \ \text{mM} $, $[\text{Pi}]_x = 0.4 \ \text{mM}$, $[\text{ATP}]_c = 9.9 \ \text{mM}$, $[\text{ADP}]_c = 0.1 \ \text{mM}$, $[\text{Pi}]_c = 0.2 \ \text{mM}$, and the membrane potential is $186 \ \text{mV}$. This state represents a *resting* energetic state with no ATP hydrolyis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is $\Delta G_{\rm ATP} = \text{-}64 \ \text{kJ mol}^{-1}$, as calculated below.
+# The above simulations reach a final steady state where the phophate metabolite concentrations are $[\text{ATP}]_x = 0.9 \ \text{mM}$, $[\text{ADP}]_x = 9.1 \ \text{mM} $, $[\text{Pi}]_x = 0.4 \ \text{mM}$, $[\text{ATP}]_c = 9.9 \ \text{mM}$, $[\text{ADP}]_c = 0.1 \ \text{mM}$, $[\text{Pi}]_c = 0.2 \ \text{mM}$, and the membrane potential is $186 \ \text{mV}$. This state represents a *resting* energetic state with no ATP hydrolyis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is $\Delta G_{\rm ATP} = \text{-}70 \ \text{kJ mol}^{-1}$, as calculated below. 
+
+# In[5]:
+
+
+sumATP_c_ss = sumATP_c[-1]
+sumADP_c_ss = sumADP_c[-1]
+sumPi_c_ss = sumPi_c[-1]
+
+H_c = 10**(-pH_c) # mol (L cuvette water)**(-1)
+# Thermochemical constants
+R = 8.314          # J (mol K)**(-1)
+T = 37 + 273.15    # K
+
+# Dissociation constants
+K_MgATP = 10**(-3.88)
+K_HATP  = 10**(-6.33)
+K_KATP  = 10**(-1.02)
+K_MgADP = 10**(-3.00)
+K_HADP  = 10**(-6.26)
+K_KADP  = 10**(-0.89)
+K_MgPi  = 10**(-1.66)
+K_HPi   = 10**(-6.62)
+K_KPi   = 10**(-0.42)
+
+## Binding polynomials
+# Cytosol species # mol (L cuvette water)**(-1)
+PATP_c = 1 + H_c/K_HATP + Mg_c/K_MgATP + K_c/K_KATP
+PADP_c = 1 + H_c/K_HADP + Mg_c/K_MgADP + K_c/K_KADP
+PPi_c  = 1 + H_c/K_HPi  + Mg_c/K_MgPi  + K_c/K_KPi
+
+DrGo_ATP = 4990
+DrG_ATP_apparent = DrGo_ATP + R * T * np.log(H_c * PATP_c / (PADP_c * PPi_c))
+
+# Use equation 9 to calculate cytosolic Gibbs energy 
+DrG_ATP = DrG_ATP_apparent + R * T * np.log((sumADP_c_ss * sumPi_c_ss / sumATP_c_ss))
+
+print('Cytosolic Gibbs energy of ATP hydrolysis (kJ mol^(-1))')
+print(DrG_ATP / 1000)
+
 
 # In[ ]:
 

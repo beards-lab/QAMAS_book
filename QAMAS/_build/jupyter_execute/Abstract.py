@@ -13,7 +13,7 @@
 # 
 # *Corresponding author
 # 
-# *Email addresses*: <a href="ebrandal@umich.edu">ebrandal@umich.edu</a> (E.B. Randall), <a href="m1hock@eng.ucsd.edu">m1hock@eng.ucsd.edu</a> (M. Hock), <a href="ralopez@umich.edu">ralopez@umich.edu</a> (R. Lopez), <a href="bmarzban@umich.edu">bmarzban@umich.edu</a> (B. Marzban), <a href="colmar@umich.edu">colmar@umich.edu</a> (C. Marshall), <a href="beardda@umich.edu">beardda@umich.edu</a> (D.A. Beard). 
+# *Email addresses*: <a href="mailto:ebrandal@umich.edu">ebrandal@umich.edu</a> (E.B. Randall), <a href="mailto:m1hock@eng.ucsd.edu">m1hock@eng.ucsd.edu</a> (M. Hock), <a href="mailto:ralopez@umich.edu">ralopez@umich.edu</a> (R. Lopez), <a href="mailto:bmarzban@umich.edu">bmarzban@umich.edu</a> (B. Marzban), <a href="mailto:colmar@umich.edu">colmar@umich.edu</a> (C. Marshall), <a href="mailto:beardda@umich.edu">beardda@umich.edu</a> (D.A. Beard). 
 # 
 # 
 # ## Abstract 

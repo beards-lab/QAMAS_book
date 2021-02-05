@@ -3,7 +3,7 @@
 
 # # Simulation of cardiac energetics in vivo
 # 
-# In this final section we apply the developed model, which is shown to match data on the relationships between ATP synthesis and phosphate metabolite levels in vivo predicting the nature of those relationships in vivo.
+# In this final section we apply the developed model, which is shown to match data on the relationships between ATP synthesis and phosphate metabolite levels in vitro, to predict the nature of those relationships in vivo.
 # 
 # ## Creatine kinase
 # 
