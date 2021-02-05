@@ -11,7 +11,7 @@ copyright                   : "2021"  # Copyright year to be placed in the foote
 logo                        : mito.png  # A path to the book logo
 
 repository:
-  url: https://ebenjaminrandall.github.io/QAMAS_book/
+  url: https://beards-lab.github.io/QAMAS_book/
 html:
   use_repository_button: true
   
