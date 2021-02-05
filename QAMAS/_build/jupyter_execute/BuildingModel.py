@@ -1175,20 +1175,7 @@ ax[1].set_ylim((-.5,10.5))
 plt.show()
 
 
-# The above simulations reach a final steady state where the phophate metabolite concentrations are $[\text{Pi}]_c = 0.2 \ \text{mM}$ and $[\text{Pi}]_x = 0.4 \ \text{mM}$, and the membrane potential is $186 \ \text{mV}$. This state represents a *resting* energetic state with no ATP hydrolyis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is $\Delta G_{\rm ATP} = \text{-}51 \ \text{kJ mol}^{-1}$, as calculated below.
-
-# In[5]:
-
-
-### Find Gibbs energy of ATP hydrolysis ### 
-dX, J_new = dXdt(t[-1],results.y[:,-1],activity_array,0)
-DrGapp_F  = J_new[-1]
-
-DrG_ATP = DrGapp_F + 8.314 * 310.15 * np.log((sumADP_x[-1] * sumPi_x[-1] / sumATP_x[-1]))
-
-print('Gibbs energy of ATP hydrolysis (kJ mol^(-1))')
-print(DrG_ATP/1000)
-
+# The above simulations reach a final steady state where the phophate metabolite concentrations are $[\text{ATP}]_x = 0.9 \ \text{mM}$, $[\text{ADP}]_x = 9.1 \ \text{mM} $, $[\text{Pi}]_x = 0.4 \ \text{mM}$, $[\text{ATP}]_c = 9.9 \ \text{mM}$, $[\text{ADP}]_c = 0.1 \ \text{mM}$, $[\text{Pi}]_c = 0.2 \ \text{mM}$, and the membrane potential is $186 \ \text{mV}$. This state represents a *resting* energetic state with no ATP hydrolyis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is $\Delta G_{\rm ATP} = \text{-}64 \ \text{kJ mol}^{-1}$, as calculated below.
 
 # In[ ]:
 

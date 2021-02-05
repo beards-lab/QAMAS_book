@@ -6,7 +6,7 @@
 #######################################################################################
 # Book settings
 title                       : Quantitative analysis of mitochondrial ATP synthesis  # The title of the book. Will be placed in the left navbar.
-author                      : Randall, Hock, Lopez, Marzban, Marshall, & Beard  # The author of the book
+author                      : Randall, Hock, Lopez, Marzban, Marshall, & Beard supported by NIH grant HL144657 # The author of the book
 copyright                   : "2021"  # Copyright year to be placed in the footer
 logo                        : mito.png  # A path to the book logo
 
@@ -14,3 +14,5 @@ repository:
   url: https://ebenjaminrandall.github.io/QAMAS_book/
 html:
   use_repository_button: true
+  
+  
