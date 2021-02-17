@@ -644,7 +644,7 @@ plt.show()
 # where $\text{c}_{ox}^{3+}$ and $\text{c}_{red}^{2+}$ are the oxidized and reduced cytochrome c species and the subscript $i$ indicates that cytochrome c is confined to the IMS. This reaction is coupled with the transport of $n_{\text{C3}} = 2$ protons from the matrix to the cytosol against the electrochemical gradient. Thus, the Gibbs energy for the overall reaction given in Equation {eq}`reaction_C3` is 
 # ```{math}
 # :label: DrG_C3
-#     \Delta G_{\text{C3}} &= \Delta_r G_\text{C3} - n_\text{C3} \Delta G_\text{\rm H} \nonumber \\ 
+#     \Delta G_{\text{C3}} &= \Delta_r G_\text{C3} - n_\text{C3} \Delta G_\text{H} \nonumber \\ 
 #     &= \Delta_r G_{\text{C3}}^\circ + R{\rm T} \ln \left( \dfrac{ [\text{Q}]_x [\text{c}_{red}^{2+}]_i^2 }{ [\text{QH}_2]_x [\text{c}_{ox}^{3+}]_i^2} \cdot [\text{H}^{+}]_c^2 \right) + n_\text{C3} F \Delta \Psi -
 #     R{\rm T} \ln \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c} \right)^{n_\text{C3}} \nonumber \\ 
 #     &= \Delta_r G'^\circ_\text{C3} + R{\rm T} \ln \left( \dfrac{ [\text{Q}]_x [\text{c}_{red}^{2+}]_i^2 }{ [\text{QH}_2]_x [\text{c}_{ox}^{3+}]_i^2}\right) + n_\text{C3} F \Delta \Psi -
