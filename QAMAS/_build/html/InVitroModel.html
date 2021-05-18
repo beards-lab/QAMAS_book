@@ -30,9 +30,9 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -177,7 +177,7 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://ebenjaminrandall.github.io/QAMAS_book/"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/beards-lab/QAMAS_book"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         
@@ -192,6 +192,31 @@
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/beards-lab/QAMAS_book/HEAD/v2/gh/beards-lab/QAMAS_book/master?urlpath=tree/InVitroModel.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/beards-lab/QAMAS_book/blob/master/InVitroModel.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
     </div>
 
@@ -640,7 +665,7 @@
 </div>
 </div>
 <p>During the leak states, NADH and <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> are maintained at a maximal values while the OCR represents the oxidative flux necessary to balance proton leak across the IMM. During state 3 (oxidative phosphorylation), the OCR markedly increases while the magnitudes of NADH and <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> are temporarily decreased. This simple model overestimates the degree to which the NADH becomes depleted during state 3.</p>
-<p>Predictions of the in vitro model may also be compared to quasi-steady state data on OCRs, phosphate metabolite levels, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, NADH, and cytochrome c redox state, analyzed by Bazil et al. <a class="bibtex reference internal" href="References.html#bazil2016" id="id2">[15]</a>. In their experiments, several steady state ATP demand levels were achieved by titrating ATP hydrolyzing enzymes into the respiration buffer. We simulate this experiment with our model by varying the rate of the external ATP consuming process, <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span>. We vary <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span> by adusting the ATP consumption rate <span class="math notranslate nohighlight">\(X_\text{AtC}\)</span> from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(60 \ \text{mol s}^{-1} \ \text{(L cell)}^{-1}\)</span>. Experiments were conducted under conditions of two different approximately constant external phosphate concentrations (1 and 5 mM) and with external <span class="math notranslate nohighlight">\(\text{TAN} = 5 \ \text{mM}\)</span>. The following code computes the steady state of the in vitro model at different levels of <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span> and compares the measured data on OCR, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, NADH, cytochrome c redox state, and buffer ADP concentration to data.</p>
+<p>Predictions of the in vitro model may also be compared to quasi-steady state data on OCRs, phosphate metabolite levels, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, NADH, and cytochrome c redox state, analyzed by Bazil et al. <a class="bibtex reference internal" href="References.html#bazil2016" id="id2">[15]</a>. In their experiments, several steady state ATP demand levels were achieved by titrating ATP hydrolyzing enzymes into the respiration buffer. We simulate this experiment with our model by varying the rate of the external ATP consuming process, <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span>. We vary <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span> by adjusting the ATP consumption rate <span class="math notranslate nohighlight">\(X_\text{AtC}\)</span> from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(60 \ \text{mol s}^{-1} \ \text{(L cell)}^{-1}\)</span>. Experiments were conducted under conditions of two different approximately constant external phosphate concentrations (1 and 5 mM) and with external <span class="math notranslate nohighlight">\(\text{TAN} = 5 \ \text{mM}\)</span>. The following code computes the steady state of the in vitro model at different levels of <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span> and compares the measured data on OCR, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, NADH, cytochrome c redox state, and buffer ADP concentration to data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1097,7 +1122,7 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "beards-lab/QAMAS_book",
             ref: "master",
         },
         codeMirrorConfig: {

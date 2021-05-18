@@ -94,7 +94,7 @@
 # ```
 # where $V_{m2c} \ \text{(L mito) (L cyto)}^{-1}$ is the fraction of the volume of mitochondria per volume cytosol and $W_c \ \text{(L cyto water) (L cyto)}^{-1}$ is the fraction of water volume in the cytoplasm to the total volume of the cytoplasm ({numref}`table-biophysicalconstants`). 
 
-# Here, we clamp the matrix phosphate concentration at a constant value since the equation {eq}`system-ATP_ANT` does not account for phosphate transport between the matrix and the cytosol.  
+# Here, we clamp the matrix phosphate concentration at a constant value since the Equation {eq}`system-ATP_ANT` does not account for phosphate transport between the matrix and the cytosol.  
 
 # In[1]:
 
@@ -644,7 +644,7 @@ plt.show()
 # where $\text{c}_{ox}^{3+}$ and $\text{c}_{red}^{2+}$ are the oxidized and reduced cytochrome c species and the subscript $i$ indicates that cytochrome c is confined to the IMS. This reaction is coupled with the transport of $n_{\text{C3}} = 2$ protons from the matrix to the cytosol against the electrochemical gradient. Thus, the Gibbs energy for the overall reaction given in Equation {eq}`reaction_C3` is 
 # ```{math}
 # :label: DrG_C3
-#     \Delta G_{\text{C3}} &= \Delta_r G_\text{C3} - n_\text{C3} \Delta G_\text{\rm H} \nonumber \\ 
+#     \Delta G_{\text{C3}} &= \Delta_r G_\text{C3} - n_\text{C3} \Delta G_\text{H} \nonumber \\ 
 #     &= \Delta_r G_{\text{C3}}^\circ + R{\rm T} \ln \left( \dfrac{ [\text{Q}]_x [\text{c}_{red}^{2+}]_i^2 }{ [\text{QH}_2]_x [\text{c}_{ox}^{3+}]_i^2} \cdot [\text{H}^{+}]_c^2 \right) + n_\text{C3} F \Delta \Psi -
 #     R{\rm T} \ln \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c} \right)^{n_\text{C3}} \nonumber \\ 
 #     &= \Delta_r G'^\circ_\text{C3} + R{\rm T} \ln \left( \dfrac{ [\text{Q}]_x [\text{c}_{red}^{2+}]_i^2 }{ [\text{QH}_2]_x [\text{c}_{ox}^{3+}]_i^2}\right) + n_\text{C3} F \Delta \Psi -
@@ -668,7 +668,7 @@ plt.show()
 
 # ### ETC complex IV
 # 
-# In the final step of the ECT catalzyed by complex IV, electrons are transferred from cytochrome c to oxygen, forming water
+# In the final step of the ETC catalzyed by complex IV, electrons are transferred from cytochrome c to oxygen, forming water
 # ```{math}
 # :label: reaction_C4
 #     2 \ (\text{c}_{red}^{2+})_i + \frac{1}{2} (\text{O}_2)_x + 2 \ (\text{H}^{+})_c + n_\text{C4} ([\text{H}^+])_x \rightleftharpoons 2 \ (\text{c}^{3+}_{ox})_i + \text{H}_2\text{O} + n_\text{C4} ([\text{H}^+])_c, 
@@ -831,7 +831,7 @@ plt.show()
 #     	\left\{ 
 # 		\renewcommand{\arraystretch}{2.5} 
 # 		\begin{array}{rl}
-# 		    \dfrac{ {\rm d} \Delta \Psi }{{\rm d} t} & =( n_\text{C1} J_\text{C1} + n_\text{C3} J_\text{C3} + n_\text{C4} J_\text{C4} - n_\text{F} J_\text{F} - J_\text{ANT} - J_\text{H}) / C_m & \\ 
+# 		    \dfrac{ {\rm d} \Delta \Psi }{{\rm d} t} & =( n_\text{C1} J_\text{C1} + n_\text{C3} J_\text{C3} + n_\text{C4} J_\text{C4} - n_\text{F} J_\text{F} - J_\text{ANT} - J_\text{H}) / C_m \\ 
 # 		    \hline 
 # 			\dfrac{ {\rm d} [\Sigma \text{ATP}]_x }{{\rm d} t} &= (J_\text{F} - J_\text{ANT} ) / W_x  \\
 # 			\dfrac{ {\rm d} [\Sigma \text{ADP}]_x }{{\rm d} t} &= (-J_\text{F} + J_\text{ANT}) / W_x \\ 
@@ -842,7 +842,7 @@ plt.show()
 # 			\dfrac{ {\rm d} [\text{c}_{red}^{2+}]_i}{{\rm d} t} &= 2(J_\text{C3} - J_\text{C4}) / W_i \quad \text{intermembrane space species}\\
 # 			\hline 
 # 			\dfrac{ {\rm d} [\Sigma \text{ATP}]_c }{{\rm d} t} &= (V_{m2c} J_\text{ANT} - J_\text{AtC} )/ W_c \\
-# 			\dfrac{ {\rm d} [\Sigma \text{ADP}]_c }{{\rm d} t} &= (-V_{m2c} J_\text{ANT} + J_\text{AtC} ) / W_c \quad \text{cytoplasm species}\\
+# 			\dfrac{ {\rm d} [\Sigma \text{ADP}]_c }{{\rm d} t} &= (-V_{m2c} J_\text{ANT} + J_\text{AtC} ) / W_c \quad \text{cytosol species}\\
 # 			\dfrac{ {\rm d} [\Sigma \text{Pi}]_c }{{\rm d} t} &= (- V_{m2c} J_\text{PiC} + J_\text{AtC}) / W_c,  
 # 		\end{array}
 # 		\renewcommand{\arraystretch}{1} 
@@ -1141,7 +1141,7 @@ def dXdt(t, X, activity_array, solve_ode):
 
     dX = [dDPsi, dATP_x, dADP_x, dPi_x, dNADH_x, dQH2_x, dcred_i, dATP_c, dADP_c, dPi_c]
     
-    # Need to be able to calculate fluxes after the fact 
+    # Calculate state-dependent quantities after model is solved
     if solve_ode == 1:
         return dX
     else:
@@ -1162,20 +1162,23 @@ ax[0].plot(t, sumATP_x*1000, label = '[$\Sigma$ATP]$_x$')
 ax[0].plot(t, sumADP_x*1000, label = '[$\Sigma$ADP]$_x$')
 ax[0].plot(t, sumPi_x*1000, label = '[$\Sigma$Pi]$_x$')
 ax[0].legend(loc="right")
+ax[0].set_xlabel('Time (s)') 
 ax[0].set_ylabel('Concentration (mM)')
 ax[0].set_ylim((-.5,10.5))
+
 
 ax[1].plot(t, sumATP_c*1000, label = '[$\Sigma$ATP]$_c$')
 ax[1].plot(t, sumADP_c*1000, label = '[$\Sigma$ADP]$_c$')
 ax[1].plot(t, sumPi_c*1000, label = '[$\Sigma$Pi]$_c$')
 ax[1].legend(loc="right")
+ax[1].set_xlabel('Time (s)')
 ax[1].set_ylabel('Concentration (mM)')
 ax[1].set_ylim((-.5,10.5))
 
 plt.show()
 
 
-# The above simulations reach a final steady state where the phophate metabolite concentrations are $[\text{ATP}]_x = 0.9 \ \text{mM}$, $[\text{ADP}]_x = 9.1 \ \text{mM} $, $[\text{Pi}]_x = 0.4 \ \text{mM}$, $[\text{ATP}]_c = 9.9 \ \text{mM}$, $[\text{ADP}]_c = 0.1 \ \text{mM}$, $[\text{Pi}]_c = 0.2 \ \text{mM}$, and the membrane potential is $186 \ \text{mV}$. This state represents a *resting* energetic state with no ATP hydrolyis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is $\Delta G_{\rm ATP} = \text{-}70 \ \text{kJ mol}^{-1}$, as calculated below. 
+# The above simulations reach a final steady state where the phosphate metabolite concentrations are $[\text{ATP}]_x = 0.9 \ \text{mM}$, $[\text{ADP}]_x = 9.1 \ \text{mM} $, $[\text{Pi}]_x = 0.4 \ \text{mM}$, $[\text{ATP}]_c = 9.9 \ \text{mM}$, $[\text{ADP}]_c = 0.1 \ \text{mM}$, $[\text{Pi}]_c = 0.2 \ \text{mM}$, and the membrane potential is $186 \ \text{mV}$. This state represents a *resting* energetic state with no ATP hydrolysis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is $\Delta G_{\rm ATP} = \text{-}70 \ \text{kJ mol}^{-1}$, as calculated below. 
 
 # In[5]:
 
@@ -1214,6 +1217,12 @@ DrG_ATP = DrG_ATP_apparent + R * T * np.log((sumADP_c_ss * sumPi_c_ss / sumATP_c
 
 print('Cytosolic Gibbs energy of ATP hydrolysis (kJ mol^(-1))')
 print(DrG_ATP / 1000)
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
