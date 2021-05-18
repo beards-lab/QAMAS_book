@@ -11,8 +11,10 @@ copyright                   : "2021"  # Copyright year to be placed in the foote
 logo                        : mito.png  # A path to the book logo
 
 repository:
-  url: https://beards-lab.github.io/QAMAS_book/
+  url: https://github.com/beards-lab/QAMAS_book
+  branch: master
 html:
   use_repository_button: true
-  
-  
+launch_buttons:
+  binderhub_url: "https://mybinder.org/v2/gh/beards-lab/QAMAS_book/HEAD"
+  thebe: true 

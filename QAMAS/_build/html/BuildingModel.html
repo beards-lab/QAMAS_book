@@ -30,9 +30,9 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -177,7 +177,7 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://beards-lab.github.io/QAMAS_book/"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/beards-lab/QAMAS_book"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         
@@ -192,6 +192,31 @@
                     class="fas fa-expand"></i></button></a>
 
         <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/beards-lab/QAMAS_book/HEAD/v2/gh/beards-lab/QAMAS_book/master?urlpath=tree/BuildingModel.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/beards-lab/QAMAS_book/blob/master/BuildingModel.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
 
     </div>
 
@@ -360,7 +385,7 @@
 		\renewcommand{\arraystretch}{1} 
 	\right.\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(V_{m2c} \ \text{(L mito) (L cyto)}^{-1}\)</span> is the fraction of the volume of mitochondria per volume cytosol and <span class="math notranslate nohighlight">\(W_c \ \text{(L cyto water) (L cyto)}^{-1}\)</span> is the fraction of water volume in the cytoplasm to the total volume of the cytoplasm (<a class="reference internal" href="Principles.html#table-biophysicalconstants"><span class="std std-numref">Table 2</span></a>).</p>
-<p>Here, we clamp the matrix phosphate concentration at a constant value since the equation <a class="reference internal" href="#equation-system-atp-ant">(14)</a> does not account for phosphate transport between the matrix and the cytosol.</p>
+<p>Here, we clamp the matrix phosphate concentration at a constant value since the Equation <a class="reference internal" href="#equation-system-atp-ant">(14)</a> does not account for phosphate transport between the matrix and the cytosol.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -916,7 +941,7 @@
 </div>
 <div class="section" id="etc-complex-iv">
 <h3>ETC complex IV<a class="headerlink" href="#etc-complex-iv" title="Permalink to this headline">¶</a></h3>
-<p>In the final step of the ECT catalzyed by complex IV, electrons are transferred from cytochrome c to oxygen, forming water</p>
+<p>In the final step of the ETC catalzyed by complex IV, electrons are transferred from cytochrome c to oxygen, forming water</p>
 <div class="math notranslate nohighlight" id="equation-reaction-c4">
 <span class="eqno">(21)<a class="headerlink" href="#equation-reaction-c4" title="Permalink to this equation">¶</a></span>\[    2 \ (\text{c}_{red}^{2+})_i + \frac{1}{2} (\text{O}_2)_x + 2 \ (\text{H}^{+})_c + n_\text{C4} ([\text{H}^+])_x \rightleftharpoons 2 \ (\text{c}^{3+}_{ox})_i + \text{H}_2\text{O} + n_\text{C4} ([\text{H}^+])_c, \]</div>
 <p>coupled with the translocation of <span class="math notranslate nohighlight">\(n_\text{C4} = 4\)</span> protons across the IMM against against the electrochemical gradient. The Gibbs energy of the reaction in Equation <a class="reference internal" href="#equation-reaction-c4">(21)</a> is</p>
@@ -1096,7 +1121,7 @@
 <span class="eqno">(23)<a class="headerlink" href="#equation-system-singlemito" title="Permalink to this equation">¶</a></span>\[\begin{split}    	\left\{ 
 		\renewcommand{\arraystretch}{2.5} 
 		\begin{array}{rl}
-		    \dfrac{ {\rm d} \Delta \Psi }{{\rm d} t} &amp; =( n_\text{C1} J_\text{C1} + n_\text{C3} J_\text{C3} + n_\text{C4} J_\text{C4} - n_\text{F} J_\text{F} - J_\text{ANT} - J_\text{H}) / C_m &amp; \\ 
+		    \dfrac{ {\rm d} \Delta \Psi }{{\rm d} t} &amp; =( n_\text{C1} J_\text{C1} + n_\text{C3} J_\text{C3} + n_\text{C4} J_\text{C4} - n_\text{F} J_\text{F} - J_\text{ANT} - J_\text{H}) / C_m \\ 
 		    \hline 
 			\dfrac{ {\rm d} [\Sigma \text{ATP}]_x }{{\rm d} t} &amp;= (J_\text{F} - J_\text{ANT} ) / W_x  \\
 			\dfrac{ {\rm d} [\Sigma \text{ADP}]_x }{{\rm d} t} &amp;= (-J_\text{F} + J_\text{ANT}) / W_x \\ 
@@ -1107,7 +1132,7 @@
 			\dfrac{ {\rm d} [\text{c}_{red}^{2+}]_i}{{\rm d} t} &amp;= 2(J_\text{C3} - J_\text{C4}) / W_i \quad \text{intermembrane space species}\\
 			\hline 
 			\dfrac{ {\rm d} [\Sigma \text{ATP}]_c }{{\rm d} t} &amp;= (V_{m2c} J_\text{ANT} - J_\text{AtC} )/ W_c \\
-			\dfrac{ {\rm d} [\Sigma \text{ADP}]_c }{{\rm d} t} &amp;= (-V_{m2c} J_\text{ANT} + J_\text{AtC} ) / W_c \quad \text{cytoplasm species}\\
+			\dfrac{ {\rm d} [\Sigma \text{ADP}]_c }{{\rm d} t} &amp;= (-V_{m2c} J_\text{ANT} + J_\text{AtC} ) / W_c \quad \text{cytosol species}\\
 			\dfrac{ {\rm d} [\Sigma \text{Pi}]_c }{{\rm d} t} &amp;= (- V_{m2c} J_\text{PiC} + J_\text{AtC}) / W_c,  
 		\end{array}
 		\renewcommand{\arraystretch}{1} 
@@ -1400,7 +1425,7 @@
 
     <span class="n">dX</span> <span class="o">=</span> <span class="p">[</span><span class="n">dDPsi</span><span class="p">,</span> <span class="n">dATP_x</span><span class="p">,</span> <span class="n">dADP_x</span><span class="p">,</span> <span class="n">dPi_x</span><span class="p">,</span> <span class="n">dNADH_x</span><span class="p">,</span> <span class="n">dQH2_x</span><span class="p">,</span> <span class="n">dcred_i</span><span class="p">,</span> <span class="n">dATP_c</span><span class="p">,</span> <span class="n">dADP_c</span><span class="p">,</span> <span class="n">dPi_c</span><span class="p">]</span>
     
-    <span class="c1"># Need to be able to calculate fluxes after the fact </span>
+    <span class="c1"># Calculate state-dependent quantities after model is solved</span>
     <span class="k">if</span> <span class="n">solve_ode</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">dX</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1421,13 +1446,16 @@
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumADP_x</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$ADP]$_x$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumPi_x</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$Pi]$_x$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span> 
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Concentration (mM)&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span><span class="mf">10.5</span><span class="p">))</span>
+
 
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumATP_c</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$ATP]$_c$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumADP_c</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$ADP]$_c$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumPi_c</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$Pi]$_c$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Concentration (mM)&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span><span class="mf">10.5</span><span class="p">))</span>
 
@@ -1439,7 +1467,7 @@
 <img alt="_images/BuildingModel_21_0.png" src="_images/BuildingModel_21_0.png" />
 </div>
 </div>
-<p>The above simulations reach a final steady state where the phophate metabolite concentrations are <span class="math notranslate nohighlight">\([\text{ATP}]_x = 0.9 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{ADP}]_x = 9.1 \ \text{mM} \)</span>, <span class="math notranslate nohighlight">\([\text{Pi}]_x = 0.4 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{ATP}]_c = 9.9 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{ADP}]_c = 0.1 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{Pi}]_c = 0.2 \ \text{mM}\)</span>, and the membrane potential is <span class="math notranslate nohighlight">\(186 \ \text{mV}\)</span>. This state represents a <em>resting</em> energetic state with no ATP hydrolyis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is <span class="math notranslate nohighlight">\(\Delta G_{\rm ATP} = \text{-}70 \ \text{kJ mol}^{-1}\)</span>, as calculated below.</p>
+<p>The above simulations reach a final steady state where the phosphate metabolite concentrations are <span class="math notranslate nohighlight">\([\text{ATP}]_x = 0.9 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{ADP}]_x = 9.1 \ \text{mM} \)</span>, <span class="math notranslate nohighlight">\([\text{Pi}]_x = 0.4 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{ATP}]_c = 9.9 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{ADP}]_c = 0.1 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{Pi}]_c = 0.2 \ \text{mM}\)</span>, and the membrane potential is <span class="math notranslate nohighlight">\(186 \ \text{mV}\)</span>. This state represents a <em>resting</em> energetic state with no ATP hydrolysis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is <span class="math notranslate nohighlight">\(\Delta G_{\rm ATP} = \text{-}70 \ \text{kJ mol}^{-1}\)</span>, as calculated below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sumATP_c_ss</span> <span class="o">=</span> <span class="n">sumATP_c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -1493,7 +1521,7 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "beards-lab/QAMAS_book",
             ref: "master",
         },
         codeMirrorConfig: {

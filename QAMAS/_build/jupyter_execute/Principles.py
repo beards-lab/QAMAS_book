@@ -489,7 +489,7 @@ plt.show()
     
 
 
-# The above simulations show that under physiological levels of $\Delta$pH, matrix ATP concentrations become essentially zero for values of the membrane potential less than approximately $150 \ \text{mV}$. At high levels of $\Delta\Psi$ all of the available phosphate is used to phosphorylate ADP to ATP. Since the initial $[\text{Pi}]$ and $[\text{ATP}]$ are $1 \ \text{mM}$ and $0.5 \ \text{mM}$, respectively, the maximum ATP obtained at the maximal $\Delta\Psi$ is $1.5 \ \text{mM}$.
+# The above simulations show that under physiological levels of $\Delta$pH, matrix ATP concentrations become essentially zero for values of the membrane potential less than approximately $150 \ \text{mV}$. At high levels of $\Delta\Psi$, all of the available phosphate is used to phosphorylate ADP to ATP. Since the initial $[\text{Pi}]$ and $[\text{ATP}]$ are $1 \ \text{mM}$ and $0.5 \ \text{mM}$, respectively, the maximum ATP obtained at the maximal $\Delta\Psi$ is $1.5 \ \text{mM}$.
 
 # In[ ]:
 
