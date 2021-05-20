@@ -198,18 +198,13 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/beards-lab/QAMAS_book/HEAD/v2/gh/beards-lab/QAMAS_book/master?urlpath=tree/BuildingModel.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/beards-lab/QAMAS_book/master?urlpath=tree/QAMAS/BuildingModel.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/beards-lab/QAMAS_book/blob/master/BuildingModel.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
         
         <button type="button" class="btn btn-secondary topbarbtn"
             onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
@@ -389,8 +384,10 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">!</span>pip install scipy
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 
 <span class="c1">###### Constants defining metabolite pools ######</span>
 <span class="c1"># Volume fractions and water space fractions</span>
@@ -400,10 +397,6 @@
 <span class="n">W_c</span> <span class="o">=</span> <span class="mf">0.8425</span>      <span class="c1"># cytosol water space           # L cyto water (L cyto)**(-1)</span>
 <span class="n">W_m</span> <span class="o">=</span> <span class="mf">0.7238</span>       <span class="c1"># mitochondrial water space     # L mito water (L mito)**(-1)</span>
 <span class="n">W_x</span> <span class="o">=</span> <span class="mf">0.9</span><span class="o">*</span><span class="n">W_m</span>      <span class="c1"># matrix water space            # L matrix water (L mito)**(-1)</span>
-<span class="n">W_i</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">W_m</span>      <span class="c1"># intermembrane water space     # L IM water (L mito)**(-1)</span>
-
-<span class="c1"># Membrane capacitance</span>
-<span class="n">Cm</span>   <span class="o">=</span> <span class="mf">3.1e-3</span>
 
 <span class="c1"># Membrane potential </span>
 <span class="n">DPsi</span> <span class="o">=</span> <span class="mi">175</span><span class="o">/</span><span class="mi">1000</span>
@@ -420,9 +413,6 @@
 <span class="c1"># Mg2+ concentrations</span>
 <span class="n">Mg_x</span> <span class="o">=</span> <span class="mf">1.0e-3</span>     <span class="c1"># mol (L matrix water)**(-1)</span>
 <span class="n">Mg_c</span> <span class="o">=</span> <span class="mf">1.0e-3</span>     <span class="c1"># mol (L cyto water)**(-1)</span>
-
-<span class="c1"># Oxygen partial pressure</span>
-<span class="n">PO2</span> <span class="o">=</span> <span class="mi">25</span>          <span class="c1"># mmHg</span>
 
 <span class="c1">###### Parameter vector ###### </span>
 <span class="n">X_F</span>   <span class="o">=</span> <span class="mi">1000</span>      <span class="c1"># Synthase activity </span>
@@ -450,9 +440,6 @@
     <span class="n">H_x</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">pH_x</span><span class="p">)</span> <span class="c1"># mol (L matrix water)**(-1)</span>
     <span class="n">H_c</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">pH_c</span><span class="p">)</span> <span class="c1"># mol (L cuvette water)**(-1)</span>
 
-    <span class="c1"># Oxygen concentration</span>
-    <span class="n">a_3</span>  <span class="o">=</span> <span class="mf">1.74e-6</span>   <span class="c1"># oxygen solubility in cuvette   # mol (L matrix water * mmHg)**(-1)</span>
-    <span class="n">O2_x</span> <span class="o">=</span> <span class="n">a_3</span><span class="o">*</span><span class="n">PO2</span>   <span class="c1"># mol (L matrix water)**(-1)</span>
 
     <span class="c1"># Thermochemical constants</span>
     <span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span>          <span class="c1"># J (mol K)**(-1)</span>
@@ -482,13 +469,11 @@
     <span class="c1"># Cytosol species # mol (L cuvette water)**(-1)</span>
     <span class="n">PATP_c</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_c</span><span class="o">/</span><span class="n">K_HATP</span> <span class="o">+</span> <span class="n">Mg_c</span><span class="o">/</span><span class="n">K_MgATP</span> <span class="o">+</span> <span class="n">K_c</span><span class="o">/</span><span class="n">K_KATP</span>
     <span class="n">PADP_c</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_c</span><span class="o">/</span><span class="n">K_HADP</span> <span class="o">+</span> <span class="n">Mg_c</span><span class="o">/</span><span class="n">K_MgADP</span> <span class="o">+</span> <span class="n">K_c</span><span class="o">/</span><span class="n">K_KADP</span>
-    <span class="n">PPi_c</span>  <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_c</span><span class="o">/</span><span class="n">K_HPi</span>  <span class="o">+</span> <span class="n">Mg_c</span><span class="o">/</span><span class="n">K_MgPi</span>  <span class="o">+</span> <span class="n">K_c</span><span class="o">/</span><span class="n">K_KPi</span>
     
     <span class="c1">## Unbound species</span>
     <span class="c1"># Matrix species</span>
     <span class="n">ATP_x</span> <span class="o">=</span> <span class="n">sumATP_x</span> <span class="o">/</span> <span class="n">PATP_x</span> <span class="c1"># [ATP4-]_x</span>
     <span class="n">ADP_x</span> <span class="o">=</span> <span class="n">sumADP_x</span> <span class="o">/</span> <span class="n">PADP_x</span> <span class="c1"># [ADP3-]_x</span>
-    <span class="n">Pi_x</span>  <span class="o">=</span> <span class="n">sumPi_x</span>  <span class="o">/</span> <span class="n">PPi_x</span>  <span class="c1"># [HPO42-]_x</span>
     
     <span class="c1"># Cytosol species </span>
     <span class="n">ATP_c</span> <span class="o">=</span> <span class="n">sumATP_c</span> <span class="o">/</span> <span class="n">PATP_c</span> <span class="c1"># [ATP4-]_c</span>
@@ -580,7 +565,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/BuildingModel_5_0.png" src="_images/BuildingModel_5_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /Users/Ben/opt/anaconda3/lib/python3.7/site-packages (1.4.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.13.3 in /Users/Ben/opt/anaconda3/lib/python3.7/site-packages (from scipy) (1.18.1)
+</pre></div>
+</div>
+<img alt="_images/BuildingModel_5_2.png" src="_images/BuildingModel_5_2.png" />
 </div>
 </div>
 <p>The above simulations of the system of Equation <a class="reference internal" href="#equation-system-atp-ant">(14)</a> show how the electrogenic nature of the ANT transport results in markedly different ATP/ADP ratios in the cytosol compared to the matrix. As we saw in the previous chapter, the ATP hydrolysis potential in the matrix is approximately <span class="math notranslate nohighlight">\(\text{-}45 \ \text{kJ mol}^{-1}\)</span>. The roughly <span class="math notranslate nohighlight">\(50\)</span>:<span class="math notranslate nohighlight">\(1\)</span> ratio of ATP to ADP in the cytosol is associated with a hydrolysis potential of approximately <span class="math notranslate nohighlight">\(\text{-}65 \ \text{kJ mol}^{-1}\)</span>. The difference of <span class="math notranslate nohighlight">\(20 \ \text{kJ mol}^{-1}\)</span> between the matrix and the cytosolic space is driven primarily by the membrane potential, which is equivalent to <span class="math notranslate nohighlight">\(20 \ \text{kJ mol}^{-1}\)</span>.</p>
@@ -611,8 +602,10 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">!</span>pip install scipy
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 
 <span class="c1">###### Constants defining metabolite pools ######</span>
 <span class="c1"># Volume fractions and water space fractions</span>
@@ -622,10 +615,6 @@
 <span class="n">W_c</span> <span class="o">=</span> <span class="mf">0.8425</span>      <span class="c1"># cytosol water space           # L cyto water (L cyto)**(-1)</span>
 <span class="n">W_m</span> <span class="o">=</span> <span class="mf">0.7238</span>       <span class="c1"># mitochondrial water space     # L mito water (L mito)**(-1)</span>
 <span class="n">W_x</span> <span class="o">=</span> <span class="mf">0.9</span><span class="o">*</span><span class="n">W_m</span>      <span class="c1"># matrix water space            # L matrix water (L mito)**(-1)</span>
-<span class="n">W_i</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">W_m</span>      <span class="c1"># intermembrane water space     # L IM water (L mito)**(-1)</span>
-
-<span class="c1"># Membrane capacitance</span>
-<span class="n">Cm</span> <span class="o">=</span> <span class="mf">3.1e-3</span>
 
 <span class="c1"># Membrane potential </span>
 <span class="n">DPsi</span> <span class="o">=</span> <span class="mi">175</span><span class="o">/</span><span class="mi">1000</span>
@@ -642,9 +631,6 @@
 <span class="c1"># Mg2+ concentrations</span>
 <span class="n">Mg_x</span> <span class="o">=</span> <span class="mf">1.0e-3</span>        <span class="c1"># mol (L matrix water)**(-1)</span>
 <span class="n">Mg_c</span> <span class="o">=</span> <span class="mf">1.0e-3</span>        <span class="c1"># mol (L cyto water)**(-1)</span>
-
-<span class="c1"># Oxygen partial pressure</span>
-<span class="n">PO2</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># mmHg</span>
 
 <span class="c1">###### Parameter vector ###### </span>
 <span class="n">X_F</span>   <span class="o">=</span> <span class="mi">100</span>        <span class="c1"># Synthase activity </span>
@@ -675,10 +661,6 @@
     <span class="n">H_x</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">pH_x</span><span class="p">)</span> <span class="c1"># mol (L matrix water)**(-1)</span>
     <span class="n">H_c</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">pH_c</span><span class="p">)</span> <span class="c1"># mol (L cuvette water)**(-1)</span>
 
-    <span class="c1"># Oxygen concentration</span>
-    <span class="n">a_3</span>  <span class="o">=</span> <span class="mf">1.74e-6</span>   <span class="c1"># oxygen solubility in cuvette   # mol (L matrix water * mmHg)**(-1)</span>
-    <span class="n">O2_x</span> <span class="o">=</span> <span class="n">a_3</span><span class="o">*</span><span class="n">PO2</span>   <span class="c1"># mol (L matrix water)**(-1)</span>
-
     <span class="c1"># Thermochemical constants</span>
     <span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span>          <span class="c1"># J (mol K)**(-1)</span>
     <span class="n">T</span> <span class="o">=</span> <span class="mi">37</span> <span class="o">+</span> <span class="mf">273.15</span>    <span class="c1"># K</span>
@@ -686,9 +668,6 @@
     
     <span class="c1"># Proton motive force parameters (dimensionless)</span>
     <span class="n">n_F</span>  <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="mi">3</span>
-    <span class="n">n_C1</span> <span class="o">=</span> <span class="mi">4</span>
-    <span class="n">n_C3</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">n_C4</span> <span class="o">=</span> <span class="mi">4</span>
     
     <span class="c1"># Dissociation constants</span>
     <span class="n">K_MgATP</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">3.88</span><span class="p">)</span>
@@ -815,7 +794,7 @@
 
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumATP_c</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$ATP]$_c$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumADP_c</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$ADP]$_c$&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumPi_c</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$Pi]$_x$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumPi_c</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$Pi]$_c$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">10.5</span><span class="p">))</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
@@ -833,13 +812,13 @@
 <p>The final matrix and cytosol ATP and ADP concentrations depend not only on the membrane potential, but also on the total amount of exchangeable phosphate in the system. Here these simulations start with <span class="math notranslate nohighlight">\([\text{Pi}]_c = 10 \ \text{mM}\)</span> and <span class="math notranslate nohighlight">\([\text{Pi}]_x = 1 \ \text{mM}\)</span>. The initial <span class="math notranslate nohighlight">\(10 \ \text{mM}\)</span> of ADP in the cytosol becomes almost entirely phosphorylated to ATP, leaving <span class="math notranslate nohighlight">\(0.32 \ \text{mM}\)</span> of inorganic phosphate in the cytosol in the final steady state. To explore how these steady states depend on <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, the following code simulates the steady-state behavior of this system for a range of <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> from <span class="math notranslate nohighlight">\(100\)</span> to <span class="math notranslate nohighlight">\(200 \ \text{mV}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Simulate over a range of Membrane potential from 100 mV to 250 mV ###</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install scipy
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+
+<span class="c1">### Simulate over a range of Membrane potential from 100 mV to 250 mV ###</span>
 
 <span class="c1"># Define array to iterate over</span>
 <span class="n">membrane_potential</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>    <span class="c1"># mV</span>
-
-<span class="c1"># Constant external pH</span>
-<span class="n">pH_c</span> <span class="o">=</span> <span class="mf">7.2</span> <span class="c1"># IMS/buffer pH</span>
 
 <span class="c1"># Define arrays to store steady state results </span>
 <span class="n">ATP_x_steady</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">membrane_potential</span><span class="p">))</span>
@@ -1149,8 +1128,10 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">!</span>pip install scipy
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 
 <span class="c1">###### Constants defining metabolite pools ######</span>
 <span class="c1"># Volume fractions and water space fractions</span>

@@ -353,9 +353,11 @@ print(DrG_ATP / 1000)
 # In[2]:
 
 
-from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
 import numpy as np
+
+get_ipython().system('pip install scipy')
+from scipy.integrate import solve_ivp
 
 # Define system of ordinary differential equations from equation (12)
 def dXdt(t, X, DPsi, pH_c):
@@ -366,11 +368,11 @@ def dXdt(t, X, DPsi, pH_c):
     R   = 8.314          # J (mol * K)**(-1)
     T   = 310.15         # K
     F   = 96485          # C mol**(-1)
-    C_m = 3.1e-3         # mol (V * L mito)**(-1)
     
     # F0F1 constants 
-    n_F = 8/3
-    X_F = 1000            # mol (s * L mito)**(-1)
+    n_F    = 8/3
+    X_F    = 1000        # mol (s * L mito)**(-1)
+    DrGo_F = 4990        # (J mol**(-1))
     
     # Dissociation constants
     K_MgATP = 10**(-3.88)
@@ -390,17 +392,16 @@ def dXdt(t, X, DPsi, pH_c):
     K_x  = 150e-3       # M 
     Mg_x = 1e-3         # M 
 
-    # Binding polynomials
-    P_ATP = 1 + H_x/K_HATP + K_x/K_KATP + Mg_x/K_MgATP # equation 6
-    P_ADP = 1 + H_x/K_HADP + K_x/K_KADP + Mg_x/K_MgADP # equation 7 
-    P_Pi  = 1 + H_x/K_HPi  + K_x/K_KPi  + Mg_x/K_MgPi  # equation 8 
-
     # Volume ratios
     W_m = 0.7238         # (L mito water) (L mito)**(-1)
     W_x = 0.9 * W_m      # (L matrix water) (L mito)**(-1)
     
+    # Binding polynomials
+    P_ATP = 1 + H_x/K_HATP + K_x/K_KATP + Mg_x/K_MgATP # equation 6
+    P_ADP = 1 + H_x/K_HADP + K_x/K_KADP + Mg_x/K_MgADP # equation 7 
+    P_Pi  = 1 + H_x/K_HPi  + K_x/K_KPi  + Mg_x/K_MgPi  # equation 8 
+    
     # Gibbs energy (equation 9)
-    DrGo_F   = 4990      # (J mol**(-1))
     DrGapp_F = DrGo_F + R * T * np.log(H_x * P_ATP / (P_ADP * P_Pi))
     
     # Apparent equilibrium constant 
@@ -452,7 +453,7 @@ plt.show()
 # 
 # To explore how the equilibrium changes with membrane potential, the following code computes the predicted equilibrium steady-state over a ranges of $\Delta\Psi$ from $100$ to $250 \ \text{mV}$. 
 
-# In[3]:
+# In[8]:
 
 
 ### Simulate over a range of Membrane potential from 100 mV to 250 mV ###

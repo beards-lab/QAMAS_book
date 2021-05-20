@@ -100,8 +100,10 @@
 
 
 import numpy as np
-from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
+
+get_ipython().system('pip install scipy')
+from scipy.integrate import solve_ivp
 
 ###### Constants defining metabolite pools ######
 # Volume fractions and water space fractions
@@ -111,10 +113,6 @@ V_m2c = V_m / V_c  # mito to cyto volume ratio     # L mito (L cuvette)**(-1)
 W_c = 0.8425      # cytosol water space           # L cyto water (L cyto)**(-1)
 W_m = 0.7238       # mitochondrial water space     # L mito water (L mito)**(-1)
 W_x = 0.9*W_m      # matrix water space            # L matrix water (L mito)**(-1)
-W_i = 0.1*W_m      # intermembrane water space     # L IM water (L mito)**(-1)
-
-# Membrane capacitance
-Cm   = 3.1e-3
 
 # Membrane potential 
 DPsi = 175/1000
@@ -131,9 +129,6 @@ K_c  = 140e-3     # mol (L cyto water)**(-1)
 # Mg2+ concentrations
 Mg_x = 1.0e-3     # mol (L matrix water)**(-1)
 Mg_c = 1.0e-3     # mol (L cyto water)**(-1)
-
-# Oxygen partial pressure
-PO2 = 25          # mmHg
 
 ###### Parameter vector ###### 
 X_F   = 1000      # Synthase activity 
@@ -161,9 +156,6 @@ def dXdt(t, X, activity_array):
     H_x = 10**(-pH_x) # mol (L matrix water)**(-1)
     H_c = 10**(-pH_c) # mol (L cuvette water)**(-1)
 
-    # Oxygen concentration
-    a_3  = 1.74e-6   # oxygen solubility in cuvette   # mol (L matrix water * mmHg)**(-1)
-    O2_x = a_3*PO2   # mol (L matrix water)**(-1)
 
     # Thermochemical constants
     R = 8.314          # J (mol K)**(-1)
@@ -193,13 +185,11 @@ def dXdt(t, X, activity_array):
     # Cytosol species # mol (L cuvette water)**(-1)
     PATP_c = 1 + H_c/K_HATP + Mg_c/K_MgATP + K_c/K_KATP
     PADP_c = 1 + H_c/K_HADP + Mg_c/K_MgADP + K_c/K_KADP
-    PPi_c  = 1 + H_c/K_HPi  + Mg_c/K_MgPi  + K_c/K_KPi
     
     ## Unbound species
     # Matrix species
     ATP_x = sumATP_x / PATP_x # [ATP4-]_x
     ADP_x = sumADP_x / PADP_x # [ADP3-]_x
-    Pi_x  = sumPi_x  / PPi_x  # [HPO42-]_x
     
     # Cytosol species 
     ATP_c = sumATP_c / PATP_c # [ATP4-]_c
@@ -322,12 +312,14 @@ plt.show()
 
 # The following code simulates the synthesis of ATP from ADP and Pi and their translocation across the IMM under physiological conditions.
 
-# In[2]:
+# In[5]:
 
 
 import numpy as np
-from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
+
+get_ipython().system('pip install scipy')
+from scipy.integrate import solve_ivp
 
 ###### Constants defining metabolite pools ######
 # Volume fractions and water space fractions
@@ -337,10 +329,6 @@ V_m2c = V_m / V_c  # mito to cyto volume ratio     # L mito (L cuvette)**(-1)
 W_c = 0.8425      # cytosol water space           # L cyto water (L cyto)**(-1)
 W_m = 0.7238       # mitochondrial water space     # L mito water (L mito)**(-1)
 W_x = 0.9*W_m      # matrix water space            # L matrix water (L mito)**(-1)
-W_i = 0.1*W_m      # intermembrane water space     # L IM water (L mito)**(-1)
-
-# Membrane capacitance
-Cm = 3.1e-3
 
 # Membrane potential 
 DPsi = 175/1000
@@ -357,9 +345,6 @@ K_c  = 140e-3      # mol (L cyto water)**(-1)
 # Mg2+ concentrations
 Mg_x = 1.0e-3        # mol (L matrix water)**(-1)
 Mg_c = 1.0e-3        # mol (L cyto water)**(-1)
-
-# Oxygen partial pressure
-PO2 = 25 # mmHg
 
 ###### Parameter vector ###### 
 X_F   = 100        # Synthase activity 
@@ -390,10 +375,6 @@ def dXdt(t, X, activity_array):
     H_x = 10**(-pH_x) # mol (L matrix water)**(-1)
     H_c = 10**(-pH_c) # mol (L cuvette water)**(-1)
 
-    # Oxygen concentration
-    a_3  = 1.74e-6   # oxygen solubility in cuvette   # mol (L matrix water * mmHg)**(-1)
-    O2_x = a_3*PO2   # mol (L matrix water)**(-1)
-
     # Thermochemical constants
     R = 8.314          # J (mol K)**(-1)
     T = 37 + 273.15    # K
@@ -401,9 +382,6 @@ def dXdt(t, X, activity_array):
     
     # Proton motive force parameters (dimensionless)
     n_F  = 8/3
-    n_C1 = 4
-    n_C3 = 2
-    n_C4 = 4
     
     # Dissociation constants
     K_MgATP = 10**(-3.88)
@@ -530,7 +508,7 @@ ax[0].set_ylabel('Concentration (mM)')
 
 ax[1].plot(t, sumATP_c*1000, label = '[$\Sigma$ATP]$_c$')
 ax[1].plot(t, sumADP_c*1000, label = '[$\Sigma$ADP]$_c$')
-ax[1].plot(t, sumPi_c*1000, label = '[$\Sigma$Pi]$_x$')
+ax[1].plot(t, sumPi_c*1000, label = '[$\Sigma$Pi]$_c$')
 ax[1].set_ylim((-0.5,10.5))
 ax[1].set_xlim((0,2))
 ax[1].set_xticks([0,1,2])
@@ -543,16 +521,16 @@ plt.show()
 # 
 # The final matrix and cytosol ATP and ADP concentrations depend not only on the membrane potential, but also on the total amount of exchangeable phosphate in the system. Here these simulations start with $[\text{Pi}]_c = 10 \ \text{mM}$ and $[\text{Pi}]_x = 1 \ \text{mM}$. The initial $10 \ \text{mM}$ of ADP in the cytosol becomes almost entirely phosphorylated to ATP, leaving $0.32 \ \text{mM}$ of inorganic phosphate in the cytosol in the final steady state. To explore how these steady states depend on $\Delta\Psi$, the following code simulates the steady-state behavior of this system for a range of $\Delta\Psi$ from $100$ to $200 \ \text{mV}$.
 
-# In[3]:
+# In[6]:
 
+
+get_ipython().system('pip install scipy')
+from scipy.integrate import solve_ivp
 
 ### Simulate over a range of Membrane potential from 100 mV to 250 mV ###
 
 # Define array to iterate over
 membrane_potential = np.linspace(100,250)    # mV
-
-# Constant external pH
-pH_c = 7.2 # IMS/buffer pH
 
 # Define arrays to store steady state results 
 ATP_x_steady = np.zeros(len(membrane_potential))
@@ -861,12 +839,14 @@ plt.show()
 # The pools are $[\text{NAD}]_{tot} = 2.97 \ \text{mmol (L matrix water)}^{-1}$, $[\text{c}]_{tot} = 2.7 \ \text{mmol (L IMS water)}^{-1}$, and $[\text{Q}]_{tot} = 1.35 \ \text{mmol (L matrix water)}^{-1}$. Initial conditions are set under the assumption that the TAN for both the matrix and cytosol is $10 \ \text{mM}$, but the ATP/ADP ratio is $<$$1$ in the matrix and $\sim$$100$ in the cytosol. The following code simulates in vitro mitochondrial function without ATP consumption in the external (cytosolic space).  
 # 
 
-# In[4]:
+# In[2]:
 
 
 import numpy as np
-from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
+
+get_ipython().system('pip install scipy')
+from scipy.integrate import solve_ivp
 
 ###### Constants defining metabolite pools ######
 # Volume fractions and water space fractions
@@ -1180,7 +1160,7 @@ plt.show()
 
 # The above simulations reach a final steady state where the phosphate metabolite concentrations are $[\text{ATP}]_x = 0.9 \ \text{mM}$, $[\text{ADP}]_x = 9.1 \ \text{mM} $, $[\text{Pi}]_x = 0.4 \ \text{mM}$, $[\text{ATP}]_c = 9.9 \ \text{mM}$, $[\text{ADP}]_c = 0.1 \ \text{mM}$, $[\text{Pi}]_c = 0.2 \ \text{mM}$, and the membrane potential is $186 \ \text{mV}$. This state represents a *resting* energetic state with no ATP hydrolysis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is $\Delta G_{\rm ATP} = \text{-}70 \ \text{kJ mol}^{-1}$, as calculated below. 
 
-# In[5]:
+# In[3]:
 
 
 sumATP_c_ss = sumATP_c[-1]

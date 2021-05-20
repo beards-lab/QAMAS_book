@@ -198,18 +198,13 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/beards-lab/QAMAS_book/HEAD/v2/gh/beards-lab/QAMAS_book/master?urlpath=tree/InVitroModel.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/beards-lab/QAMAS_book/master?urlpath=tree/QAMAS/InVitroModel.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
                     alt="Interact on binder">Binder</button></a>
         
         
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/beards-lab/QAMAS_book/blob/master/InVitroModel.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
         
         <button type="button" class="btn btn-secondary topbarbtn"
             onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
@@ -285,8 +280,10 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">!</span>pip install scipy
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 
 <span class="c1">###### Constants defining metabolite pools ######</span>
 <span class="c1"># Volume fractions and water space fractions</span>
@@ -607,6 +604,14 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /Users/Ben/opt/anaconda3/lib/python3.7/site-packages (1.4.1)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.13.3 in /Users/Ben/opt/anaconda3/lib/python3.7/site-packages (from scipy) (1.18.1)
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell tag_full-width docutils container">
 <div class="cell_input docutils container">
@@ -669,8 +674,10 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">!</span>pip install scipy
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 
 <span class="c1">###### Constants defining metabolite pools ######</span>
 <span class="c1"># Volume fractions and water space fractions</span>
@@ -720,32 +727,6 @@
 <span class="n">X_AtC</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="n">activity_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">X_DH</span><span class="p">,</span> <span class="n">X_C1</span><span class="p">,</span> <span class="n">X_C3</span><span class="p">,</span> <span class="n">X_C4</span><span class="p">,</span> <span class="n">X_F</span><span class="p">,</span> <span class="n">E_ANT</span><span class="p">,</span> <span class="n">E_PiC</span><span class="p">,</span> <span class="n">X_H</span><span class="p">,</span> <span class="n">X_AtC</span><span class="p">])</span>
-
-<span class="c1">###### Initial Conditions ######</span>
-<span class="c1"># Membrane Potential</span>
-<span class="n">Psi_0</span> <span class="o">=</span> <span class="mi">175</span><span class="o">/</span><span class="mi">1000</span>      <span class="c1"># Volts</span>
-
-<span class="c1"># Total Pool Sizes</span>
-<span class="n">NAD_tot</span> <span class="o">=</span> <span class="mf">2.97e-3</span>  <span class="c1"># NAD+ and NADH conc            # mol (L matrix water)^(-1)</span>
-<span class="n">Q_tot</span>   <span class="o">=</span> <span class="mf">1.35e-3</span>  <span class="c1"># Q and QH2 conc                # mol (L matrix water)^(-1)</span>
-<span class="n">c_tot</span>   <span class="o">=</span> <span class="mf">2.7e-3</span>
-
-<span class="c1"># Matrix species</span>
-<span class="n">sumATP_x_0</span> <span class="o">=</span> <span class="mf">0.5e-3</span>  <span class="c1"># mol (L matrix water)**(-1)</span>
-<span class="n">sumADP_x_0</span> <span class="o">=</span> <span class="mf">9.5e-3</span>  <span class="c1"># mol (L matrix water)**(-1)</span>
-<span class="n">sumPi_x_0</span>  <span class="o">=</span> <span class="mf">0.3e-3</span>  <span class="c1"># mol (L matrix water)**(-1)</span>
-<span class="n">NADH_x_0</span>   <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">NAD_tot</span>  <span class="c1"># mol (L matrix water)**(-1)</span>
-<span class="n">QH2_x_0</span>    <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">Q_tot</span>    <span class="c1"># mol (L matrix water)**(-1)</span>
-
-<span class="c1"># IMS species</span>
-<span class="n">cred_i_0</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">c_tot</span> <span class="c1"># mol (L IMS water)**(-1)</span>
-
-<span class="c1"># Cytosoo=lic species</span>
-<span class="n">sumATP_c_0</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1"># mol (L cyto water)^(-1)</span>
-<span class="n">sumADP_c_0</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1"># mol (L cyto water)^(-1)</span>
-<span class="n">sumPi_c_0</span>  <span class="o">=</span> <span class="mf">5.0e-3</span>  <span class="c1"># mol (L cyto water)^(-1)</span>
-
-<span class="n">X_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">Psi_0</span><span class="p">,</span> <span class="n">sumATP_x_0</span><span class="p">,</span> <span class="n">sumADP_x_0</span><span class="p">,</span> <span class="n">sumPi_x_0</span><span class="p">,</span> <span class="n">NADH_x_0</span><span class="p">,</span> <span class="n">QH2_x_0</span><span class="p">,</span> <span class="n">cred_i_0</span><span class="p">,</span> <span class="n">sumATP_c_0</span><span class="p">,</span> <span class="n">sumADP_c_0</span><span class="p">,</span> <span class="n">sumPi_c_0</span><span class="p">])</span>
 
 <span class="k">def</span> <span class="nf">dXdt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">activity_array</span><span class="p">,</span> <span class="n">solve_ode</span><span class="p">):</span>
     <span class="c1"># Unpack variables </span>
@@ -992,7 +973,7 @@
    <span class="c1"># run for long time to acheive steady-state</span>
    <span class="n">steady_state_temp_results</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">dXdt</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3000</span><span class="p">],</span> <span class="n">X_0</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;Radau&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">activity_array</span><span class="p">,</span><span class="mi">1</span><span class="p">,))</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
    <span class="n">steady_state</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">steady_state_temp_results</span>
-   <span class="n">f</span><span class="p">,</span><span class="n">J</span> <span class="o">=</span> <span class="n">dXdt</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="n">steady_state_temp_results</span><span class="p">,</span> <span class="n">activity_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+   <span class="n">f</span><span class="p">,</span><span class="n">J</span> <span class="o">=</span> <span class="n">dXdt</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span><span class="n">steady_state_temp_results</span><span class="p">,</span> <span class="n">activity_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
    <span class="n">J_C4</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="c1"># oxygen flux in mol O / sec / (L mito)</span>
 
    <span class="c1"># convert to units of nmol / min / UCS</span>
@@ -1041,7 +1022,7 @@
    <span class="c1"># run for long time to acheive steady-state</span>
    <span class="n">steady_state_temp_results</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">dXdt</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3000</span><span class="p">],</span> <span class="n">X_0</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;Radau&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">activity_array</span><span class="p">,</span><span class="mi">1</span><span class="p">,))</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
    <span class="n">steady_state</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">steady_state_temp_results</span>
-   <span class="n">f</span><span class="p">,</span><span class="n">J</span> <span class="o">=</span> <span class="n">dXdt</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="n">steady_state_temp_results</span><span class="p">,</span> <span class="n">activity_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+   <span class="n">f</span><span class="p">,</span><span class="n">J</span> <span class="o">=</span> <span class="n">dXdt</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span><span class="n">steady_state_temp_results</span><span class="p">,</span> <span class="n">activity_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
    <span class="n">J_C4</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="c1"># oxygen flux in mol O / sec / (L mito)</span>
 
    <span class="c1"># convert to units of nmol / min / UCS</span>
@@ -1079,7 +1060,7 @@
 <span class="n">data_DPsi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data_DPsi</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_DPsi</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">data_DPsi</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;1 mM Pi Exp&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_DPsi</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">data_DPsi</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;5 mM Pi Exp&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Membrane Potential $\Psi$ (mV)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Membrane Potential $\Delta\Psi$ (mV)&#39;</span><span class="p">)</span>
 
 
 <span class="c1"># Cytochrome C</span>
@@ -1091,7 +1072,7 @@
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_cred</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">data_cred</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_cred</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">data_cred</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;OCR (nmol O$_2$ min$^{-1}$ U CS$^{-1}$)&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Cyt C $^{2+}$ (Normalized)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Cyt c$^{2+}$ (Normalized)&#39;</span><span class="p">)</span>
 
 <span class="c1"># Buffer ADP</span>
 <span class="n">data_ADP</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10.494</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">14.509</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>

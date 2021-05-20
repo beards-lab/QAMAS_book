@@ -32,9 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-from matplotlib import rcParams, cycler
-import matplotlib.pyplot as plt
-import numpy as np
-plt.ion()
+['import numpy as np', 'import matplotlib.pyplot as plt', '', '!pip install scipy', 'from scipy.integrate import solve_ivp']
+...
+['    dX, J = dXdt(t[i], all_results[:,i], activity_array, 0)', '    J_C4[i] = J[9]', '', '# Convert complex IV flux to oxygen flux in nmol O2 / U Citrate Synthase', 'JO2 = J_C4/2 * 60 * 1e9 * 0.0000012232']
 -------------------
 

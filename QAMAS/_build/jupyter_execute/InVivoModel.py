@@ -126,8 +126,10 @@
 
 
 import numpy as np
-from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
+
+get_ipython().system('pip install scipy')
+from scipy.integrate import solve_ivp
 
 ###### Constants defining metabolite pools ######
 # Volume fractions and water space fractions
