@@ -277,12 +277,14 @@ dADP_c = (-V_m2c * J_ANT + J_AtC - J_CK ) / W_c;
 dPi_c  = (-V_m2c * J_PiC + J_AtC) / W_c;
 dCrP_c = -J_CK / W_c;
 
-
+% Calculate state-dependent quantities after model is solved 
 if solve_ode == 1
     dXdt = [dDPsi; dATP_x; dADP_x; dPi_x;
         dNADH_x; dQH2_x; dcred_i; dATP_c; dADP_c; dPi_c; dCrP_c];
+    J = []; 
 else 
+    dXdt = []; 
     J = [PATP_x; PADP_x; PPi_x; PATP_c; PADP_c; PPi_c;
-        J_DH; J_C1; J_C3; J_C4; J_F; J_ANT; J_PiC; J_CK];
+        J_DH; J_C1; J_C3; J_C4; J_F; J_ANT; J_H; J_PiC; J_CK];
 end 
 

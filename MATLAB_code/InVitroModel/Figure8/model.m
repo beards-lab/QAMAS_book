@@ -259,14 +259,14 @@ dXdt = [dDPsi; dATP_x; dADP_x; dPi_x;
     dNADH_x; dQH2_x; dcred_i; 
     dATP_c; dADP_c; dPi_c];
 
-% Need to be able to calculate fluxes after the fact 
+% Calculate state-dependent quantities after model is solved 
 if solve_ode == 1
     dXdt = [dDPsi; dATP_x; dADP_x; dPi_x; 
         dNADH_x; dQH2_x; dcred_i; 
         dATP_c; dADP_c; dPi_c];
 else
     J = [PATP_x; PADP_x; PPi_x; PATP_c; PADP_c; PPi_c;
-        J_DH; J_C1; J_C3; J_C4; J_F; J_ANT; J_PiC];
+        J_DH; J_C1; J_C3; J_C4; J_F; J_H; J_ANT; J_PiC];
 end
 
 end 
