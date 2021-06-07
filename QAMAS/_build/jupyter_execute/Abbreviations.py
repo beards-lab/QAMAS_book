@@ -5,8 +5,8 @@
 # 
 # | Description | Abbreviation |
 # | :------ | :------: | 
-# | Adenosine triphosphate | ATP |
 # | Adenosine diphosphate | ADP |
+# | Adenosine triphosphate | ATP |
 # | Deoxyribonucleic acid  | DNA |
 # | Flavin adenine dinucleotide (oxidized) | FAD |
 # | Flavin adenine dinucleotide (reduced) | FADH$_2$ | 

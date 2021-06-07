@@ -3,7 +3,7 @@
 
 # # Basic chemical, electrical, and thermodynamic principles
 # 
-# To develop a quantitative understanding of how these processes work, we start with a set of definitions of the basic quantities and concepts with which we are concerned.
+# To develop a quantitative understanding of how these processes work, we start with a set of definitions of the some quantities and concepts with which we are concerned. Specifically, this section reviews basic biochemical, thermodynamic, and related concepts that are particularly relevant to the quantitative analysis of mitochondrial ATP synthesis.  
 # 
 # ```{figure} Figure1.png 
 # ------
@@ -22,10 +22,10 @@
 # ```{math}
 #     C_m \dfrac{ {\rm d} {\Delta\Psi}}{{\rm d} t} = I.
 # ```
-# In the model and associated calculations presented below, we express fluxes in units of moles per unit time per unit volume of mitochondria. Thus, it is convenient to obtain an estimate of $C_m$ in units of mole per volt per volume of mitochondria. Approximating a mitochondrion as a sphere with radius $r = 1 \ \mu\text{m}$, we obtain a surface area-to-volume ratio of $3 \ \mu\text{m}^{-1}$. Furthermore, we estimate that the IMM has ten-fold greater surface area than the outer membrane, yielding a surface area to volume ratio of $30 \ \mu\text{m}^{-1}$ for the IMM. Since the capacitance density of biological membranes ranges from $0.5\text{-}1.0 \mu\text{F cm}^{-2}$, or $0.5 \text{-} 1.0 \times \ 10^{-8} \ \mu\text{F} \ \mu\text{m}^{-2}$ {cite}`Nicholls2013`, $C_m$ is approximately $3 \times 10^{-8} \ \mu\text{F} \ \mu\text{m}^{-3} = 300 \ \text{F (L mito)}^{-1}$. To convert to the units used in the calculations below, we have 
+# In the model and associated calculations presented below, we express fluxes in units of moles per unit time per unit volume of mitochondria. Thus, it is convenient to obtain an estimate of $C_m$ in units of mole per volt per volume of mitochondria. Mitochondria take on a roughly ellipsoid shape in vivo, and a more spherical morphometry in suspension of purified mitochondria {cite}`Picard2011`. To estimate the mitochondrial surface area-to-volume ratio, we take a representative mitochondrion as a sphere with radius $r = 1 \ \mu\text{m}$ and obtain a surface area-to-volume ratio of $3 \ \mu\text{m}^{-1}$.   Furthermore, we estimate that the IMM has ten-fold greater surface area than the outer membrane, yielding a surface area to volume ratio of $30 \ \mu\text{m}^{-1}$ for the IMM. Since the capacitance density of biological membranes ranges from $0.5\text{-}1.0 \mu\text{F cm}^{-2}$, or $0.5 \text{-} 1.0 \times \ 10^{-8} \ \mu\text{F} \ \mu\text{m}^{-2}$ {cite}`Nicholls2013`, $C_m$ is approximately $30 \times 10^{-8} \ \mu\text{F} \ \mu\text{m}^{-3} = 300 \ \text{F (L mito)}^{-1}$. To convert to the units used in the calculations below, we have 
 # ```{math}
-#   C_m = 300 \ \frac{\rm F}{\rm L \ mito} = 300 \ \frac{\rm C}{\rm V \cdot L \, mito}\cdot
-#   \frac{1}{F}\, \frac{\rm mol}{\rm C} =
+#   C_m = 300 \ \frac{\rm F}{\rm L \ mito} = 300 \ \frac{\rm C}{\rm V \cdot L \, mito}\cdot 
+#     \frac{1}{F}\, \frac{\rm mol}{\rm C} =
 #   3.1 \times 10^{-3} \, 
 #   \frac{\rm mol}{\rm V \cdot  L \, mito}, \,
 # ```
@@ -33,7 +33,9 @@
 
 # ## Gibbs free energy
 # 
+# 
 # A *free energy* is a thermodynamic quantity that relates a change in the thermodynamic state of a system to an associated change in total entropy of the system plus its environment. Chemical reaction processes necessarily proceed in the direction associated with a reduction in free energy {cite}`Nicholls2013`. When free energy of a system is reduced, total entropy (of the universe) is increased. The form of free energy that is operative in constant-temperature and constant-pressure systems (most relevant for biochemistry) is the Gibbs free energy, or simply the *Gibbs energy*. 
+# 
 # 
 # For a chemical reaction of reactants $A_i$ and products $B_j$, 
 # ```{math}
@@ -44,18 +46,17 @@
 # :label: Delta_rG     
 #     \Delta_r G = \Delta_r G^\circ + R{\rm T} \ln \left( \dfrac{ \prod_{i = 1}^{N} [\text{B}_j]^{n_i}}{ \prod_{i = 1}^{M} [\text{A}_i]^{m_i}} \right), 
 # ```   
-# where $\Delta_r G^\circ$ is the reference Gibbs energy for the reaction (a constant at given constant chemical conditions of temperature, pressure, ionic conditions, etc.), $R = 8.314 \ \text{J mol}^{-1} \ \text{K}^{-1}$ is the gas constant, and $\text{T} = 310.15 \ \text{K}$ is the temperature. The second term on the right hand side of Equation {eq}`Delta_rG` governs how changes in concentrations of species affects $\Delta_r G$.
+# where $\Delta_r G^\circ$ is the reference Gibbs energy for the reaction (a constant at given constant chemical conditions of temperature, pressure, ionic conditions, etc.), $R = 8.314 \ \text{J mol}^{-1} \ \text{K}^{-1}$ is the gas constant, and $\text{T} = 310.15 \ \text{K}$ is the temperature. The second term on the right hand side of Equation {eq}`Delta_rG` governs how changes in concentrations of species affects $\Delta_r G$.   Applications of Equation {eq}`Delta_rG` to reactions in aqueous solution usually adopt the convention that all solute concentrations are measured relative to 1 Molar, ensuring that the argument of the logarithm is unitless regardless of the stoichiometry of the reaction.   
 # 
 # A system is in chemical equilibrium when there is no thermodynamic driving force, that is, $\Delta_r G = 0$. Thus, for this chemical reaction the reference Gibbs energy is related to the equilibrium constant as
 # ```{math} 
-# :label: eq:equilibrium
 #     K_{eq} = \left( \frac{\prod_{i = 1}^{N} [\text{B}_j]^{n_i}}{\prod_{i = 1}^{M} [\text{A}_i]^{m_i}} \right)_{eq}
 #            = \exp\left\{ -\frac{\Delta_r G^\circ}{R{\rm T}} \right\} .
 # ```
 
 # ## Membrane potential and proton motive force
 # 
-# Free energy associated with the oxidation of primary fuels is transduced to generate the chemical potential across the IMM known as the *proton motive force*, which is used to synthesize ATP in the matrix and transport ATP out of the matrix to the cytosol {cite}`Nicholls2013`. The thermodynamic driving force for translocation of hydrogen ions ($\text{H}^{+}$) across the IMM has two components: the difference in electrostatic potential across the membrane, $\Delta\Psi$ (V), and the difference in $\text{H}^{+}$ concentration (or activity) between the media on either side of the membrane, $\Delta\text{pH}$, that is 
+# Free energy associated with the oxidation of primary fuels is transduced to generate the chemical potential across the IMM known as the {\em proton motive force}, which is used to synthesize ATP in the matrix and transport ATP out of the matrix to the cytosol {cite}`Nicholls2013`. The thermodynamic driving force for translocation of hydrogen ions ($\text{H}^{+}$) across the IMM has two components: the difference in electrostatic potential across the membrane, $\Delta\Psi$ (V), and the difference in $\text{H}^{+}$ concentration (or activity) between the media on either side of the membrane, $\Delta\text{pH}$, that is 
 # ```{math}
 # :label: DG_H
 #     \Delta G_{\rm H} &=& -F\Delta\Psi + R{\rm T}\ln\left( [{\rm H}^+]_x/[{\rm H}^+]_c \right)  \nonumber \\
@@ -78,44 +79,44 @@
 # 	\left( \frac{ [\text{ADP}^{3-}] [\text{HPO}_4^{2-}] [{\rm H}^{+}] }
 # 	{ [\text{ATP}^{4-}] }\right),
 # ```
-# where the Gibbs energy for ATP hydrolysis under physiological conditions is approximately $\Delta_r G^o_\text{ATP} = 4.99 \ \text{kJ mol}^{-1}$ {cite}`Li2011`.
+# where the Gibbs energy for ATP hydrolysis under physiological conditions is approximately $\Delta_r G^o_\text{ATP} = 4.99 \ \text{kJ mol}^{-1}$ {cite}`Li2011`.   Using the convention that all concentrations are formally defined as measured relative to 1 Molar, the argument of the logarithm in Equation {eq}`DrG_ATP` is unitless.   
 
 # ### Calculation of the ATP hydrolysis potential
 # 
-# Equation {eq}`DrG_ATP` expresses the Gibbs energy of chemical Equation {eq}`ATP1` in terms of its *chemical species*. In practice, biochemistry typically deals with biochemical *reactants*, which are comprised of sums of rapidly interconverting chemical species. We calculate the total ATP concentration, $[\Sigma \text{ATP}]$, in terms of its bound and unbound species, that is, 
+# Equation {eq}`DrG_ATP` expresses the Gibbs energy of chemical Equation {eq}`ATP1` in terms of its *chemical species*. In practice, biochemistry typically deals with biochemical *reactants*, which are comprised of sums of rapidly interconverting chemical species. We calculate the total ATP concentration, $[\Sigma \text{ATP}]$, in terms of its bound and unbound species, that is,
 # ```{math}  
 # :label: sumATP
-# 	[\Sigma \text{ATP}] &=& [\text{ATP}^{4-}] + [\text{MgATP}^{2-}] + [\text{HATP}^{3-}] + [\text{KATP}^{3-}] \nonumber\\
-# 	&=& [\text{ATP}^{4-}] + \frac{[\text{Mg}^{2+}] [\text{ATP}^{4-}]}{K_{\text{MgATP}}} + \frac{ [\text{H}^{+}] [\text{ATP}^{4-}]}{K_{\text{HATP}}} + \frac{ [\text{K}^{+}] [\text{ATP}^{4-}]}{K_{\text{KATP}}} \nonumber \\
-# 	&=& [\text{ATP}^{4-}] \left( 1 + \frac{[\text{Mg}^{2+}]}{K_{\text{MgATP}}} + \frac{ [\text{H}^{+}]}{K_{\text{HATP}}} + \frac{ [\text{K}^{+}]}{K_{\text{KATP}}} \right) \nonumber \\
-# 	&=& [\text{ATP}^{4-}] P_{\text{ATP}},
+# 	[\Sigma \text{ATP}] &= [\text{ATP}^{4-}] + [\text{MgATP}^{2-}] + [\text{HATP}^{3-}] + [\text{KATP}^{3-}] \nonumber\\
+# 	&= [\text{ATP}^{4-}] + \frac{[\text{Mg}^{2+}] [\text{ATP}^{4-}]}{K_{\text{MgATP}}} + \frac{ [\text{H}^{+}] [\text{ATP}^{4-}]}{K_{\text{HATP}}} + \frac{ [\text{K}^{+}] [\text{ATP}^{4-}]}{K_{\text{KATP}}} \nonumber \\
+# 	&= [\text{ATP}^{4-}] \left( 1 + \frac{[\text{Mg}^{2+}]}{K_{\text{MgATP}}} + \frac{ [\text{H}^{+}]}{K_{\text{HATP}}} + \frac{ [\text{K}^{+}]}{K_{\text{KATP}}} \right) \nonumber \\
+# 	&= [\text{ATP}^{4-}] P_{\text{ATP}},
 # ```
 # where $P_{\text{ATP}}$ is a *binding polynomial*. Here, we we account for only the single cation-bound species. (Free $\text{H}^+$ in solution associates with water to form $\text{H}_3\text{O}^+$. Here we use [$\text{H}^+$] to indicate hydrogen ion activity, which is equal to $10^{-\text{pH}}$.)  {numref}`table-dissociationconstants` lists the dissociation constants used in this study from {cite}`Li2011`. Similarly, total ADP, [$\Sigma \text{ADP}$], and inorganic phosphate, [$\Sigma \text{Pi}$], concentrations are 
 # ```{math} 
 # :label: sumADP
-#     [\Sigma {\rm ADP} ] &=& [{\rm ADP}^{3-}]\left( 1 + \frac{[{\rm Mg}^{2+}]}{K_{\rm MgADP}} + \frac{ [{\rm H}^{+}]}{K_{\rm HADP}} + \frac{ [{\rm K}^{+}]}{K_{\rm KADP}} \right) \nonumber \\
-#     &=& [{\rm ADP}^{3-}]P_{\rm ADP} 
+#     [\Sigma {\rm ADP} ] &= [{\rm ADP}^{3-}]\left( 1 + \frac{[{\rm Mg}^{2+}]}{K_{\rm MgADP}} + \frac{ [{\rm H}^{+}]}{K_{\rm HADP}} + \frac{ [{\rm K}^{+}]}{K_{\rm KADP}} \right) \nonumber \\
+#     &= [{\rm ADP}^{3-}]P_{\rm ADP} 
 # ```
 # and
 # ```{math}
 # :label: sumPi
-#     [\Sigma {\rm Pi} ] &=& [{\rm HPO}_4^{2-}] \left( 1 + \frac{[{\rm Mg}^{2+}]}{K_{\rm MgPi}} + \frac{ [{\rm H}^{+}]}{K_{\rm HPi}} + \frac{ [{\rm K}^{+}]}{K_{\rm KPi}} \right) \nonumber \\
-#     &=& [{\rm HPO}_4^{2-}] P_{\rm Pi},
+#     [\Sigma {\rm Pi} ] &= [{\rm HPO}_4^{2-}] \left( 1 + \frac{[{\rm Mg}^{2+}]}{K_{\rm MgPi}} + \frac{ [{\rm H}^{+}]}{K_{\rm HPi}} + \frac{ [{\rm K}^{+}]}{K_{\rm KPi}} \right) \nonumber \\
+#     &= [{\rm HPO}_4^{2-}] P_{\rm Pi},
 # ```
 # for binding polynomials $P_{\text{ADP}}$ and $P_{\text{Pi}}$. 
 # 
 # Expressing the Gibbs energy of ATP hydrolysis in Equation {eq}`ATP1` in terms of biochemical reactant concentrations, we obtain
 # ```{math} 
 # :label: ATP2
-#     \Delta_r G_{\rm ATP} &=& \Delta_r G^o_\text{ATP} + R{\rm T} \ln \left(
+#     \Delta_r G_{\rm ATP} &= \Delta_r G^o_\text{ATP} + R{\rm T} \ln \left(
 #     \frac{[\Sigma{\rm ADP}][\Sigma{\rm Pi}]}
 #     {[\Sigma{\rm ATP}]}\cdot\frac{[{\rm H}^+]P_{\rm ATP}}{P_{\rm ADP}P_{\rm Pi}}
 #     \right) \nonumber \\ 
-#     &=& \Delta_r G^o_\text{ATP}
+#     &= \Delta_r G^o_\text{ATP}
 #     + R{\rm T} \ln \left(\frac{[{\rm H}^+]P_{\rm ATP}}{P_{\rm ADP}P_{\rm Pi}} \right)
 #     + R{\rm T} \ln \left(\frac{[\Sigma{\rm ADP}][\Sigma{\rm Pi}]}
 #     {[\Sigma{\rm ATP}]}\right) \nonumber \\ 
-#     &=& \Delta_r G'^o_\text{ATP}
+#     &= \Delta_r G'^o_\text{ATP}
 #     + R{\rm T} \ln \left(\frac{[\Sigma{\rm ADP}][\Sigma{\rm Pi}]}
 #     {[\Sigma{\rm ATP}]}\right)
 # ```
@@ -193,10 +194,10 @@ sumPi  = 1.0e-3         # Molar
 # Reaction:
 # ATP4− + H2O ⇌ ADP3− + HPO2−4 + H+
 
-# Use equation 9 to calcuate apparent Gibbs energy 
+# Use equation 8 to calcuate apparent reference Gibbs energy 
 DrG_ATP_apparent = DrGo_ATP + R * T * np.log(H * P_ATP / (P_ADP * P_Pi))
 
-# Use equation 9 to calculate actual Gibbs energy 
+# Use equation 8 to calculate reaction Gibbs energy 
 DrG_ATP = DrG_ATP_apparent + R * T * np.log((sumADP * sumPi / sumATP))
 
 print('Gibbs energy of ATP hydrolysis (kJ mol^(-1))')
@@ -204,13 +205,15 @@ print(DrG_ATP / 1000)
 
 
 # The reactant concentrations used in the above calculation represent reasonable values for concentrations in the mitochondrial matrix. In the cytosol, the ATP/ADP ratio is on the order of 100:1, yielding a $\Delta_r G_\text{ATP}$ of approximately $\text{-}64 \ \text{kJ mol}^{-1}$. 
+# 
+# Note the large difference in magnitude of the estimated Gibbs energy of ATP hydrolysis inside (-$45 \ \text{kJ mol}^{-1}$) versus outside (-$64 \ \text{kJ mol}^{-1}$) of the mitochondrial matrix. Light will be shed on the mechanisms underlying this difference via the calculations and analyses presented below.   
 
 # ### ATP synthesis in the mitochondrial matrix
 # 
 # The F$_0$F$_1$ ATP synthase catalyzes the synthesis of ATP from ADP and Pi by coupling to the translocation of  $n_{\text{F}} = 8/3$ protons from the cytosol to the matrix via the combined reaction
 # ```{math} 
 # :label: ATP3
-#     ({\rm ADP}^{3-})_x + ({\rm HPO_4}^{2-})_x + ({\rm H}^+)_x + n_{\text{F}} (\text{H}^{+})_c 
+#     ({\rm ADP}^{3-})_x + ({\rm HPO}_4^{2-})_x + ({\rm H}^+)_x + n_{\text{F}} (\text{H}^{+})_c 
 # 	\rightleftharpoons 
 # 	({\rm ATP})^{4-}_x + {\rm H_2O} +  n_{\text{F}} (\text{H}^{+})_x \, .
 # ``` 
@@ -224,9 +227,9 @@ print(DrG_ATP / 1000)
 # ```
 # Note that the negative before $\Delta_r G_\text{ATP}$ indicates that the reaction of Equation {eq}`ATP1` is reversed in Equation {eq}`ATP3`. The equilibrium concentration ratio occurs when $\Delta G_{\text{F}} = 0$. Solving for the second term in Equation {eq}`DG_F`, we calculate the apparent equilibrium constant for ATP synthesis as 
 # ```{math} 
+# :label: Kapp_F
 # 	K_{eq,\text{F}}^\prime = 
-# 	    \left( \frac{[\Sigma{\rm ATP}]_x}{[\Sigma{\rm ADP}]_x[\Sigma{\rm Pi}]_x} \right)_{eq}
-# 	    = \exp\left\{\frac{ \Delta_rG'^o_{\rm ATP}  + n_{\rm F} F \Delta\Psi}{R{\rm T}}\right\}
+# 	    \left( \frac{[\Sigma{\rm ATP}]_x}{[\Sigma{\rm ADP}]_x[\Sigma{\rm Pi}]_x} \right)_{eq} = \exp\left\{\frac{ \Delta_rG'^o_{\rm ATP}  + n_{\rm F} F \Delta\Psi}{R{\rm T}}\right\}
 #         \left( \frac{[{\rm H^+}]_c}{[{\rm H^+}]_x} \right)^{n_{\rm F}}. 
 # ```
 
@@ -234,7 +237,8 @@ print(DrG_ATP / 1000)
 # ### Mathematical modeling ATP synthesis
 # 
 # A simple model of ATP synthesis kinetics can be constructed using the apparent equilibrium constant and mass-action kinetics in the form
-# ```{math} 
+# ```{math}
+# :label: J_F
 #     J_{\text{F}} = X_{\text{F}} (K_{eq,\text{F}}^\prime [\Sigma \text{ADP}]_x [\Sigma \text{Pi}]_x - [\Sigma \text{ATP}]_x), 
 # ``` 
 # where $X_{\text{F}} = 1000 \ \text{mol s}^{-1} \ \text{(L mito)}^{-1}$ is a rate constant set to an arbitrarily high value that maintains the reaction in equilibrium in model simulations. To simulate ATP synthesis at a given membrane potential, matrix pH, cytosolic pH, and cation concentrations, we have
@@ -353,11 +357,13 @@ print(DrG_ATP / 1000)
 # In[2]:
 
 
-from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Define system of ordinary differential equations from equation (12)
+get_ipython().system('pip install scipy')
+from scipy.integrate import solve_ivp
+
+# Define system of ordinary differential equations from equation (13)
 def dXdt(t, X, DPsi, pH_c):
     # Unpack X state variable
     sumATP, sumADP, sumPi = X
@@ -366,11 +372,11 @@ def dXdt(t, X, DPsi, pH_c):
     R   = 8.314          # J (mol * K)**(-1)
     T   = 310.15         # K
     F   = 96485          # C mol**(-1)
-    C_m = 3.1e-3         # mol (V * L mito)**(-1)
     
     # F0F1 constants 
-    n_F = 8/3
-    X_F = 1000            # mol (s * L mito)**(-1)
+    n_F    = 8/3
+    X_F    = 1000        # mol (s * L mito)**(-1)
+    DrGo_F = 4990        # (J mol**(-1))
     
     # Dissociation constants
     K_MgATP = 10**(-3.88)
@@ -390,17 +396,16 @@ def dXdt(t, X, DPsi, pH_c):
     K_x  = 150e-3       # M 
     Mg_x = 1e-3         # M 
 
-    # Binding polynomials
-    P_ATP = 1 + H_x/K_HATP + K_x/K_KATP + Mg_x/K_MgATP # equation 6
-    P_ADP = 1 + H_x/K_HADP + K_x/K_KADP + Mg_x/K_MgADP # equation 7 
-    P_Pi  = 1 + H_x/K_HPi  + K_x/K_KPi  + Mg_x/K_MgPi  # equation 8 
-
     # Volume ratios
     W_m = 0.7238         # (L mito water) (L mito)**(-1)
     W_x = 0.9 * W_m      # (L matrix water) (L mito)**(-1)
     
+    # Binding polynomials
+    P_ATP = 1 + H_x/K_HATP + K_x/K_KATP + Mg_x/K_MgATP # equation 5
+    P_ADP = 1 + H_x/K_HADP + K_x/K_KADP + Mg_x/K_MgADP # equation 6 
+    P_Pi  = 1 + H_x/K_HPi  + K_x/K_KPi  + Mg_x/K_MgPi  # equation 7 
+    
     # Gibbs energy (equation 9)
-    DrGo_F   = 4990      # (J mol**(-1))
     DrGapp_F = DrGo_F + R * T * np.log(H_x * P_ATP / (P_ADP * P_Pi))
     
     # Apparent equilibrium constant 
@@ -409,7 +414,7 @@ def dXdt(t, X, DPsi, pH_c):
     # Flux (mol (s * L mito)**(-1))  
     J_F = X_F * (Kapp_F * sumADP * sumPi - sumATP)
        
-    ###### Differential equations (equation 12) ######
+    ###### Differential equations (equation 13) ######
     dATP = J_F / W_x
     dADP = -J_F / W_x
     dPi  = -J_F / W_x
@@ -448,14 +453,18 @@ plt.ylim(0, 10)
 plt.show()
 
 
-# The above simulation shows that under the clamped pH and $\Delta\Psi$ conditions simulated here, the model is nearly in equilibrium at the initial conditions of ATP, ADP, and Pi concentrations. Most of the adenine nucleotide remains in the form of ADP and the ATP/ADP ratio in the matrix is approximately $1$:$20$, with the inorganic phosphate concentration of approximately $1 \ \text{mM}$.
+# 
+# **Figure 2:** Steady state solution from Equation {eq}`system-ATPase` for $\Delta \Psi = 175$ mV, $\text{pH}_x = 7.4$, and $\text{pH}_c = 7.2$.
+# 
+
+# The above simulation shows that under the clamped pH and $\Delta\Psi$ conditions simulated here, the model quickly approaches an equilibrium steady state. (Even though all reaction fluxes go to zero in the final steady state, the ATP hydrolysis potential attains a finite nonzero value because of the energy supplied by the clamped proton motive force.) Most of the adenine nucleotide remains in the form of ADP and the   final   ATP/ADP ratio in the matrix is approximately $1$:$20$, with the inorganic phosphate concentration of approximately $1 \ \text{mM}$.
 # 
 # To explore how the equilibrium changes with membrane potential, the following code computes the predicted equilibrium steady-state over a ranges of $\Delta\Psi$ from $100$ to $250 \ \text{mV}$. 
 
 # In[3]:
 
 
-### Simulate over a range of Membrane potential from 100 mV to 250 mV ###
+### Simulate over a range of membrane potential from 100 mV to 250 mV ###
 
 # Define array to iterate over
 membrane_potential = np.linspace(100,250)    # mV
@@ -489,7 +498,10 @@ plt.show()
     
 
 
-# The above simulations show that under physiological levels of $\Delta$pH, matrix ATP concentrations become essentially zero for values of the membrane potential less than approximately $150 \ \text{mV}$. At high levels of $\Delta\Psi$, all of the available phosphate is used to phosphorylate ADP to ATP. Since the initial $[\text{Pi}]$ and $[\text{ATP}]$ are $1 \ \text{mM}$ and $0.5 \ \text{mM}$, respectively, the maximum ATP obtained at the maximal $\Delta\Psi$ is $1.5 \ \text{mM}$.
+# 
+# **Figure 3:** Simulation of concentration versus $\Delta \Psi$ for Equation {eq}`system-ATPase` for $\Delta \Psi$ from $100$ to $250$ mV.
+
+# The above simulations show that under physiological levels of $\Delta$pH, matrix ATP concentrations become essentially zero for values of the membrane potential less than approximately $150 \ \text{mV}$. At higher levels of $\Delta\Psi$, all of the available phosphate is used to phosphorylate ADP to ATP. Since the initial $[\text{Pi}]$ and $[\text{ATP}]$ are $1 \ \text{mM}$ and $0.5 \ \text{mM}$, respectively, the maximum ATP obtained at the maximal $\Delta\Psi$ is $1.5 \ \text{mM}$.
 
 # In[ ]:
 

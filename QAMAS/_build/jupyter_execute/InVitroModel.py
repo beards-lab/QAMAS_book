@@ -5,7 +5,7 @@
 # 
 # The integrated model developed in the previous section can be adapted to simulate in vitro experiments performed using suspensions of mitochondria purified from primary tissues. To simulate in vitro experiments, the major change that we make to the model is to replace the cytosolic components of the model with variables and associated volumes of distribution representing experimental buffers used in specific experiments. Here, we set $V_c = 1$, $V_m = 5\text{e-}4$, and $W_c = 1$ to represent mitochondria suspended in a buffer solution, i.e., in this virtual experiment, the mitochondria take up $0.05\%$ of the volume of the experimental media. 
 #     
-# The following code simulates an experiment in which the non-energized mitochondrial state (state 1), is followed by a leak state (state 2), followed by oxidative phosphorylation state (state 3), followed by another leak state (state 4) {cite}`Gnaiger2020`. The virtual experiment represents a real experiment in which a purified suspension of mitochondria is introduced to a buffer containing no fuel substrates at time $t=0$. This non-energized state is simulated by setting the dehydrogenase activity in the model to $X_{\rm DH} = 0$ for $0 \leq t < 25 \ \text{s}$. State 2 is achieved by setting $X_{\rm DH}$ to $0.1732$ for $25 \leq t < 75 \ \text{s}$ to represent the addision of substrates (such as pyruvate and malate) to fuel NADH production. At time $t = 75 \ \text{s}$, $0.375 \ \mu\text{M}$ of ADP is introduced into the respiration buffer to initiate the active oxidative phosphorylation state, or state 3. State 4 occurs when the ADP is nearly fully phosphorylated at approximately $t = 170 \ \text{s}$, and the system returns to a leak state. Note that this experiment is conducted under high external inorganic phosphate conditions (i.e., $[\text{Pi}]_c = 5 \ \text{mM}$). 
+# The following code simulates an experiment in which the non-energized mitochondrial state (state 1), is followed by a leak state (state 2), followed by oxidative phosphorylation state (state 3), followed by another leak state (state 4) {cite}`Gnaiger2020`. The virtual experiment represents a real experiment in which a purified suspension of mitochondria is introduced to a buffer containing no fuel substrates at time $t=0$. This non-energized state is simulated by setting the dehydrogenase activity in the model to $X_{\rm DH} = 0$ for $0 \leq t < 25 \ \text{s}$. State 2 is achieved by setting $X_{\rm DH}$ to $0.1732$ for $25 \leq t < 75 \ \text{s}$ to represent the addition of substrates (such as pyruvate and malate) to fuel NADH production. At time $t = 75 \ \text{s}$, $0.375 \ \mu\text{M}$ of ADP is introduced into the respiration buffer to initiate the active oxidative phosphorylation state, or state 3. State 4 occurs when the ADP is nearly fully phosphorylated at approximately $t = 170 \ \text{s}$, and the system returns to a leak state. Note that this experiment is conducted under high external inorganic phosphate conditions (i.e.,   initial   $[\text{Pi}]_c = 5 \ \text{mM}$).
 
 # ```{list-table} Isolated mitochondria in silico experiment.
 # :header-rows: 1
@@ -32,7 +32,7 @@
 #   - $ -$ 
 #   - $+375$ $\mu$M 
 # * - $[\text{Pi}]_c$ 
-#   - $5$ 
+#   - $5$ mM
 #   - $-$ 
 #   - $-$ 
 # ```
@@ -41,8 +41,10 @@
 
 
 import numpy as np
-from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
+
+get_ipython().system('pip install scipy')
+from scipy.integrate import solve_ivp
 
 ###### Constants defining metabolite pools ######
 # Volume fractions and water space fractions
@@ -176,7 +178,6 @@ def dXdt(t, X, activity_array, solve_ode):
     
     
     ###### NADH Dehydrogenase ######
-
     # Constants
     r      = 6.8385
     k_Pi1  = 4.659e-4    # mol (L matrix water)**(-1)
@@ -318,7 +319,7 @@ def dXdt(t, X, activity_array, solve_ode):
 
     dX = [dDPsi, dATP_x, dADP_x, dPi_x, dNADH_x, dQH2_x, dcred_i, dATP_c, dADP_c, dPi_c]
     
-    # Need to be able to calculate fluxes after the fact 
+    # Calculate state-dependent quantities after model is solved. 
     if solve_ode == 1:
         return dX
     else:
@@ -345,7 +346,7 @@ state_2_results.y[8, -1] = 0.375e-3 # Molar
 state_3_results = solve_ivp(dXdt, [75,200], state_2_results.y[:,-1], method = 'Radau', t_eval = t_3, args=(activity_array,1,))
 
 # Concatenate Results
-# Note: need to prevent duplicating points
+# Note: remove redundant time points 
 all_results = np.hstack((state_1_results.y[:,0:-1], state_2_results.y[:,0:-1],state_3_results.y))
 t = np.concatenate((state_1_results.t[0:-1], state_2_results.t[0:-1], state_3_results.t))
 
@@ -358,7 +359,7 @@ for i in range(len(t)):
     dX, J = dXdt(t[i], all_results[:,i], activity_array, 0)
     J_C4[i] = J[9]
 
-# Convert complex IV flux to oxygen flux in nmol O2 / U Citrate Synthase
+# Convert complex IV flux to oxygen flux in nmol O2 / U citrate synthase
 JO2 = J_C4/2 * 60 * 1e9 * 0.0000012232
 
 
@@ -414,7 +415,13 @@ ax[2].set_ylabel('$\Delta \Psi$ (mV)', fontsize = 15)
 plt.show()
 
 
-# During the leak states, NADH and $\Delta\Psi$ are maintained at a maximal values while the OCR represents the oxidative flux necessary to balance proton leak across the IMM. During state 3 (oxidative phosphorylation), the OCR markedly increases while the magnitudes of NADH and $\Delta\Psi$ are temporarily decreased. This simple model overestimates the degree to which the NADH becomes depleted during state 3.
+# **Figure 8:** Simulation of respiratory control for (a) the oxygen consumption rate (OCR), (b) matrix NADH concentration ($[\text{NADH}]_x$), and (c) membrane potential ($\Delta \Psi$) using the conditions listed in Table {numref}`table-invitro`.
+
+# The first panel in the above figures shows oxygen consumption rate (OCR), which represents the oxidative flux necessary to balance proton leak across the IMM. In this study, we quantify OCR in units $\text{nmol O}_2 \text{ min}^{-1} \text{ U CS}^{-1}$ proportional to the flux of complex IV, that is, 
+# ```{math}
+#     J_\text{O2} = \Bigg( J_\text{C4} \ \dfrac{\text{mol}}{\text{s (L mito)}} \Bigg) \Bigg(60 \ \dfrac{\text{s}}{\text{min}} \Bigg)\Bigg(1\text{e}9 \ \dfrac{\text{nmol}}{\text{mol}}\Bigg)\Bigg(1.22\text{e-6} \ \dfrac{\text{L mito}}{\text{U CS}}\Bigg). 
+# ```
+# The factor $1.22\text{e-}6 \text{ (L mito) (U CS)}^{-1}$ corresponds to roughly $740 \text{ (U CS) (mL mito)}^{-1}$, reported by Vinnakota et al. {cite}`Vinnakota2016_2`. Note that this approximation for $J_\text{O2}$ is valid for constant partial pressure of $\text{O}_2$, and hence, we do not model hypoxic or hyperoxic conditions. During the leak states, NADH and $\Delta\Psi$ are maintained at a maximal values. During state 3 (oxidative phosphorylation), the OCR markedly increases while the magnitudes of NADH and $\Delta\Psi$ are temporarily decreased. This simple model overestimates the degree to which the NADH becomes depleted during state 3.
 # 
 # Predictions of the in vitro model may also be compared to quasi-steady state data on OCRs, phosphate metabolite levels, $\Delta\Psi$, NADH, and cytochrome c redox state, analyzed by Bazil et al. {cite}`Bazil2016`. In their experiments, several steady state ATP demand levels were achieved by titrating ATP hydrolyzing enzymes into the respiration buffer. We simulate this experiment with our model by varying the rate of the external ATP consuming process, $J_\text{AtC}$. We vary $J_\text{AtC}$ by adjusting the ATP consumption rate $X_\text{AtC}$ from $0$ to $60 \ \text{mol s}^{-1} \ \text{(L cell)}^{-1}$. Experiments were conducted under conditions of two different approximately constant external phosphate concentrations (1 and 5 mM) and with external $\text{TAN} = 5 \ \text{mM}$. The following code computes the steady state of the in vitro model at different levels of $J_\text{AtC}$ and compares the measured data on OCR, $\Delta\Psi$, NADH, cytochrome c redox state, and buffer ADP concentration to data.
 
@@ -422,8 +429,10 @@ plt.show()
 
 
 import numpy as np
-from scipy.integrate import solve_ivp
 import matplotlib.pyplot as plt
+
+get_ipython().system('pip install scipy')
+from scipy.integrate import solve_ivp
 
 ###### Constants defining metabolite pools ######
 # Volume fractions and water space fractions
@@ -474,32 +483,6 @@ X_AtC = 0
 
 activity_array = np.array([X_DH, X_C1, X_C3, X_C4, X_F, E_ANT, E_PiC, X_H, X_AtC])
 
-###### Initial Conditions ######
-# Membrane Potential
-Psi_0 = 175/1000      # Volts
-
-# Total Pool Sizes
-NAD_tot = 2.97e-3  # NAD+ and NADH conc            # mol (L matrix water)^(-1)
-Q_tot   = 1.35e-3  # Q and QH2 conc                # mol (L matrix water)^(-1)
-c_tot   = 2.7e-3
-
-# Matrix species
-sumATP_x_0 = 0.5e-3  # mol (L matrix water)**(-1)
-sumADP_x_0 = 9.5e-3  # mol (L matrix water)**(-1)
-sumPi_x_0  = 0.3e-3  # mol (L matrix water)**(-1)
-NADH_x_0   = 0.1 * NAD_tot  # mol (L matrix water)**(-1)
-QH2_x_0    = 0.1 * Q_tot    # mol (L matrix water)**(-1)
-
-# IMS species
-cred_i_0 = 0.1 * c_tot # mol (L IMS water)**(-1)
-
-# Cytosoo=lic species
-sumATP_c_0 = 0       # mol (L cyto water)^(-1)
-sumADP_c_0 = 0       # mol (L cyto water)^(-1)
-sumPi_c_0  = 5.0e-3  # mol (L cyto water)^(-1)
-
-X_0 = np.array([Psi_0, sumATP_x_0, sumADP_x_0, sumPi_x_0, NADH_x_0, QH2_x_0, cred_i_0, sumATP_c_0, sumADP_c_0, sumPi_c_0])
-
 def dXdt(t, X, activity_array, solve_ode):
     # Unpack variables 
     DPsi, sumATP_x,sumADP_x, sumPi_x, NADH_x, QH2_x, cred_i, sumATP_c, sumADP_c, sumPi_c = X
@@ -536,9 +519,9 @@ def dXdt(t, X, activity_array, solve_ode):
     K_KPi   = 10**(-0.42)
 
     ## Other concentrations computed from the state variables:
-    NAD_x = NAD_tot - NADH_x  ## mol (L matrix water)**(-1)
-    Q_x   = Q_tot - QH2_x     ## mol (L matrix water)**(-1)
-    cox_i = c_tot - cred_i    ## mol (L matrix water)**(-1)
+    NAD_x = NAD_tot - NADH_x  # mol (L matrix water)**(-1)
+    Q_x   = Q_tot - QH2_x     # mol (L matrix water)**(-1)
+    cox_i = c_tot - cred_i    # mol (L matrix water)**(-1)
 
     ## Binding polynomials
     # Matrix species # mol (L mito water)**(-1)
@@ -564,7 +547,6 @@ def dXdt(t, X, activity_array, solve_ode):
     
     
     ###### NADH Dehydrogenase ######
-
     # Constants
     r      = 6.8385
     k_Pi1  = 4.659e-4    # mol (L matrix water)**(-1)
@@ -705,6 +687,8 @@ def dXdt(t, X, activity_array, solve_ode):
     dPi_c  = (-V_m2c * J_PiC + J_AtC) / W_c
 
     dX = [dDPsi, dATP_x, dADP_x, dPi_x, dNADH_x, dQH2_x, dcred_i, dATP_c, dADP_c, dPi_c]
+    
+    # Calculate state-dependent quantities after model is solved.
     if solve_ode == 1:
         return dX
     else:
@@ -734,18 +718,18 @@ Pi_c_0  = 1.0e-3
 
 X_0 = np.array([DPsi_0, ATP_x_0, ADP_x_0, Pi_x_0, NADH_x_0, QH2_x_0, cred_i_0, ATP_c_0, ADP_c_0, Pi_c_0 ])
 
-# range of ATP consumption rates
-X_AtC = np.linspace(0,6e-6, 60)   # Increase max hydrolysis to find apparent Km.
+# Range of ATP consumption rates
+X_AtC = np.linspace(0,6e-6, 60)   
 steady_state = np.zeros((len(X_AtC), len(X_0)))
 JO2 = np.zeros(len(X_AtC))
 
-# looping through different ATP consumptions states
+# Looping through different ATP consumptions states
 for i in range(len(X_AtC)):
    activity_array = np.array([X_DH, X_C1, X_C3, X_C4, X_F, E_ANT, E_PiC, X_H, X_AtC[i]])
    # run for long time to acheive steady-state
    steady_state_temp_results = solve_ivp(dXdt, [0,3000], X_0, method = 'Radau', args=(activity_array,1,)).y[:,-1]
    steady_state[i] = steady_state_temp_results
-   f,J = dXdt(30,steady_state_temp_results, activity_array, 0)
+   f,J = dXdt(3000,steady_state_temp_results, activity_array, 0)
    J_C4 = J[9] # oxygen flux in mol O / sec / (L mito)
 
    # convert to units of nmol / min / UCS
@@ -783,18 +767,18 @@ Pi_c_0  = 5.0e-3
 
 X_0 = np.array([DPsi_0, ATP_x_0, ADP_x_0, Pi_x_0, NADH_x_0, QH2_x_0, cred_i_0, ATP_c_0, ADP_c_0, Pi_c_0 ])
 
-# range of ATP consumption rates
-X_AtC = np.linspace(0,6e-6, 60)   # Increase max hydrolysis to find apparent Km.
+# Range of ATP consumption rates
+X_AtC = np.linspace(0,6e-6, 60)   
 steady_state = np.zeros((len(X_AtC), len(X_0)))
 JO2 = np.zeros(len(X_AtC))
 
-# looping through different ATP consumptions states
+# Looping through different ATP consumptions states
 for i in range(len(X_AtC)):
    activity_array = np.array([X_DH, X_C1, X_C3, X_C4, X_F, E_ANT, E_PiC, X_H, X_AtC[i]])
    # run for long time to acheive steady-state
    steady_state_temp_results = solve_ivp(dXdt, [0,3000], X_0, method = 'Radau', args=(activity_array,1,)).y[:,-1]
    steady_state[i] = steady_state_temp_results
-   f,J = dXdt(30,steady_state_temp_results, activity_array, 0)
+   f,J = dXdt(3000,steady_state_temp_results, activity_array, 0)
    J_C4 = J[9] # oxygen flux in mol O / sec / (L mito)
 
    # convert to units of nmol / min / UCS
@@ -832,7 +816,7 @@ data_DPsi = [10.494, 183.2317,                         14.509, 183.4706,
 data_DPsi = np.reshape(data_DPsi,(3,4))
 ax[0,1].plot(data_DPsi[:,0], data_DPsi[:,1], 'o', label = '1 mM Pi Exp')
 ax[0,1].plot(data_DPsi[:,2], data_DPsi[:,3], 'o', color = 'red', label = '5 mM Pi Exp')
-ax[0,1].set_ylabel('Membrane Potential $\Psi$ (mV)')
+ax[0,1].set_ylabel('Membrane Potential $\Delta\Psi$ (mV)')
 
 
 # Cytochrome C
@@ -844,7 +828,7 @@ data_cred = np.reshape(data_cred,(3,4))
 ax[1,0].plot(data_cred[:,0], data_cred[:,1], 'o')
 ax[1,0].plot(data_cred[:,2], data_cred[:,3], 'o', color = 'red')
 ax[1,0].set_xlabel('OCR (nmol O$_2$ min$^{-1}$ U CS$^{-1}$)')
-ax[1,0].set_ylabel('Cyt C $^{2+}$ (Normalized)')
+ax[1,0].set_ylabel('Cyt c$^{2+}$ (Normalized)')
 
 # Buffer ADP
 data_ADP = [10.494, 0, 14.509, 0,
@@ -862,5 +846,7 @@ plt.tight_layout()
 ax[0,1].legend()
 plt.show()
 
+
+# **Figure 9:** Comparison of oxygen consumption rate (OCR) simulations to data from {cite}`Bazil2016`.
 
 # The match to the data is remarkably good considering how much simpler the model developed here is compared to the model of Bazil et al. {cite}`Bazil2016`. The Bazil et al. model accounts for the mechanisms underlying oxidative phosphorylation and associated side reactions at a deeper level of detail, and thus, finds broader applications. Yet the basic frameworks of our models are equivalent.

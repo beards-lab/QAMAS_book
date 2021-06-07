@@ -1,16 +1,14 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
-#- file: home
-#  numbered: true 
-- file: Abstract.ipynb
-- file: Abbreviations.ipynb
-- file: Introduction.ipynb
-- file: Principles.ipynb
-- file: BuildingModel.ipynb
-- file: InVitroModel.ipynb
-- file: InVivoModel.ipynb
-- file: Summary.ipynb
-- file: References.ipynb
-
-
+format: jb-book
+root: Abstract
+chapters:
+- file: Abbreviations
+- file: Introduction
+- file: Principles
+- file: BuildingModel
+- file: InVitroModel
+- file: InVivoModel
+- file: Summary
+- file: References
