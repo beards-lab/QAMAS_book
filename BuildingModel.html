@@ -1,33 +1,47 @@
 
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Building a model of oxidative ATP synthesis from energetic components &#8212; Quantitative analysis of mitochondrial ATP synthesis</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
-    <link rel="stylesheet" type="text/css" href="_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -35,18 +49,20 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Simulation of respiratory control in vitro" href="InVitroModel.html" />
     <link rel="prev" title="Basic chemical, electrical, and thermodynamic principles" href="Principles.html" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
-
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -55,30 +71,27 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/mito.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Quantitative analysis of mitochondrial ATP synthesis</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/mito.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Quantitative analysis of mitochondrial ATP synthesis</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Abstract.html">
    Title Page
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Abbreviations.html">
    Abbreviations
@@ -121,9 +134,8 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -138,25 +150,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -168,9 +180,9 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
+
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -178,30 +190,53 @@
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
             href="https://beards-lab.github.io/QAMAS_book/"><button type="button" class="btn btn-secondary topbarbtn"
+
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/beards-lab/QAMAS_book/issues/new?title=Issue%20on%20page%20%2FBuildingModel.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/beards-lab/QAMAS_book/master?urlpath=tree/QAMAS/BuildingModel.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
         
         
     </div>
 </div>
 
-
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
-
-        <!-- Launch buttons -->
-
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#adenine-nucleotide-translocase">
    Adenine nucleotide translocase
@@ -251,7 +286,8 @@
  </li>
 </ul>
 
-        </nav>
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -261,25 +297,25 @@
                 
   <div class="section" id="building-a-model-of-oxidative-atp-synthesis-from-energetic-components">
 <h1>Building a model of oxidative ATP synthesis from energetic components<a class="headerlink" href="#building-a-model-of-oxidative-atp-synthesis-from-energetic-components" title="Permalink to this headline">¶</a></h1>
-<p>Simulations in the preceding section illustrate how matrix ATP and ADP concentrations are governed by the contributors to the proton motive force. They also show how the matrix ATP/ADP ratio must typically be less than <span class="math notranslate nohighlight">\(1\)</span>, in contrast to the cytosolic ATP/ADP ratio, which is on the order of <span class="math notranslate nohighlight">\(100\)</span>. To understand the dependence of ATP synthesis and transport on the proton motive force, the kinetics of the processes that generate it, and the interplay of these processes, we can assemble models of the adenine nucleotide translocase (ANT), mitochondrial phosphate transport, and complexes I, III, and IV of the electron transport chain (ETC) to generate a core model of mitochondrial oxidative ATP synthesis.</p>
+<p>Simulations in the preceding section illustrate how matrix ATP and ADP concentrations are governed by the contributors to the proton motive force. They also show how the matrix ATP/ADP ratio must typically be less than <span class="math notranslate nohighlight">\(1\)</span>, in contrast to the cytosolic ATP/ADP ratio, which is on the order of <span class="math notranslate nohighlight">\(100\)</span>. To understand the dependence of ATP synthesis and transport on the proton motive force, the kinetics of the processes that generate it, and the interplay of these processes, we can assemble models of the   <span class="math notranslate nohighlight">\(\text{F}_0\text{F}_1\)</span> ATP synthase,   adenine nucleotide translocase (ANT), mitochondrial phosphate transport, and complexes I, III, and IV of the electron transport chain (ETC) to generate a core model of mitochondrial oxidative ATP synthesis.</p>
 <div class="section" id="adenine-nucleotide-translocase">
 <h2>Adenine nucleotide translocase<a class="headerlink" href="#adenine-nucleotide-translocase" title="Permalink to this headline">¶</a></h2>
 <p>Following synthesis of ATP from ADP and Pi in the matrix, the final step in delivering ATP to the cytosol at physiological free energy levels is the electrically driven exchange of a matrix <span class="math notranslate nohighlight">\(\text{ATP}^{4-}\)</span> for a cytosolic <span class="math notranslate nohighlight">\(\text{ADP}^{3-}\)</span>. This exchange process,</p>
 <div class="math notranslate nohighlight">
 \[	(\text{ATP}^{4-})_x + (\text{ADP}^{3-})_c \rightleftharpoons (\text{ATP}^{4-})_c + (\text{ADP}^{3-})_x \, ,\]</div>
 <p>is catalyzed by the ANT. Here, we assume rapid transport of species between the cytosol and the IMS, and therefore, equate IMS and cytosol species concentrations.</p>
-<p>To simulate the kinetics of this process, we use the Metelkin et al. model <a class="bibtex reference internal" href="References.html#metelkin2006" id="id1">[8]</a>, which accounts for pH and electrochemical dependencies. (Kinetic parameter value estimates for this model were updated by Wu et al. <a class="bibtex reference internal" href="References.html#wu2008" id="id2">[3]</a>.) The steady-state flux of ANT is expressed</p>
-<div class="math notranslate nohighlight">
-\[	J_{\text{ANT}} = E_{\text{ANT}}  \dfrac{  \dfrac{ k_2^{\text{ANT}} q }{ K_o^D }  [ \text{ATP}^{4-} ]_x [ \text{ADP}^{3-}]_c  - \dfrac{ k_3^{\text{ANT}} }{ K_o^T } [ \text{ADP}^{3-} ]_x [ \text{ATP}^{4-} ]_c }{ \left(1 + \dfrac{ [ \text{ATP}^{4-} ]_c }{ K_o^T } + \dfrac{ [ \text{ADP}^{3-} ]_c }{ K_o^D } \right)( [ \text{ADP}^{3-} ]_x + [ \text{ATP}^{4-} ]_x q) }, \]</div>
+<p>To simulate the kinetics of this process, we use the Metelkin et al. model <span id="id1">[<a class="reference internal" href="References.html#id17">11</a>]</span>, which accounts for pH and electrochemical dependencies. (Kinetic parameter value estimates for this model were updated by Wu et al. <span id="id2">[<a class="reference internal" href="References.html#id25">22</a>]</span>.) The steady-state flux of ANT is expressed</p>
+<div class="math notranslate nohighlight" id="equation-j-ant">
+<span class="eqno">(14)<a class="headerlink" href="#equation-j-ant" title="Permalink to this equation">¶</a></span>\[	J_{\text{ANT}} = E_{\text{ANT}}  \dfrac{  \dfrac{ k_2^{\text{ANT}} q }{ K_o^D }  [ \text{ATP}^{4-} ]_x [ \text{ADP}^{3-}]_c  - \dfrac{ k_3^{\text{ANT}} }{ K_o^T } [ \text{ADP}^{3-} ]_x [ \text{ATP}^{4-} ]_c }{ \left(1 + \dfrac{ [ \text{ATP}^{4-} ]_c }{ K_o^T } + \dfrac{ [ \text{ADP}^{3-} ]_c }{ K_o^D } \right)( [ \text{ADP}^{3-} ]_x + [ \text{ATP}^{4-} ]_x q) }, \]</div>
 <p>where <span class="math notranslate nohighlight">\(E_{\text{ANT}} \ \text{(mol (L mito)}^{-1})\)</span> is the total ANT content of the mitochondria and</p>
 <div class="math notranslate nohighlight" id="equation-phi">
-<span class="eqno">(13)<a class="headerlink" href="#equation-phi" title="Permalink to this equation">¶</a></span>\[\begin{split}	k_2^\text{ANT} &amp;=&amp; k_{2,o}^\text{ANT} e^{( -3A - 4B + C) \phi}, \nonumber \\ 
+<span class="eqno">(15)<a class="headerlink" href="#equation-phi" title="Permalink to this equation">¶</a></span>\[\begin{split}	k_2^\text{ANT} &amp;=&amp; k_{2,o}^\text{ANT} e^{( -3A - 4B + C) \phi}, \nonumber \\ 
 	k_3^\text{ANT} &amp;=&amp; k_{3,o}^\text{ANT} e^{(-4A - 3B + C) \phi}, \nonumber \\ 
 	K_o^D &amp;=&amp; K_o^{D,0} e^{3 \delta_D \phi}, \nonumber \\
 	K_o^T &amp;=&amp; K_o^{T,0} e^{4 \delta_T \phi}, \nonumber \\ 
 	q &amp;=&amp; \dfrac{ k_3^\text{ANT} K_o^D }{ k_2^\text{ANT} K_o^T } e^\phi, \quad \text{and} \nonumber \\
 	\phi &amp;=&amp; F \Delta \Psi / R{\rm T}.  \end{split}\]</div>
-<p>All parameter values and units can be found in <a class="reference internal" href="#table-ant"><span class="std std-numref">Table 3</span></a>, reproduced from <a class="bibtex reference internal" href="References.html#bazil2016" id="id3">[15]</a>.</p>
+<p>All parameter values and units can be found in <a class="reference internal" href="#table-ant"><span class="std std-numref">Table 3</span></a>, reproduced from <span id="id3">[<a class="reference internal" href="References.html#id11">1</a>]</span>.</p>
 <table class="table" id="table-ant">
 <caption><span class="caption-number">Table 3 </span><span class="caption-text">Adenine nucleotide translocase (ANT) parameters.</span><a class="headerlink" href="#table-ant" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -348,9 +384,9 @@
 </tr>
 </tbody>
 </table>
-<p>To simulate ANT and F<span class="math notranslate nohighlight">\(_0\)</span>F<span class="math notranslate nohighlight">\(_1\)</span> ATP synthase activity simultaneously, we extend the system of Equation <a class="reference internal" href="Principles.html#equation-system-atpase">(12)</a> by adding states for cytosolic species <span class="math notranslate nohighlight">\([\Sigma \text{ATP} ]_c\)</span> and <span class="math notranslate nohighlight">\([\Sigma \text{ADP}]_c\)</span>, yielding</p>
+<p>To simulate ANT and F<span class="math notranslate nohighlight">\(_0\)</span>F<span class="math notranslate nohighlight">\(_1\)</span> ATP synthase activity simultaneously, we extend the system of Equation <a class="reference internal" href="Principles.html#equation-system-atpase">(13)</a> by adding states for cytosolic species <span class="math notranslate nohighlight">\([\Sigma \text{ATP} ]_c\)</span> and <span class="math notranslate nohighlight">\([\Sigma \text{ADP}]_c\)</span>, yielding</p>
 <div class="math notranslate nohighlight" id="equation-system-atp-ant">
-<span class="eqno">(14)<a class="headerlink" href="#equation-system-atp-ant" title="Permalink to this equation">¶</a></span>\[\begin{split}	\left\{ 
+<span class="eqno">(16)<a class="headerlink" href="#equation-system-atp-ant" title="Permalink to this equation">¶</a></span>\[\begin{split}	\left\{ 
 		\renewcommand{\arraystretch}{2} 
 		\begin{array}{rlrl}
 			\dfrac{ {\rm d} [\Sigma \text{ATP}]_x }{{\rm d} t} &amp;= (J_\text{F} - J_\text{ANT} ) / W_x, &amp; \dfrac{ {\rm d} [\Sigma \text{ATP}]_c }{{\rm d} t} &amp;= (V_{m2c} J_\text{ANT})  / W_c, \\
@@ -360,12 +396,14 @@
 		\renewcommand{\arraystretch}{1} 
 	\right.\end{split}\]</div>
 <p>where <span class="math notranslate nohighlight">\(V_{m2c} \ \text{(L mito) (L cyto)}^{-1}\)</span> is the fraction of the volume of mitochondria per volume cytosol and <span class="math notranslate nohighlight">\(W_c \ \text{(L cyto water) (L cyto)}^{-1}\)</span> is the fraction of water volume in the cytoplasm to the total volume of the cytoplasm (<a class="reference internal" href="Principles.html#table-biophysicalconstants"><span class="std std-numref">Table 2</span></a>).</p>
-<p>Here, we clamp the matrix phosphate concentration at a constant value since the equation <a class="reference internal" href="#equation-system-atp-ant">(14)</a> does not account for phosphate transport between the matrix and the cytosol.</p>
+<p>Here, we clamp the matrix phosphate concentration at a constant value since the   system of equations in   Equation <a class="reference internal" href="#equation-system-atp-ant">(16)</a> does not account for phosphate transport between the matrix and the cytosol.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">!</span>pip install scipy
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 
 <span class="c1">###### Constants defining metabolite pools ######</span>
 <span class="c1"># Volume fractions and water space fractions</span>
@@ -375,15 +413,11 @@
 <span class="n">W_c</span> <span class="o">=</span> <span class="mf">0.8425</span>      <span class="c1"># cytosol water space           # L cyto water (L cyto)**(-1)</span>
 <span class="n">W_m</span> <span class="o">=</span> <span class="mf">0.7238</span>       <span class="c1"># mitochondrial water space     # L mito water (L mito)**(-1)</span>
 <span class="n">W_x</span> <span class="o">=</span> <span class="mf">0.9</span><span class="o">*</span><span class="n">W_m</span>      <span class="c1"># matrix water space            # L matrix water (L mito)**(-1)</span>
-<span class="n">W_i</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">W_m</span>      <span class="c1"># intermembrane water space     # L IM water (L mito)**(-1)</span>
-
-<span class="c1"># Membrane capacitance</span>
-<span class="n">Cm</span>   <span class="o">=</span> <span class="mf">3.1e-3</span>
 
 <span class="c1"># Membrane potential </span>
 <span class="n">DPsi</span> <span class="o">=</span> <span class="mi">175</span><span class="o">/</span><span class="mi">1000</span>
 
-<span class="c1">###### Set fixed pH, cation concentrations, and O2 partial pressure ######</span>
+<span class="c1">###### Set fixed pH and cation concentrations ######</span>
 <span class="c1"># pH</span>
 <span class="n">pH_x</span> <span class="o">=</span> <span class="mf">7.40</span>
 <span class="n">pH_c</span> <span class="o">=</span> <span class="mf">7.20</span>
@@ -395,9 +429,6 @@
 <span class="c1"># Mg2+ concentrations</span>
 <span class="n">Mg_x</span> <span class="o">=</span> <span class="mf">1.0e-3</span>     <span class="c1"># mol (L matrix water)**(-1)</span>
 <span class="n">Mg_c</span> <span class="o">=</span> <span class="mf">1.0e-3</span>     <span class="c1"># mol (L cyto water)**(-1)</span>
-
-<span class="c1"># Oxygen partial pressure</span>
-<span class="n">PO2</span> <span class="o">=</span> <span class="mi">25</span>          <span class="c1"># mmHg</span>
 
 <span class="c1">###### Parameter vector ###### </span>
 <span class="n">X_F</span>   <span class="o">=</span> <span class="mi">1000</span>      <span class="c1"># Synthase activity </span>
@@ -425,9 +456,6 @@
     <span class="n">H_x</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">pH_x</span><span class="p">)</span> <span class="c1"># mol (L matrix water)**(-1)</span>
     <span class="n">H_c</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">pH_c</span><span class="p">)</span> <span class="c1"># mol (L cuvette water)**(-1)</span>
 
-    <span class="c1"># Oxygen concentration</span>
-    <span class="n">a_3</span>  <span class="o">=</span> <span class="mf">1.74e-6</span>   <span class="c1"># oxygen solubility in cuvette   # mol (L matrix water * mmHg)**(-1)</span>
-    <span class="n">O2_x</span> <span class="o">=</span> <span class="n">a_3</span><span class="o">*</span><span class="n">PO2</span>   <span class="c1"># mol (L matrix water)**(-1)</span>
 
     <span class="c1"># Thermochemical constants</span>
     <span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span>          <span class="c1"># J (mol K)**(-1)</span>
@@ -457,13 +485,11 @@
     <span class="c1"># Cytosol species # mol (L cuvette water)**(-1)</span>
     <span class="n">PATP_c</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_c</span><span class="o">/</span><span class="n">K_HATP</span> <span class="o">+</span> <span class="n">Mg_c</span><span class="o">/</span><span class="n">K_MgATP</span> <span class="o">+</span> <span class="n">K_c</span><span class="o">/</span><span class="n">K_KATP</span>
     <span class="n">PADP_c</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_c</span><span class="o">/</span><span class="n">K_HADP</span> <span class="o">+</span> <span class="n">Mg_c</span><span class="o">/</span><span class="n">K_MgADP</span> <span class="o">+</span> <span class="n">K_c</span><span class="o">/</span><span class="n">K_KADP</span>
-    <span class="n">PPi_c</span>  <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_c</span><span class="o">/</span><span class="n">K_HPi</span>  <span class="o">+</span> <span class="n">Mg_c</span><span class="o">/</span><span class="n">K_MgPi</span>  <span class="o">+</span> <span class="n">K_c</span><span class="o">/</span><span class="n">K_KPi</span>
     
     <span class="c1">## Unbound species</span>
     <span class="c1"># Matrix species</span>
     <span class="n">ATP_x</span> <span class="o">=</span> <span class="n">sumATP_x</span> <span class="o">/</span> <span class="n">PATP_x</span> <span class="c1"># [ATP4-]_x</span>
     <span class="n">ADP_x</span> <span class="o">=</span> <span class="n">sumADP_x</span> <span class="o">/</span> <span class="n">PADP_x</span> <span class="c1"># [ADP3-]_x</span>
-    <span class="n">Pi_x</span>  <span class="o">=</span> <span class="n">sumPi_x</span>  <span class="o">/</span> <span class="n">PPi_x</span>  <span class="c1"># [HPO42-]_x</span>
     
     <span class="c1"># Cytosol species </span>
     <span class="n">ATP_c</span> <span class="o">=</span> <span class="n">sumATP_c</span> <span class="o">/</span> <span class="n">PATP_c</span> <span class="c1"># [ATP4-]_c</span>
@@ -519,7 +545,7 @@
     <span class="c1"># Matrix species</span>
     <span class="n">dATP_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">J_F</span>  <span class="o">-</span> <span class="n">J_ANT</span><span class="p">)</span> <span class="o">/</span> <span class="n">W_x</span>
     <span class="n">dADP_x</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">J_F</span> <span class="o">+</span> <span class="n">J_ANT</span><span class="p">)</span> <span class="o">/</span> <span class="n">W_x</span>
-    <span class="n">dPi_x</span>  <span class="o">=</span> <span class="mi">0</span> <span class="c1">#(-J_F ) / W_x</span>
+    <span class="n">dPi_x</span>  <span class="o">=</span> <span class="mi">0</span> 
 
     <span class="c1"># Cytosol species</span>
     <span class="n">dATP_c</span> <span class="o">=</span> <span class="p">(</span> <span class="n">V_m2c</span> <span class="o">*</span> <span class="n">J_ANT</span><span class="p">)</span> <span class="o">/</span> <span class="n">W_c</span>
@@ -539,7 +565,7 @@
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumADP_x</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$ADP]$_x$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumPi_x</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$Pi]$_x$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span><span class="mf">10.5</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span><span class="mf">10.5</span><span class="p">))</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Concentration (mM)&#39;</span><span class="p">)</span>
@@ -555,25 +581,31 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/BuildingModel_5_0.png" src="_images/BuildingModel_5_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /usr/local/lib/python3.9/site-packages (1.6.3)
+Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /usr/local/lib/python3.9/site-packages (from scipy) (1.20.3)
+</pre></div>
+</div>
+<img alt="_images/BuildingModel_5_1.png" src="_images/BuildingModel_5_1.png" />
 </div>
 </div>
-<p>The above simulations of the system of Equation <a class="reference internal" href="#equation-system-atp-ant">(14)</a> show how the electrogenic nature of the ANT transport results in markedly different ATP/ADP ratios in the cytosol compared to the matrix. As we saw in the previous chapter, the ATP hydrolysis potential in the matrix is approximately <span class="math notranslate nohighlight">\(\text{-}45 \ \text{kJ mol}^{-1}\)</span>. The roughly <span class="math notranslate nohighlight">\(50\)</span>:<span class="math notranslate nohighlight">\(1\)</span> ratio of ATP to ADP in the cytosol is associated with a hydrolysis potential of approximately <span class="math notranslate nohighlight">\(\text{-}65 \ \text{kJ mol}^{-1}\)</span>. The difference of <span class="math notranslate nohighlight">\(20 \ \text{kJ mol}^{-1}\)</span> between the matrix and the cytosolic space is driven primarily by the membrane potential, which is equivalent to <span class="math notranslate nohighlight">\(20 \ \text{kJ mol}^{-1}\)</span>.</p>
+<p><strong>Figure 4:</strong> Steady state solution from Equation <a class="reference internal" href="#equation-system-atp-ant">(16)</a> for the (a) matrix and (b) cytosol species with <span class="math notranslate nohighlight">\(\Delta \Psi = 175\)</span> mV, <span class="math notranslate nohighlight">\(\text{pH}_x = 7.4\)</span>, and <span class="math notranslate nohighlight">\(\text{pH}_c = 7.2\)</span>.</p>
+<p>The above simulations of the system of Equation <a class="reference internal" href="#equation-system-atp-ant">(16)</a> show how the electrogenic nature of the ANT transport results in   the   markedly different ATP/ADP ratios in the cytosol compared to the matrix. As we saw in the previous chapter, the ATP hydrolysis potential in the matrix is approximately <span class="math notranslate nohighlight">\(\text{-}45 \ \text{kJ mol}^{-1}\)</span>. The roughly <span class="math notranslate nohighlight">\(100\)</span>:<span class="math notranslate nohighlight">\(1\)</span> ratio of ATP to ADP in the cytosol is associated with a hydrolysis potential of approximately <span class="math notranslate nohighlight">\(\text{-}65 \ \text{kJ mol}^{-1}\)</span>. The difference of <span class="math notranslate nohighlight">\(20 \ \text{kJ mol}^{-1}\)</span> between the matrix and the cytosolic space is driven primarily by the membrane potential, which is   roughly   equivalent to <span class="math notranslate nohighlight">\(20 \ \text{kJ mol}^{-1}\)</span>.</p>
 </div>
 <div class="section" id="inorganic-phosphate-transport">
 <h2>Inorganic phosphate transport<a class="headerlink" href="#inorganic-phosphate-transport" title="Permalink to this headline">¶</a></h2>
 <p>During active ATP synthesis, mitochondrial Pi is replenished via the activity of the phosphate-proton cotransporter (PiC), catalyzing the electroneutral cotransport of protonated inorganic phosphate, <span class="math notranslate nohighlight">\(\text{H}_2\text{PO}_4^{-}\)</span>, and <span class="math notranslate nohighlight">\(\text{H}^{+}\)</span> across the membrane. Again, we assume rapid transport between the cytoplasm and intermembrane space, and hence, we have</p>
 <div class="math notranslate nohighlight">
-\[    (\text{H}_2\text{PO}_4^{-})_x + (\text{H}^{+})_x \rightleftharpoons (\text{H}_2\text{PO}_4^{-})_c + (\text{H}^{+})_c.\]</div>
-<p>Adopting the flux equation from Bazil et al. <a class="bibtex reference internal" href="References.html#bazil2016" id="id4">[15]</a>, we have</p>
-<div class="math notranslate nohighlight">
-\[    J_\text{PiC} = E_{\text{PiC}} \dfrac{ [\text{H}^{+} ]_{c} [\text{H}_2\text{PO}_4^{-}]_{c} - [\text{H}^{+}]_{x} [\text{H}_2\text{PO}_4^{-}]_{x} }{ [\text{H}_2\text{PO}_4^{-}]_c + k_{\text{PiC}} }, \]</div>
+\[    (\text{H}_2\text{PO}_4^{-})_c + (\text{H}^{+})_c \rightleftharpoons (\text{H}_2\text{PO}_4^{-})_x + (\text{H}^{+})_x.\]</div>
+<p>Adopting the flux equation from Bazil et al. <span id="id4">[<a class="reference internal" href="References.html#id11">1</a>]</span>, we have</p>
+<div class="math notranslate nohighlight" id="equation-j-pic">
+<span class="eqno">(17)<a class="headerlink" href="#equation-j-pic" title="Permalink to this equation">¶</a></span>\[    J_\text{PiC} = E_{\text{PiC}} \dfrac{ [\text{H}^{+} ]_{c} [\text{H}_2\text{PO}_4^{-}]_{c} - [\text{H}^{+}]_{x} [\text{H}_2\text{PO}_4^{-}]_{x} }{ [\text{H}_2\text{PO}_4^{-}]_c + k_{\text{PiC}} }, \]</div>
 <p>where <span class="math notranslate nohighlight">\(E_{\text{PiC}} \ \text{(L matrix water) s}^{-1} \text{ (L mito)}^{-1}\)</span> is the PiC activity rate and <span class="math notranslate nohighlight">\(k_{\text{PiC}} = 1.61\)</span> mM is an effective Michaelis-Menten constant. The <span class="math notranslate nohighlight">\(\text{H}_2\text{PO}_4^{-}\)</span> concentrations in the matrix and cytosol are computed via the relationship</p>
 <div class="math notranslate nohighlight">
-\[    [\text{H}_2\text{PO}_4^{-}] = [\Sigma{\rm Pi}] \left( [{\rm H}^+]/K_{\rm HPi} \right) / P_{\rm Pi} . \]</div>
-<p>To incorporate PiC into Equation <a class="reference internal" href="#equation-system-atp-ant">(14)</a>, we add a new state <span class="math notranslate nohighlight">\([\Sigma \text{Pi}]_c\)</span> such that at given membrane potential, matrix and cytosolic pH, and cation concentrations, we obtain</p>
+\[   [\text{H}_2\text{PO}_4^{-}] = [\Sigma{\rm Pi}] \left( [{\rm H}^+]/K_{\rm HPi} \right) / P_{\rm Pi} \]</div>
+<p>from Equation \eqref{sumPi}.</p>
+<p>To incorporate PiC into Equation <a class="reference internal" href="#equation-system-atp-ant">(16)</a>, we add a new state <span class="math notranslate nohighlight">\([\Sigma \text{Pi}]_c\)</span> such that at given membrane potential, matrix and cytosolic pH, and cation concentrations, we obtain</p>
 <div class="math notranslate nohighlight" id="equation-system-atp-ant-pic">
-<span class="eqno">(15)<a class="headerlink" href="#equation-system-atp-ant-pic" title="Permalink to this equation">¶</a></span>\[\begin{split}	\left\{ 
+<span class="eqno">(18)<a class="headerlink" href="#equation-system-atp-ant-pic" title="Permalink to this equation">¶</a></span>\[\begin{split}	\left\{ 
 		\renewcommand{\arraystretch}{2} 
 		\begin{array}{rlrl}
 			\dfrac{ {\rm d} [\Sigma \text{ATP}]_x }{{\rm d} t} &amp;= (J_\text{F} - J_\text{ANT} ) / W_x,  &amp; \dfrac{ {\rm d} [\Sigma \text{ATP}]_c }{{\rm d} t} &amp;= (V_{m2c} J_\text{ANT})  / W_c \\
@@ -586,8 +618,10 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">!</span>pip install scipy
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 
 <span class="c1">###### Constants defining metabolite pools ######</span>
 <span class="c1"># Volume fractions and water space fractions</span>
@@ -597,10 +631,6 @@
 <span class="n">W_c</span> <span class="o">=</span> <span class="mf">0.8425</span>      <span class="c1"># cytosol water space           # L cyto water (L cyto)**(-1)</span>
 <span class="n">W_m</span> <span class="o">=</span> <span class="mf">0.7238</span>       <span class="c1"># mitochondrial water space     # L mito water (L mito)**(-1)</span>
 <span class="n">W_x</span> <span class="o">=</span> <span class="mf">0.9</span><span class="o">*</span><span class="n">W_m</span>      <span class="c1"># matrix water space            # L matrix water (L mito)**(-1)</span>
-<span class="n">W_i</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">W_m</span>      <span class="c1"># intermembrane water space     # L IM water (L mito)**(-1)</span>
-
-<span class="c1"># Membrane capacitance</span>
-<span class="n">Cm</span> <span class="o">=</span> <span class="mf">3.1e-3</span>
 
 <span class="c1"># Membrane potential </span>
 <span class="n">DPsi</span> <span class="o">=</span> <span class="mi">175</span><span class="o">/</span><span class="mi">1000</span>
@@ -617,9 +647,6 @@
 <span class="c1"># Mg2+ concentrations</span>
 <span class="n">Mg_x</span> <span class="o">=</span> <span class="mf">1.0e-3</span>        <span class="c1"># mol (L matrix water)**(-1)</span>
 <span class="n">Mg_c</span> <span class="o">=</span> <span class="mf">1.0e-3</span>        <span class="c1"># mol (L cyto water)**(-1)</span>
-
-<span class="c1"># Oxygen partial pressure</span>
-<span class="n">PO2</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># mmHg</span>
 
 <span class="c1">###### Parameter vector ###### </span>
 <span class="n">X_F</span>   <span class="o">=</span> <span class="mi">100</span>        <span class="c1"># Synthase activity </span>
@@ -650,10 +677,6 @@
     <span class="n">H_x</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">pH_x</span><span class="p">)</span> <span class="c1"># mol (L matrix water)**(-1)</span>
     <span class="n">H_c</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">pH_c</span><span class="p">)</span> <span class="c1"># mol (L cuvette water)**(-1)</span>
 
-    <span class="c1"># Oxygen concentration</span>
-    <span class="n">a_3</span>  <span class="o">=</span> <span class="mf">1.74e-6</span>   <span class="c1"># oxygen solubility in cuvette   # mol (L matrix water * mmHg)**(-1)</span>
-    <span class="n">O2_x</span> <span class="o">=</span> <span class="n">a_3</span><span class="o">*</span><span class="n">PO2</span>   <span class="c1"># mol (L matrix water)**(-1)</span>
-
     <span class="c1"># Thermochemical constants</span>
     <span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span>          <span class="c1"># J (mol K)**(-1)</span>
     <span class="n">T</span> <span class="o">=</span> <span class="mi">37</span> <span class="o">+</span> <span class="mf">273.15</span>    <span class="c1"># K</span>
@@ -661,9 +684,6 @@
     
     <span class="c1"># Proton motive force parameters (dimensionless)</span>
     <span class="n">n_F</span>  <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="mi">3</span>
-    <span class="n">n_C1</span> <span class="o">=</span> <span class="mi">4</span>
-    <span class="n">n_C3</span> <span class="o">=</span> <span class="mi">2</span>
-    <span class="n">n_C4</span> <span class="o">=</span> <span class="mi">4</span>
     
     <span class="c1"># Dissociation constants</span>
     <span class="n">K_MgATP</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">3.88</span><span class="p">)</span>
@@ -782,7 +802,7 @@
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumADP_x</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$ADP]$_x$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumPi_x</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$Pi]$_x$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span><span class="mf">10.5</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span><span class="mf">10.5</span><span class="p">))</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
@@ -790,7 +810,7 @@
 
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumATP_c</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$ATP]$_c$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumADP_c</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$ADP]$_c$&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumPi_c</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$Pi]$_x$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumPi_c</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$Pi]$_c$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">10.5</span><span class="p">))</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
@@ -801,20 +821,25 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/BuildingModel_9_0.png" src="_images/BuildingModel_9_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /usr/local/lib/python3.9/site-packages (1.6.3)
+Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /usr/local/lib/python3.9/site-packages (from scipy) (1.20.3)
+</pre></div>
+</div>
+<img alt="_images/BuildingModel_10_1.png" src="_images/BuildingModel_10_1.png" />
 </div>
 </div>
+<p><strong>Figure 5:</strong> Steady state solution from Equation <a class="reference internal" href="#equation-system-atp-ant-pic">(18)</a> for the (a) matrix and (b) cytosol species with <span class="math notranslate nohighlight">\(\Delta \Psi = 175\)</span> mV, <span class="math notranslate nohighlight">\(\text{pH}_x = 7.4\)</span>, and <span class="math notranslate nohighlight">\(\text{pH}_c = 7.2\)</span>.</p>
 <p>For the above simulations, cytosolic inorganic phosphate is set to <span class="math notranslate nohighlight">\(10 \ \text{mM}\)</span> initially, and all other initial conditions remain unchanged. Driven by <span class="math notranslate nohighlight">\(\Delta \text{pH}\)</span>, a gradient in phosphate concentration is established, with a steady-state ratio of matrix-to-cytosol concentration of approximately <span class="math notranslate nohighlight">\(2.2\)</span>. As seen in the previous section, with a constant membrane potential of <span class="math notranslate nohighlight">\(175 \ \text{mV}\)</span>, the ATP/ADP ratio is maintained at a much higher level in the cytosol than in the matrix.</p>
-<p>The final matrix and cytosol ATP and ADP concentrations depend not only on the membrane potential, but also on the total amount of exchangeable phosphate in the system. Here these simulations start with <span class="math notranslate nohighlight">\([\text{Pi}]_c = 10 \ \text{mM}\)</span> and <span class="math notranslate nohighlight">\([\text{Pi}]_x = 1 \ \text{mM}\)</span>. The initial <span class="math notranslate nohighlight">\(10 \ \text{mM}\)</span> of ADP in the cytosol becomes almost entirely phosphorylated to ATP, leaving <span class="math notranslate nohighlight">\(0.32 \ \text{mM}\)</span> of inorganic phosphate in the cytosol in the final steady state. To explore how these steady states depend on <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, the following code simulates the steady-state behavior of this system for a range of <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> from <span class="math notranslate nohighlight">\(100\)</span> to <span class="math notranslate nohighlight">\(200 \ \text{mV}\)</span>.</p>
+<p>The final matrix and cytosol ATP and ADP concentrations depend not only on the membrane potential, but also on the total amount of exchangeable phosphate in the system. Here these simulations start with <span class="math notranslate nohighlight">\([\text{Pi}]_c = 10 \ \text{mM}\)</span> and <span class="math notranslate nohighlight">\([\text{Pi}]_x = 1 \ \text{mM}\)</span>. The initial <span class="math notranslate nohighlight">\(10 \ \text{mM}\)</span> of ADP in the cytosol becomes almost entirely phosphorylated to ATP, leaving <span class="math notranslate nohighlight">\(0.32 \ \text{mM}\)</span> of inorganic phosphate in the cytosol in the final steady state. To explore how these steady states depend on <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, the following code simulates the steady-state behavior of this system for a range of <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> from <span class="math notranslate nohighlight">\(100\)</span> to <span class="math notranslate nohighlight">\(200 \ \text{mV}\)</span>. These simulations, based on a simple, thermodynamically constrained model, show that it is not possible to synthesize ATP at physiological free energy levels for values of <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> of lower than approximately <span class="math notranslate nohighlight">\(160 \ \text{mV}\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Simulate over a range of Membrane potential from 100 mV to 250 mV ###</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">!</span>pip install scipy
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+
+<span class="c1">### Simulate over a range of Membrane potential from 100 mV to 250 mV ###</span>
 
 <span class="c1"># Define array to iterate over</span>
 <span class="n">membrane_potential</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">250</span><span class="p">)</span>    <span class="c1"># mV</span>
-
-<span class="c1"># Constant external pH</span>
-<span class="n">pH_c</span> <span class="o">=</span> <span class="mf">7.2</span> <span class="c1"># IMS/buffer pH</span>
 
 <span class="c1"># Define arrays to store steady state results </span>
 <span class="n">ATP_x_steady</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">membrane_potential</span><span class="p">))</span>
@@ -861,9 +886,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/BuildingModel_11_0.png" src="_images/BuildingModel_11_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /usr/local/lib/python3.9/site-packages (1.6.3)
+Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /usr/local/lib/python3.9/site-packages (from scipy) (1.20.3)
+</pre></div>
+</div>
+<img alt="_images/BuildingModel_13_1.png" src="_images/BuildingModel_13_1.png" />
 </div>
 </div>
+<p><strong>Figure 6:</strong> Simulation of concentration versus <span class="math notranslate nohighlight">\(\Delta \Psi\)</span> for Equation <a class="reference internal" href="#equation-system-atp-ant-pic">(18)</a> for the (a) matrix and (b) cytosol species with <span class="math notranslate nohighlight">\(\Delta \Psi\)</span> from <span class="math notranslate nohighlight">\(100\)</span> to <span class="math notranslate nohighlight">\(250\)</span> mV.</p>
 <p>Simulation of this system reinforces the fact that ATP cannot be synthesized at physiological free energy levels for mitochondrial membrane potential of less than approximately <span class="math notranslate nohighlight">\(150 \ \text{mV}\)</span>.</p>
 </div>
 <div class="section" id="respiratory-complexes-and-nadh-synthesis">
@@ -873,21 +903,21 @@
 <h3>ETC complex I<a class="headerlink" href="#etc-complex-i" title="Permalink to this headline">¶</a></h3>
 <p>Coupled with the translocation of <span class="math notranslate nohighlight">\(n_\text{C1} = 4\)</span> protons across the IMM against the electrochemical gradient, electrons are transferred from NADH to ubiquinone (<span class="math notranslate nohighlight">\(Q\)</span>) at complex I of the ETC via the reaction</p>
 <div class="math notranslate nohighlight" id="equation-reaction-c1">
-<span class="eqno">(16)<a class="headerlink" href="#equation-reaction-c1" title="Permalink to this equation">¶</a></span>\[    (\text{NADH}^{2-})_x + (\text{H}^{+})_x + (\text{Q})_x + n_\text{C1} (\text{H}^{+})_x \rightleftharpoons (\text{NAD}^{-})_x + (\text{QH}_2)_x + \text{H}_2\text{O} + n_\text{C1}(\text{H}^+)_c.\]</div>
-<p>Since protons move against the gradient when the reaction proceeds in the left-to-right direction, the overall Gibbs energy for the reaction of Equation <a class="reference internal" href="#equation-reaction-c1">(16)</a> is</p>
-<div class="math notranslate nohighlight" id="equation-drg-c1">
-<span class="eqno">(17)<a class="headerlink" href="#equation-drg-c1" title="Permalink to this equation">¶</a></span>\[\begin{split}    \Delta G_\text{C1} &amp;= \Delta_r G_\text{C1} - n_\text{C1} \Delta G_{\rm H} \nonumber \\
+<span class="eqno">(19)<a class="headerlink" href="#equation-reaction-c1" title="Permalink to this equation">¶</a></span>\[    (\text{NADH}^{2-})_x + (\text{H}^{+})_x + (\text{Q})_x + n_\text{C1} (\text{H}^{+})_x \rightleftharpoons (\text{NAD}^{-})_x + (\text{QH}_2)_x + \text{H}_2\text{O} + n_\text{C1}(\text{H}^+)_c.\]</div>
+<p>Since protons move against the gradient when the reaction proceeds in the left-to-right direction, the overall Gibbs energy for the reaction of Equation <a class="reference internal" href="#equation-reaction-c1">(19)</a> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \Delta G_\text{C1} &amp;= \Delta_r G_\text{C1} - n_\text{C1} \Delta G_{\rm H} \nonumber \\
     &amp;= \Delta_r G_\text{C1}^\circ + R{\rm T} \ln \left( \dfrac{ [\text{NAD}^{-}]_x [\text{QH}_2]_x }{ [\text{NADH}^{2-}]_x [\text{Q}]_x} \cdot  \dfrac{1}{[\text{H}^{+}]_x } \right) + n_\text{C1} F \Delta \Psi - R{\rm T} \ln \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c } \right)^{n_{\text{C1}}} \nonumber \\ 
-    &amp;= \Delta_r G'^{\circ}_\text{C1} + R{\rm T} \ln \left( \dfrac{ [\text{NAD}^{-}]_x [\text{QH}_2]_x }{ [\text{NADH}^{2-}]_x [\text{Q}]_x} \right) + n_\text{C1} F \Delta \Psi - R{\rm T} \ln \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c } \right)^{n_{\text{C1}}}, \end{split}\]</div>
+    &amp;= \Delta_r G'^{\circ}_\text{C1} + R{\rm T} \ln \left( \dfrac{ [\text{NAD}^{-}]_x [\text{QH}_2]_x }{ [\text{NADH}^{2-}]_x [\text{Q}]_x} \right) + n_\text{C1} F \Delta \Psi - R{\rm T} \ln \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c } \right)^{n_{\text{C1}}},  \end{split}\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
 \[    \Delta_r G'^\circ_\text{C1} = \Delta_r G^\circ_\text{C1} - R \text{T} \ln ( [\text{H}^+]_x )\]</div>
-<p>is the apparent Gibbs energy for Equation <a class="reference internal" href="#equation-reaction-c1">(16)</a>. The apparent equilibrium constant is</p>
-<div class="math notranslate nohighlight">
-\[    K'_{eq,\text{C1}} = \left(\dfrac{ [\text{NAD}^{-}]_x [\text{QH}_2]_x }{ [\text{NADH}^{2-}]_x [\text{Q}]_x} \right)_{eq} = \exp \left\{ \dfrac{ - ( \Delta_r G'^\circ_\text{C1} + n_\text{C1} F \Delta \Psi) }{ R \text{T}} \right\} \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c } \right)^{n_\text{C1}}.\]</div>
+<p>is the apparent Gibbs energy for the reaction in Equation <a class="reference internal" href="#equation-reaction-c1">(19)</a>. The apparent equilibrium constant is</p>
+<div class="math notranslate nohighlight" id="equation-kapp-c1">
+<span class="eqno">(20)<a class="headerlink" href="#equation-kapp-c1" title="Permalink to this equation">¶</a></span>\[    K'_{eq,\text{C1}} = \left(\dfrac{ [\text{NAD}^{-}]_x [\text{QH}_2]_x }{ [\text{NADH}^{2-}]_x [\text{Q}]_x} \right)_{eq} = \exp \left\{ \dfrac{ - ( \Delta_r G'^\circ_\text{C1} + n_\text{C1} F \Delta \Psi) }{ R \text{T}} \right\} \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c } \right)^{n_\text{C1}}.\]</div>
 <p>To simulate the flux of complex I, <span class="math notranslate nohighlight">\(J_{\text{C1}} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})\)</span>, across the IMM by mass-action kinetics, we have</p>
-<div class="math notranslate nohighlight" id="equation-eq-complexi">
-<span class="eqno">(18)<a class="headerlink" href="#equation-eq-complexi" title="Permalink to this equation">¶</a></span>\[    J_{\text{C1}} = X_{\text{C1}} ( K_{eq,\text{C1}}^\prime [\text{NADH}^{2-}]_x [\text{Q}]_x - [\text{NAD}^{-}]_x [\text{QH}_2]_x ),\]</div>
+<div class="math notranslate nohighlight" id="equation-j-c1">
+<span class="eqno">(21)<a class="headerlink" href="#equation-j-c1" title="Permalink to this equation">¶</a></span>\[    J_{\text{C1}} = X_{\text{C1}} \left( K_{eq,\text{C1}}^\prime [\text{NADH}^{2-}]_x [\text{Q}]_x - [\text{NAD}^{-}]_x [\text{QH}_2]_x \right),\]</div>
 <p>for <span class="math notranslate nohighlight">\(X_\text{C1} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})\)</span> the a rate constant. <a class="reference internal" href="#table-etc"><span class="std std-numref">Table 4</span></a> lists the constants for complex I.</p>
 </div>
 <div class="section" id="etc-complex-iii">
@@ -906,53 +936,53 @@
 <div class="math notranslate nohighlight">
 \[    \Delta_r G'^\circ_\text{C3} = \Delta_r G^\circ_\text{C3} + 2 R \text{T} \ln ([\text{H}^+]_c)\]</div>
 <p>is the apparent Gibbs energy for complex III. The apparent equilibrium constant is</p>
-<div class="math notranslate nohighlight">
-\[    K_{eq,\text{C3}}^\prime = \left( \dfrac{ [\text{Q}]_x [\text{c}_{red}^{2+}]_i^2 }{ [\text{QH}_2]_x [\text{c}_{ox}^{3+}]_i^2 } \right)_{eq} = \exp \left\{ \dfrac{ -(\Delta_r G'^\circ_\text{C3} + n_\text{C3} F 
-    \Delta \Psi )}{ R \text{T}} \right\} \left( \dfrac{ [\text{H}^{+}]_x}{ [\text{H}^{+}]_c} \right)^{n_\text{C3}}, \]</div>
+<div class="math notranslate nohighlight" id="equation-kapp-c3">
+<span class="eqno">(23)<a class="headerlink" href="#equation-kapp-c3" title="Permalink to this equation">¶</a></span>\[    K_{eq,\text{C3}}^\prime = \left( \dfrac{ [\text{Q}]_x [\text{c}_{red}^{2+}]_i^2 }{ [\text{QH}_2]_x [\text{c}_{ox}^{3+}]_i^2 } \right)_{eq} = \exp \left\{ \dfrac{ -(\Delta_r G'^\circ_\text{C3} + n_\text{C3} F 
+    \Delta \Psi )}{ R \text{T}} \right\} \left( \dfrac{ [\text{H}^{+}]_x}{ [\text{H}^{+}]_c} \right)^{n_\text{C3}}.\]</div>
 <p>To simulate the flux of complex III, <span class="math notranslate nohighlight">\(J_\text{C3} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})\)</span>, by mass-action kinetics, we have</p>
-<div class="math notranslate nohighlight">
-\[    J_{\text{C3}} = X_{\text{C3}} (K_{eq,\text{C3}}^\prime [\text{QH}_2]_x [\text{c}_{ox}^{3+}]_i^2 - [\text{Q}]_x [\text{c}_{red}^{2+}]_i^2 ),\]</div>
+<div class="math notranslate nohighlight" id="equation-j-c3">
+<span class="eqno">(24)<a class="headerlink" href="#equation-j-c3" title="Permalink to this equation">¶</a></span>\[    J_{\text{C3}} = X_{\text{C3}} \left( K_{eq,\text{C3}}^\prime [\text{QH}_2]_x [\text{c}_{ox}^{3+}]_i^2 - [\text{Q}]_x [\text{c}_{red}^{2+}]_i^2 \right),\]</div>
 <p>where <span class="math notranslate nohighlight">\(X_{\text{C3}} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})\)</span> is the rate constant.</p>
 </div>
 <div class="section" id="etc-complex-iv">
 <h3>ETC complex IV<a class="headerlink" href="#etc-complex-iv" title="Permalink to this headline">¶</a></h3>
-<p>In the final step of the ECT catalzyed by complex IV, electrons are transferred from cytochrome c to oxygen, forming water</p>
+<p>In the final step of the ETC catalyzed by complex IV, electrons are transferred from cytochrome c to oxygen, forming water</p>
 <div class="math notranslate nohighlight" id="equation-reaction-c4">
-<span class="eqno">(21)<a class="headerlink" href="#equation-reaction-c4" title="Permalink to this equation">¶</a></span>\[    2 \ (\text{c}_{red}^{2+})_i + \frac{1}{2} (\text{O}_2)_x + 2 \ (\text{H}^{+})_c + n_\text{C4} ([\text{H}^+])_x \rightleftharpoons 2 \ (\text{c}^{3+}_{ox})_i + \text{H}_2\text{O} + n_\text{C4} ([\text{H}^+])_c, \]</div>
-<p>coupled with the translocation of <span class="math notranslate nohighlight">\(n_\text{C4} = 4\)</span> protons across the IMM against against the electrochemical gradient. The Gibbs energy of the reaction in Equation <a class="reference internal" href="#equation-reaction-c4">(21)</a> is</p>
-<div class="math notranslate nohighlight" id="equation-drg-c4">
-<span class="eqno">(22)<a class="headerlink" href="#equation-drg-c4" title="Permalink to this equation">¶</a></span>\[\begin{split}    \Delta G_\text{C4} &amp;= \Delta_r G_\text{C4} - n_\text{C4} \Delta G_{\rm H} \nonumber \\
+<span class="eqno">(25)<a class="headerlink" href="#equation-reaction-c4" title="Permalink to this equation">¶</a></span>\[    2 \ (\text{c}_{red}^{2+})_i + \frac{1}{2} (\text{O}_2)_x + 2 \ (\text{H}^{+})_c + n_\text{C4} ([\text{H}^+])_x \rightleftharpoons 2 \ (\text{c}^{3+}_{ox})_i + \text{H}_2\text{O} + n_\text{C4} ([\text{H}^+])_c, \]</div>
+<p>coupled with the translocation of <span class="math notranslate nohighlight">\(n_\text{C4} = 4\)</span> protons across the IMM against against the electrochemical gradient. The Gibbs energy of the reaction in Equation <a class="reference internal" href="#equation-reaction-c4">(25)</a> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}    \Delta G_\text{C4} &amp;= \Delta_r G_\text{C4} - n_\text{C4} \Delta G_{\rm H} \nonumber \\
     &amp;= \Delta_r G_{\text{C4}}^o + R{\rm T} \ln \left( \dfrac{ [\text{c}^{3+}_{ox}]^2_i }{ [\text{c}^{2+}_{red}]^2_i [\text{O}_2]^{1/2}_x } \cdot \dfrac{1}{[\text{H}^{+}]^2_c}\right) + n_{\text{C4}} F \Delta \Psi -  R{\rm T} \ln \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c} \right)^{n_{\text{C4}}} \nonumber \\ 
-    &amp;= \Delta_r G'^\circ_{\text{C4}} + R{\rm T} \ln \left( \dfrac{ [\text{c}^{3+}_{ox}]^2_i }{ [\text{c}^{2+}_{red}]^2_i [\text{O}_2]^{1/2}_x } \right) + n_{\text{C4}} F \Delta \Psi -  R{\rm T} \ln \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c} \right)^{n_{\text{C4}}},
-    \label{DrG_C4} \end{split}\]</div>
+    &amp;= \Delta_r G'^\circ_{\text{C4}} + R{\rm T} \ln \left( \dfrac{ [\text{c}^{3+}_{ox}]^2_i }{ [\text{c}^{2+}_{red}]^2_i [\text{O}_2]^{1/2}_x } \right) + n_{\text{C4}} F \Delta \Psi -  R{\rm T} \ln \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c} \right)^{n_{\text{C4}}},\end{split}\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
 \[    \Delta_r G'^\circ_\text{C4} = \Delta_r G^\circ_\text{C4} - 2 R \text{T} \ln([\text{H}^+]_c)\]</div>
 <p>is the apparent Gibbs energy for complex IV. The apparent equilibrium constant is</p>
-<div class="math notranslate nohighlight">
-\[    K_{eq,\text{C4}}^\prime = \left( \dfrac{ [\text{c}^{3+}_{ox}]_i^2 }{ [\text{c}^{2+}_{red}]_i^2 [\text{O}_2]_x^{1/2} } \right)_{eq} = \exp \left\{ \dfrac{-(\Delta_r G'^\circ_\text{C4} + n_\text{C4} F \Delta \Psi )}{ R \text{T} } \right\} \left( \dfrac{ [\text{H}^+]_x }{[\text{H}^+]_c} \right)^{n_\text{C4}}.\]</div>
+<div class="math notranslate nohighlight" id="equation-kapp-c4">
+<span class="eqno">(26)<a class="headerlink" href="#equation-kapp-c4" title="Permalink to this equation">¶</a></span>\[    K_{eq,\text{C4}}^\prime = \left( \dfrac{ [\text{c}^{3+}_{ox}]_i^2 }{ [\text{c}^{2+}_{red}]_i^2 [\text{O}_2]_x^{1/2} } \right)_{eq} = \exp \left\{ \dfrac{-(\Delta_r G'^\circ_\text{C4} + n_\text{C4} F \Delta \Psi )}{ R \text{T} } \right\} \left( \dfrac{ [\text{H}^+]_x }{[\text{H}^+]_c} \right)^{n_\text{C4}}.\]</div>
 <p>To simulate the flux of complex IV, <span class="math notranslate nohighlight">\(J_{\text{C4}} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})\)</span>, we use mass-action kinetics and account for binding of oxygen to complex IV as</p>
-<div class="math notranslate nohighlight">
-\[    J_{\text{C4}} = X_{\text{C4}} \left( \dfrac{1}{1 + \frac{k_{\text{O}_2}}{[\text{O}_2]
-    }} \right) \left[ \left(K_{eq,\text{C4}}^\prime\right)^{1/2} [\text{c}_{red}^{2+}]_i [\text{O}_2]_x^{1/4} - [\text{c}_{ox}^{3+}]_i \right],\]</div>
-<p>where <span class="math notranslate nohighlight">\(X_{\text{C4}} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})\)</span> is the rate constant and <span class="math notranslate nohighlight">\(k_{\text{O}_2}\)</span> is the <span class="math notranslate nohighlight">\(\text{O}_2\)</span> binding constant (<a class="reference internal" href="#table-etc"><span class="std std-numref">Table 4</span></a>). For this study, we assume a partial pressure of <span class="math notranslate nohighlight">\(\text{O}_2\)</span> at <span class="math notranslate nohighlight">\(25 \ \text{mmHg}\)</span>.</p>
+<div class="math notranslate nohighlight" id="equation-j-c4">
+<span class="eqno">(27)<a class="headerlink" href="#equation-j-c4" title="Permalink to this equation">¶</a></span>\[    J_{\text{C4}} = X_{\text{C4}} \left( \dfrac{1}{1 + \frac{k_{\text{O}_2}}{[\text{O}_2]
+    }} \right) \left( \left(K_{eq,\text{C4}}^\prime\right)^{1/2} [\text{c}_{red}^{2+}]_i [\text{O}_2]_x^{1/4} - [\text{c}_{ox}^{3+}]_i \right),\]</div>
+<p>where <span class="math notranslate nohighlight">\(X_{\text{C4}} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})\)</span> is the rate constant and <span class="math notranslate nohighlight">\(k_{\text{O}_2}\)</span> is the <span class="math notranslate nohighlight">\(\text{O}_2\)</span> binding constant (\ref{table-ETC}). For this study, we assume a partial pressure of <span class="math notranslate nohighlight">\(\text{O}_2\)</span> at <span class="math notranslate nohighlight">\(25 \ \text{mmHg}\)</span>.</p>
+<p>The apparent equilibrium constants for the <span class="math notranslate nohighlight">\(\text{F}_0\text{F}_1\)</span> ATPase (Equation <a class="reference internal" href="Principles.html#equation-kapp-f">(11)</a>), complex I (Equation <a class="reference internal" href="#equation-kapp-c1">(20)</a>), complex III (Equation <a class="reference internal" href="#equation-kapp-c3">(23)</a>), and complex IV (Equation <a class="reference internal" href="#equation-kapp-c4">(26)</a>) depend on <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>. In the model developed in this section, since <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> is a variable, these apparent equilibrium constants are also variables. Thus, the flux expressions in Equations <a class="reference internal" href="Principles.html#equation-j-f">(12)</a>, <a class="reference internal" href="#equation-j-c1">(21)</a>, <a class="reference internal" href="#equation-j-c3">(24)</a>, and <a class="reference internal" href="#equation-j-c4">(27)</a> depend on <span class="math notranslate nohighlight">\(\Delta \Psi\)</span>. These expressions may be compared to a generalized formulation of rate laws for reversible enzyme-catalyzed reactions <span id="id5">[<a class="reference internal" href="References.html#id10">14</a>]</span>, where in this case the saturating dependence of flux on substrate concentrations is not accounted for. These expressions may also be compared to the more detailed representations of the underlying catalytic mechanisms used by Bazil et al. <span id="id6">[<a class="reference internal" href="References.html#id11">1</a>]</span>. The Bazil et al. model also accounts for side reactions generating reactive oxygen species that are not accounted for here.</p>
 </div>
 <div class="section" id="dehydrogenase-activity">
 <h3>Dehydrogenase activity<a class="headerlink" href="#dehydrogenase-activity" title="Permalink to this headline">¶</a></h3>
-<p>We do not explicitly model the full TCA cycle but rather the combined action of NADH-producing reactions, that is,</p>
+<p>In this model, we do not explicitly simulate the reactions of the TCA cycle or beta oxidation,   but rather the combined action of NADH-producing reactions, that is,</p>
 <div class="math notranslate nohighlight">
 \[    (\text{NAD}^{-})_x \rightleftharpoons (\text{NADH}^{2-})_x + (\text{H}^{+})_x\]</div>
-<p>From Beard <a class="bibtex reference internal" href="References.html#beard2005" id="id5">[1]</a>, the flux of NADH dehydrogenase is assumed to be phosphate-dependent</p>
-<div class="math notranslate nohighlight">
-\[    J_{\text{DH}} = X_{\text{DH}} (r [\text{NAD}^-] - [\text{NADH}^{2-}]) \left( \dfrac{ 1 + [\Sigma \text{Pi}]_x/k_{\text{Pi},1} }{ 1 + [\Sigma \text{Pi}]_x/k_{\text{Pi},2} } \right),\]</div>
-<p>where <span class="math notranslate nohighlight">\(X_\text{DH} \text{ (mol s}^{-1} \text{ (L mito)}^{-1})\)</span> is the dehydrogenase activity and <span class="math notranslate nohighlight">\(r\)</span> (dimensionless), <span class="math notranslate nohighlight">\(k_{\text{Pi},1} \ \text{(mol (L matrix water)}^{-1})\)</span>, and <span class="math notranslate nohighlight">\(k_{\text{Pi},2} \ \text{(mol (L matrix water)}^{-1})\)</span> are constants. Parameter values can be found in <a class="reference internal" href="#table-etc"><span class="std std-numref">Table 4</span></a>.</p>
+<p>From Beard <span id="id7">[<a class="reference internal" href="References.html#id13">2</a>]</span>, we represent a Pi dependence of NADH production using the following phenomenological expression</p>
+<div class="math notranslate nohighlight" id="equation-j-dh">
+<span class="eqno">(28)<a class="headerlink" href="#equation-j-dh" title="Permalink to this equation">¶</a></span>\[    J_{\text{DH}} = X_{\text{DH}} \left( r [\text{NAD}^-] - [\text{NADH}^{2-}] \right) \left( \dfrac{ 1 + [\Sigma \text{Pi}]_x/k_{\text{Pi},1} }{ 1 + [\Sigma \text{Pi}]_x/k_{\text{Pi},2} } \right),\]</div>
+<p>where <span class="math notranslate nohighlight">\(X_\text{DH} \text{ (mol s}^{-1} \text{ (L mito)}^{-1})\)</span> is the dehydrogenase activity and <span class="math notranslate nohighlight">\(r\)</span> (dimensionless), <span class="math notranslate nohighlight">\(k_{\text{Pi},1} \ \text{(mol (L matrix water)}^{-1})\)</span>, and <span class="math notranslate nohighlight">\(k_{\text{Pi},2} \ \text{(mol (L matrix water)}^{-1})\)</span> are constants. Parameter values are listed in Table <a class="reference internal" href="#table-etc"><span class="std std-numref">Table 4</span></a>. The dependence of NADH production on Pi reflects the Pi-dependence of the substrate-level phosphorylation step of the TCA cycle (the succinyl coenzyme-A synthetase reaction) and the fact that Pi drives substrate oxidation via the dicarboxylate carrier.</p>
 </div>
 <div class="section" id="proton-leak">
 <h3>Proton leak<a class="headerlink" href="#proton-leak" title="Permalink to this headline">¶</a></h3>
-<p>To simulate proton leakage across the IMM, we adopt the Goldman-Hodgkins-Katz formulation from Wu et al. <a class="bibtex reference internal" href="References.html#wu2008" id="id6">[3]</a>,</p>
-<div class="math notranslate nohighlight">
-\[    J_{\text{H}} = X_\text{H} ( [\text{H}^{+}]_c \ e^{\phi/2} - [\text{H}^{+}]_x \ e^{-\phi/2}) \]</div>
-<p>where <span class="math notranslate nohighlight">\(X_\text{H} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})\)</span> is the proton leak activity and <span class="math notranslate nohighlight">\(\phi\)</span> is given in Equation <a class="reference internal" href="#equation-phi">(13)</a>.</p>
+<p>To simulate proton leak across the IMM, we adopt the Goldman-Hodgkins-Katz formulation from Wu et al. <span id="id8">[<a class="reference internal" href="References.html#id25">22</a>]</span>,</p>
+<div class="math notranslate nohighlight" id="equation-j-h">
+<span class="eqno">(29)<a class="headerlink" href="#equation-j-h" title="Permalink to this equation">¶</a></span>\[    J_{\text{H}} = X_\text{H} \left( [\text{H}^{+}]_c \ e^{\phi/2} - [\text{H}^{+}]_x \ e^{-\phi/2} \right) \]</div>
+<p>where <span class="math notranslate nohighlight">\(X_\text{H} = 1000 \ \text{mol s}^{-1} \text{ (L mito)}^{-1}\)</span> is the proton leak activity and <span class="math notranslate nohighlight">\(\phi\)</span> is given in Equation <a class="reference internal" href="#equation-phi">(15)</a>. Even though the kinetic constants <span class="math notranslate nohighlight">\(X_\text{F}\)</span> and <span class="math notranslate nohighlight">\(X_\text{H}\)</span> attain equal values here, under the ATP-producing conditions the proton flux through the <span class="math notranslate nohighlight">\(\text{F}_0\text{F}_1\)</span> ATPase (<span class="math notranslate nohighlight">\(J_\text{F}\)</span>, Equation <a class="reference internal" href="Principles.html#equation-j-f">(12)</a>) is an order of magnitude greater than the proton leak flux (<span class="math notranslate nohighlight">\(J_\text{H}\)</span>, Equation <a class="reference internal" href="#equation-j-h">(29)</a>).</p>
 <table class="table" id="table-etc">
 <caption><span class="caption-number">Table 4 </span><span class="caption-text">Respiratory complex and inorganic phosphate transport parameters</span><a class="headerlink" href="#table-etc" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -975,19 +1005,19 @@
 <td></td>
 <td><p>Protons translocated by complex I</p></td>
 <td><p><span class="math notranslate nohighlight">\(4 \)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#nicholls2013" id="id7">[11]</a></p></td>
+<td><p><span id="id9">[<a class="reference internal" href="References.html#id21">13</a>]</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(n_{\text{C}3}\)</span></p></td>
 <td></td>
 <td><p>Protons translocated by complex III</p></td>
 <td><p><span class="math notranslate nohighlight">\(2 \)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#nicholls2013" id="id8">[11]</a></p></td>
+<td><p><span id="id10">[<a class="reference internal" href="References.html#id21">13</a>]</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(n_{\text{C}4}\)</span></p></td>
 <td></td>
 <td><p>Protons translocated by complex IV</p></td>
 <td><p><span class="math notranslate nohighlight">\(4 \)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#nicholls2013" id="id9">[11]</a></p></td>
+<td><p><span id="id11">[<a class="reference internal" href="References.html#id21">13</a>]</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(X_\text{C1}\)</span></p></td>
 <td><p>mol s<span class="math notranslate nohighlight">\(^{-1}\)</span> (L mito)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
@@ -1041,49 +1071,49 @@
 <td><p>mmol (L cell)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>PiC constant</p></td>
 <td><p><span class="math notranslate nohighlight">\(1.61\)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id10">[15]</a></p></td>
+<td><p><span id="id12">[<a class="reference internal" href="References.html#id11">1</a>]</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(k_{\text{O}_2}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\mu\)</span>mol (L matrix water)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>O<span class="math notranslate nohighlight">\(_2\)</span> binding constant</p></td>
 <td><p><span class="math notranslate nohighlight">\(120\)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#wu2007" id="id11">[4]</a></p></td>
+<td><p><span id="id13">[<a class="reference internal" href="References.html#id24">21</a>]</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Delta_r G^o_\text{C1}\)</span></p></td>
 <td><p>kJ mol<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Gibbs energy of reaction for complex I</p></td>
 <td><p><span class="math notranslate nohighlight">\( -109.7 \)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#li2011" id="id12">[7]</a></p></td>
+<td><p><span id="id14">[<a class="reference internal" href="References.html#id19">9</a>]</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Delta_r G^o_\text{C3}\)</span></p></td>
 <td><p>kJ mol<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Gibbs energy of reaction for complex III</p></td>
 <td><p><span class="math notranslate nohighlight">\(46.7 \)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#li2011" id="id13">[7]</a></p></td>
+<td><p><span id="id15">[<a class="reference internal" href="References.html#id19">9</a>]</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Delta_r G^o_\text{C4}\)</span></p></td>
 <td><p>kJ mol<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Gibbs energy of reaction for complex IV</p></td>
 <td><p><span class="math notranslate nohighlight">\( -202.2 \)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#li2011" id="id14">[7]</a></p></td>
+<td><p><span id="id16">[<a class="reference internal" href="References.html#id19">9</a>]</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\([\text{NAD}]_{tot}\)</span></p></td>
 <td><p>mmol (L matrix water)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Total NAD pool in the matrix</p></td>
 <td><p><span class="math notranslate nohighlight">\(2.97\)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#wu2007" id="id15">[4]</a></p></td>
+<td><p><span id="id17">[<a class="reference internal" href="References.html#id24">21</a>]</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\([\text{Q}]_{tot}\)</span></p></td>
 <td><p>mmol (L matrix water)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Total Q pool in the matrix</p></td>
 <td><p><span class="math notranslate nohighlight">\(1.35\)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#wu2007" id="id16">[4]</a></p></td>
+<td><p><span id="id18">[<a class="reference internal" href="References.html#id24">21</a>]</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\([\text{c}]_{tot}\)</span></p></td>
 <td><p>mmol (L IM water)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Total cytochrome c pool in the IMS</p></td>
 <td><p><span class="math notranslate nohighlight">\(2.70\)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#wu2007" id="id17">[4]</a></p></td>
+<td><p><span id="id19">[<a class="reference internal" href="References.html#id24">21</a>]</span></p></td>
 </tr>
 </tbody>
 </table>
@@ -1093,10 +1123,10 @@
 <h2>Simulating ATP synthesis in vitro<a class="headerlink" href="#simulating-atp-synthesis-in-vitro" title="Permalink to this headline">¶</a></h2>
 <p>The flux expressions developed above may be used to simulate mitochondrial ATP synthesis in vitro, governed by the system of equations</p>
 <div class="math notranslate nohighlight" id="equation-system-singlemito">
-<span class="eqno">(23)<a class="headerlink" href="#equation-system-singlemito" title="Permalink to this equation">¶</a></span>\[\begin{split}    	\left\{ 
+<span class="eqno">(30)<a class="headerlink" href="#equation-system-singlemito" title="Permalink to this equation">¶</a></span>\[\begin{split}    	\left\{ 
 		\renewcommand{\arraystretch}{2.5} 
 		\begin{array}{rl}
-		    \dfrac{ {\rm d} \Delta \Psi }{{\rm d} t} &amp; =( n_\text{C1} J_\text{C1} + n_\text{C3} J_\text{C3} + n_\text{C4} J_\text{C4} - n_\text{F} J_\text{F} - J_\text{ANT} - J_\text{H}) / C_m &amp; \\ 
+		    \dfrac{ {\rm d} \Delta \Psi }{{\rm d} t} &amp; = ( n_\text{C1} J_\text{C1} + n_\text{C3} J_\text{C3} + n_\text{C4} J_\text{C4} - n_\text{F} J_\text{F} - J_\text{ANT} - J_\text{H}) / C_m \\ 
 		    \hline 
 			\dfrac{ {\rm d} [\Sigma \text{ATP}]_x }{{\rm d} t} &amp;= (J_\text{F} - J_\text{ANT} ) / W_x  \\
 			\dfrac{ {\rm d} [\Sigma \text{ADP}]_x }{{\rm d} t} &amp;= (-J_\text{F} + J_\text{ANT}) / W_x \\ 
@@ -1107,25 +1137,27 @@
 			\dfrac{ {\rm d} [\text{c}_{red}^{2+}]_i}{{\rm d} t} &amp;= 2(J_\text{C3} - J_\text{C4}) / W_i \quad \text{intermembrane space species}\\
 			\hline 
 			\dfrac{ {\rm d} [\Sigma \text{ATP}]_c }{{\rm d} t} &amp;= (V_{m2c} J_\text{ANT} - J_\text{AtC} )/ W_c \\
-			\dfrac{ {\rm d} [\Sigma \text{ADP}]_c }{{\rm d} t} &amp;= (-V_{m2c} J_\text{ANT} + J_\text{AtC} ) / W_c \quad \text{cytoplasm species}\\
+			\dfrac{ {\rm d} [\Sigma \text{ADP}]_c }{{\rm d} t} &amp;= (-V_{m2c} J_\text{ANT} + J_\text{AtC} ) / W_c \quad \text{cytosol species}\\
 			\dfrac{ {\rm d} [\Sigma \text{Pi}]_c }{{\rm d} t} &amp;= (- V_{m2c} J_\text{PiC} + J_\text{AtC}) / W_c,  
 		\end{array}
 		\renewcommand{\arraystretch}{1} 
 	\right.\end{split}\]</div>
-<p>Here, we incorporate a constant ATP consumption flux, <span class="math notranslate nohighlight">\(J_\text{AtC} \ \text{(mol s}^{-1} \text{ (L cyto)}^{-1})\)</span>, that is</p>
+<p>where the fluxes <span class="math notranslate nohighlight">\(J_\text{F}\)</span> (Equation <a class="reference internal" href="Principles.html#equation-j-f">(12)</a>), <span class="math notranslate nohighlight">\(J_\text{ANT}\)</span> (Equation <a class="reference internal" href="#equation-j-ant">(14)</a>), <span class="math notranslate nohighlight">\(J_\text{PiC}\)</span> (Equation <a class="reference internal" href="#equation-j-pic">(17)</a>), <span class="math notranslate nohighlight">\(J_\text{C1}\)</span> (Equation <a class="reference internal" href="#equation-j-c1">(21)</a>), <span class="math notranslate nohighlight">\(J_\text{C3}\)</span> (Equation <a class="reference internal" href="#equation-j-c3">(24)</a>), <span class="math notranslate nohighlight">\(J_\text{C4}\)</span> (Equation <a class="reference internal" href="#equation-j-c4">(27)</a>), <span class="math notranslate nohighlight">\(J_\text{DH}\)</span> (Equation <a class="reference internal" href="#equation-j-dh">(28)</a>), and <span class="math notranslate nohighlight">\(J_\text{H}\)</span> (Equation <a class="reference internal" href="#equation-j-h">(29)</a>) are given above and the constants are listed in Tables <a class="reference internal" href="Principles.html#table-biophysicalconstants"><span class="std std-numref">Table 2</span></a> and <a class="reference internal" href="#table-etc"><span class="std std-numref">Table 4</span></a>. Here, we incorporate a constant ATP consumption flux, <span class="math notranslate nohighlight">\(J_\text{AtC} \ \text{(mol s}^{-1} \text{ (L cyto)}^{-1})\)</span>, that is</p>
 <div class="math notranslate nohighlight">
 \[    J_\text{AtC} = X_\text{AtC}/V_c\]</div>
-<p>where <span class="math notranslate nohighlight">\(V_c\)</span> is the ratio of the volume of cytosol per L cell. <span class="math notranslate nohighlight">\(X_\text{AtC}\)</span> is the ATP consumption rate expressed in units of mmol s<span class="math notranslate nohighlight">\(^{-1}\)</span> (L cell)<span class="math notranslate nohighlight">\(^{-1}\)</span>. Equation <a class="reference internal" href="#equation-system-singlemito">(23)</a> does not explicitly treat matrix or external <span class="math notranslate nohighlight">\(\text{pH}\)</span>, <span class="math notranslate nohighlight">\(\text{K}^+\)</span>, <span class="math notranslate nohighlight">\(\text{Mg}^{2+}\)</span>, or <span class="math notranslate nohighlight">\(\text{O}_2\)</span> as variables. Reasonable clamped concentrations for these variables are <span class="math notranslate nohighlight">\({\rm pH}_x = 7.4\)</span>, <span class="math notranslate nohighlight">\({\rm pH}_c = 7.2\)</span>, <span class="math notranslate nohighlight">\([\text{Mg}^{2+}]_x = 1 \ \text{mmol (L matrix water)}^{-1}\)</span>, <span class="math notranslate nohighlight">\([\text{Mg}^{2+}]_c = 1 \ \text{mmol (L cyto water)}^{-1}\)</span>, <span class="math notranslate nohighlight">\([\text{K}^{+}]_x = 100 \ \text{mmol (L matrix water)}^{-1}\)</span>, and <span class="math notranslate nohighlight">\([K^{+}]_c = 140 \ \text{mmol (L cyto water)}^{-1}\)</span>, and <span class="math notranslate nohighlight">\(\text{O}_2\)</span> partial pressure of <span class="math notranslate nohighlight">\(25 \ \text{mmHg}\)</span>. Respiratory reactants are determined from a total concentration of metabolites within the mitochondrion, that is, the total pools for NAD, cytochrome c, and Q species are</p>
+<p>where <span class="math notranslate nohighlight">\(V_c\)</span> is the ratio of the volume of cytosol per L cell. <span class="math notranslate nohighlight">\(X_\text{AtC}\)</span> is the ATP consumption rate expressed in units of mmol s<span class="math notranslate nohighlight">\(^{-1}\)</span> (L cell)<span class="math notranslate nohighlight">\(^{-1}\)</span>. Equation <a class="reference internal" href="#equation-system-singlemito">(30)</a> does not explicitly treat matrix or external <span class="math notranslate nohighlight">\(\text{pH}\)</span>, <span class="math notranslate nohighlight">\(\text{K}^+\)</span>, <span class="math notranslate nohighlight">\(\text{Mg}^{2+}\)</span>, or <span class="math notranslate nohighlight">\(\text{O}_2\)</span> as variables. Reasonable clamped concentrations for these variables are <span class="math notranslate nohighlight">\({\rm pH}_x = 7.4\)</span>, <span class="math notranslate nohighlight">\({\rm pH}_c = 7.2\)</span>, <span class="math notranslate nohighlight">\([\text{Mg}^{2+}]_x = 1 \ \text{mmol (L matrix water)}^{-1}\)</span>, <span class="math notranslate nohighlight">\([\text{Mg}^{2+}]_c = 1 \ \text{mmol (L cyto water)}^{-1}\)</span>, <span class="math notranslate nohighlight">\([\text{K}^{+}]_x = 100 \ \text{mmol (L matrix water)}^{-1}\)</span>, and <span class="math notranslate nohighlight">\([K^{+}]_c = 140 \ \text{mmol (L cyto water)}^{-1}\)</span>, and <span class="math notranslate nohighlight">\(\text{O}_2\)</span> partial pressure of <span class="math notranslate nohighlight">\(25 \ \text{mmHg}\)</span>. Respiratory chain reactants are determined from a total concentration of metabolites within the mitochondrion, that is, the total pools for NAD, cytochrome c, and Q species are</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}    [\text{NAD}]_{tot} &amp;= [\text{NAD}^-]_x + [\text{NADH}^{2-}]_x \\
     [\text{c}]_{tot} &amp;= [\text{c}^{2+}_{red}]_i + [\text{c}^{3+}_{ox}]_i, \quad \text{and}  \\
     [\text{Q}]_{tot} &amp;= [\text{Q}]_x + [\text{QH}_2]_x. \end{split}\]</div>
-<p>The pools are <span class="math notranslate nohighlight">\([\text{NAD}]_{tot} = 2.97 \ \text{mmol (L matrix water)}^{-1}\)</span>, <span class="math notranslate nohighlight">\([\text{c}]_{tot} = 2.7 \ \text{mmol (L IMS water)}^{-1}\)</span>, and <span class="math notranslate nohighlight">\([\text{Q}]_{tot} = 1.35 \ \text{mmol (L matrix water)}^{-1}\)</span>. Initial conditions are set under the assumption that the TAN for both the matrix and cytosol is <span class="math notranslate nohighlight">\(10 \ \text{mM}\)</span>, but the ATP/ADP ratio is <span class="math notranslate nohighlight">\(&lt;\)</span><span class="math notranslate nohighlight">\(1\)</span> in the matrix and <span class="math notranslate nohighlight">\(\sim\)</span><span class="math notranslate nohighlight">\(100\)</span> in the cytosol. The following code simulates in vitro mitochondrial function without ATP consumption in the external (cytosolic space).</p>
+<p>The pools are <span class="math notranslate nohighlight">\([\text{NAD}]_{tot} = 2.97 \ \text{mmol (L matrix water)}^{-1}\)</span>, <span class="math notranslate nohighlight">\([\text{c}]_{tot} = 2.7 \ \text{mmol (L IMS water)}^{-1}\)</span>, and <span class="math notranslate nohighlight">\([\text{Q}]_{tot} = 1.35\)</span> <span class="math notranslate nohighlight">\(\text{mmol}~\text{(L matrix water)}^{-1}\)</span>. The finite nature of these metabolite pools constrains the maximal concentrations of substrates available for complexes I, III, and IV. Thus, although the simple mass-action models for these complexes do not account for saturable enzyme kinetics, the fluxes are limited by the availability of substrates. Initial conditions are set under the assumption that the TAN for both the matrix and cytosol is <span class="math notranslate nohighlight">\(10 \ \text{mM}\)</span>, but the ATP/ADP ratio is <span class="math notranslate nohighlight">\(&lt;\)</span><span class="math notranslate nohighlight">\(1\)</span> in the matrix and <span class="math notranslate nohighlight">\(\sim\)</span><span class="math notranslate nohighlight">\(100\)</span> in the cytosol. The following code simulates in vitro mitochondrial function without ATP consumption in the external (cytosolic space).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">!</span>pip install scipy
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 
 <span class="c1">###### Constants defining metabolite pools ######</span>
 <span class="c1"># Volume fractions and water space fractions</span>
@@ -1142,7 +1174,7 @@
 <span class="n">Q_tot</span>   <span class="o">=</span> <span class="mf">1.35e-3</span>  <span class="c1"># Q and QH2 conc                # mol (L matrix water)**(-1)</span>
 <span class="n">c_tot</span>   <span class="o">=</span> <span class="mf">2.7e-3</span>   <span class="c1"># cytochrome c ox and red conc  # mol (L IM water)**(-1)</span>
 
-<span class="c1"># Membrane capacitance</span>
+<span class="c1"># Membrane capacitance ()</span>
 <span class="n">Cm</span> <span class="o">=</span> <span class="mf">3.1e-3</span>
 
 <span class="c1">###### Set fixed pH, cation concentrations, and O2 partial pressure ######</span>
@@ -1231,9 +1263,9 @@
     <span class="n">K_KPi</span>   <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.42</span><span class="p">)</span>
 
     <span class="c1"># Other concentrations computed from the state variables:</span>
-    <span class="n">NAD_x</span> <span class="o">=</span> <span class="n">NAD_tot</span> <span class="o">-</span> <span class="n">NADH_x</span>  <span class="c1">## mol (L matrix water)**(-1)</span>
-    <span class="n">Q_x</span>   <span class="o">=</span> <span class="n">Q_tot</span> <span class="o">-</span> <span class="n">QH2_x</span>     <span class="c1">## mol (L matrix water)**(-1)</span>
-    <span class="n">cox_i</span> <span class="o">=</span> <span class="n">c_tot</span> <span class="o">-</span> <span class="n">cred_i</span>    <span class="c1">## mol (L matrix water)**(-1)</span>
+    <span class="n">NAD_x</span> <span class="o">=</span> <span class="n">NAD_tot</span> <span class="o">-</span> <span class="n">NADH_x</span>  <span class="c1"># mol (L matrix water)**(-1)</span>
+    <span class="n">Q_x</span>   <span class="o">=</span> <span class="n">Q_tot</span> <span class="o">-</span> <span class="n">QH2_x</span>     <span class="c1"># mol (L matrix water)**(-1)</span>
+    <span class="n">cox_i</span> <span class="o">=</span> <span class="n">c_tot</span> <span class="o">-</span> <span class="n">cred_i</span>    <span class="c1"># mol (L matrix water)**(-1)</span>
 
     <span class="c1">## Binding polynomials</span>
     <span class="c1"># Matrix species # mol (L mito water)**(-1)</span>
@@ -1369,7 +1401,6 @@
     <span class="n">J_PiC</span> <span class="o">=</span> <span class="n">E_PiC</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_c</span> <span class="o">*</span> <span class="n">HPi_c</span> <span class="o">-</span> <span class="n">H_x</span> <span class="o">*</span> <span class="n">HPi_x</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_PiC</span> <span class="o">+</span> <span class="n">HPi_c</span><span class="p">)</span>
 
     <span class="c1">###### H+ leak ######</span>
-    
     <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
     <span class="n">J_H</span> <span class="o">=</span> <span class="n">X_H</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_c</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">phi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">H_x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">phi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
     
@@ -1400,7 +1431,7 @@
 
     <span class="n">dX</span> <span class="o">=</span> <span class="p">[</span><span class="n">dDPsi</span><span class="p">,</span> <span class="n">dATP_x</span><span class="p">,</span> <span class="n">dADP_x</span><span class="p">,</span> <span class="n">dPi_x</span><span class="p">,</span> <span class="n">dNADH_x</span><span class="p">,</span> <span class="n">dQH2_x</span><span class="p">,</span> <span class="n">dcred_i</span><span class="p">,</span> <span class="n">dATP_c</span><span class="p">,</span> <span class="n">dADP_c</span><span class="p">,</span> <span class="n">dPi_c</span><span class="p">]</span>
     
-    <span class="c1"># Need to be able to calculate fluxes after the fact </span>
+    <span class="c1"># Calculate state-dependent quantities after model is solved</span>
     <span class="k">if</span> <span class="n">solve_ode</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">dX</span>
     <span class="k">else</span><span class="p">:</span>
@@ -1421,25 +1452,33 @@
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumADP_x</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$ADP]$_x$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumPi_x</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$Pi]$_x$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span> 
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Concentration (mM)&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span><span class="mf">10.5</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span><span class="mf">10.5</span><span class="p">))</span>
+
 
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumATP_c</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$ATP]$_c$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumADP_c</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$ADP]$_c$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">sumPi_c</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;[$\Sigma$Pi]$_c$&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;right&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Time (s)&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Concentration (mM)&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-.</span><span class="mi">5</span><span class="p">,</span><span class="mf">10.5</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mf">.5</span><span class="p">,</span><span class="mf">10.5</span><span class="p">))</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/BuildingModel_21_0.png" src="_images/BuildingModel_21_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /usr/local/lib/python3.9/site-packages (1.6.3)
+Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /usr/local/lib/python3.9/site-packages (from scipy) (1.20.3)
+</pre></div>
+</div>
+<img alt="_images/BuildingModel_25_1.png" src="_images/BuildingModel_25_1.png" />
 </div>
 </div>
-<p>The above simulations reach a final steady state where the phophate metabolite concentrations are <span class="math notranslate nohighlight">\([\text{ATP}]_x = 0.9 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{ADP}]_x = 9.1 \ \text{mM} \)</span>, <span class="math notranslate nohighlight">\([\text{Pi}]_x = 0.4 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{ATP}]_c = 9.9 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{ADP}]_c = 0.1 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{Pi}]_c = 0.2 \ \text{mM}\)</span>, and the membrane potential is <span class="math notranslate nohighlight">\(186 \ \text{mV}\)</span>. This state represents a <em>resting</em> energetic state with no ATP hydrolyis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is <span class="math notranslate nohighlight">\(\Delta G_{\rm ATP} = \text{-}70 \ \text{kJ mol}^{-1}\)</span>, as calculated below.</p>
+<p><strong>Figure 7:</strong> Steady state solution from Equation <a class="reference internal" href="#equation-system-singlemito">(30)</a> for the (a) matrix and (b) cytosol species with <span class="math notranslate nohighlight">\(\text{pH}_x = 7.4\)</span> and <span class="math notranslate nohighlight">\(\text{pH}_c = 2\)</span>.</p>
+<p>The above simulations reach a final steady state where the phosphate metabolite concentrations are <span class="math notranslate nohighlight">\([\text{ATP}]_x = 0.9 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{ADP}]_x = 9.1 \ \text{mM} \)</span>, <span class="math notranslate nohighlight">\([\text{Pi}]_x = 0.4 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{ATP}]_c = 9.9 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{ADP}]_c = 0.1 \ \text{mM}\)</span>, <span class="math notranslate nohighlight">\([\text{Pi}]_c = 0.2 \ \text{mM}\)</span>, and the membrane potential is <span class="math notranslate nohighlight">\(186 \ \text{mV}\)</span>. This state represents a <em>resting</em> energetic state with no ATP hydrolysis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is <span class="math notranslate nohighlight">\(\Delta G_{\rm ATP} = \text{-}70 \ \text{kJ mol}^{-1}\)</span>, as calculated below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sumATP_c_ss</span> <span class="o">=</span> <span class="n">sumATP_c</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
@@ -1469,10 +1508,12 @@
 <span class="n">PPi_c</span>  <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_c</span><span class="o">/</span><span class="n">K_HPi</span>  <span class="o">+</span> <span class="n">Mg_c</span><span class="o">/</span><span class="n">K_MgPi</span>  <span class="o">+</span> <span class="n">K_c</span><span class="o">/</span><span class="n">K_KPi</span>
 
 <span class="n">DrGo_ATP</span> <span class="o">=</span> <span class="mi">4990</span>
-<span class="n">DrG_ATP_apparent</span> <span class="o">=</span> <span class="n">DrGo_ATP</span> <span class="o">+</span> <span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">H_c</span> <span class="o">*</span> <span class="n">PATP_c</span> <span class="o">/</span> <span class="p">(</span><span class="n">PADP_c</span> <span class="o">*</span> <span class="n">PPi_c</span><span class="p">))</span>
+
+<span class="c1"># Use equation 9 to calcuate apparent reference cytosolic Gibbs energy </span>
+<span class="n">DrGo_ATP_apparent</span> <span class="o">=</span> <span class="n">DrGo_ATP</span> <span class="o">+</span> <span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">H_c</span> <span class="o">*</span> <span class="n">PATP_c</span> <span class="o">/</span> <span class="p">(</span><span class="n">PADP_c</span> <span class="o">*</span> <span class="n">PPi_c</span><span class="p">))</span>
 
 <span class="c1"># Use equation 9 to calculate cytosolic Gibbs energy </span>
-<span class="n">DrG_ATP</span> <span class="o">=</span> <span class="n">DrG_ATP_apparent</span> <span class="o">+</span> <span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="n">sumADP_c_ss</span> <span class="o">*</span> <span class="n">sumPi_c_ss</span> <span class="o">/</span> <span class="n">sumATP_c_ss</span><span class="p">))</span>
+<span class="n">DrG_ATP</span> <span class="o">=</span> <span class="n">DrGo_ATP_apparent</span> <span class="o">+</span> <span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">((</span><span class="n">sumADP_c_ss</span> <span class="o">*</span> <span class="n">sumPi_c_ss</span> <span class="o">/</span> <span class="n">sumATP_c_ss</span><span class="p">))</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Cytosolic Gibbs energy of ATP hydrolysis (kJ mol^(-1))&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">DrG_ATP</span> <span class="o">/</span> <span class="mi">1000</span><span class="p">)</span>
@@ -1481,7 +1522,7 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cytosolic Gibbs energy of ATP hydrolysis (kJ mol^(-1))
--70.22745953514723
+-70.22745953640147
 </pre></div>
 </div>
 </div>
@@ -1511,15 +1552,15 @@
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="Principles.html" title="previous page">Basic chemical, electrical, and thermodynamic principles</a>
     <a class='right-next' id="next-link" href="InVitroModel.html" title="next page">Simulation of respiratory control in vitro</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -1536,8 +1577,9 @@
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    <script src="_static/js/index.js"></script>
-    
+  
   </body>
 </html>

@@ -1,33 +1,47 @@
 
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Simulation of respiratory control in vitro &#8212; Quantitative analysis of mitochondrial ATP synthesis</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
-    <link rel="stylesheet" type="text/css" href="_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
@@ -35,18 +49,20 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Simulation of cardiac energetics in vivo" href="InVivoModel.html" />
     <link rel="prev" title="Building a model of oxidative ATP synthesis from energetic components" href="BuildingModel.html" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
-
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -55,30 +71,27 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/mito.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Quantitative analysis of mitochondrial ATP synthesis</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/mito.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Quantitative analysis of mitochondrial ATP synthesis</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Abstract.html">
    Title Page
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Abbreviations.html">
    Abbreviations
@@ -121,9 +134,8 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -138,25 +150,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -168,41 +180,60 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
+
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
+
             href="https://beards-lab.github.io/QAMAS_book/"><button type="button" class="btn btn-secondary topbarbtn"
+
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/beards-lab/QAMAS_book/issues/new?title=Issue%20on%20page%20%2FInVitroModel.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/beards-lab/QAMAS_book/master?urlpath=tree/QAMAS/InVitroModel.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
         
         
     </div>
 </div>
 
-
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
-
-        <!-- Launch buttons -->
-
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
             
-        </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -213,7 +244,7 @@
   <div class="section" id="simulation-of-respiratory-control-in-vitro">
 <h1>Simulation of respiratory control in vitro<a class="headerlink" href="#simulation-of-respiratory-control-in-vitro" title="Permalink to this headline">¶</a></h1>
 <p>The integrated model developed in the previous section can be adapted to simulate in vitro experiments performed using suspensions of mitochondria purified from primary tissues. To simulate in vitro experiments, the major change that we make to the model is to replace the cytosolic components of the model with variables and associated volumes of distribution representing experimental buffers used in specific experiments. Here, we set <span class="math notranslate nohighlight">\(V_c = 1\)</span>, <span class="math notranslate nohighlight">\(V_m = 5\text{e-}4\)</span>, and <span class="math notranslate nohighlight">\(W_c = 1\)</span> to represent mitochondria suspended in a buffer solution, i.e., in this virtual experiment, the mitochondria take up <span class="math notranslate nohighlight">\(0.05\%\)</span> of the volume of the experimental media.</p>
-<p>The following code simulates an experiment in which the non-energized mitochondrial state (state 1), is followed by a leak state (state 2), followed by oxidative phosphorylation state (state 3), followed by another leak state (state 4) <a class="bibtex reference internal" href="References.html#gnaiger2020" id="id1">[10]</a>. The virtual experiment represents a real experiment in which a purified suspension of mitochondria is introduced to a buffer containing no fuel substrates at time <span class="math notranslate nohighlight">\(t=0\)</span>. This non-energized state is simulated by setting the dehydrogenase activity in the model to <span class="math notranslate nohighlight">\(X_{\rm DH} = 0\)</span> for <span class="math notranslate nohighlight">\(0 \leq t &lt; 25 \ \text{s}\)</span>. State 2 is achieved by setting <span class="math notranslate nohighlight">\(X_{\rm DH}\)</span> to <span class="math notranslate nohighlight">\(0.1732\)</span> for <span class="math notranslate nohighlight">\(25 \leq t &lt; 75 \ \text{s}\)</span> to represent the addision of substrates (such as pyruvate and malate) to fuel NADH production. At time <span class="math notranslate nohighlight">\(t = 75 \ \text{s}\)</span>, <span class="math notranslate nohighlight">\(0.375 \ \mu\text{M}\)</span> of ADP is introduced into the respiration buffer to initiate the active oxidative phosphorylation state, or state 3. State 4 occurs when the ADP is nearly fully phosphorylated at approximately <span class="math notranslate nohighlight">\(t = 170 \ \text{s}\)</span>, and the system returns to a leak state. Note that this experiment is conducted under high external inorganic phosphate conditions (i.e., <span class="math notranslate nohighlight">\([\text{Pi}]_c = 5 \ \text{mM}\)</span>).</p>
+<p>The following code simulates an experiment in which the non-energized mitochondrial state (state 1), is followed by a leak state (state 2), followed by oxidative phosphorylation state (state 3), followed by another leak state (state 4) <span id="id1">[<a class="reference internal" href="References.html#id18">6</a>]</span>. The virtual experiment represents a real experiment in which a purified suspension of mitochondria is introduced to a buffer containing no fuel substrates at time <span class="math notranslate nohighlight">\(t=0\)</span>. This non-energized state is simulated by setting the dehydrogenase activity in the model to <span class="math notranslate nohighlight">\(X_{\rm DH} = 0\)</span> for <span class="math notranslate nohighlight">\(0 \leq t &lt; 25 \ \text{s}\)</span>. State 2 is achieved by setting <span class="math notranslate nohighlight">\(X_{\rm DH}\)</span> to <span class="math notranslate nohighlight">\(0.1732\)</span> for <span class="math notranslate nohighlight">\(25 \leq t &lt; 75 \ \text{s}\)</span> to represent the addition of substrates (such as pyruvate and malate) to fuel NADH production. At time <span class="math notranslate nohighlight">\(t = 75 \ \text{s}\)</span>, <span class="math notranslate nohighlight">\(0.375 \ \mu\text{M}\)</span> of ADP is introduced into the respiration buffer to initiate the active oxidative phosphorylation state, or state 3. State 4 occurs when the ADP is nearly fully phosphorylated at approximately <span class="math notranslate nohighlight">\(t = 170 \ \text{s}\)</span>, and the system returns to a leak state. Note that this experiment is conducted under high external inorganic phosphate conditions (i.e.,   initial   <span class="math notranslate nohighlight">\([\text{Pi}]_c = 5 \ \text{mM}\)</span>).</p>
 <table class="table" id="table-invitro">
 <caption><span class="caption-number">Table 5 </span><span class="caption-text">Isolated mitochondria in silico experiment.</span><a class="headerlink" href="#table-invitro" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -251,7 +282,7 @@
 <td><p><span class="math notranslate nohighlight">\(+375\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>M</p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\([\text{Pi}]_c\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(5\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5\)</span> mM</p></td>
 <td><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
 </tr>
@@ -260,8 +291,10 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">!</span>pip install scipy
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 
 <span class="c1">###### Constants defining metabolite pools ######</span>
 <span class="c1"># Volume fractions and water space fractions</span>
@@ -395,7 +428,6 @@
     
     
     <span class="c1">###### NADH Dehydrogenase ######</span>
-
     <span class="c1"># Constants</span>
     <span class="n">r</span>      <span class="o">=</span> <span class="mf">6.8385</span>
     <span class="n">k_Pi1</span>  <span class="o">=</span> <span class="mf">4.659e-4</span>    <span class="c1"># mol (L matrix water)**(-1)</span>
@@ -537,7 +569,7 @@
 
     <span class="n">dX</span> <span class="o">=</span> <span class="p">[</span><span class="n">dDPsi</span><span class="p">,</span> <span class="n">dATP_x</span><span class="p">,</span> <span class="n">dADP_x</span><span class="p">,</span> <span class="n">dPi_x</span><span class="p">,</span> <span class="n">dNADH_x</span><span class="p">,</span> <span class="n">dQH2_x</span><span class="p">,</span> <span class="n">dcred_i</span><span class="p">,</span> <span class="n">dATP_c</span><span class="p">,</span> <span class="n">dADP_c</span><span class="p">,</span> <span class="n">dPi_c</span><span class="p">]</span>
     
-    <span class="c1"># Need to be able to calculate fluxes after the fact </span>
+    <span class="c1"># Calculate state-dependent quantities after model is solved. </span>
     <span class="k">if</span> <span class="n">solve_ode</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">dX</span>
     <span class="k">else</span><span class="p">:</span>
@@ -564,7 +596,7 @@
 <span class="n">state_3_results</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">dXdt</span><span class="p">,</span> <span class="p">[</span><span class="mi">75</span><span class="p">,</span><span class="mi">200</span><span class="p">],</span> <span class="n">state_2_results</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;Radau&#39;</span><span class="p">,</span> <span class="n">t_eval</span> <span class="o">=</span> <span class="n">t_3</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">activity_array</span><span class="p">,</span><span class="mi">1</span><span class="p">,))</span>
 
 <span class="c1"># Concatenate Results</span>
-<span class="c1"># Note: need to prevent duplicating points</span>
+<span class="c1"># Note: remove redundant time points </span>
 <span class="n">all_results</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">state_1_results</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">state_2_results</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">state_3_results</span><span class="o">.</span><span class="n">y</span><span class="p">))</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">state_1_results</span><span class="o">.</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">state_2_results</span><span class="o">.</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">state_3_results</span><span class="o">.</span><span class="n">t</span><span class="p">))</span>
 
@@ -577,8 +609,14 @@
     <span class="n">dX</span><span class="p">,</span> <span class="n">J</span> <span class="o">=</span> <span class="n">dXdt</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">all_results</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span> <span class="n">activity_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
     <span class="n">J_C4</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span>
 
-<span class="c1"># Convert complex IV flux to oxygen flux in nmol O2 / U Citrate Synthase</span>
+<span class="c1"># Convert complex IV flux to oxygen flux in nmol O2 / U citrate synthase</span>
 <span class="n">JO2</span> <span class="o">=</span> <span class="n">J_C4</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mf">1e9</span> <span class="o">*</span> <span class="mf">0.0000012232</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /usr/local/lib/python3.9/site-packages (1.6.3)
+Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /usr/local/lib/python3.9/site-packages (from scipy) (1.20.3)
 </pre></div>
 </div>
 </div>
@@ -611,9 +649,9 @@
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">205</span><span class="p">])</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="s1">&#39;State 1&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="o">.</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;State 2&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">112.5</span><span class="p">,</span> <span class="o">.</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;State 3&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">175</span><span class="p">,</span> <span class="o">.</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;State 4&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mf">.9</span><span class="p">,</span> <span class="s1">&#39;State 2&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">112.5</span><span class="p">,</span> <span class="mf">.9</span><span class="p">,</span> <span class="s1">&#39;State 3&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">175</span><span class="p">,</span> <span class="mf">.9</span><span class="p">,</span> <span class="s1">&#39;State 4&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Times (s)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;[NADH]$_x$ (mM)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
 
@@ -639,13 +677,19 @@
 <img alt="_images/InVitroModel_3_0.png" src="_images/InVitroModel_3_0.png" />
 </div>
 </div>
-<p>During the leak states, NADH and <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> are maintained at a maximal values while the OCR represents the oxidative flux necessary to balance proton leak across the IMM. During state 3 (oxidative phosphorylation), the OCR markedly increases while the magnitudes of NADH and <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> are temporarily decreased. This simple model overestimates the degree to which the NADH becomes depleted during state 3.</p>
-<p>Predictions of the in vitro model may also be compared to quasi-steady state data on OCRs, phosphate metabolite levels, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, NADH, and cytochrome c redox state, analyzed by Bazil et al. <a class="bibtex reference internal" href="References.html#bazil2016" id="id2">[15]</a>. In their experiments, several steady state ATP demand levels were achieved by titrating ATP hydrolyzing enzymes into the respiration buffer. We simulate this experiment with our model by varying the rate of the external ATP consuming process, <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span>. We vary <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span> by adusting the ATP consumption rate <span class="math notranslate nohighlight">\(X_\text{AtC}\)</span> from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(60 \ \text{mol s}^{-1} \ \text{(L cell)}^{-1}\)</span>. Experiments were conducted under conditions of two different approximately constant external phosphate concentrations (1 and 5 mM) and with external <span class="math notranslate nohighlight">\(\text{TAN} = 5 \ \text{mM}\)</span>. The following code computes the steady state of the in vitro model at different levels of <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span> and compares the measured data on OCR, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, NADH, cytochrome c redox state, and buffer ADP concentration to data.</p>
+<p><strong>Figure 8:</strong> Simulation of respiratory control for (a) the oxygen consumption rate (OCR), (b) matrix NADH concentration (<span class="math notranslate nohighlight">\([\text{NADH}]_x\)</span>), and (c) membrane potential (<span class="math notranslate nohighlight">\(\Delta \Psi\)</span>) using the conditions listed in Table <a class="reference internal" href="#table-invitro"><span class="std std-numref">Table 5</span></a>.</p>
+<p>The first panel in the above figures shows oxygen consumption rate (OCR), which represents the oxidative flux necessary to balance proton leak across the IMM. In this study, we quantify OCR in units <span class="math notranslate nohighlight">\(\text{nmol O}_2 \text{ min}^{-1} \text{ U CS}^{-1}\)</span> proportional to the flux of complex IV, that is,</p>
+<div class="math notranslate nohighlight">
+\[    J_\text{O2} = \Bigg( J_\text{C4} \ \dfrac{\text{mol}}{\text{s (L mito)}} \Bigg) \Bigg(60 \ \dfrac{\text{s}}{\text{min}} \Bigg)\Bigg(1\text{e}9 \ \dfrac{\text{nmol}}{\text{mol}}\Bigg)\Bigg(1.22\text{e-6} \ \dfrac{\text{L mito}}{\text{U CS}}\Bigg). \]</div>
+<p>The factor <span class="math notranslate nohighlight">\(1.22\text{e-}6 \text{ (L mito) (U CS)}^{-1}\)</span> corresponds to roughly <span class="math notranslate nohighlight">\(740 \text{ (U CS) (mL mito)}^{-1}\)</span>, reported by Vinnakota et al. <span id="id2">[<a class="reference internal" href="References.html#id3">16</a>]</span>. Note that this approximation for <span class="math notranslate nohighlight">\(J_\text{O2}\)</span> is valid for constant partial pressure of <span class="math notranslate nohighlight">\(\text{O}_2\)</span>, and hence, we do not model hypoxic or hyperoxic conditions. During the leak states, NADH and <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> are maintained at a maximal values. During state 3 (oxidative phosphorylation), the OCR markedly increases while the magnitudes of NADH and <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> are temporarily decreased. This simple model overestimates the degree to which the NADH becomes depleted during state 3.</p>
+<p>Predictions of the in vitro model may also be compared to quasi-steady state data on OCRs, phosphate metabolite levels, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, NADH, and cytochrome c redox state, analyzed by Bazil et al. <span id="id3">[<a class="reference internal" href="References.html#id11">1</a>]</span>. In their experiments, several steady state ATP demand levels were achieved by titrating ATP hydrolyzing enzymes into the respiration buffer. We simulate this experiment with our model by varying the rate of the external ATP consuming process, <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span>. We vary <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span> by adjusting the ATP consumption rate <span class="math notranslate nohighlight">\(X_\text{AtC}\)</span> from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(60 \ \text{mol s}^{-1} \ \text{(L cell)}^{-1}\)</span>. Experiments were conducted under conditions of two different approximately constant external phosphate concentrations (1 and 5 mM) and with external <span class="math notranslate nohighlight">\(\text{TAN} = 5 \ \text{mM}\)</span>. The following code computes the steady state of the in vitro model at different levels of <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span> and compares the measured data on OCR, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, NADH, cytochrome c redox state, and buffer ADP concentration to data.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">!</span>pip install scipy
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 
 <span class="c1">###### Constants defining metabolite pools ######</span>
 <span class="c1"># Volume fractions and water space fractions</span>
@@ -696,32 +740,6 @@
 
 <span class="n">activity_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">X_DH</span><span class="p">,</span> <span class="n">X_C1</span><span class="p">,</span> <span class="n">X_C3</span><span class="p">,</span> <span class="n">X_C4</span><span class="p">,</span> <span class="n">X_F</span><span class="p">,</span> <span class="n">E_ANT</span><span class="p">,</span> <span class="n">E_PiC</span><span class="p">,</span> <span class="n">X_H</span><span class="p">,</span> <span class="n">X_AtC</span><span class="p">])</span>
 
-<span class="c1">###### Initial Conditions ######</span>
-<span class="c1"># Membrane Potential</span>
-<span class="n">Psi_0</span> <span class="o">=</span> <span class="mi">175</span><span class="o">/</span><span class="mi">1000</span>      <span class="c1"># Volts</span>
-
-<span class="c1"># Total Pool Sizes</span>
-<span class="n">NAD_tot</span> <span class="o">=</span> <span class="mf">2.97e-3</span>  <span class="c1"># NAD+ and NADH conc            # mol (L matrix water)^(-1)</span>
-<span class="n">Q_tot</span>   <span class="o">=</span> <span class="mf">1.35e-3</span>  <span class="c1"># Q and QH2 conc                # mol (L matrix water)^(-1)</span>
-<span class="n">c_tot</span>   <span class="o">=</span> <span class="mf">2.7e-3</span>
-
-<span class="c1"># Matrix species</span>
-<span class="n">sumATP_x_0</span> <span class="o">=</span> <span class="mf">0.5e-3</span>  <span class="c1"># mol (L matrix water)**(-1)</span>
-<span class="n">sumADP_x_0</span> <span class="o">=</span> <span class="mf">9.5e-3</span>  <span class="c1"># mol (L matrix water)**(-1)</span>
-<span class="n">sumPi_x_0</span>  <span class="o">=</span> <span class="mf">0.3e-3</span>  <span class="c1"># mol (L matrix water)**(-1)</span>
-<span class="n">NADH_x_0</span>   <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">NAD_tot</span>  <span class="c1"># mol (L matrix water)**(-1)</span>
-<span class="n">QH2_x_0</span>    <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">Q_tot</span>    <span class="c1"># mol (L matrix water)**(-1)</span>
-
-<span class="c1"># IMS species</span>
-<span class="n">cred_i_0</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">c_tot</span> <span class="c1"># mol (L IMS water)**(-1)</span>
-
-<span class="c1"># Cytosoo=lic species</span>
-<span class="n">sumATP_c_0</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1"># mol (L cyto water)^(-1)</span>
-<span class="n">sumADP_c_0</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1"># mol (L cyto water)^(-1)</span>
-<span class="n">sumPi_c_0</span>  <span class="o">=</span> <span class="mf">5.0e-3</span>  <span class="c1"># mol (L cyto water)^(-1)</span>
-
-<span class="n">X_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">Psi_0</span><span class="p">,</span> <span class="n">sumATP_x_0</span><span class="p">,</span> <span class="n">sumADP_x_0</span><span class="p">,</span> <span class="n">sumPi_x_0</span><span class="p">,</span> <span class="n">NADH_x_0</span><span class="p">,</span> <span class="n">QH2_x_0</span><span class="p">,</span> <span class="n">cred_i_0</span><span class="p">,</span> <span class="n">sumATP_c_0</span><span class="p">,</span> <span class="n">sumADP_c_0</span><span class="p">,</span> <span class="n">sumPi_c_0</span><span class="p">])</span>
-
 <span class="k">def</span> <span class="nf">dXdt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">activity_array</span><span class="p">,</span> <span class="n">solve_ode</span><span class="p">):</span>
     <span class="c1"># Unpack variables </span>
     <span class="n">DPsi</span><span class="p">,</span> <span class="n">sumATP_x</span><span class="p">,</span><span class="n">sumADP_x</span><span class="p">,</span> <span class="n">sumPi_x</span><span class="p">,</span> <span class="n">NADH_x</span><span class="p">,</span> <span class="n">QH2_x</span><span class="p">,</span> <span class="n">cred_i</span><span class="p">,</span> <span class="n">sumATP_c</span><span class="p">,</span> <span class="n">sumADP_c</span><span class="p">,</span> <span class="n">sumPi_c</span> <span class="o">=</span> <span class="n">X</span>
@@ -758,9 +776,9 @@
     <span class="n">K_KPi</span>   <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.42</span><span class="p">)</span>
 
     <span class="c1">## Other concentrations computed from the state variables:</span>
-    <span class="n">NAD_x</span> <span class="o">=</span> <span class="n">NAD_tot</span> <span class="o">-</span> <span class="n">NADH_x</span>  <span class="c1">## mol (L matrix water)**(-1)</span>
-    <span class="n">Q_x</span>   <span class="o">=</span> <span class="n">Q_tot</span> <span class="o">-</span> <span class="n">QH2_x</span>     <span class="c1">## mol (L matrix water)**(-1)</span>
-    <span class="n">cox_i</span> <span class="o">=</span> <span class="n">c_tot</span> <span class="o">-</span> <span class="n">cred_i</span>    <span class="c1">## mol (L matrix water)**(-1)</span>
+    <span class="n">NAD_x</span> <span class="o">=</span> <span class="n">NAD_tot</span> <span class="o">-</span> <span class="n">NADH_x</span>  <span class="c1"># mol (L matrix water)**(-1)</span>
+    <span class="n">Q_x</span>   <span class="o">=</span> <span class="n">Q_tot</span> <span class="o">-</span> <span class="n">QH2_x</span>     <span class="c1"># mol (L matrix water)**(-1)</span>
+    <span class="n">cox_i</span> <span class="o">=</span> <span class="n">c_tot</span> <span class="o">-</span> <span class="n">cred_i</span>    <span class="c1"># mol (L matrix water)**(-1)</span>
 
     <span class="c1">## Binding polynomials</span>
     <span class="c1"># Matrix species # mol (L mito water)**(-1)</span>
@@ -786,7 +804,6 @@
     
     
     <span class="c1">###### NADH Dehydrogenase ######</span>
-
     <span class="c1"># Constants</span>
     <span class="n">r</span>      <span class="o">=</span> <span class="mf">6.8385</span>
     <span class="n">k_Pi1</span>  <span class="o">=</span> <span class="mf">4.659e-4</span>    <span class="c1"># mol (L matrix water)**(-1)</span>
@@ -927,6 +944,8 @@
     <span class="n">dPi_c</span>  <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">V_m2c</span> <span class="o">*</span> <span class="n">J_PiC</span> <span class="o">+</span> <span class="n">J_AtC</span><span class="p">)</span> <span class="o">/</span> <span class="n">W_c</span>
 
     <span class="n">dX</span> <span class="o">=</span> <span class="p">[</span><span class="n">dDPsi</span><span class="p">,</span> <span class="n">dATP_x</span><span class="p">,</span> <span class="n">dADP_x</span><span class="p">,</span> <span class="n">dPi_x</span><span class="p">,</span> <span class="n">dNADH_x</span><span class="p">,</span> <span class="n">dQH2_x</span><span class="p">,</span> <span class="n">dcred_i</span><span class="p">,</span> <span class="n">dATP_c</span><span class="p">,</span> <span class="n">dADP_c</span><span class="p">,</span> <span class="n">dPi_c</span><span class="p">]</span>
+    
+    <span class="c1"># Calculate state-dependent quantities after model is solved.</span>
     <span class="k">if</span> <span class="n">solve_ode</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">dX</span>
     <span class="k">else</span><span class="p">:</span>
@@ -956,18 +975,18 @@
 
 <span class="n">X_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">DPsi_0</span><span class="p">,</span> <span class="n">ATP_x_0</span><span class="p">,</span> <span class="n">ADP_x_0</span><span class="p">,</span> <span class="n">Pi_x_0</span><span class="p">,</span> <span class="n">NADH_x_0</span><span class="p">,</span> <span class="n">QH2_x_0</span><span class="p">,</span> <span class="n">cred_i_0</span><span class="p">,</span> <span class="n">ATP_c_0</span><span class="p">,</span> <span class="n">ADP_c_0</span><span class="p">,</span> <span class="n">Pi_c_0</span> <span class="p">])</span>
 
-<span class="c1"># range of ATP consumption rates</span>
-<span class="n">X_AtC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">6e-6</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>   <span class="c1"># Increase max hydrolysis to find apparent Km.</span>
+<span class="c1"># Range of ATP consumption rates</span>
+<span class="n">X_AtC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">6e-6</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>   
 <span class="n">steady_state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">X_AtC</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_0</span><span class="p">)))</span>
 <span class="n">JO2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_AtC</span><span class="p">))</span>
 
-<span class="c1"># looping through different ATP consumptions states</span>
+<span class="c1"># Looping through different ATP consumptions states</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_AtC</span><span class="p">)):</span>
    <span class="n">activity_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">X_DH</span><span class="p">,</span> <span class="n">X_C1</span><span class="p">,</span> <span class="n">X_C3</span><span class="p">,</span> <span class="n">X_C4</span><span class="p">,</span> <span class="n">X_F</span><span class="p">,</span> <span class="n">E_ANT</span><span class="p">,</span> <span class="n">E_PiC</span><span class="p">,</span> <span class="n">X_H</span><span class="p">,</span> <span class="n">X_AtC</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
    <span class="c1"># run for long time to acheive steady-state</span>
    <span class="n">steady_state_temp_results</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">dXdt</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3000</span><span class="p">],</span> <span class="n">X_0</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;Radau&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">activity_array</span><span class="p">,</span><span class="mi">1</span><span class="p">,))</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
    <span class="n">steady_state</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">steady_state_temp_results</span>
-   <span class="n">f</span><span class="p">,</span><span class="n">J</span> <span class="o">=</span> <span class="n">dXdt</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="n">steady_state_temp_results</span><span class="p">,</span> <span class="n">activity_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+   <span class="n">f</span><span class="p">,</span><span class="n">J</span> <span class="o">=</span> <span class="n">dXdt</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span><span class="n">steady_state_temp_results</span><span class="p">,</span> <span class="n">activity_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
    <span class="n">J_C4</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="c1"># oxygen flux in mol O / sec / (L mito)</span>
 
    <span class="c1"># convert to units of nmol / min / UCS</span>
@@ -1005,18 +1024,18 @@
 
 <span class="n">X_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">DPsi_0</span><span class="p">,</span> <span class="n">ATP_x_0</span><span class="p">,</span> <span class="n">ADP_x_0</span><span class="p">,</span> <span class="n">Pi_x_0</span><span class="p">,</span> <span class="n">NADH_x_0</span><span class="p">,</span> <span class="n">QH2_x_0</span><span class="p">,</span> <span class="n">cred_i_0</span><span class="p">,</span> <span class="n">ATP_c_0</span><span class="p">,</span> <span class="n">ADP_c_0</span><span class="p">,</span> <span class="n">Pi_c_0</span> <span class="p">])</span>
 
-<span class="c1"># range of ATP consumption rates</span>
-<span class="n">X_AtC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">6e-6</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>   <span class="c1"># Increase max hydrolysis to find apparent Km.</span>
+<span class="c1"># Range of ATP consumption rates</span>
+<span class="n">X_AtC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">6e-6</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>   
 <span class="n">steady_state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">X_AtC</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_0</span><span class="p">)))</span>
 <span class="n">JO2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_AtC</span><span class="p">))</span>
 
-<span class="c1"># looping through different ATP consumptions states</span>
+<span class="c1"># Looping through different ATP consumptions states</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_AtC</span><span class="p">)):</span>
    <span class="n">activity_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">X_DH</span><span class="p">,</span> <span class="n">X_C1</span><span class="p">,</span> <span class="n">X_C3</span><span class="p">,</span> <span class="n">X_C4</span><span class="p">,</span> <span class="n">X_F</span><span class="p">,</span> <span class="n">E_ANT</span><span class="p">,</span> <span class="n">E_PiC</span><span class="p">,</span> <span class="n">X_H</span><span class="p">,</span> <span class="n">X_AtC</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
    <span class="c1"># run for long time to acheive steady-state</span>
    <span class="n">steady_state_temp_results</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">dXdt</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3000</span><span class="p">],</span> <span class="n">X_0</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;Radau&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">activity_array</span><span class="p">,</span><span class="mi">1</span><span class="p">,))</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
    <span class="n">steady_state</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">steady_state_temp_results</span>
-   <span class="n">f</span><span class="p">,</span><span class="n">J</span> <span class="o">=</span> <span class="n">dXdt</span><span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="n">steady_state_temp_results</span><span class="p">,</span> <span class="n">activity_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+   <span class="n">f</span><span class="p">,</span><span class="n">J</span> <span class="o">=</span> <span class="n">dXdt</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span><span class="n">steady_state_temp_results</span><span class="p">,</span> <span class="n">activity_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
    <span class="n">J_C4</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="c1"># oxygen flux in mol O / sec / (L mito)</span>
 
    <span class="c1"># convert to units of nmol / min / UCS</span>
@@ -1054,7 +1073,7 @@
 <span class="n">data_DPsi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data_DPsi</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_DPsi</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">data_DPsi</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;1 mM Pi Exp&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_DPsi</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">data_DPsi</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;5 mM Pi Exp&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Membrane Potential $\Psi$ (mV)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Membrane Potential $\Delta\Psi$ (mV)&#39;</span><span class="p">)</span>
 
 
 <span class="c1"># Cytochrome C</span>
@@ -1066,7 +1085,7 @@
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_cred</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">data_cred</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_cred</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">data_cred</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;OCR (nmol O$_2$ min$^{-1}$ U CS$^{-1}$)&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Cyt C $^{2+}$ (Normalized)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Cyt c$^{2+}$ (Normalized)&#39;</span><span class="p">)</span>
 
 <span class="c1"># Buffer ADP</span>
 <span class="n">data_ADP</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10.494</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">14.509</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
@@ -1087,10 +1106,17 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/InVitroModel_5_0.png" src="_images/InVitroModel_5_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /usr/local/lib/python3.9/site-packages (1.6.3)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /usr/local/lib/python3.9/site-packages (from scipy) (1.20.3)
+</pre></div>
+</div>
+<img alt="_images/InVitroModel_6_2.png" src="_images/InVitroModel_6_2.png" />
 </div>
 </div>
-<p>The match to the data is remarkably good considering how much simpler the model developed here is compared to the model of Bazil et al. <a class="bibtex reference internal" href="References.html#bazil2016" id="id3">[15]</a>. The Bazil et al. model accounts for the mechanisms underlying oxidative phosphorylation and associated side reactions at a deeper level of detail, and thus, finds broader applications. Yet the basic frameworks of our models are equivalent.</p>
+<p><strong>Figure 9:</strong> Comparison of oxygen consumption rate (OCR) simulations to data from <span id="id4">[<a class="reference internal" href="References.html#id11">1</a>]</span>.</p>
+<p>The match to the data is remarkably good considering how much simpler the model developed here is compared to the model of Bazil et al. <span id="id5">[<a class="reference internal" href="References.html#id11">1</a>]</span>. The Bazil et al. model accounts for the mechanisms underlying oxidative phosphorylation and associated side reactions at a deeper level of detail, and thus, finds broader applications. Yet the basic frameworks of our models are equivalent.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1115,15 +1141,15 @@
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="BuildingModel.html" title="previous page">Building a model of oxidative ATP synthesis from energetic components</a>
     <a class='right-next' id="next-link" href="InVivoModel.html" title="next page">Simulation of cardiac energetics in vivo</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -1140,8 +1166,9 @@
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    <script src="_static/js/index.js"></script>
-    
+  
   </body>
 </html>
