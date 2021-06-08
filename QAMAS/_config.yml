@@ -1,7 +1,7 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Quantitative analysis of mitochondrial ATP synthesi
+title: Quantitative analysis of mitochondrial ATP synthesis
 author: Randall, Hock, Lopez, Marzban, Marshall, & Beard supported by NIH grant HL144657
 logo: mito.png
 
