@@ -189,7 +189,8 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/beards-lab/QAMAS_book"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://beards-lab.github.io/QAMAS_book/"><button type="button" class="btn btn-secondary topbarbtn"
+
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
@@ -923,10 +924,10 @@ Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /usr/local/lib/pyt
 <h3>ETC complex III<a class="headerlink" href="#etc-complex-iii" title="Permalink to this headline">¶</a></h3>
 <p>The reaction catalyzed by complex III reduces two cytochrome c proteins for every  <span class="math notranslate nohighlight">\(\text{QH}_2\)</span> oxidized</p>
 <div class="math notranslate nohighlight" id="equation-reaction-c3">
-<span class="eqno">(22)<a class="headerlink" href="#equation-reaction-c3" title="Permalink to this equation">¶</a></span>\[    (\text{QH}_2)_x + 2 \ (\text{c}_{ox}^{3+})_i + n_\text{C3} (\text{H}^+)_x \rightleftharpoons (\text{Q})_x + 2 \ (\text{c}_{red}^{2+})_i + 2 \ (\text{H}^{+})_c + n_\text{C3} (\text{H}^+)_c,\]</div>
-<p>where <span class="math notranslate nohighlight">\(\text{c}_{ox}^{3+}\)</span> and <span class="math notranslate nohighlight">\(\text{c}_{red}^{2+}\)</span> are the oxidized and reduced cytochrome c species and the subscript <span class="math notranslate nohighlight">\(i\)</span> indicates that cytochrome c is confined to the IMS. This reaction is coupled with the transport of <span class="math notranslate nohighlight">\(n_{\text{C3}} = 2\)</span> protons from the matrix to the cytosol against the electrochemical gradient. Thus, the Gibbs energy for the overall reaction given in Equation <a class="reference internal" href="#equation-reaction-c3">(22)</a> is</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}    \Delta G_{\text{C3}} &amp;= \Delta_r G_\text{C3} - n_\text{C3} \Delta G_\text{H} \nonumber \\ 
+<span class="eqno">(19)<a class="headerlink" href="#equation-reaction-c3" title="Permalink to this equation">¶</a></span>\[    (\text{QH}_2)_x + 2 \ (\text{c}_{ox}^{3+})_i + n_\text{C3} (\text{H}^+)_x \rightleftharpoons (\text{Q})_x + 2 \ (\text{c}_{red}^{2+})_i + 2 \ (\text{H}^{+})_c + n_\text{C3} (\text{H}^+)_c,\]</div>
+<p>where <span class="math notranslate nohighlight">\(\text{c}_{ox}^{3+}\)</span> and <span class="math notranslate nohighlight">\(\text{c}_{red}^{2+}\)</span> are the oxidized and reduced cytochrome c species and the subscript <span class="math notranslate nohighlight">\(i\)</span> indicates that cytochrome c is confined to the IMS. This reaction is coupled with the transport of <span class="math notranslate nohighlight">\(n_{\text{C3}} = 2\)</span> protons from the matrix to the cytosol against the electrochemical gradient. Thus, the Gibbs energy for the overall reaction given in Equation <a class="reference internal" href="#equation-reaction-c3">(19)</a> is</p>
+<div class="math notranslate nohighlight" id="equation-drg-c3">
+<span class="eqno">(20)<a class="headerlink" href="#equation-drg-c3" title="Permalink to this equation">¶</a></span>\[\begin{split}    \Delta G_{\text{C3}} &amp;= \Delta_r G_\text{C3} - n_\text{C3} \Delta G_\text{H} \nonumber \\ 
     &amp;= \Delta_r G_{\text{C3}}^\circ + R{\rm T} \ln \left( \dfrac{ [\text{Q}]_x [\text{c}_{red}^{2+}]_i^2 }{ [\text{QH}_2]_x [\text{c}_{ox}^{3+}]_i^2} \cdot [\text{H}^{+}]_c^2 \right) + n_\text{C3} F \Delta \Psi -
     R{\rm T} \ln \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c} \right)^{n_\text{C3}} \nonumber \\ 
     &amp;= \Delta_r G'^\circ_\text{C3} + R{\rm T} \ln \left( \dfrac{ [\text{Q}]_x [\text{c}_{red}^{2+}]_i^2 }{ [\text{QH}_2]_x [\text{c}_{ox}^{3+}]_i^2}\right) + n_\text{C3} F \Delta \Psi -
