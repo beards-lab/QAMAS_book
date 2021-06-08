@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# ## References
+# # References
 # 
 # ```{bibliography} /references.bib
 # :style: plain
