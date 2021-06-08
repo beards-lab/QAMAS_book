@@ -38,20 +38,3 @@
 
 
 
-
-# 
-# ```{toctree}
-# :hidden:
-# :titlesonly:
-# 
-# 
-# Abbreviations.ipynb
-# Introduction.ipynb
-# Principles.ipynb
-# BuildingModel.ipynb
-# InVitroModel.ipynb
-# InVivoModel.ipynb
-# Summary.ipynb
-# References.ipynb
-# ```
-# 

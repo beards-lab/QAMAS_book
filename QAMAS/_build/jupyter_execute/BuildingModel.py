@@ -3,7 +3,7 @@
 
 # # Building a model of oxidative ATP synthesis from energetic components 
 # 
-# Simulations in the preceding section illustrate how matrix ATP and ADP concentrations are governed by the contributors to the proton motive force. They also show how the matrix ATP/ADP ratio must typically be less than $1$, in contrast to the cytosolic ATP/ADP ratio, which is on the order of $100$. To understand the dependence of ATP synthesis and transport on the proton motive force, the kinetics of the processes that generate it, and the interplay of these processes, we can assemble models of the adenine nucleotide translocase (ANT), mitochondrial phosphate transport, and complexes I, III, and IV of the electron transport chain (ETC) to generate a core model of mitochondrial oxidative ATP synthesis. 
+# Simulations in the preceding section illustrate how matrix ATP and ADP concentrations are governed by the contributors to the proton motive force. They also show how the matrix ATP/ADP ratio must typically be less than $1$, in contrast to the cytosolic ATP/ADP ratio, which is on the order of $100$. To understand the dependence of ATP synthesis and transport on the proton motive force, the kinetics of the processes that generate it, and the interplay of these processes, we can assemble models of the   $\text{F}_0\text{F}_1$ ATP synthase,   adenine nucleotide translocase (ANT), mitochondrial phosphate transport, and complexes I, III, and IV of the electron transport chain (ETC) to generate a core model of mitochondrial oxidative ATP synthesis.
 
 # ## Adenine nucleotide translocase
 # 
@@ -15,6 +15,7 @@
 # 
 # To simulate the kinetics of this process, we use the Metelkin et al. model {cite}`Metelkin2006`, which accounts for pH and electrochemical dependencies. (Kinetic parameter value estimates for this model were updated by Wu et al. {cite}`Wu2008`.) The steady-state flux of ANT is expressed 
 # ```{math}
+# :label: J_ANT
 # 	J_{\text{ANT}} = E_{\text{ANT}}  \dfrac{  \dfrac{ k_2^{\text{ANT}} q }{ K_o^D }  [ \text{ATP}^{4-} ]_x [ \text{ADP}^{3-}]_c  - \dfrac{ k_3^{\text{ANT}} }{ K_o^T } [ \text{ADP}^{3-} ]_x [ \text{ATP}^{4-} ]_c }{ \left(1 + \dfrac{ [ \text{ATP}^{4-} ]_c }{ K_o^T } + \dfrac{ [ \text{ADP}^{3-} ]_c }{ K_o^D } \right)( [ \text{ADP}^{3-} ]_x + [ \text{ATP}^{4-} ]_x q) }, 
 # ```
 # where $E_{\text{ANT}} \ \text{(mol (L mito)}^{-1})$ is the total ANT content of the mitochondria and 
@@ -27,7 +28,7 @@
 # 	q &=& \dfrac{ k_3^\text{ANT} K_o^D }{ k_2^\text{ANT} K_o^T } e^\phi, \quad \text{and} \nonumber \\
 # 	\phi &=& F \Delta \Psi / R{\rm T}.  
 # ``` 
-# All parameter values and units can be found in {numref}`table-ANT`, reproduced from {cite}`Bazil2016`. 
+# All parameter values and units can be found in {numref}`table-ANT`, reproduced from {cite}`Bazil2016`.
 
 # ```{list-table} Adenine nucleotide translocase (ANT) parameters. 
 # :header-rows: 1
@@ -94,7 +95,7 @@
 # ```
 # where $V_{m2c} \ \text{(L mito) (L cyto)}^{-1}$ is the fraction of the volume of mitochondria per volume cytosol and $W_c \ \text{(L cyto water) (L cyto)}^{-1}$ is the fraction of water volume in the cytoplasm to the total volume of the cytoplasm ({numref}`table-biophysicalconstants`). 
 
-# Here, we clamp the matrix phosphate concentration at a constant value since the Equation {eq}`system-ATP_ANT` does not account for phosphate transport between the matrix and the cytosol.  
+# Here, we clamp the matrix phosphate concentration at a constant value since the   system of equations in   Equation {eq}`system-ATP_ANT` does not account for phosphate transport between the matrix and the cytosol.  
 
 # In[1]:
 
@@ -117,7 +118,7 @@ W_x = 0.9*W_m      # matrix water space            # L matrix water (L mito)**(-
 # Membrane potential 
 DPsi = 175/1000
 
-###### Set fixed pH, cation concentrations, and O2 partial pressure ######
+###### Set fixed pH and cation concentrations ######
 # pH
 pH_x = 7.40
 pH_c = 7.20
@@ -245,7 +246,7 @@ def dXdt(t, X, activity_array):
     # Matrix species
     dATP_x = (J_F  - J_ANT) / W_x
     dADP_x = (-J_F + J_ANT) / W_x
-    dPi_x  = 0 #(-J_F ) / W_x
+    dPi_x  = 0 
 
     # Cytosol species
     dATP_c = ( V_m2c * J_ANT) / W_c
@@ -279,24 +280,29 @@ ax[1].set_xlabel('Time (s)')
 plt.show()
 
 
-# The above simulations of the system of Equation {eq}`system-ATP_ANT` show how the electrogenic nature of the ANT transport results in markedly different ATP/ADP ratios in the cytosol compared to the matrix. As we saw in the previous chapter, the ATP hydrolysis potential in the matrix is approximately $\text{-}45 \ \text{kJ mol}^{-1}$. The roughly $50$:$1$ ratio of ATP to ADP in the cytosol is associated with a hydrolysis potential of approximately $\text{-}65 \ \text{kJ mol}^{-1}$. The difference of $20 \ \text{kJ mol}^{-1}$ between the matrix and the cytosolic space is driven primarily by the membrane potential, which is equivalent to $20 \ \text{kJ mol}^{-1}$.
+# **Figure 4:** Steady state solution from Equation {eq}`system-ATP_ANT` for the (a) matrix and (b) cytosol species with $\Delta \Psi = 175$ mV, $\text{pH}_x = 7.4$, and $\text{pH}_c = 7.2$.
+
+# The above simulations of the system of Equation {eq}`system-ATP_ANT` show how the electrogenic nature of the ANT transport results in   the   markedly different ATP/ADP ratios in the cytosol compared to the matrix. As we saw in the previous chapter, the ATP hydrolysis potential in the matrix is approximately $\text{-}45 \ \text{kJ mol}^{-1}$. The roughly $100$:$1$ ratio of ATP to ADP in the cytosol is associated with a hydrolysis potential of approximately $\text{-}65 \ \text{kJ mol}^{-1}$. The difference of $20 \ \text{kJ mol}^{-1}$ between the matrix and the cytosolic space is driven primarily by the membrane potential, which is   roughly   equivalent to $20 \ \text{kJ mol}^{-1}$.
 
 # ## Inorganic phosphate transport
 # 
 # During active ATP synthesis, mitochondrial Pi is replenished via the activity of the phosphate-proton cotransporter (PiC), catalyzing the electroneutral cotransport of protonated inorganic phosphate, $\text{H}_2\text{PO}_4^{-}$, and $\text{H}^{+}$ across the membrane. Again, we assume rapid transport between the cytoplasm and intermembrane space, and hence, we have 
 # ```{math}
-#     (\text{H}_2\text{PO}_4^{-})_x + (\text{H}^{+})_x \rightleftharpoons (\text{H}_2\text{PO}_4^{-})_c + (\text{H}^{+})_c.
+#     (\text{H}_2\text{PO}_4^{-})_c + (\text{H}^{+})_c \rightleftharpoons (\text{H}_2\text{PO}_4^{-})_x + (\text{H}^{+})_x.
 # ```
 # Adopting the flux equation from Bazil et al. {cite}`Bazil2016`, we have
 # ```{math}
+# :label: J_PiC
 #     J_\text{PiC} = E_{\text{PiC}} \dfrac{ [\text{H}^{+} ]_{c} [\text{H}_2\text{PO}_4^{-}]_{c} - [\text{H}^{+}]_{x} [\text{H}_2\text{PO}_4^{-}]_{x} }{ [\text{H}_2\text{PO}_4^{-}]_c + k_{\text{PiC}} }, 
 # ```
 # where $E_{\text{PiC}} \ \text{(L matrix water) s}^{-1} \text{ (L mito)}^{-1}$ is the PiC activity rate and $k_{\text{PiC}} = 1.61$ mM is an effective Michaelis-Menten constant. The $\text{H}_2\text{PO}_4^{-}$ concentrations in the matrix and cytosol are computed via the relationship
 # ```{math}
-#     [\text{H}_2\text{PO}_4^{-}] = [\Sigma{\rm Pi}] \left( [{\rm H}^+]/K_{\rm HPi} \right) / P_{\rm Pi} . 
+#    [\text{H}_2\text{PO}_4^{-}] = [\Sigma{\rm Pi}] \left( [{\rm H}^+]/K_{\rm HPi} \right) / P_{\rm Pi} 
 # ```
+# from Equation \eqref{sumPi}.   
 # 
-# To incorporate PiC into Equation {eq}`system-ATP_ANT`, we add a new state $[\Sigma \text{Pi}]_c$ such that at given membrane potential, matrix and cytosolic pH, and cation concentrations, we obtain  
+# 
+# To incorporate PiC into Equation {eq}`system-ATP_ANT`, we add a new state $[\Sigma \text{Pi}]_c$ such that at given membrane potential, matrix and cytosolic pH, and cation concentrations, we obtain   
 # ```{math}
 # :label: system-ATP_ANT_PiC
 # 	\left\{ 
@@ -517,12 +523,17 @@ ax[1].set_xlabel('Time (s)')
 plt.show()
 
 
-# For the above simulations, cytosolic inorganic phosphate is set to $10 \ \text{mM}$ initially, and all other initial conditions remain unchanged. Driven by $\Delta \text{pH}$, a gradient in phosphate concentration is established, with a steady-state ratio of matrix-to-cytosol concentration of approximately $2.2$. As seen in the previous section, with a constant membrane potential of $175 \ \text{mV}$, the ATP/ADP ratio is maintained at a much higher level in the cytosol than in the matrix. 
+# **Figure 5:** Steady state solution from Equation {eq}`system-ATP_ANT_PiC` for the (a) matrix and (b) cytosol species with $\Delta \Psi = 175$ mV, $\text{pH}_x = 7.4$, and $\text{pH}_c = 7.2$.
+
+# For the above simulations, cytosolic inorganic phosphate is set to $10 \ \text{mM}$ initially, and all other initial conditions remain unchanged. Driven by $\Delta \text{pH}$, a gradient in phosphate concentration is established, with a steady-state ratio of matrix-to-cytosol concentration of approximately $2.2$. As seen in the previous section, with a constant membrane potential of $175 \ \text{mV}$, the ATP/ADP ratio is maintained at a much higher level in the cytosol than in the matrix.  
 # 
-# The final matrix and cytosol ATP and ADP concentrations depend not only on the membrane potential, but also on the total amount of exchangeable phosphate in the system. Here these simulations start with $[\text{Pi}]_c = 10 \ \text{mM}$ and $[\text{Pi}]_x = 1 \ \text{mM}$. The initial $10 \ \text{mM}$ of ADP in the cytosol becomes almost entirely phosphorylated to ATP, leaving $0.32 \ \text{mM}$ of inorganic phosphate in the cytosol in the final steady state. To explore how these steady states depend on $\Delta\Psi$, the following code simulates the steady-state behavior of this system for a range of $\Delta\Psi$ from $100$ to $200 \ \text{mV}$.
+# The final matrix and cytosol ATP and ADP concentrations depend not only on the membrane potential, but also on the total amount of exchangeable phosphate in the system. Here these simulations start with $[\text{Pi}]_c = 10 \ \text{mM}$ and $[\text{Pi}]_x = 1 \ \text{mM}$. The initial $10 \ \text{mM}$ of ADP in the cytosol becomes almost entirely phosphorylated to ATP, leaving $0.32 \ \text{mM}$ of inorganic phosphate in the cytosol in the final steady state. To explore how these steady states depend on $\Delta\Psi$, the following code simulates the steady-state behavior of this system for a range of $\Delta\Psi$ from $100$ to $200 \ \text{mV}$. These simulations, based on a simple, thermodynamically constrained model, show that it is not possible to synthesize ATP at physiological free energy levels for values of $\Delta\Psi$ of lower than approximately $160 \ \text{mV}$.  
 
 # In[6]:
 
+
+get_ipython().system('pip install scipy')
+from scipy.integrate import solve_ivp
 
 get_ipython().system('pip install scipy')
 from scipy.integrate import solve_ivp
@@ -575,11 +586,13 @@ ax[1].set_ylim([-0.5,13])
 plt.show()
 
 
+# **Figure 6:** Simulation of concentration versus $\Delta \Psi$ for Equation {eq}`system-ATP_ANT_PiC` for the (a) matrix and (b) cytosol species with $\Delta \Psi$ from $100$ to $250$ mV.
+
 # Simulation of this system reinforces the fact that ATP cannot be synthesized at physiological free energy levels for mitochondrial membrane potential of less than approximately $150 \ \text{mV}$. 
 
 # ## Respiratory complexes and NADH synthesis
 # 
-# The previous sections have assumed a constant membrane potential. To account for the processes that generate the membrane potential, we model proton pumping associated with  the respiratory complexes I, III, and IV of the ETC ({numref}`mitofig`). 
+# The previous sections have assumed a constant membrane potential. To account for the processes that generate the membrane potential, we model proton pumping associated with  the respiratory complexes I, III, and IV of the ETC ({numref}`mitofig`).
 
 # ### ETC complex I
 # 
@@ -588,26 +601,26 @@ plt.show()
 # :label: reaction_C1
 #     (\text{NADH}^{2-})_x + (\text{H}^{+})_x + (\text{Q})_x + n_\text{C1} (\text{H}^{+})_x \rightleftharpoons (\text{NAD}^{-})_x + (\text{QH}_2)_x + \text{H}_2\text{O} + n_\text{C1}(\text{H}^+)_c.
 # ```
-# Since protons move against the gradient when the reaction proceeds in the left-to-right direction, the overall Gibbs energy for the reaction of Equation {eq}`reaction_C1` is 
+# Since protons move against the gradient when the reaction proceeds in the left-to-right direction, the overall Gibbs energy for the reaction of Equation {eq}`reaction_C1` is
 # ```{math}
-# :label: DrG_C1
 #     \Delta G_\text{C1} &= \Delta_r G_\text{C1} - n_\text{C1} \Delta G_{\rm H} \nonumber \\
 #     &= \Delta_r G_\text{C1}^\circ + R{\rm T} \ln \left( \dfrac{ [\text{NAD}^{-}]_x [\text{QH}_2]_x }{ [\text{NADH}^{2-}]_x [\text{Q}]_x} \cdot  \dfrac{1}{[\text{H}^{+}]_x } \right) + n_\text{C1} F \Delta \Psi - R{\rm T} \ln \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c } \right)^{n_{\text{C1}}} \nonumber \\ 
-#     &= \Delta_r G'^{\circ}_\text{C1} + R{\rm T} \ln \left( \dfrac{ [\text{NAD}^{-}]_x [\text{QH}_2]_x }{ [\text{NADH}^{2-}]_x [\text{Q}]_x} \right) + n_\text{C1} F \Delta \Psi - R{\rm T} \ln \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c } \right)^{n_{\text{C1}}}, 
+#     &= \Delta_r G'^{\circ}_\text{C1} + R{\rm T} \ln \left( \dfrac{ [\text{NAD}^{-}]_x [\text{QH}_2]_x }{ [\text{NADH}^{2-}]_x [\text{Q}]_x} \right) + n_\text{C1} F \Delta \Psi - R{\rm T} \ln \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c } \right)^{n_{\text{C1}}},  
 # ```
 # where 
 # ```{math}
 #     \Delta_r G'^\circ_\text{C1} = \Delta_r G^\circ_\text{C1} - R \text{T} \ln ( [\text{H}^+]_x )
 # ```
-# is the apparent Gibbs energy for Equation {eq}`reaction_C1`. The apparent equilibrium constant is 
+# is the apparent Gibbs energy for the reaction in Equation {eq}`reaction_C1`. The apparent equilibrium constant is 
 # ```{math}
+# :label: Kapp_C1
 #     K'_{eq,\text{C1}} = \left(\dfrac{ [\text{NAD}^{-}]_x [\text{QH}_2]_x }{ [\text{NADH}^{2-}]_x [\text{Q}]_x} \right)_{eq} = \exp \left\{ \dfrac{ - ( \Delta_r G'^\circ_\text{C1} + n_\text{C1} F \Delta \Psi) }{ R \text{T}} \right\} \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c } \right)^{n_\text{C1}}.
 # ```
 # 
 # To simulate the flux of complex I, $J_{\text{C1}} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})$, across the IMM by mass-action kinetics, we have 
 # ```{math} 
-# :label: eq:complexI
-#     J_{\text{C1}} = X_{\text{C1}} ( K_{eq,\text{C1}}^\prime [\text{NADH}^{2-}]_x [\text{Q}]_x - [\text{NAD}^{-}]_x [\text{QH}_2]_x ),
+# :label: J_C1
+#     J_{\text{C1}} = X_{\text{C1}} \left( K_{eq,\text{C1}}^\prime [\text{NADH}^{2-}]_x [\text{Q}]_x - [\text{NAD}^{-}]_x [\text{QH}_2]_x \right),
 # ```
 # for $X_\text{C1} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})$ the a rate constant. {numref}`table-ETC` lists the constants for complex I.
 
@@ -621,7 +634,6 @@ plt.show()
 # ```
 # where $\text{c}_{ox}^{3+}$ and $\text{c}_{red}^{2+}$ are the oxidized and reduced cytochrome c species and the subscript $i$ indicates that cytochrome c is confined to the IMS. This reaction is coupled with the transport of $n_{\text{C3}} = 2$ protons from the matrix to the cytosol against the electrochemical gradient. Thus, the Gibbs energy for the overall reaction given in Equation {eq}`reaction_C3` is 
 # ```{math}
-# :label: DrG_C3
 #     \Delta G_{\text{C3}} &= \Delta_r G_\text{C3} - n_\text{C3} \Delta G_\text{H} \nonumber \\ 
 #     &= \Delta_r G_{\text{C3}}^\circ + R{\rm T} \ln \left( \dfrac{ [\text{Q}]_x [\text{c}_{red}^{2+}]_i^2 }{ [\text{QH}_2]_x [\text{c}_{ox}^{3+}]_i^2} \cdot [\text{H}^{+}]_c^2 \right) + n_\text{C3} F \Delta \Psi -
 #     R{\rm T} \ln \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c} \right)^{n_\text{C3}} \nonumber \\ 
@@ -634,30 +646,30 @@ plt.show()
 # ```
 # is the apparent Gibbs energy for complex III. The apparent equilibrium constant is 
 # ```{math}
+# :label: Kapp_C3
 #     K_{eq,\text{C3}}^\prime = \left( \dfrac{ [\text{Q}]_x [\text{c}_{red}^{2+}]_i^2 }{ [\text{QH}_2]_x [\text{c}_{ox}^{3+}]_i^2 } \right)_{eq} = \exp \left\{ \dfrac{ -(\Delta_r G'^\circ_\text{C3} + n_\text{C3} F 
-#     \Delta \Psi )}{ R \text{T}} \right\} \left( \dfrac{ [\text{H}^{+}]_x}{ [\text{H}^{+}]_c} \right)^{n_\text{C3}}, 
+#     \Delta \Psi )}{ R \text{T}} \right\} \left( \dfrac{ [\text{H}^{+}]_x}{ [\text{H}^{+}]_c} \right)^{n_\text{C3}}.
 # ```
 # 
 # To simulate the flux of complex III, $J_\text{C3} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})$, by mass-action kinetics, we have
 # ```{math}
-#     J_{\text{C3}} = X_{\text{C3}} (K_{eq,\text{C3}}^\prime [\text{QH}_2]_x [\text{c}_{ox}^{3+}]_i^2 - [\text{Q}]_x [\text{c}_{red}^{2+}]_i^2 ),
+# :label: J_C3
+#     J_{\text{C3}} = X_{\text{C3}} \left( K_{eq,\text{C3}}^\prime [\text{QH}_2]_x [\text{c}_{ox}^{3+}]_i^2 - [\text{Q}]_x [\text{c}_{red}^{2+}]_i^2 \right),
 # ``` 
 # where $X_{\text{C3}} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})$ is the rate constant. 
 
 # ### ETC complex IV
 # 
-# In the final step of the ETC catalzyed by complex IV, electrons are transferred from cytochrome c to oxygen, forming water
+# In the final step of the ETC catalyzed by complex IV, electrons are transferred from cytochrome c to oxygen, forming water
 # ```{math}
 # :label: reaction_C4
 #     2 \ (\text{c}_{red}^{2+})_i + \frac{1}{2} (\text{O}_2)_x + 2 \ (\text{H}^{+})_c + n_\text{C4} ([\text{H}^+])_x \rightleftharpoons 2 \ (\text{c}^{3+}_{ox})_i + \text{H}_2\text{O} + n_\text{C4} ([\text{H}^+])_c, 
 # ```
 # coupled with the translocation of $n_\text{C4} = 4$ protons across the IMM against against the electrochemical gradient. The Gibbs energy of the reaction in Equation {eq}`reaction_C4` is 
 # ```{math}
-# :label: DrG_C4
 #     \Delta G_\text{C4} &= \Delta_r G_\text{C4} - n_\text{C4} \Delta G_{\rm H} \nonumber \\
 #     &= \Delta_r G_{\text{C4}}^o + R{\rm T} \ln \left( \dfrac{ [\text{c}^{3+}_{ox}]^2_i }{ [\text{c}^{2+}_{red}]^2_i [\text{O}_2]^{1/2}_x } \cdot \dfrac{1}{[\text{H}^{+}]^2_c}\right) + n_{\text{C4}} F \Delta \Psi -  R{\rm T} \ln \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c} \right)^{n_{\text{C4}}} \nonumber \\ 
 #     &= \Delta_r G'^\circ_{\text{C4}} + R{\rm T} \ln \left( \dfrac{ [\text{c}^{3+}_{ox}]^2_i }{ [\text{c}^{2+}_{red}]^2_i [\text{O}_2]^{1/2}_x } \right) + n_{\text{C4}} F \Delta \Psi -  R{\rm T} \ln \left( \dfrac{ [\text{H}^{+}]_x }{ [\text{H}^{+}]_c} \right)^{n_{\text{C4}}},
-#     \label{DrG_C4} 
 # ```
 # where 
 # ```{math}
@@ -665,35 +677,41 @@ plt.show()
 # ```
 # is the apparent Gibbs energy for complex IV. The apparent equilibrium constant is 
 # ```{math}
+# :label: Kapp_C4
 #     K_{eq,\text{C4}}^\prime = \left( \dfrac{ [\text{c}^{3+}_{ox}]_i^2 }{ [\text{c}^{2+}_{red}]_i^2 [\text{O}_2]_x^{1/2} } \right)_{eq} = \exp \left\{ \dfrac{-(\Delta_r G'^\circ_\text{C4} + n_\text{C4} F \Delta \Psi )}{ R \text{T} } \right\} \left( \dfrac{ [\text{H}^+]_x }{[\text{H}^+]_c} \right)^{n_\text{C4}}.
 # ```
 # 
 # To simulate the flux of complex IV, $J_{\text{C4}} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})$, we use mass-action kinetics and account for binding of oxygen to complex IV as
-# ```{math} 
+# ```{math}
+# :label: J_C4
 #     J_{\text{C4}} = X_{\text{C4}} \left( \dfrac{1}{1 + \frac{k_{\text{O}_2}}{[\text{O}_2]
-#     }} \right) \left[ \left(K_{eq,\text{C4}}^\prime\right)^{1/2} [\text{c}_{red}^{2+}]_i [\text{O}_2]_x^{1/4} - [\text{c}_{ox}^{3+}]_i \right],
+#     }} \right) \left( \left(K_{eq,\text{C4}}^\prime\right)^{1/2} [\text{c}_{red}^{2+}]_i [\text{O}_2]_x^{1/4} - [\text{c}_{ox}^{3+}]_i \right),
 # ```
-# where $X_{\text{C4}} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})$ is the rate constant and $k_{\text{O}_2}$ is the $\text{O}_2$ binding constant ({numref}`table-ETC`). For this study, we assume a partial pressure of $\text{O}_2$ at $25 \ \text{mmHg}$. 
+# where $X_{\text{C4}} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})$ is the rate constant and $k_{\text{O}_2}$ is the $\text{O}_2$ binding constant (\ref{table-ETC}). For this study, we assume a partial pressure of $\text{O}_2$ at $25 \ \text{mmHg}$.
+
+# The apparent equilibrium constants for the $\text{F}_0\text{F}_1$ ATPase (Equation {eq}`Kapp_F`), complex I (Equation {eq}`Kapp_C1`), complex III (Equation {eq}`Kapp_C3`), and complex IV (Equation {eq}`Kapp_C4`) depend on $\Delta\Psi$. In the model developed in this section, since $\Delta\Psi$ is a variable, these apparent equilibrium constants are also variables. Thus, the flux expressions in Equations {eq}`J_F`, {eq}`J_C1`, {eq}`J_C3`, and {eq}`J_C4` depend on $\Delta \Psi$. These expressions may be compared to a generalized formulation of rate laws for reversible enzyme-catalyzed reactions {cite}`Noor2013`, where in this case the saturating dependence of flux on substrate concentrations is not accounted for. These expressions may also be compared to the more detailed representations of the underlying catalytic mechanisms used by Bazil et al. {cite}`Bazil2016`. The Bazil et al. model also accounts for side reactions generating reactive oxygen species that are not accounted for here.
 
 # ### Dehydrogenase activity
 # 
-# We do not explicitly model the full TCA cycle but rather the combined action of NADH-producing reactions, that is, 
+# In this model, we do not explicitly simulate the reactions of the TCA cycle or beta oxidation,   but rather the combined action of NADH-producing reactions, that is,  
 # ```{math}
 #     (\text{NAD}^{-})_x \rightleftharpoons (\text{NADH}^{2-})_x + (\text{H}^{+})_x
 # ```
-# From Beard {cite}`Beard2005`, the flux of NADH dehydrogenase is assumed to be phosphate-dependent
+# From Beard {cite}`Beard2005`, we represent a Pi dependence of NADH production using the following phenomenological expression  
 # ```{math}
-#     J_{\text{DH}} = X_{\text{DH}} (r [\text{NAD}^-] - [\text{NADH}^{2-}]) \left( \dfrac{ 1 + [\Sigma \text{Pi}]_x/k_{\text{Pi},1} }{ 1 + [\Sigma \text{Pi}]_x/k_{\text{Pi},2} } \right),
+# :label: J_DH
+#     J_{\text{DH}} = X_{\text{DH}} \left( r [\text{NAD}^-] - [\text{NADH}^{2-}] \right) \left( \dfrac{ 1 + [\Sigma \text{Pi}]_x/k_{\text{Pi},1} }{ 1 + [\Sigma \text{Pi}]_x/k_{\text{Pi},2} } \right),
 # ```
-# where $X_\text{DH} \text{ (mol s}^{-1} \text{ (L mito)}^{-1})$ is the dehydrogenase activity and $r$ (dimensionless), $k_{\text{Pi},1} \ \text{(mol (L matrix water)}^{-1})$, and $k_{\text{Pi},2} \ \text{(mol (L matrix water)}^{-1})$ are constants. Parameter values can be found in {numref}`table-ETC`. 
+# where $X_\text{DH} \text{ (mol s}^{-1} \text{ (L mito)}^{-1})$ is the dehydrogenase activity and $r$ (dimensionless), $k_{\text{Pi},1} \ \text{(mol (L matrix water)}^{-1})$, and $k_{\text{Pi},2} \ \text{(mol (L matrix water)}^{-1})$ are constants. Parameter values are listed in Table {numref}`table-ETC`. The dependence of NADH production on Pi reflects the Pi-dependence of the substrate-level phosphorylation step of the TCA cycle (the succinyl coenzyme-A synthetase reaction) and the fact that Pi drives substrate oxidation via the dicarboxylate carrier.  
 
 # ### Proton leak
 # 
-# To simulate proton leakage across the IMM, we adopt the Goldman-Hodgkins-Katz formulation from Wu et al. {cite}`Wu2008`,
-# ```{math} 
-#     J_{\text{H}} = X_\text{H} ( [\text{H}^{+}]_c \ e^{\phi/2} - [\text{H}^{+}]_x \ e^{-\phi/2}) 
+# To simulate proton leak across the IMM, we adopt the Goldman-Hodgkins-Katz formulation from Wu et al. {cite}`Wu2008`,
+# ```{math}
+# :label: J_H
+#     J_{\text{H}} = X_\text{H} \left( [\text{H}^{+}]_c \ e^{\phi/2} - [\text{H}^{+}]_x \ e^{-\phi/2} \right) 
 # ```
-# where $X_\text{H} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})$ is the proton leak activity and $\phi$ is given in Equation {eq}`phi`. 
+# where $X_\text{H} = 1000 \ \text{mol s}^{-1} \text{ (L mito)}^{-1}$ is the proton leak activity and $\phi$ is given in Equation {eq}`phi`. Even though the kinetic constants $X_\text{F}$ and $X_\text{H}$ attain equal values here, under the ATP-producing conditions the proton flux through the $\text{F}_0\text{F}_1$ ATPase ($J_\text{F}$, Equation {eq}`J_F`) is an order of magnitude greater than the proton leak flux ($J_\text{H}$, Equation {eq}`J_H`). 
 
 # ```{list-table} Respiratory complex and inorganic phosphate transport parameters
 # :header-rows: 1
@@ -809,7 +827,7 @@ plt.show()
 #     	\left\{ 
 # 		\renewcommand{\arraystretch}{2.5} 
 # 		\begin{array}{rl}
-# 		    \dfrac{ {\rm d} \Delta \Psi }{{\rm d} t} & =( n_\text{C1} J_\text{C1} + n_\text{C3} J_\text{C3} + n_\text{C4} J_\text{C4} - n_\text{F} J_\text{F} - J_\text{ANT} - J_\text{H}) / C_m \\ 
+# 		    \dfrac{ {\rm d} \Delta \Psi }{{\rm d} t} & = ( n_\text{C1} J_\text{C1} + n_\text{C3} J_\text{C3} + n_\text{C4} J_\text{C4} - n_\text{F} J_\text{F} - J_\text{ANT} - J_\text{H}) / C_m \\ 
 # 		    \hline 
 # 			\dfrac{ {\rm d} [\Sigma \text{ATP}]_x }{{\rm d} t} &= (J_\text{F} - J_\text{ANT} ) / W_x  \\
 # 			\dfrac{ {\rm d} [\Sigma \text{ADP}]_x }{{\rm d} t} &= (-J_\text{F} + J_\text{ANT}) / W_x \\ 
@@ -826,17 +844,17 @@ plt.show()
 # 		\renewcommand{\arraystretch}{1} 
 # 	\right.
 # ``` 
-# Here, we incorporate a constant ATP consumption flux, $J_\text{AtC} \ \text{(mol s}^{-1} \text{ (L cyto)}^{-1})$, that is
+# where the fluxes $J_\text{F}$ (Equation {eq}`J_F`), $J_\text{ANT}$ (Equation {eq}`J_ANT`), $J_\text{PiC}$ (Equation {eq}`J_PiC`), $J_\text{C1}$ (Equation {eq}`J_C1`), $J_\text{C3}$ (Equation {eq}`J_C3`), $J_\text{C4}$ (Equation {eq}`J_C4`), $J_\text{DH}$ (Equation {eq}`J_DH`), and $J_\text{H}$ (Equation {eq}`J_H`) are given above and the constants are listed in Tables {numref}`table-biophysicalconstants` and {numref}`table-ETC`. Here, we incorporate a constant ATP consumption flux, $J_\text{AtC} \ \text{(mol s}^{-1} \text{ (L cyto)}^{-1})$, that is
 # ```{math}
 #     J_\text{AtC} = X_\text{AtC}/V_c
 # ``` 
-# where $V_c$ is the ratio of the volume of cytosol per L cell. $X_\text{AtC}$ is the ATP consumption rate expressed in units of mmol s$^{-1}$ (L cell)$^{-1}$. Equation {eq}`system-singlemito` does not explicitly treat matrix or external $\text{pH}$, $\text{K}^+$, $\text{Mg}^{2+}$, or $\text{O}_2$ as variables. Reasonable clamped concentrations for these variables are ${\rm pH}_x = 7.4$, ${\rm pH}_c = 7.2$, $[\text{Mg}^{2+}]_x = 1 \ \text{mmol (L matrix water)}^{-1}$, $[\text{Mg}^{2+}]_c = 1 \ \text{mmol (L cyto water)}^{-1}$, $[\text{K}^{+}]_x = 100 \ \text{mmol (L matrix water)}^{-1}$, and $[K^{+}]_c = 140 \ \text{mmol (L cyto water)}^{-1}$, and $\text{O}_2$ partial pressure of $25 \ \text{mmHg}$. Respiratory reactants are determined from a total concentration of metabolites within the mitochondrion, that is, the total pools for NAD, cytochrome c, and Q species are 
+# where $V_c$ is the ratio of the volume of cytosol per L cell. $X_\text{AtC}$ is the ATP consumption rate expressed in units of mmol s$^{-1}$ (L cell)$^{-1}$. Equation {eq}`system-singlemito` does not explicitly treat matrix or external $\text{pH}$, $\text{K}^+$, $\text{Mg}^{2+}$, or $\text{O}_2$ as variables. Reasonable clamped concentrations for these variables are ${\rm pH}_x = 7.4$, ${\rm pH}_c = 7.2$, $[\text{Mg}^{2+}]_x = 1 \ \text{mmol (L matrix water)}^{-1}$, $[\text{Mg}^{2+}]_c = 1 \ \text{mmol (L cyto water)}^{-1}$, $[\text{K}^{+}]_x = 100 \ \text{mmol (L matrix water)}^{-1}$, and $[K^{+}]_c = 140 \ \text{mmol (L cyto water)}^{-1}$, and $\text{O}_2$ partial pressure of $25 \ \text{mmHg}$. Respiratory chain reactants are determined from a total concentration of metabolites within the mitochondrion, that is, the total pools for NAD, cytochrome c, and Q species are  
 # ```{math} 
 #     [\text{NAD}]_{tot} &= [\text{NAD}^-]_x + [\text{NADH}^{2-}]_x \\
 #     [\text{c}]_{tot} &= [\text{c}^{2+}_{red}]_i + [\text{c}^{3+}_{ox}]_i, \quad \text{and}  \\
 #     [\text{Q}]_{tot} &= [\text{Q}]_x + [\text{QH}_2]_x. 
 # ```
-# The pools are $[\text{NAD}]_{tot} = 2.97 \ \text{mmol (L matrix water)}^{-1}$, $[\text{c}]_{tot} = 2.7 \ \text{mmol (L IMS water)}^{-1}$, and $[\text{Q}]_{tot} = 1.35 \ \text{mmol (L matrix water)}^{-1}$. Initial conditions are set under the assumption that the TAN for both the matrix and cytosol is $10 \ \text{mM}$, but the ATP/ADP ratio is $<$$1$ in the matrix and $\sim$$100$ in the cytosol. The following code simulates in vitro mitochondrial function without ATP consumption in the external (cytosolic space).  
+# The pools are $[\text{NAD}]_{tot} = 2.97 \ \text{mmol (L matrix water)}^{-1}$, $[\text{c}]_{tot} = 2.7 \ \text{mmol (L IMS water)}^{-1}$, and $[\text{Q}]_{tot} = 1.35$ $\text{mmol}~\text{(L matrix water)}^{-1}$. The finite nature of these metabolite pools constrains the maximal concentrations of substrates available for complexes I, III, and IV. Thus, although the simple mass-action models for these complexes do not account for saturable enzyme kinetics, the fluxes are limited by the availability of substrates. Initial conditions are set under the assumption that the TAN for both the matrix and cytosol is $10 \ \text{mM}$, but the ATP/ADP ratio is $<$$1$ in the matrix and $\sim$$100$ in the cytosol. The following code simulates in vitro mitochondrial function without ATP consumption in the external (cytosolic space).  
 # 
 
 # In[2]:
@@ -863,7 +881,7 @@ NAD_tot = 2.97e-3  # NAD+ and NADH conc            # mol (L matrix water)**(-1)
 Q_tot   = 1.35e-3  # Q and QH2 conc                # mol (L matrix water)**(-1)
 c_tot   = 2.7e-3   # cytochrome c ox and red conc  # mol (L IM water)**(-1)
 
-# Membrane capacitance
+# Membrane capacitance ()
 Cm = 3.1e-3
 
 ###### Set fixed pH, cation concentrations, and O2 partial pressure ######
@@ -952,9 +970,9 @@ def dXdt(t, X, activity_array, solve_ode):
     K_KPi   = 10**(-0.42)
 
     # Other concentrations computed from the state variables:
-    NAD_x = NAD_tot - NADH_x  ## mol (L matrix water)**(-1)
-    Q_x   = Q_tot - QH2_x     ## mol (L matrix water)**(-1)
-    cox_i = c_tot - cred_i    ## mol (L matrix water)**(-1)
+    NAD_x = NAD_tot - NADH_x  # mol (L matrix water)**(-1)
+    Q_x   = Q_tot - QH2_x     # mol (L matrix water)**(-1)
+    cox_i = c_tot - cred_i    # mol (L matrix water)**(-1)
 
     ## Binding polynomials
     # Matrix species # mol (L mito water)**(-1)
@@ -1090,7 +1108,6 @@ def dXdt(t, X, activity_array, solve_ode):
     J_PiC = E_PiC * (H_c * HPi_c - H_x * HPi_x) / (k_PiC + HPi_c)
 
     ###### H+ leak ######
-    
     # Flux (mol (s * L mito)**(-1))
     J_H = X_H * (H_c * np.exp(phi/2) - H_x * np.exp(-phi/2))
     
@@ -1158,6 +1175,8 @@ ax[1].set_ylim((-.5,10.5))
 plt.show()
 
 
+# **Figure 7:** Steady state solution from Equation {eq}`system-singlemito` for the (a) matrix and (b) cytosol species with $\text{pH}_x = 7.4$ and $\text{pH}_c = 2$.
+
 # The above simulations reach a final steady state where the phosphate metabolite concentrations are $[\text{ATP}]_x = 0.9 \ \text{mM}$, $[\text{ADP}]_x = 9.1 \ \text{mM} $, $[\text{Pi}]_x = 0.4 \ \text{mM}$, $[\text{ATP}]_c = 9.9 \ \text{mM}$, $[\text{ADP}]_c = 0.1 \ \text{mM}$, $[\text{Pi}]_c = 0.2 \ \text{mM}$, and the membrane potential is $186 \ \text{mV}$. This state represents a *resting* energetic state with no ATP hydrolysis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is $\Delta G_{\rm ATP} = \text{-}70 \ \text{kJ mol}^{-1}$, as calculated below. 
 
 # In[3]:
@@ -1190,10 +1209,12 @@ PADP_c = 1 + H_c/K_HADP + Mg_c/K_MgADP + K_c/K_KADP
 PPi_c  = 1 + H_c/K_HPi  + Mg_c/K_MgPi  + K_c/K_KPi
 
 DrGo_ATP = 4990
-DrG_ATP_apparent = DrGo_ATP + R * T * np.log(H_c * PATP_c / (PADP_c * PPi_c))
+
+# Use equation 9 to calcuate apparent reference cytosolic Gibbs energy 
+DrGo_ATP_apparent = DrGo_ATP + R * T * np.log(H_c * PATP_c / (PADP_c * PPi_c))
 
 # Use equation 9 to calculate cytosolic Gibbs energy 
-DrG_ATP = DrG_ATP_apparent + R * T * np.log((sumADP_c_ss * sumPi_c_ss / sumATP_c_ss))
+DrG_ATP = DrGo_ATP_apparent + R * T * np.log((sumADP_c_ss * sumPi_c_ss / sumATP_c_ss))
 
 print('Cytosolic Gibbs energy of ATP hydrolysis (kJ mol^(-1))')
 print(DrG_ATP / 1000)

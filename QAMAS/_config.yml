@@ -1,39 +1,32 @@
-#######################################################################################
-# A default configuration that will be loaded for all jupyter books
-# See the documentation for help and more options: 
-# https://jupyterbook.org/customize/config.html
-
-#######################################################################################
 # Book settings
-title                       : Quantitative analysis of mitochondrial ATP synthesis  # The title of the book. Will be placed in the left navbar.
-author                      : Randall, Hock, Lopez, Marzban, Marshall, & Beard supported by NIH grant HL144657 # The author of the book
-copyright                   : "2021"  # Copyright year to be placed in the footer
-logo                        : mito.png  # A path to the book logo
+# Learn more at https://jupyterbook.org/customize/config.html
 
+title: Quantitative analysis of mitochondrial ATP synthesi
+author: Randall, Hock, Lopez, Marzban, Marshall, & Beard supported by NIH grant HL144657
+logo: mito.png
 
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: force
 
-html:
-  favicon                   : ""  # A path to a favicon image
-  use_edit_page_button      : false  # Whether to add an "edit this page" button to pages. If `true`, repository information in repository: must be filled in
-  use_repository_button     : true  # Whether to add a link to your repository button
-  use_issues_button         : false  # Whether to add an "open an issue" button
-  extra_navbar              : Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.
-  extra_footer              : ""  # Will be displayed underneath the footer.
-  google_analytics_id       : ""  # A GA id that can be used to track book views.
-  home_page_in_navbar       : true  # Whether to include your home page in the left Navigation Bar
-  baseurl                   : ""  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
-  comments:
-    hypothesis              : false
-    utterances              : false
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_documents:
+    targetname: book.tex
 
-launch_buttons:
-  notebook_interface        : classic  # The interface interactive links will activate ["classic", "jupyterlab"]
-  binderhub_url             : https://mybinder.org  # The URL of the BinderHub (e.g., https://mybinder.org)
-  jupyterhub_url            : ""  # The URL of the JupyterHub (e.g., https://datahub.berkeley.edu)
-  thebe                     : true  # Add a thebe button to pages (requires the repository to run on Binder)
-  colab_url                 : "" # The URL of Google Colab (https://colab.research.google.com)
+# Add a bibtex file so that we can create citations
+bibtex_bibfiles:
+  - references.bib
 
+# Information about where the book exists on the web
 repository:
-  url                       : https://github.com/beards-lab/QAMAS_book  # The URL to your book's repository
-  path_to_book              : QAMAS/  # A path to your book's folder, relative to the repository root.
-  branch                    : master  # Which branch of the repository should be used when creating links
+  url: https://github.com/beards-lab/QAMAS_book  # Online location of your book
+  path_to_book: QAMAS/  # Optional path to your book, relative to the repository root
+  branch: master  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: true
+  use_repository_button: true

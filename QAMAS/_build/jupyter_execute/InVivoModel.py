@@ -12,31 +12,31 @@
 # :label: creatine 
 #     (\text{ADP}^{3-})_c + (\text{CrP}^{2-})_c + (\text{H}^{+})_c \rightleftharpoons (\text{ATP}^{4-})_c + (\text{Cr})_c ,
 # ```
-# where Cr denotes creatine and CrP creatine phosphate. The total cytosolic creatine pool, $[\text{Cr}]_{tot}$, is conserved, that is, 
+# where Cr denotes creatine and CrP creatine phosphate. The total cytosolic creatine pool, $[\text{Cr}]_{tot}$, is conserved, that is,
 # ```{math} 
 #     [\text{Cr}]_{tot} = [\text{Cr}]_c + [\text{CrP}]_c.
 # ```
 # To determine the effective Gibbs energy of the creatine kinase reaction in terms of measurable biochemical reactants, we substitute Equations {eq}`sumATP` and {eq}`sumADP` obtaining  
 # ```{math} 
-#     \Delta_r G_\text{CK} &=& \Delta_r G^\circ_\text{CK} + R \text{T} \ln \left( \dfrac{ [\Sigma \text{ATP}]_c [\text{Cr}]_c }{ [\Sigma \text{ADP}]_c [\text{CrP}^{2-}]_c } \cdot \dfrac{P_\text{ADP}}{P_\text{ATP} [\text{H}^{+}]_c} \right) \nonumber \\ 
-#     &=& \Delta_r G'^\circ_\text{CK} + R \text{T} \ln \left( \dfrac{ [\Sigma \text{ATP}]_c [\text{Cr}]_c }{ [\Sigma \text{ADP}]_c [\text{CrP}^{2-}]_c } \right), 
+#     \Delta_r G_\text{CK} &= \Delta_r G^\circ_\text{CK} + R \text{T} \ln \left( \dfrac{ [\Sigma \text{ATP}]_c [\text{Cr}]_c }{ [\Sigma \text{ADP}]_c [\text{CrP}^{2-}]_c } \cdot \dfrac{P_\text{ADP}}{P_\text{ATP} [\text{H}^{+}]_c} \right) \nonumber \\ 
+#     &= \Delta_r G'^\circ_\text{CK} + R \text{T} \ln \left( \dfrac{ [\Sigma \text{ATP}]_c [\text{Cr}]_c }{ [\Sigma \text{ADP}]_c [\text{CrP}^{2-}]_c } \right), 
 # ``` 
 # where 
 # ```{math} 
 #     \Delta_r G'^\circ_\text{CK} = \Delta_r G^\circ_\text{CK} + R \text{T} \ln \left( \dfrac{P_\text{ADP}}{P_\text{ATP} [\text{H}^{+}]_c} \right).
 # ```
-# Here, $\Delta_r G^\circ_\text{CK} = -R\text{T} \ln(K_{eq,\text{CK}})$ for experimental equilibrium constant $K_{eq,\text{CK}} = 3.5 \times 10^8$ {cite}`Beard2012`. The apparent equilibrium of Equation {eq}`creatine` is 
+# Here, $\Delta_r G^\circ_\text{CK} = -R\text{T} \ln(K_{eq,\text{CK}})$ for experimental equilibrium constant $K_{eq,\text{CK}} = 3.5 \times 10^8$ {cite}`Beard2012`. The apparent equilibrium of the reaction in Equation {eq}`creatine` is 
 # ```{math}
-#     K'_{eq,\text{CK}} = \left( \dfrac{ [\Sigma \text{ATP}]_c [\text{Cr}]_c }{ [\Sigma \text{ADP}]_c [\text{CrP}^{2-}]_c } \right)_{eq} = \exp \left\{ \dfrac{-\Delta_r G'^\circ_\text{CK} }{R \text{T}} \right\}.  
+#     K'_{eq,\text{CK}} = \left( \dfrac{ [\Sigma \text{ATP}]_c [\text{Cr}]_c }{ [\Sigma \text{ADP}]_c [\text{CrP}^{2-}]_c } \right)_{eq} = \exp \left\{ \dfrac{-\Delta_r G'^\circ_\text{CK} }{R \text{T}} \right\}.   
 # ```
 # We simulate creatine kinase flux, $J_\text{CK} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})$, via mass-action kinetics as 
 # ```{math}
 # :label: J_CK
-#     J_\text{CK} = X_\text{CK} ( K'_{eq,\text{CK}} [\Sigma \text{ADP}]_c [\text{CrP}]_c - [\text{ATP}]_c [\text{Cr}]_c) 
+#     J_\text{CK} = X_\text{CK} \left( K'_{eq,\text{CK}} [\Sigma \text{ADP}]_c [\text{CrP}]_c - [\text{ATP}]_c [\text{Cr}]_c \right) 
 # ```
 # where $X_\text{CK} \ \text{(mol s}^{-1} \text{ (L cyto)}^{-1})$ is the creatine kinase activity.
 # 
-# To simulate cardiac energetics and in vivo experiments, we incorporate the creatine kinase module and obtain the following system: 
+# To simulate cardiac energetics and in vivo experiments, we incorporate the creatine kinase module and obtain the following system:  
 # ```{math}
 # :label: system-invivo
 # \left\{ 
@@ -55,12 +55,12 @@
 # 			\dfrac{ {\rm d} [\Sigma \text{ATP}]_c }{{\rm d} t} &= (V_{m2c} J_\text{ANT} - J_\text{AtC} + J_\text{CK})/ W_c  \\
 # 			\dfrac{ {\rm d} [\Sigma \text{ADP}]_c }{{\rm d} t} &= (-V_{m2c} J_\text{ANT} + J_\text{AtC} - J_\text{CK}) / W_c \quad \text{cytoplasm species}\\
 # 			\dfrac{ {\rm d} [\Sigma \text{Pi}]_c }{{\rm d} t} &= (- V_{m2c} J_\text{PiC} + J_\text{AtC}) / W_c  \\
-# 			\dfrac{ {\rm d} [\text{CrP}] }{{\rm d} t} &= -J_\text{CK} / W_c. 
+# 			\dfrac{ {\rm d} [\text{CrP}] }{{\rm d} t} &= -J_\text{CK} / W_c
 # 		\end{array}
 # 		\renewcommand{\arraystretch}{1} 
 # 	\right.
 # ```
-# In addition to the incorporation of the creatine kinase reaction, the in vivo model is adapted from the in vitro model by adjusting the mitochondrial volume. In the in vitro model, the volume fraction of the experimental system taken up by mitochondria is $0.0005$ corresponding to a dilute suspension of purified mitochondria ({numref}`table-biophysicalconstants`). In the in vivo model, the volume fraction of a cardiomyocyte taken up by mitochondria is $0.2882$ ({numref}`table-invivoconstants`).
+# where the flux $J_\text{CK}$ is given in Equation {eq}`J_CK`. In addition to the incorporation of the creatine kinase reaction, the in vivo model is adapted from the in vitro model by adjusting the mitochondrial volume. In the in vitro model, the volume fraction of the experimental system taken up by mitochondria is $0.0005$ corresponding to a dilute suspension of purified mitochondria ({numref}`table-biophysicalconstants`). In the in vivo model, the volume fraction of a cardiomyocyte taken up by mitochondria is $0.2882$ ({numref}`table-invivoconstants`).
 
 # ```{list-table} Parameters for ATP synthesis in vivo. 
 # :header-rows: 1
@@ -85,44 +85,44 @@
 
 # ## Simulation of respiratory control in vivo
 # 
-# Previous investigations ({cite}`Lopez2020,Wu2009`) have revealed that the certain cytosolic metabolite pools influence the phosphate metabolite levels in the myocardium in vivo. These metabolite pools are the total adeninine nucleotide ($\text{TAN}$, $\text{mmol (L cell)}^{−1}$), total exchangeable phosphate ($\text{TEP}$, $\text{mmol (L cell)}^{−1}$), and total creatine ($[\text{Cr}]_{tot}$, $ \text{mmol (L cell)}^{−1}$) pool, which may be computed from our model variables via
+# Previous investigations ({cite}`Lopez2020,Wu2009`) have revealed that the certain cytosolic metabolite pools influence the phosphate metabolite levels in the myocardium in vivo. These metabolite pools are the total adenine nucleotide ($\text{TAN}$, $\text{mmol (L cell)}^{-1}$), total exchangeable phosphate ($\text{TEP}$, $\text{mmol (L cell)}^{-1}$), and total creatine ($[\text{Cr}]_{tot}$, $ \text{mmol (L cell)}^{-1}$) pool, which may be computed from our model variables via
 # ```{math}
-#     \text{TAN} &=& (V_{c}W_{c} + V_{m}W_{i}) ([\text{ATP}]_{c} + [\text{ADP}]_{c}) + V_{m}W_{x} ([\text{ATP}]_{x} + [\text{ADP}]_{x}), \nonumber \\
-#     \text{TEP} &=& (V_{c}W_{c} + V_m W_i) (2[\text{ATP}]_{c} + [\text{ADP}]_{c}+ [\text{Pi}]_{c}+[\text{CrP}]_{c}) \nonumber + V_{m}W_{x} ([\text{ATP}]_{x} + [\text{ADP}]_x + [\text{Pi}]_{x}), \quad \text{and} \nonumber\\
-#     \text{Cr}_{tot} &=& V_{c}W_{c} ([\text{Cr}]_{c}+[\text{CrP}]_{c}).  
+#     \text{TAN} &= (V_{c}W_{c} + V_{m}W_{i}) ([\text{ATP}]_{c} + [\text{ADP}]_{c}) + V_{m}W_{x} ([\text{ATP}]_{x} + [\text{ADP}]_{x}), \nonumber \\
+#     \text{TEP} &= (V_{c}W_{c} + V_m W_i) (2[\text{ATP}]_{c} + [\text{ADP}]_{c}+ [\text{Pi}]_{c}+[\text{CrP}]_{c}) \nonumber + V_{m}W_{x} ([\text{ATP}]_{x} + [\text{ADP}]_x + [\text{Pi}]_{x}), \quad \text{and} \nonumber\\
+#     \text{Cr}_{tot} &= V_{c}W_{c} ([\text{Cr}]_{c}+[\text{CrP}]_{c}).  
 # ```
 # To simulate healthy normal conditions, these pools are set as $\text{TAN} = 7.6$, $\text{TEP} = 27.5$, and $[\text{Cr}]_{tot} = 40 \ \text{mM (L cell)}^{-1}$. The levels of these metabolite pools have been shown to decrease in heart failure compared to normal physiological conditions. In the simulations below we explore the predicted effects of altering these metabolite pool levels.
 # 
-# The code below computes the steady-state behavior of the in vivo model over a range of ATP consumption rates, representing myocardial ATP demand levels associated with resting and exercise conditions. The resting state is associated with a myocardial ATP consumption rate of approximately $0.4 \ \text{mmol s}^{−1} \ \text{(L cell)}^{−1}$ while under vigorous exercise conditions the ATP consumption rate is approximately $1.2 \ \text{mmol s}^{−1} \ \text{(L cell)}^{−1}$ {cite}`Gao2019`. Here the myocardial ATP consumption rate is varied over the range of $0.4$ to $1.2 \ \text{mmol s}^{−1} \ \text{(L cell)}^{−1}$, corresponding to a range of myocardial oxygen consumption rate of approximately $25$ to $60 \ \text{nmol min}^{-1} \ \text{(U CS)}^{-1}$. 
+# The code below computes the steady-state behavior of the in vivo model over a range of ATP consumption rates, representing myocardial ATP demand levels associated with resting and exercise conditions. The resting state is associated with a myocardial ATP consumption rate of approximately $0.4 \ \text{mmol s}^{-1} \ \text{(L cell)}^{-1}$ while under vigorous exercise conditions the ATP consumption rate is approximately $1.2 \ \text{mmol s}^{-1} \ \text{(L cell)}^{-1}$ {cite}`Gao2019`. Here, the myocardial ATP consumption rate is varied over the range of $0.4$ to $1.2 \ \text{mmol s}^{-1} \ \text{(L cell)}^{-1}$, corresponding to a range of myocardial oxygen consumption rate of approximately $4$ to $12 \ \mu\text{mol O}_2 \text{ min}^{-1} \ \text{(g tissue)}^{-1}$.  
 # 
 
-# ```{list-table} Metabolite pool concentrations in mmol (L cell)$^{-1}$. 
+# ```{list-table} In vivo metabolite pool concentrations. 
 # :header-rows: 1
 # :name: table-metabolitepools
 # 
 # * - Symbol 
-#   - Description
 #   - Units
+#   - Description
 #   - Healthy	
 #   - Heart failure {cite}`Lopez2020`
 # * - TAN
+#   - mmol (L cell)$^{-1}$ 
 #   - Total adenine nucleotide 
-#   - mM 
 #   - $7.6$
-#   - $6.976$ 
+#   - $6.98$ 
 # * - TEP
+#   - mmol (L cell)$^{-1}$
 #   - Total exchangeable phosphate 
-#   - mM 
 #   - $27.5$ 
 #   - $24.11$ 
 # * - $[\text{Cr}_{tot}]$
+#   - mmol (L cell)$^{-1}$ 
 #   - Total creatine 
-#   - mM 
 #   - $40$ 
 #   - $23.03$ 
 # ```
 
-# In[8]:
+# In[1]:
 
 
 import numpy as np
@@ -246,7 +246,6 @@ def dXdt(t, X, activity_array, solve_ode):
     
     
     ###### NADH Dehydrogenase ######
-
     # Constants
     r      = 6.8385
     k_Pi1  = 4.659e-4    # mol (L matrix water)**(-1)
@@ -281,7 +280,6 @@ def dXdt(t, X, activity_array, solve_ode):
     # Flux (mol (s * L mito)**(-1))
     J_C3 = X_C3 * (Kapp_C3 * cox_i**2 * QH2_x - cred_i**2 * Q_x)
 
-
     ###### Complex IV ######
     # 2 cytoC(red)2+_i + 0.5O2_x + 4H+_x <-> cytoC(ox)3+_x + H2O_x + 2H+_i + 2DPsi
     
@@ -309,7 +307,6 @@ def dXdt(t, X, activity_array, solve_ode):
     
     # Flux (mol (s * L mito)**(-1))
     J_F = X_F * (Kapp_F * sumADP_x * sumPi_x - sumATP_x)
-
     
     ###### ANT ######
     # ATP4-_x + ADP3-_i <-> ATP4-_i + ADP3-_x
@@ -405,6 +402,8 @@ def dXdt(t, X, activity_array, solve_ode):
     dCrP_c = -J_CK / W_c
     
     dX = [dDPsi, dATP_x, dADP_x, dPi_x, dNADH_x, dQH2_x, dcred_i, dATP_c, dADP_c, dPi_c, dCrP_c]
+    
+    # Calculate state-dependent quantities after model is solved.
     if solve_ode == 1:
         return dX
     else:
@@ -465,7 +464,6 @@ ax[0].plot(X_AtC * 1000, CrP_c * (V_c * W_c)/(sumATP_x * V_m * W_x+ sumATP_c *(V
 # Pi_c
 ax[1].plot(X_AtC * 1000, sumPi_c * 1000,label = 'Normal')     # Pi_c 
 
-
 ###### Heart Failure (HF/TAC) case ######
 #Mean TAC pools
 TAN = 0.006976 #(M per liter cell)
@@ -509,5 +507,7 @@ plt.show()
 
 
 
+
+# **Figure 10:** Simulation of respiratory control in vivo using the system in Equation {eq}`system-invivo` for (a) the creatine phosphate to ATP ratio ($[\text{CrP}]_c/[\text{ATP}]_c$) and (b) cytosolic Pi concentration ($[\text{Pi}]_c$).
 
 # Simulations of the normal case (blue lines) show that over the physiological range of ATP demand and oxygen consumption, the CrP/ATP ratio in the myocardium decreases from a value of $2.2$ at rest to $2.0$ in exercise, while the cytosolic phosphate concentration increases from approximately $ 0.75 \ \text{mM}$ at rest to $2.3 \ \text{mM}$ in exercise. These model predictions are remarkably close to experiment observations, given the relative simplicity of this model. Consistent with previous analyses, when the metabolite pool levels are changed to represent heart failure conditions (red lines), the CrP/ATP ratio decreases compared and the inorganic phosphate concentration is predicted to increase compared to physiological levels.

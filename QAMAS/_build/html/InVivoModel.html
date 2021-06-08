@@ -1,52 +1,68 @@
 
-
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
-    <title>Simulation of cardiac energetics in vivo &#8212; Quantitative analysis of mitochondrial ATP synthesis</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="_static/css/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulation of cardiac energetics in vivo &#8212; Quantitative analysis of mitochondrial ATP synthesi</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
-    <link rel="stylesheet" type="text/css" href="_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
-    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
-    <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Summary and conclusions" href="Summary.html" />
     <link rel="prev" title="Simulation of respiratory control in vitro" href="InVitroModel.html" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
-
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
     
 
     <div class="container-xl">
@@ -55,30 +71,27 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="index.html">
-  
-  <img src="_static/mito.png" class="logo" alt="logo">
-  
-  
-  <h1 class="site-logo" id="site-title">Quantitative analysis of mitochondrial ATP synthesis</h1>
-  
-</a>
-</div>
-
-<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/mito.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Quantitative analysis of mitochondrial ATP synthesi</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Abstract.html">
    Title Page
   </a>
  </li>
 </ul>
-<ul class="current nav sidenav_l1">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Abbreviations.html">
    Abbreviations
@@ -121,9 +134,8 @@
  </li>
 </ul>
 
-</nav>
-
- <!-- To handle the deprecated key -->
+    </div>
+</nav> <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -138,25 +150,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
-    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -168,9 +180,9 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
-    
 </div>
-        <!-- Source interaction buttons -->
+
+            <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -180,18 +192,22 @@
             href="https://github.com/beards-lab/QAMAS_book"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
-        
+        <a class="issues-button"
+            href="https://github.com/beards-lab/QAMAS_book/issues/new?title=Issue%20on%20page%20%2FInVivoModel.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
     </div>
 </div>
 
+            <!-- Full screen (wrap in <a> to have style consistency -->
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
 
-        <!-- Launch buttons -->
+            <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -206,22 +222,26 @@
         
         
         
+<<<<<<< HEAD
         <button type="button" class="btn btn-secondary topbarbtn"
             onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+=======
+>>>>>>> pr/1
         
     </div>
 </div>
 
-    </div>
-
-    <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
         </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#creatine-kinase">
    Creatine kinase
@@ -234,7 +254,8 @@
  </li>
 </ul>
 
-        </nav>
+            </nav>
+        </div>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -249,27 +270,27 @@
 <h2>Creatine kinase<a class="headerlink" href="#creatine-kinase" title="Permalink to this headline">¶</a></h2>
 <p>To use the mitochondrial model developed above to simulate energetics in muscle in vivo, we must account for the cytosolic creatine kinase reaction</p>
 <div class="math notranslate nohighlight" id="equation-creatine">
-<span class="eqno">(24)<a class="headerlink" href="#equation-creatine" title="Permalink to this equation">¶</a></span>\[    (\text{ADP}^{3-})_c + (\text{CrP}^{2-})_c + (\text{H}^{+})_c \rightleftharpoons (\text{ATP}^{4-})_c + (\text{Cr})_c ,\]</div>
+<span class="eqno">(31)<a class="headerlink" href="#equation-creatine" title="Permalink to this equation">¶</a></span>\[    (\text{ADP}^{3-})_c + (\text{CrP}^{2-})_c + (\text{H}^{+})_c \rightleftharpoons (\text{ATP}^{4-})_c + (\text{Cr})_c ,\]</div>
 <p>where Cr denotes creatine and CrP creatine phosphate. The total cytosolic creatine pool, <span class="math notranslate nohighlight">\([\text{Cr}]_{tot}\)</span>, is conserved, that is,</p>
 <div class="math notranslate nohighlight">
 \[    [\text{Cr}]_{tot} = [\text{Cr}]_c + [\text{CrP}]_c.\]</div>
-<p>To determine the effective Gibbs energy of the creatine kinase reaction in terms of measurable biochemical reactants, we substitute Equations <a class="reference internal" href="Principles.html#equation-sumatp">(6)</a> and <a class="reference internal" href="Principles.html#equation-sumadp">(7)</a> obtaining</p>
+<p>To determine the effective Gibbs energy of the creatine kinase reaction in terms of measurable biochemical reactants, we substitute Equations <a class="reference internal" href="Principles.html#equation-sumatp">(5)</a> and <a class="reference internal" href="Principles.html#equation-sumadp">(6)</a> obtaining</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}    \Delta_r G_\text{CK} &amp;=&amp; \Delta_r G^\circ_\text{CK} + R \text{T} \ln \left( \dfrac{ [\Sigma \text{ATP}]_c [\text{Cr}]_c }{ [\Sigma \text{ADP}]_c [\text{CrP}^{2-}]_c } \cdot \dfrac{P_\text{ADP}}{P_\text{ATP} [\text{H}^{+}]_c} \right) \nonumber \\ 
-    &amp;=&amp; \Delta_r G'^\circ_\text{CK} + R \text{T} \ln \left( \dfrac{ [\Sigma \text{ATP}]_c [\text{Cr}]_c }{ [\Sigma \text{ADP}]_c [\text{CrP}^{2-}]_c } \right), \end{split}\]</div>
+\[\begin{split}    \Delta_r G_\text{CK} &amp;= \Delta_r G^\circ_\text{CK} + R \text{T} \ln \left( \dfrac{ [\Sigma \text{ATP}]_c [\text{Cr}]_c }{ [\Sigma \text{ADP}]_c [\text{CrP}^{2-}]_c } \cdot \dfrac{P_\text{ADP}}{P_\text{ATP} [\text{H}^{+}]_c} \right) \nonumber \\ 
+    &amp;= \Delta_r G'^\circ_\text{CK} + R \text{T} \ln \left( \dfrac{ [\Sigma \text{ATP}]_c [\text{Cr}]_c }{ [\Sigma \text{ADP}]_c [\text{CrP}^{2-}]_c } \right), \end{split}\]</div>
 <p>where</p>
 <div class="math notranslate nohighlight">
 \[    \Delta_r G'^\circ_\text{CK} = \Delta_r G^\circ_\text{CK} + R \text{T} \ln \left( \dfrac{P_\text{ADP}}{P_\text{ATP} [\text{H}^{+}]_c} \right).\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(\Delta_r G^\circ_\text{CK} = -R\text{T} \ln(K_{eq,\text{CK}})\)</span> for experimental equilibrium constant <span class="math notranslate nohighlight">\(K_{eq,\text{CK}} = 3.5 \times 10^8\)</span> <a class="bibtex reference internal" href="References.html#beard2012" id="id1">[2]</a>. The apparent equilibrium of Equation <a class="reference internal" href="#equation-creatine">(24)</a> is</p>
+<p>Here, <span class="math notranslate nohighlight">\(\Delta_r G^\circ_\text{CK} = -R\text{T} \ln(K_{eq,\text{CK}})\)</span> for experimental equilibrium constant <span class="math notranslate nohighlight">\(K_{eq,\text{CK}} = 3.5 \times 10^8\)</span> <span id="id1">[<a class="reference internal" href="References.html#id14">3</a>]</span>. The apparent equilibrium of the reaction in Equation <a class="reference internal" href="#equation-creatine">(31)</a> is</p>
 <div class="math notranslate nohighlight">
-\[    K'_{eq,\text{CK}} = \left( \dfrac{ [\Sigma \text{ATP}]_c [\text{Cr}]_c }{ [\Sigma \text{ADP}]_c [\text{CrP}^{2-}]_c } \right)_{eq} = \exp \left\{ \dfrac{-\Delta_r G'^\circ_\text{CK} }{R \text{T}} \right\}.  \]</div>
+\[    K'_{eq,\text{CK}} = \left( \dfrac{ [\Sigma \text{ATP}]_c [\text{Cr}]_c }{ [\Sigma \text{ADP}]_c [\text{CrP}^{2-}]_c } \right)_{eq} = \exp \left\{ \dfrac{-\Delta_r G'^\circ_\text{CK} }{R \text{T}} \right\}.   \]</div>
 <p>We simulate creatine kinase flux, <span class="math notranslate nohighlight">\(J_\text{CK} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})\)</span>, via mass-action kinetics as</p>
 <div class="math notranslate nohighlight" id="equation-j-ck">
-<span class="eqno">(25)<a class="headerlink" href="#equation-j-ck" title="Permalink to this equation">¶</a></span>\[    J_\text{CK} = X_\text{CK} ( K'_{eq,\text{CK}} [\Sigma \text{ADP}]_c [\text{CrP}]_c - [\text{ATP}]_c [\text{Cr}]_c) \]</div>
+<span class="eqno">(32)<a class="headerlink" href="#equation-j-ck" title="Permalink to this equation">¶</a></span>\[    J_\text{CK} = X_\text{CK} \left( K'_{eq,\text{CK}} [\Sigma \text{ADP}]_c [\text{CrP}]_c - [\text{ATP}]_c [\text{Cr}]_c \right) \]</div>
 <p>where <span class="math notranslate nohighlight">\(X_\text{CK} \ \text{(mol s}^{-1} \text{ (L cyto)}^{-1})\)</span> is the creatine kinase activity.</p>
 <p>To simulate cardiac energetics and in vivo experiments, we incorporate the creatine kinase module and obtain the following system:</p>
 <div class="math notranslate nohighlight" id="equation-system-invivo">
-<span class="eqno">(26)<a class="headerlink" href="#equation-system-invivo" title="Permalink to this equation">¶</a></span>\[\begin{split}\left\{ 
+<span class="eqno">(33)<a class="headerlink" href="#equation-system-invivo" title="Permalink to this equation">¶</a></span>\[\begin{split}\left\{ 
 		\renewcommand{\arraystretch}{2.5} 
 		\begin{array}{rl}
 		    \dfrac{ {\rm d} \Delta \Psi }{{\rm d} t} &amp; =( n_\text{C1} J_\text{C1} + n_\text{C3} J_\text{C3} + n_\text{C4} J_\text{C4} - n_\text{F} J_\text{F} - J_\text{ANT} - J_\text{H}) / C_m \\ 
@@ -285,11 +306,11 @@
 			\dfrac{ {\rm d} [\Sigma \text{ATP}]_c }{{\rm d} t} &amp;= (V_{m2c} J_\text{ANT} - J_\text{AtC} + J_\text{CK})/ W_c  \\
 			\dfrac{ {\rm d} [\Sigma \text{ADP}]_c }{{\rm d} t} &amp;= (-V_{m2c} J_\text{ANT} + J_\text{AtC} - J_\text{CK}) / W_c \quad \text{cytoplasm species}\\
 			\dfrac{ {\rm d} [\Sigma \text{Pi}]_c }{{\rm d} t} &amp;= (- V_{m2c} J_\text{PiC} + J_\text{AtC}) / W_c  \\
-			\dfrac{ {\rm d} [\text{CrP}] }{{\rm d} t} &amp;= -J_\text{CK} / W_c. 
+			\dfrac{ {\rm d} [\text{CrP}] }{{\rm d} t} &amp;= -J_\text{CK} / W_c
 		\end{array}
 		\renewcommand{\arraystretch}{1} 
 	\right.\end{split}\]</div>
-<p>In addition to the incorporation of the creatine kinase reaction, the in vivo model is adapted from the in vitro model by adjusting the mitochondrial volume. In the in vitro model, the volume fraction of the experimental system taken up by mitochondria is <span class="math notranslate nohighlight">\(0.0005\)</span> corresponding to a dilute suspension of purified mitochondria (<a class="reference internal" href="Principles.html#table-biophysicalconstants"><span class="std std-numref">Table 2</span></a>). In the in vivo model, the volume fraction of a cardiomyocyte taken up by mitochondria is <span class="math notranslate nohighlight">\(0.2882\)</span> (<a class="reference internal" href="#table-invivoconstants"><span class="std std-numref">Table 6</span></a>).</p>
+<p>where the flux <span class="math notranslate nohighlight">\(J_\text{CK}\)</span> is given in Equation <a class="reference internal" href="#equation-j-ck">(32)</a>. In addition to the incorporation of the creatine kinase reaction, the in vivo model is adapted from the in vitro model by adjusting the mitochondrial volume. In the in vitro model, the volume fraction of the experimental system taken up by mitochondria is <span class="math notranslate nohighlight">\(0.0005\)</span> corresponding to a dilute suspension of purified mitochondria (<a class="reference internal" href="Principles.html#table-biophysicalconstants"><span class="std std-numref">Table 2</span></a>). In the in vivo model, the volume fraction of a cardiomyocyte taken up by mitochondria is <span class="math notranslate nohighlight">\(0.2882\)</span> (<a class="reference internal" href="#table-invivoconstants"><span class="std std-numref">Table 6</span></a>).</p>
 <table class="table" id="table-invivoconstants">
 <caption><span class="caption-number">Table 6 </span><span class="caption-text">Parameters for ATP synthesis in vivo.</span><a class="headerlink" href="#table-invivoconstants" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -312,28 +333,28 @@
 <td><p>mol s<span class="math notranslate nohighlight">\(^{-1}\)</span> (L cyto)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Creatine kinase activity</p></td>
 <td><p><span class="math notranslate nohighlight">\(10^7\)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id2">[15]</a></p></td>
+<td><p><span id="id2">[<a class="reference internal" href="References.html#id11">1</a>]</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\([\text{Cr}]_{tot}\)</span></p></td>
 <td><p>mmol (L cell)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Total creatine pool in the cell</p></td>
 <td><p><span class="math notranslate nohighlight">\(40\)</span></p></td>
-<td><p><a class="bibtex reference internal" href="References.html#lopez2020" id="id3">[9]</a></p></td>
+<td><p><span id="id3">[<a class="reference internal" href="References.html#id20">10</a>]</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="simulation-of-respiratory-control-in-vivo">
 <h2>Simulation of respiratory control in vivo<a class="headerlink" href="#simulation-of-respiratory-control-in-vivo" title="Permalink to this headline">¶</a></h2>
-<p>Previous investigations (<a class="bibtex reference internal" href="References.html#lopez2020" id="id4">[9]</a><a class="bibtex reference internal" href="References.html#wu2009" id="id5">[5]</a>) have revealed that the certain cytosolic metabolite pools influence the phosphate metabolite levels in the myocardium in vivo. These metabolite pools are the total adeninine nucleotide (<span class="math notranslate nohighlight">\(\text{TAN}\)</span>, <span class="math notranslate nohighlight">\(\text{mmol (L cell)}^{−1}\)</span>), total exchangeable phosphate (<span class="math notranslate nohighlight">\(\text{TEP}\)</span>, <span class="math notranslate nohighlight">\(\text{mmol (L cell)}^{−1}\)</span>), and total creatine (<span class="math notranslate nohighlight">\([\text{Cr}]_{tot}\)</span>, <span class="math notranslate nohighlight">\( \text{mmol (L cell)}^{−1}\)</span>) pool, which may be computed from our model variables via</p>
+<p>Previous investigations (<span id="id4">[<a class="reference internal" href="References.html#id20">10</a>, <a class="reference internal" href="References.html#id6">20</a>]</span>) have revealed that the certain cytosolic metabolite pools influence the phosphate metabolite levels in the myocardium in vivo. These metabolite pools are the total adenine nucleotide (<span class="math notranslate nohighlight">\(\text{TAN}\)</span>, <span class="math notranslate nohighlight">\(\text{mmol (L cell)}^{-1}\)</span>), total exchangeable phosphate (<span class="math notranslate nohighlight">\(\text{TEP}\)</span>, <span class="math notranslate nohighlight">\(\text{mmol (L cell)}^{-1}\)</span>), and total creatine (<span class="math notranslate nohighlight">\([\text{Cr}]_{tot}\)</span>, <span class="math notranslate nohighlight">\( \text{mmol (L cell)}^{-1}\)</span>) pool, which may be computed from our model variables via</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}    \text{TAN} &amp;=&amp; (V_{c}W_{c} + V_{m}W_{i}) ([\text{ATP}]_{c} + [\text{ADP}]_{c}) + V_{m}W_{x} ([\text{ATP}]_{x} + [\text{ADP}]_{x}), \nonumber \\
-    \text{TEP} &amp;=&amp; (V_{c}W_{c} + V_m W_i) (2[\text{ATP}]_{c} + [\text{ADP}]_{c}+ [\text{Pi}]_{c}+[\text{CrP}]_{c}) \nonumber + V_{m}W_{x} ([\text{ATP}]_{x} + [\text{ADP}]_x + [\text{Pi}]_{x}), \quad \text{and} \nonumber\\
-    \text{Cr}_{tot} &amp;=&amp; V_{c}W_{c} ([\text{Cr}]_{c}+[\text{CrP}]_{c}).  \end{split}\]</div>
+\[\begin{split}    \text{TAN} &amp;= (V_{c}W_{c} + V_{m}W_{i}) ([\text{ATP}]_{c} + [\text{ADP}]_{c}) + V_{m}W_{x} ([\text{ATP}]_{x} + [\text{ADP}]_{x}), \nonumber \\
+    \text{TEP} &amp;= (V_{c}W_{c} + V_m W_i) (2[\text{ATP}]_{c} + [\text{ADP}]_{c}+ [\text{Pi}]_{c}+[\text{CrP}]_{c}) \nonumber + V_{m}W_{x} ([\text{ATP}]_{x} + [\text{ADP}]_x + [\text{Pi}]_{x}), \quad \text{and} \nonumber\\
+    \text{Cr}_{tot} &amp;= V_{c}W_{c} ([\text{Cr}]_{c}+[\text{CrP}]_{c}).  \end{split}\]</div>
 <p>To simulate healthy normal conditions, these pools are set as <span class="math notranslate nohighlight">\(\text{TAN} = 7.6\)</span>, <span class="math notranslate nohighlight">\(\text{TEP} = 27.5\)</span>, and <span class="math notranslate nohighlight">\([\text{Cr}]_{tot} = 40 \ \text{mM (L cell)}^{-1}\)</span>. The levels of these metabolite pools have been shown to decrease in heart failure compared to normal physiological conditions. In the simulations below we explore the predicted effects of altering these metabolite pool levels.</p>
-<p>The code below computes the steady-state behavior of the in vivo model over a range of ATP consumption rates, representing myocardial ATP demand levels associated with resting and exercise conditions. The resting state is associated with a myocardial ATP consumption rate of approximately <span class="math notranslate nohighlight">\(0.4 \ \text{mmol s}^{−1} \ \text{(L cell)}^{−1}\)</span> while under vigorous exercise conditions the ATP consumption rate is approximately <span class="math notranslate nohighlight">\(1.2 \ \text{mmol s}^{−1} \ \text{(L cell)}^{−1}\)</span> <a class="bibtex reference internal" href="References.html#gao2019" id="id6">[6]</a>. Here the myocardial ATP consumption rate is varied over the range of <span class="math notranslate nohighlight">\(0.4\)</span> to <span class="math notranslate nohighlight">\(1.2 \ \text{mmol s}^{−1} \ \text{(L cell)}^{−1}\)</span>, corresponding to a range of myocardial oxygen consumption rate of approximately <span class="math notranslate nohighlight">\(25\)</span> to <span class="math notranslate nohighlight">\(60 \ \text{nmol min}^{-1} \ \text{(U CS)}^{-1}\)</span>.</p>
+<p>The code below computes the steady-state behavior of the in vivo model over a range of ATP consumption rates, representing myocardial ATP demand levels associated with resting and exercise conditions. The resting state is associated with a myocardial ATP consumption rate of approximately <span class="math notranslate nohighlight">\(0.4 \ \text{mmol s}^{-1} \ \text{(L cell)}^{-1}\)</span> while under vigorous exercise conditions the ATP consumption rate is approximately <span class="math notranslate nohighlight">\(1.2 \ \text{mmol s}^{-1} \ \text{(L cell)}^{-1}\)</span> <span id="id5">[<a class="reference internal" href="References.html#id15">8</a>]</span>. Here, the myocardial ATP consumption rate is varied over the range of <span class="math notranslate nohighlight">\(0.4\)</span> to <span class="math notranslate nohighlight">\(1.2 \ \text{mmol s}^{-1} \ \text{(L cell)}^{-1}\)</span>, corresponding to a range of myocardial oxygen consumption rate of approximately <span class="math notranslate nohighlight">\(4\)</span> to <span class="math notranslate nohighlight">\(12 \ \mu\text{mol O}_2 \text{ min}^{-1} \ \text{(g tissue)}^{-1}\)</span>.</p>
 <table class="table" id="table-metabolitepools">
-<caption><span class="caption-number">Table 7 </span><span class="caption-text">Metabolite pool concentrations in mmol (L cell)<span class="math notranslate nohighlight">\(^{-1}\)</span>.</span><a class="headerlink" href="#table-metabolitepools" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-number">Table 7 </span><span class="caption-text">In vivo metabolite pool concentrations.</span><a class="headerlink" href="#table-metabolitepools" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col style="width: 20%" />
 <col style="width: 20%" />
@@ -343,28 +364,28 @@
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Symbol</p></th>
-<th class="head"><p>Description</p></th>
 <th class="head"><p>Units</p></th>
+<th class="head"><p>Description</p></th>
 <th class="head"><p>Healthy</p></th>
-<th class="head"><p>Heart failure <a class="bibtex reference internal" href="References.html#lopez2020" id="id7">[9]</a></p></th>
+<th class="head"><p>Heart failure <span id="id6">[<a class="reference internal" href="References.html#id20">10</a>]</span></p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>TAN</p></td>
+<td><p>mmol (L cell)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Total adenine nucleotide</p></td>
-<td><p>mM</p></td>
 <td><p><span class="math notranslate nohighlight">\(7.6\)</span></p></td>
-<td><p><span class="math notranslate nohighlight">\(6.976\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(6.98\)</span></p></td>
 </tr>
 <tr class="row-odd"><td><p>TEP</p></td>
+<td><p>mmol (L cell)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Total exchangeable phosphate</p></td>
-<td><p>mM</p></td>
 <td><p><span class="math notranslate nohighlight">\(27.5\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(24.11\)</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\([\text{Cr}_{tot}]\)</span></p></td>
+<td><p>mmol (L cell)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Total creatine</p></td>
-<td><p>mM</p></td>
 <td><p><span class="math notranslate nohighlight">\(40\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(23.03\)</span></p></td>
 </tr>
@@ -493,7 +514,6 @@
     
     
     <span class="c1">###### NADH Dehydrogenase ######</span>
-
     <span class="c1"># Constants</span>
     <span class="n">r</span>      <span class="o">=</span> <span class="mf">6.8385</span>
     <span class="n">k_Pi1</span>  <span class="o">=</span> <span class="mf">4.659e-4</span>    <span class="c1"># mol (L matrix water)**(-1)</span>
@@ -528,7 +548,6 @@
     <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
     <span class="n">J_C3</span> <span class="o">=</span> <span class="n">X_C3</span> <span class="o">*</span> <span class="p">(</span><span class="n">Kapp_C3</span> <span class="o">*</span> <span class="n">cox_i</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">QH2_x</span> <span class="o">-</span> <span class="n">cred_i</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">Q_x</span><span class="p">)</span>
 
-
     <span class="c1">###### Complex IV ######</span>
     <span class="c1"># 2 cytoC(red)2+_i + 0.5O2_x + 4H+_x &lt;-&gt; cytoC(ox)3+_x + H2O_x + 2H+_i + 2DPsi</span>
     
@@ -556,7 +575,6 @@
     
     <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
     <span class="n">J_F</span> <span class="o">=</span> <span class="n">X_F</span> <span class="o">*</span> <span class="p">(</span><span class="n">Kapp_F</span> <span class="o">*</span> <span class="n">sumADP_x</span> <span class="o">*</span> <span class="n">sumPi_x</span> <span class="o">-</span> <span class="n">sumATP_x</span><span class="p">)</span>
-
     
     <span class="c1">###### ANT ######</span>
     <span class="c1"># ATP4-_x + ADP3-_i &lt;-&gt; ATP4-_i + ADP3-_x</span>
@@ -652,6 +670,8 @@
     <span class="n">dCrP_c</span> <span class="o">=</span> <span class="o">-</span><span class="n">J_CK</span> <span class="o">/</span> <span class="n">W_c</span>
     
     <span class="n">dX</span> <span class="o">=</span> <span class="p">[</span><span class="n">dDPsi</span><span class="p">,</span> <span class="n">dATP_x</span><span class="p">,</span> <span class="n">dADP_x</span><span class="p">,</span> <span class="n">dPi_x</span><span class="p">,</span> <span class="n">dNADH_x</span><span class="p">,</span> <span class="n">dQH2_x</span><span class="p">,</span> <span class="n">dcred_i</span><span class="p">,</span> <span class="n">dATP_c</span><span class="p">,</span> <span class="n">dADP_c</span><span class="p">,</span> <span class="n">dPi_c</span><span class="p">,</span> <span class="n">dCrP_c</span><span class="p">]</span>
+    
+    <span class="c1"># Calculate state-dependent quantities after model is solved.</span>
     <span class="k">if</span> <span class="n">solve_ode</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">dX</span>
     <span class="k">else</span><span class="p">:</span>
@@ -684,7 +704,7 @@
      
 <span class="n">sumATP_c_0</span> <span class="o">=</span> <span class="p">(</span><span class="n">TAN</span> <span class="o">-</span> <span class="n">V_m</span><span class="o">*</span><span class="n">W_x</span><span class="o">*</span><span class="p">(</span><span class="n">sumATP_x_0</span> <span class="o">+</span> <span class="n">sumADP_x_0</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">V_c</span><span class="o">*</span><span class="n">W_c</span><span class="o">+</span><span class="n">V_m</span><span class="o">*</span><span class="n">W_i</span><span class="p">)</span> <span class="o">-</span> <span class="n">sumADP_c_0</span>
 <span class="n">Cr_tot_c</span>   <span class="o">=</span> <span class="n">Cr_tot</span> <span class="o">/</span> <span class="p">(</span><span class="n">V_c</span> <span class="o">*</span> <span class="n">W_c</span><span class="p">)</span> <span class="c1"># convert to mol (L cyto water)^(-1)</span>
-<span class="n">CrP_c_0</span>    <span class="o">=</span> <span class="o">.</span><span class="mi">3</span> <span class="o">*</span> <span class="n">Cr_tot_c</span>  <span class="c1"># mol (L cyto water)^(-1)</span>
+<span class="n">CrP_c_0</span>    <span class="o">=</span> <span class="mf">.3</span> <span class="o">*</span> <span class="n">Cr_tot_c</span>  <span class="c1"># mol (L cyto water)^(-1)</span>
 <span class="n">sumPi_c_0</span>  <span class="o">=</span> <span class="p">(</span><span class="n">TEP</span><span class="o">-</span><span class="n">V_m</span><span class="o">*</span><span class="n">W_x</span><span class="o">*</span><span class="p">(</span><span class="n">sumATP_x_0</span> <span class="o">+</span> <span class="n">sumADP_x_0</span> <span class="o">+</span> <span class="n">sumPi_x_0</span> <span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">V_c</span><span class="o">*</span><span class="n">W_c</span><span class="o">+</span><span class="n">V_m</span><span class="o">*</span><span class="n">W_i</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">sumATP_c_0</span> <span class="o">-</span> <span class="n">sumADP_c_0</span> <span class="o">-</span> <span class="n">CrP_c_0</span> 
 
 <span class="n">X_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">Psi_0</span><span class="p">,</span> <span class="n">sumATP_x_0</span><span class="p">,</span> <span class="n">sumADP_x_0</span><span class="p">,</span> <span class="n">sumPi_x_0</span><span class="p">,</span> <span class="n">NADH_x_0</span><span class="p">,</span> <span class="n">QH2_x_0</span><span class="p">,</span> <span class="n">cred_i_0</span><span class="p">,</span> <span class="n">sumATP_c_0</span><span class="p">,</span> <span class="n">sumADP_c_0</span><span class="p">,</span> <span class="n">sumPi_c_0</span><span class="p">,</span> <span class="n">CrP_c_0</span><span class="p">])</span> 
@@ -712,7 +732,6 @@
 <span class="c1"># Pi_c</span>
 <span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">X_AtC</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="n">sumPi_c</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Normal&#39;</span><span class="p">)</span>     <span class="c1"># Pi_c </span>
 
-
 <span class="c1">###### Heart Failure (HF/TAC) case ######</span>
 <span class="c1">#Mean TAC pools</span>
 <span class="n">TAN</span> <span class="o">=</span> <span class="mf">0.006976</span> <span class="c1">#(M per liter cell)</span>
@@ -721,7 +740,7 @@
     
 <span class="n">sumATP_c_0</span> <span class="o">=</span> <span class="p">(</span><span class="n">TAN</span> <span class="o">-</span> <span class="n">V_m</span><span class="o">*</span><span class="n">W_x</span><span class="o">*</span><span class="p">(</span><span class="n">sumATP_x_0</span> <span class="o">+</span> <span class="n">sumADP_x_0</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">V_c</span><span class="o">*</span><span class="n">W_c</span><span class="o">+</span><span class="n">V_m</span><span class="o">*</span><span class="n">W_i</span><span class="p">)</span> <span class="o">-</span> <span class="n">sumADP_c_0</span>
 <span class="n">Cr_tot_c</span>   <span class="o">=</span> <span class="n">Cr_tot</span> <span class="o">/</span> <span class="p">(</span><span class="n">V_c</span> <span class="o">*</span> <span class="n">W_c</span><span class="p">)</span> <span class="c1"># convert to mol (L cyto water)^(-1)</span>
-<span class="n">CrP_c_0</span>    <span class="o">=</span> <span class="o">.</span><span class="mi">3</span> <span class="o">*</span> <span class="n">Cr_tot_c</span>  <span class="c1"># mol (L cyto water)^(-1)</span>
+<span class="n">CrP_c_0</span>    <span class="o">=</span> <span class="mf">.3</span> <span class="o">*</span> <span class="n">Cr_tot_c</span>  <span class="c1"># mol (L cyto water)^(-1)</span>
 <span class="n">sumPi_c_0</span>  <span class="o">=</span> <span class="p">(</span><span class="n">TEP</span><span class="o">-</span><span class="n">V_m</span><span class="o">*</span><span class="n">W_x</span><span class="o">*</span><span class="p">(</span><span class="n">sumATP_x_0</span> <span class="o">+</span> <span class="n">sumADP_x_0</span> <span class="o">+</span> <span class="n">sumPi_x_0</span> <span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">V_c</span><span class="o">*</span><span class="n">W_c</span><span class="o">+</span><span class="n">V_m</span><span class="o">*</span><span class="n">W_i</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span><span class="o">*</span><span class="n">sumATP_c_0</span> <span class="o">-</span> <span class="n">sumADP_c_0</span> <span class="o">-</span> <span class="n">CrP_c_0</span> 
 
 <span class="n">X_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">Psi_0</span><span class="p">,</span> <span class="n">sumATP_x_0</span><span class="p">,</span> <span class="n">sumADP_x_0</span><span class="p">,</span> <span class="n">sumPi_x_0</span><span class="p">,</span> <span class="n">NADH_x_0</span><span class="p">,</span> <span class="n">QH2_x_0</span><span class="p">,</span> <span class="n">cred_i_0</span><span class="p">,</span> <span class="n">sumATP_c_0</span><span class="p">,</span> <span class="n">sumADP_c_0</span><span class="p">,</span> <span class="n">sumPi_c_0</span><span class="p">,</span> <span class="n">CrP_c_0</span><span class="p">])</span> 
@@ -757,9 +776,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/InVivoModel_4_0.png" src="_images/InVivoModel_4_0.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /usr/local/lib/python3.9/site-packages (1.6.3)
+Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /usr/local/lib/python3.9/site-packages (from scipy) (1.20.3)
+</pre></div>
+</div>
+<img alt="_images/InVivoModel_4_1.png" src="_images/InVivoModel_4_1.png" />
 </div>
 </div>
+<p><strong>Figure 10:</strong> Simulation of respiratory control in vivo using the system in Equation <a class="reference internal" href="#equation-system-invivo">(33)</a> for (a) the creatine phosphate to ATP ratio (<span class="math notranslate nohighlight">\([\text{CrP}]_c/[\text{ATP}]_c\)</span>) and (b) cytosolic Pi concentration (<span class="math notranslate nohighlight">\([\text{Pi}]_c\)</span>).</p>
 <p>Simulations of the normal case (blue lines) show that over the physiological range of ATP demand and oxygen consumption, the CrP/ATP ratio in the myocardium decreases from a value of <span class="math notranslate nohighlight">\(2.2\)</span> at rest to <span class="math notranslate nohighlight">\(2.0\)</span> in exercise, while the cytosolic phosphate concentration increases from approximately <span class="math notranslate nohighlight">\( 0.75 \ \text{mM}\)</span> at rest to <span class="math notranslate nohighlight">\(2.3 \ \text{mM}\)</span> in exercise. These model predictions are remarkably close to experiment observations, given the relative simplicity of this model. Consistent with previous analyses, when the metabolite pool levels are changed to represent heart failure conditions (red lines), the CrP/ATP ratio decreases compared and the inorganic phosphate concentration is predicted to increase compared to physiological levels.</p>
 </div>
 </div>
@@ -768,7 +792,7 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "beards-lab/QAMAS_book",
+            repo: "binder-examples/jupyter-stacks-datascience",
             ref: "master",
         },
         codeMirrorConfig: {
@@ -786,15 +810,15 @@
 
               </div>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
         
+        <div class='prev-next-bottom'>
+            
     <a class='left-prev' id="prev-link" href="InVitroModel.html" title="previous page">Simulation of respiratory control in vitro</a>
     <a class='right-next' id="next-link" href="Summary.html" title="next page">Summary and conclusions</a>
 
+        </div>
+        
+        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -811,8 +835,9 @@
 
       </div>
     </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-    <script src="_static/js/index.js"></script>
-    
+  
   </body>
 </html>

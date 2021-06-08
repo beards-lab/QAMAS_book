@@ -266,7 +266,7 @@ if solve_ode == 1
         dATP_c; dADP_c; dPi_c];
 else
     J = [PATP_x; PADP_x; PPi_x; PATP_c; PADP_c; PPi_c;
-        J_DH; J_C1; J_C3; J_C4; J_F; J_ANT; J_PiC];
+        J_DH; J_C1; J_C3; J_C4; J_F; J_H; J_ANT; J_PiC];
 end
 
 end 
