@@ -363,7 +363,7 @@ for i in range(len(t)):
 JO2 = J_C4/2 * 60 * 1e9 * 0.0000012232
 
 
-# In[9]:
+# In[2]:
 
 
 fig, ax = plt.subplots(1,3, figsize = (30,5))
@@ -425,7 +425,7 @@ plt.show()
 # 
 # Predictions of the in vitro model may also be compared to quasi-steady state data on OCRs, phosphate metabolite levels, $\Delta\Psi$, NADH, and cytochrome c redox state, analyzed by Bazil et al. {cite}`Bazil2016`. In their experiments, several steady state ATP demand levels were achieved by titrating ATP hydrolyzing enzymes into the respiration buffer. We simulate this experiment with our model by varying the rate of the external ATP consuming process, $J_\text{AtC}$. We vary $J_\text{AtC}$ by adjusting the ATP consumption rate $X_\text{AtC}$ from $0$ to $60 \ \text{mol s}^{-1} \ \text{(L cell)}^{-1}$. Experiments were conducted under conditions of two different approximately constant external phosphate concentrations (1 and 5 mM) and with external $\text{TAN} = 5 \ \text{mM}$. The following code computes the steady state of the in vitro model at different levels of $J_\text{AtC}$ and compares the measured data on OCR, $\Delta\Psi$, NADH, cytochrome c redox state, and buffer ADP concentration to data.
 
-# In[5]:
+# In[3]:
 
 
 import numpy as np

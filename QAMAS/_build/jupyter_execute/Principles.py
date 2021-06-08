@@ -363,7 +363,6 @@ import numpy as np
 get_ipython().system('pip install scipy')
 from scipy.integrate import solve_ivp
 
-
 # Define system of ordinary differential equations from equation (13)
 def dXdt(t, X, DPsi, pH_c):
     # Unpack X state variable
@@ -462,7 +461,7 @@ plt.show()
 # 
 # To explore how the equilibrium changes with membrane potential, the following code computes the predicted equilibrium steady-state over a ranges of $\Delta\Psi$ from $100$ to $250 \ \text{mV}$. 
 
-# In[8]:
+# In[3]:
 
 
 ### Simulate over a range of membrane potential from 100 mV to 250 mV ###

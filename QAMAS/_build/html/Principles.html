@@ -84,14 +84,7 @@
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="Abstract.html">
-   Title Page
-  </a>
- </li>
-</ul>
-<ul class="current nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="Abbreviations.html">
    Abbreviations
@@ -222,12 +215,6 @@
         
         
         
-<<<<<<< HEAD
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-=======
->>>>>>> pr/1
         
     </div>
 </div>
@@ -655,11 +642,7 @@
 <span class="o">!</span>pip install scipy
 <span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
 
-<<<<<<< HEAD
-<span class="c1"># Define system of ordinary differential equations from equation (12)</span>
-=======
 <span class="c1"># Define system of ordinary differential equations from equation (13)</span>
->>>>>>> pr/1
 <span class="k">def</span> <span class="nf">dXdt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">DPsi</span><span class="p">,</span> <span class="n">pH_c</span><span class="p">):</span>
     <span class="c1"># Unpack X state variable</span>
     <span class="n">sumATP</span><span class="p">,</span> <span class="n">sumADP</span><span class="p">,</span> <span class="n">sumPi</span> <span class="o">=</span> <span class="n">X</span>
@@ -695,14 +678,6 @@
     <span class="c1"># Volume ratios</span>
     <span class="n">W_m</span> <span class="o">=</span> <span class="mf">0.7238</span>         <span class="c1"># (L mito water) (L mito)**(-1)</span>
     <span class="n">W_x</span> <span class="o">=</span> <span class="mf">0.9</span> <span class="o">*</span> <span class="n">W_m</span>      <span class="c1"># (L matrix water) (L mito)**(-1)</span>
-<<<<<<< HEAD
-    
-    <span class="c1"># Binding polynomials</span>
-    <span class="n">P_ATP</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_x</span><span class="o">/</span><span class="n">K_HATP</span> <span class="o">+</span> <span class="n">K_x</span><span class="o">/</span><span class="n">K_KATP</span> <span class="o">+</span> <span class="n">Mg_x</span><span class="o">/</span><span class="n">K_MgATP</span> <span class="c1"># equation 6</span>
-    <span class="n">P_ADP</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_x</span><span class="o">/</span><span class="n">K_HADP</span> <span class="o">+</span> <span class="n">K_x</span><span class="o">/</span><span class="n">K_KADP</span> <span class="o">+</span> <span class="n">Mg_x</span><span class="o">/</span><span class="n">K_MgADP</span> <span class="c1"># equation 7 </span>
-    <span class="n">P_Pi</span>  <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_x</span><span class="o">/</span><span class="n">K_HPi</span>  <span class="o">+</span> <span class="n">K_x</span><span class="o">/</span><span class="n">K_KPi</span>  <span class="o">+</span> <span class="n">Mg_x</span><span class="o">/</span><span class="n">K_MgPi</span>  <span class="c1"># equation 8 </span>
-=======
->>>>>>> pr/1
     
     <span class="c1"># Binding polynomials</span>
     <span class="n">P_ATP</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_x</span><span class="o">/</span><span class="n">K_HATP</span> <span class="o">+</span> <span class="n">K_x</span><span class="o">/</span><span class="n">K_KATP</span> <span class="o">+</span> <span class="n">Mg_x</span><span class="o">/</span><span class="n">K_MgATP</span> <span class="c1"># equation 5</span>
@@ -759,17 +734,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<<<<<<< HEAD
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /Users/Ben/opt/anaconda3/lib/python3.7/site-packages (1.4.1)
-Requirement already satisfied: numpy&gt;=1.13.3 in /Users/Ben/opt/anaconda3/lib/python3.7/site-packages (from scipy) (1.18.1)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /Users/Ben/opt/anaconda3/envs/qe-mini-example/lib/python3.8/site-packages (1.6.3)
+Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /Users/Ben/opt/anaconda3/envs/qe-mini-example/lib/python3.8/site-packages (from scipy) (1.20.2)
 </pre></div>
-</div>
-<img alt="_images/Principles_15_1.png" src="_images/Principles_15_1.png" />
-=======
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /usr/local/lib/python3.9/site-packages (1.6.3)
-Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /usr/local/lib/python3.9/site-packages (from scipy) (1.20.3)
-</pre></div>
->>>>>>> pr/1
 </div>
 <img alt="_images/Principles_15_1.png" src="_images/Principles_15_1.png" />
 </div>

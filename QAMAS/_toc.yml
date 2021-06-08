@@ -1,9 +1,9 @@
 # Table of contents
 # Learn more at https://jupyterbook.org/customize/toc.html
 
-format: jb-book
+format: jb-article
 root: Abstract
-chapters:
+sections:
 - file: Abbreviations
 - file: Introduction
 - file: Principles
