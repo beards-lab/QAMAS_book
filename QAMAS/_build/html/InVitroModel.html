@@ -1,0 +1,1168 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Simulation of respiratory control in vitro &#8212; Quantitative analysis of mitochondrial ATP synthesis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
+    <link rel="stylesheet" type="text/css" href="_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Simulation of cardiac energetics in vivo" href="InVivoModel.html" />
+    <link rel="prev" title="Building a model of oxidative ATP synthesis from energetic components" href="BuildingModel.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/mito.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Quantitative analysis of mitochondrial ATP synthesis</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Abstract.html">
+   Title Page
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Abbreviations.html">
+   Abbreviations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Introduction.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Principles.html">
+   Basic chemical, electrical, and thermodynamic principles
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="BuildingModel.html">
+   Building a model of oxidative ATP synthesis from energetic components
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Simulation of respiratory control in vitro
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="InVivoModel.html">
+   Simulation of cardiac energetics in vivo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Summary.html">
+   Summary and conclusions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="References.html">
+   References
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/InVitroModel.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/beards-lab/QAMAS_book"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/beards-lab/QAMAS_book/issues/new?title=Issue%20on%20page%20%2FInVitroModel.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/beards-lab/QAMAS_book/master?urlpath=tree/QAMAS/InVitroModel.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/beards-lab/QAMAS_book/blob/master/QAMAS/InVitroModel.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="simulation-of-respiratory-control-in-vitro">
+<h1>Simulation of respiratory control in vitro<a class="headerlink" href="#simulation-of-respiratory-control-in-vitro" title="Permalink to this headline">¶</a></h1>
+<p>The integrated model developed in the previous section can be adapted to simulate in vitro experiments performed using suspensions of mitochondria purified from primary tissues. To simulate in vitro experiments, the major change that we make to the model is to replace the cytosolic components of the model with variables and associated volumes of distribution representing experimental buffers used in specific experiments. Here, we set <span class="math notranslate nohighlight">\(V_c = 1\)</span>, <span class="math notranslate nohighlight">\(V_m = 5\text{e-}4\)</span>, and <span class="math notranslate nohighlight">\(W_c = 1\)</span> to represent mitochondria suspended in a buffer solution, i.e., in this virtual experiment, the mitochondria take up <span class="math notranslate nohighlight">\(0.05\%\)</span> of the volume of the experimental media.</p>
+<p>The following code simulates an experiment in which the non-energized mitochondrial state (state 1), is followed by a leak state (state 2), followed by oxidative phosphorylation state (state 3), followed by another leak state (state 4) <a class="bibtex reference internal" href="References.html#gnaiger2020" id="id1">[8]</a>. The virtual experiment represents a real experiment in which a purified suspension of mitochondria is introduced to a buffer containing no fuel substrates at time <span class="math notranslate nohighlight">\(t=0\)</span>. This non-energized state is simulated by setting the dehydrogenase activity in the model to <span class="math notranslate nohighlight">\(X_{\rm DH} = 0\)</span> for <span class="math notranslate nohighlight">\(0 \leq t &lt; 25 \ \text{s}\)</span>. State 2 is achieved by setting <span class="math notranslate nohighlight">\(X_{\rm DH}\)</span> to <span class="math notranslate nohighlight">\(0.1732\)</span> for <span class="math notranslate nohighlight">\(25 \leq t &lt; 75 \ \text{s}\)</span> to represent the addition of substrates (such as pyruvate and malate) to fuel NADH production. At time <span class="math notranslate nohighlight">\(t = 75 \ \text{s}\)</span>, <span class="math notranslate nohighlight">\(0.375 \ \mu\text{M}\)</span> of ADP is introduced into the respiration buffer to initiate the active oxidative phosphorylation state, or state 3. State 4 occurs when the ADP is nearly fully phosphorylated at approximately <span class="math notranslate nohighlight">\(t = 170 \ \text{s}\)</span>, and the system returns to a leak state. Note that this experiment is conducted under high external inorganic phosphate conditions (i.e.,   initial   <span class="math notranslate nohighlight">\([\text{Pi}]_c = 5 \ \text{mM}\)</span>).</p>
+<table class="table" id="table-invitro">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">Isolated mitochondria in silico experiment.</span><a class="headerlink" href="#table-invitro" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter or Condition</p></th>
+<th class="head"><p>State 1</p></th>
+<th class="head"><p>State 2</p></th>
+<th class="head"><p>State 3 and 4</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\(X_\text{DH}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0.1732\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( - \)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\([\text{NADH}]_x\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\([\text{ATP}]_c\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p><span class="math notranslate nohighlight">\([\text{ADP}]_c\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(0\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\( -\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(+375\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>M</p></td>
+</tr>
+<tr class="row-even"><td><p><span class="math notranslate nohighlight">\([\text{Pi}]_c\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(5\)</span> mM</p></td>
+<td><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(-\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">!</span>pip install scipy
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+
+<span class="c1">###### Constants defining metabolite pools ######</span>
+<span class="c1"># Volume fractions and water space fractions</span>
+<span class="n">V_c</span> <span class="o">=</span> <span class="mf">1.0</span>          <span class="c1"># buffer volume fraction        # L buffer (L cuvette)**(-1)</span>
+<span class="n">V_m</span> <span class="o">=</span> <span class="mf">0.0005</span>       <span class="c1"># mitochondrial volume fraction # L mito (L cuvette)**(-1)</span>
+<span class="n">V_m2c</span> <span class="o">=</span> <span class="n">V_m</span> <span class="o">/</span> <span class="n">V_c</span>  <span class="c1"># mito to cyto volume ratio     # L mito (L cuvette)**(-1)</span>
+<span class="n">W_c</span> <span class="o">=</span> <span class="mf">1.0</span>          <span class="c1"># buffer water space            # L buffer water (L buffer)**(-1)</span>
+<span class="n">W_m</span> <span class="o">=</span> <span class="mf">0.7238</span>       <span class="c1"># mitochondrial water space     # L mito water (L mito)**(-1)</span>
+<span class="n">W_x</span> <span class="o">=</span> <span class="mf">0.9</span><span class="o">*</span><span class="n">W_m</span>      <span class="c1"># matrix water space            # L matrix water (L mito)**(-1)</span>
+<span class="n">W_i</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">W_m</span>      <span class="c1"># intermembrane water space     # L IM water (L mito)**(-1)</span>
+
+<span class="c1"># Total pool concentrations</span>
+<span class="n">NAD_tot</span> <span class="o">=</span> <span class="mf">2.97e-3</span>  <span class="c1"># NAD+ and NADH conc            # mol (L matrix water)**(-1)</span>
+<span class="n">Q_tot</span>   <span class="o">=</span> <span class="mf">1.35e-3</span>  <span class="c1"># Q and QH2 conc                # mol (L matrix water)**(-1)</span>
+<span class="n">c_tot</span>   <span class="o">=</span> <span class="mf">2.7e-3</span>   <span class="c1"># cytochrome c ox and red conc  # mol (L IM water)**(-1)</span>
+
+<span class="c1"># Membrane capacitance</span>
+<span class="n">Cm</span> <span class="o">=</span> <span class="mf">3.1e-3</span>
+
+<span class="c1">###### Set fixed pH, cation concentrations, and O2 partial pressure ######</span>
+<span class="c1"># pH</span>
+<span class="n">pH_x</span> <span class="o">=</span> <span class="mf">7.40</span>
+<span class="n">pH_c</span> <span class="o">=</span> <span class="mf">7.20</span>
+
+<span class="c1"># K+ concentrations</span>
+<span class="n">K_x</span>  <span class="o">=</span> <span class="mf">100e-3</span>      <span class="c1"># mol (L matrix water)**(-1)</span>
+<span class="n">K_c</span>  <span class="o">=</span> <span class="mf">140e-3</span>      <span class="c1"># mol (L cyto water)**(-1)</span>
+
+<span class="c1"># Mg2+ concentrations</span>
+<span class="n">Mg_x</span> <span class="o">=</span> <span class="mf">1.0e-3</span>        <span class="c1"># mol (L matrix water)**(-1)</span>
+<span class="n">Mg_c</span> <span class="o">=</span> <span class="mf">1.0e-3</span>        <span class="c1"># mol (L cyto water)**(-1)</span>
+
+<span class="c1"># Oxygen partial pressure</span>
+<span class="n">PO2</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># mmHg</span>
+
+<span class="c1">###### Parameter vector ###### </span>
+<span class="n">X_DH</span>  <span class="o">=</span> <span class="mf">0.1732</span>
+<span class="n">X_C1</span>  <span class="o">=</span> <span class="mf">1.0e4</span>
+<span class="n">X_C3</span>  <span class="o">=</span> <span class="mf">1.0e6</span>
+<span class="n">X_C4</span>  <span class="o">=</span> <span class="mf">0.0125</span>
+<span class="n">X_F</span>   <span class="o">=</span> <span class="mf">1.0e3</span>
+<span class="n">E_ANT</span> <span class="o">=</span> <span class="mf">0.325</span>
+<span class="n">E_PiC</span> <span class="o">=</span> <span class="mf">5.0e6</span>
+<span class="n">X_H</span>   <span class="o">=</span> <span class="mf">1.0e3</span>
+<span class="n">X_AtC</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">activity_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">X_DH</span><span class="p">,</span> <span class="n">X_C1</span><span class="p">,</span> <span class="n">X_C3</span><span class="p">,</span> <span class="n">X_C4</span><span class="p">,</span> <span class="n">X_F</span><span class="p">,</span> <span class="n">E_ANT</span><span class="p">,</span> <span class="n">E_PiC</span><span class="p">,</span> <span class="n">X_H</span><span class="p">,</span> <span class="n">X_AtC</span><span class="p">])</span>
+
+<span class="c1">###### Initial Conditions ######</span>
+<span class="c1"># Membrane Potential</span>
+<span class="n">DPsi_0</span> <span class="o">=</span> <span class="mi">175</span><span class="o">/</span><span class="mi">1000</span>      <span class="c1"># V</span>
+
+<span class="c1"># Matrix species</span>
+<span class="n">sumATP_x_0</span> <span class="o">=</span> <span class="mf">0.5e-3</span>        <span class="c1"># mol (L matrix water)**(-1)</span>
+<span class="n">sumADP_x_0</span> <span class="o">=</span> <span class="mf">9.5e-3</span>        <span class="c1"># mol (L matrix water)**(-1)</span>
+<span class="n">sumPi_x_0</span>  <span class="o">=</span> <span class="mf">0.3e-3</span>        <span class="c1"># mol (L matrix water)**(-1)</span>
+<span class="n">NADH_x_0</span>   <span class="o">=</span> <span class="mi">0</span>             <span class="c1"># mol (L matrix water)**(-1)</span>
+<span class="n">QH2_x_0</span>    <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">Q_tot</span>   <span class="c1"># mol (L matrix water)**(-1)</span>
+
+<span class="c1"># IMS species</span>
+<span class="n">cred_i_0</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">c_tot</span> <span class="c1"># mol (L IMS water)**(-1)</span>
+
+<span class="c1"># Cytosolic species</span>
+<span class="n">sumATP_c_0</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1"># mol (L cyto water)^(-1)</span>
+<span class="n">sumADP_c_0</span> <span class="o">=</span> <span class="mi">0</span>       <span class="c1"># mol (L cyto water)^(-1)</span>
+<span class="n">sumPi_c_0</span>  <span class="o">=</span> <span class="mf">5.0e-3</span>  <span class="c1"># mol (L cyto water)^(-1)</span>
+
+<span class="n">X_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">DPsi_0</span><span class="p">,</span> <span class="n">sumATP_x_0</span><span class="p">,</span> <span class="n">sumADP_x_0</span><span class="p">,</span> <span class="n">sumPi_x_0</span><span class="p">,</span> <span class="n">NADH_x_0</span><span class="p">,</span> <span class="n">QH2_x_0</span><span class="p">,</span> <span class="n">cred_i_0</span><span class="p">,</span> <span class="n">sumATP_c_0</span><span class="p">,</span> <span class="n">sumADP_c_0</span><span class="p">,</span> <span class="n">sumPi_c_0</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">dXdt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">activity_array</span><span class="p">,</span> <span class="n">solve_ode</span><span class="p">):</span>
+    <span class="c1"># Unpack variables </span>
+    <span class="n">DPsi</span><span class="p">,</span> <span class="n">sumATP_x</span><span class="p">,</span><span class="n">sumADP_x</span><span class="p">,</span> <span class="n">sumPi_x</span><span class="p">,</span> <span class="n">NADH_x</span><span class="p">,</span> <span class="n">QH2_x</span><span class="p">,</span> <span class="n">cred_i</span><span class="p">,</span> <span class="n">sumATP_c</span><span class="p">,</span> <span class="n">sumADP_c</span><span class="p">,</span> <span class="n">sumPi_c</span> <span class="o">=</span> <span class="n">X</span>
+    <span class="n">X_DH</span><span class="p">,</span> <span class="n">X_C1</span><span class="p">,</span> <span class="n">X_C3</span><span class="p">,</span> <span class="n">X_C4</span><span class="p">,</span> <span class="n">X_F</span><span class="p">,</span> <span class="n">E_ANT</span><span class="p">,</span> <span class="n">E_PiC</span><span class="p">,</span> <span class="n">X_H</span><span class="p">,</span> <span class="n">X_AtC</span> <span class="o">=</span> <span class="n">activity_array</span>
+
+    <span class="c1"># Hydrogen ion concentration</span>
+    <span class="n">H_x</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">pH_x</span><span class="p">)</span> <span class="c1"># mol (L matrix water)**(-1)</span>
+    <span class="n">H_c</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">pH_c</span><span class="p">)</span> <span class="c1"># mol (L cuvette water)**(-1)</span>
+
+    <span class="c1"># Oxygen concentration</span>
+    <span class="n">a_3</span>  <span class="o">=</span> <span class="mf">1.74e-6</span>   <span class="c1"># oxygen solubility in cuvette   # mol (L matrix water * mmHg)**(-1)</span>
+    <span class="n">O2_x</span> <span class="o">=</span> <span class="n">a_3</span><span class="o">*</span><span class="n">PO2</span>   <span class="c1"># mol (L matrix water)**(-1)</span>
+
+    <span class="c1"># Thermochemical constants</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span>          <span class="c1"># J (mol K)**(-1)</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="mi">37</span> <span class="o">+</span> <span class="mf">273.15</span>    <span class="c1"># K</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="mi">96485</span>          <span class="c1"># C mol**(-1)</span>
+    
+    <span class="c1"># Proton motive force parameters (dimensionless)</span>
+    <span class="n">n_F</span>  <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="mi">3</span>
+    <span class="n">n_C1</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">n_C3</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">n_C4</span> <span class="o">=</span> <span class="mi">4</span>
+    
+    <span class="c1"># Dissociation constants</span>
+    <span class="n">K_MgATP</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">3.88</span><span class="p">)</span>
+    <span class="n">K_HATP</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">6.33</span><span class="p">)</span>
+    <span class="n">K_KATP</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">1.02</span><span class="p">)</span>
+    <span class="n">K_MgADP</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">3.00</span><span class="p">)</span>
+    <span class="n">K_HADP</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">6.26</span><span class="p">)</span>
+    <span class="n">K_KADP</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.89</span><span class="p">)</span>
+    <span class="n">K_MgPi</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">1.66</span><span class="p">)</span>
+    <span class="n">K_HPi</span>   <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">6.62</span><span class="p">)</span>
+    <span class="n">K_KPi</span>   <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.42</span><span class="p">)</span>
+
+    <span class="c1"># Other concentrations computed from the state variables</span>
+    <span class="n">NAD_x</span> <span class="o">=</span> <span class="n">NAD_tot</span> <span class="o">-</span> <span class="n">NADH_x</span>  <span class="c1">## mol (L matrix water)**(-1)</span>
+    <span class="n">Q_x</span>   <span class="o">=</span> <span class="n">Q_tot</span> <span class="o">-</span> <span class="n">QH2_x</span>     <span class="c1">## mol (L matrix water)**(-1)</span>
+    <span class="n">cox_i</span> <span class="o">=</span> <span class="n">c_tot</span> <span class="o">-</span> <span class="n">cred_i</span>    <span class="c1">## mol (L matrix water)**(-1)</span>
+
+    <span class="c1">## Binding polynomials</span>
+    <span class="c1"># Matrix species # mol (L mito water)**(-1)</span>
+    <span class="n">PATP_x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_x</span><span class="o">/</span><span class="n">K_HATP</span> <span class="o">+</span> <span class="n">Mg_x</span><span class="o">/</span><span class="n">K_MgATP</span> <span class="o">+</span> <span class="n">K_x</span><span class="o">/</span><span class="n">K_KATP</span>
+    <span class="n">PADP_x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_x</span><span class="o">/</span><span class="n">K_HADP</span> <span class="o">+</span> <span class="n">Mg_x</span><span class="o">/</span><span class="n">K_MgADP</span> <span class="o">+</span> <span class="n">K_x</span><span class="o">/</span><span class="n">K_KADP</span>
+    <span class="n">PPi_x</span>  <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_x</span><span class="o">/</span><span class="n">K_HPi</span>  <span class="o">+</span> <span class="n">Mg_x</span><span class="o">/</span><span class="n">K_MgPi</span>  <span class="o">+</span> <span class="n">K_x</span><span class="o">/</span><span class="n">K_KPi</span>
+    
+    <span class="c1"># Cytosol species # mol (L cuvette water)**(-1)</span>
+    <span class="n">PATP_c</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_c</span><span class="o">/</span><span class="n">K_HATP</span> <span class="o">+</span> <span class="n">Mg_c</span><span class="o">/</span><span class="n">K_MgATP</span> <span class="o">+</span> <span class="n">K_c</span><span class="o">/</span><span class="n">K_KATP</span>
+    <span class="n">PADP_c</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_c</span><span class="o">/</span><span class="n">K_HADP</span> <span class="o">+</span> <span class="n">Mg_c</span><span class="o">/</span><span class="n">K_MgADP</span> <span class="o">+</span> <span class="n">K_c</span><span class="o">/</span><span class="n">K_KADP</span>
+    <span class="n">PPi_c</span>  <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_c</span><span class="o">/</span><span class="n">K_HPi</span>  <span class="o">+</span> <span class="n">Mg_c</span><span class="o">/</span><span class="n">K_MgPi</span>  <span class="o">+</span> <span class="n">K_c</span><span class="o">/</span><span class="n">K_KPi</span>
+    
+    <span class="c1">## Unbound species</span>
+    <span class="c1"># Matrix species</span>
+    <span class="n">ATP_x</span> <span class="o">=</span> <span class="n">sumATP_x</span> <span class="o">/</span> <span class="n">PATP_x</span> <span class="c1"># [ATP4-]_x</span>
+    <span class="n">ADP_x</span> <span class="o">=</span> <span class="n">sumADP_x</span> <span class="o">/</span> <span class="n">PADP_x</span> <span class="c1"># [ADP3-]_x</span>
+    <span class="n">Pi_x</span>  <span class="o">=</span> <span class="n">sumPi_x</span>  <span class="o">/</span> <span class="n">PPi_x</span>  <span class="c1"># [HPO42-]_x</span>
+    
+    <span class="c1"># Cytosolic species </span>
+    <span class="n">ATP_c</span> <span class="o">=</span> <span class="n">sumATP_c</span> <span class="o">/</span> <span class="n">PATP_c</span> <span class="c1"># [ATP4-]_c</span>
+    <span class="n">ADP_c</span> <span class="o">=</span> <span class="n">sumADP_c</span> <span class="o">/</span> <span class="n">PADP_c</span> <span class="c1"># [ADP3-]_c</span>
+    <span class="n">Pi_c</span>  <span class="o">=</span> <span class="n">sumPi_c</span>  <span class="o">/</span> <span class="n">PPi_c</span>  <span class="c1"># [HPO42-]_c</span>
+    
+    
+    <span class="c1">###### NADH Dehydrogenase ######</span>
+    <span class="c1"># Constants</span>
+    <span class="n">r</span>      <span class="o">=</span> <span class="mf">6.8385</span>
+    <span class="n">k_Pi1</span>  <span class="o">=</span> <span class="mf">4.659e-4</span>    <span class="c1"># mol (L matrix water)**(-1)</span>
+    <span class="n">k_Pi2</span>  <span class="o">=</span> <span class="mf">6.578e-4</span>    <span class="c1"># mol (L matrix water)**(-1)</span>
+    
+    <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
+    <span class="n">J_DH</span> <span class="o">=</span> <span class="n">X_DH</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">NAD_x</span> <span class="o">-</span> <span class="n">NADH_x</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">sumPi_x</span> <span class="o">/</span> <span class="n">k_Pi1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">sumPi_x</span> <span class="o">/</span> <span class="n">k_Pi2</span><span class="p">))</span>
+
+    <span class="c1">###### Complex I ######</span>
+    <span class="c1"># NADH_x + Q_x + 5H+_x &lt;-&gt; NAD+_x + QH2_x + 4H+_i + 4DPsi</span>
+    
+    <span class="c1"># Gibbs energy (J mol**(-1))</span>
+    <span class="n">DrGo_C1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">109680</span> 
+    <span class="n">DrGapp_C1</span> <span class="o">=</span> <span class="n">DrGo_C1</span> <span class="o">-</span> <span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">H_x</span><span class="p">)</span> 
+    
+    <span class="c1"># Apparent equilibrium constant </span>
+    <span class="n">Kapp_C1</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="o">-</span><span class="p">(</span><span class="n">DrGapp_C1</span> <span class="o">+</span> <span class="n">n_C1</span> <span class="o">*</span> <span class="n">F</span> <span class="o">*</span> <span class="n">DPsi</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span><span class="p">))</span> <span class="o">*</span> <span class="p">((</span><span class="n">H_x</span> <span class="o">/</span> <span class="n">H_c</span><span class="p">)</span><span class="o">**</span><span class="n">n_C1</span><span class="p">)</span>
+    
+    <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
+    <span class="n">J_C1</span> <span class="o">=</span> <span class="n">X_C1</span> <span class="o">*</span> <span class="p">(</span><span class="n">Kapp_C1</span> <span class="o">*</span> <span class="n">NADH_x</span> <span class="o">*</span> <span class="n">Q_x</span> <span class="o">-</span> <span class="n">NAD_x</span> <span class="o">*</span> <span class="n">QH2_x</span><span class="p">)</span>
+    
+    <span class="c1">###### Complex III ######</span>
+    <span class="c1"># QH2_x + 2cuvetteC(ox)3+_i + 2H+_x &lt;-&gt; Q_x + 2cuvetteC(red)2+_i + 4H+_i + 2DPsi</span>
+    
+    <span class="c1"># Gibbs energy (J mol**(-1))</span>
+    <span class="n">DrGo_C3</span> <span class="o">=</span> <span class="mi">46690</span> 
+    <span class="n">DrGapp_C3</span> <span class="o">=</span> <span class="n">DrGo_C3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">H_c</span><span class="p">)</span> 
+    
+    <span class="c1"># Apparent equilibrium constant </span>
+    <span class="n">Kapp_C3</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">DrGapp_C3</span> <span class="o">+</span> <span class="n">n_C3</span> <span class="o">*</span> <span class="n">F</span> <span class="o">*</span> <span class="n">DPsi</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_x</span> <span class="o">/</span> <span class="n">H_c</span><span class="p">)</span><span class="o">**</span><span class="n">n_C3</span> 
+    
+    <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
+    <span class="n">J_C3</span> <span class="o">=</span> <span class="n">X_C3</span> <span class="o">*</span> <span class="p">(</span><span class="n">Kapp_C3</span> <span class="o">*</span> <span class="n">cox_i</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">QH2_x</span> <span class="o">-</span> <span class="n">cred_i</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">Q_x</span><span class="p">)</span>
+
+    <span class="c1">###### Complex IV ######</span>
+    <span class="c1"># 2 cytoC(red)2+_i + 0.5O2_x + 4H+_x &lt;-&gt; cytoC(ox)3+_x + H2O_x + 2H+_i +2DPsi</span>
+    
+    <span class="c1"># Constant</span>
+    <span class="n">k_O2</span> <span class="o">=</span> <span class="mf">1.2e-4</span>      <span class="c1"># mol (L matrix water)**(-1)</span>
+    
+    <span class="c1"># Gibbs energy (J mol**(-1))</span>
+    <span class="n">DrGo_C4</span> <span class="o">=</span> <span class="o">-</span><span class="mi">202160</span>  <span class="c1"># J mol**(-1)</span>
+    <span class="n">DrGapp_C4</span> <span class="o">=</span> <span class="n">DrGo_C4</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">H_c</span><span class="p">)</span>
+    
+    <span class="c1"># Apparent equilibrium constant </span>
+    <span class="n">Kapp_C4</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">DrGapp_C4</span> <span class="o">+</span> <span class="n">n_C4</span> <span class="o">*</span> <span class="n">F</span> <span class="o">*</span> <span class="n">DPsi</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_x</span> <span class="o">/</span> <span class="n">H_c</span><span class="p">)</span><span class="o">**</span><span class="n">n_C4</span>
+    
+    <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
+    <span class="n">J_C4</span> <span class="o">=</span> <span class="n">X_C4</span> <span class="o">*</span><span class="p">(</span><span class="n">Kapp_C4</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">cred_i</span> <span class="o">*</span> <span class="n">O2_x</span><span class="o">**</span><span class="mf">0.25</span> <span class="o">-</span> <span class="n">cox_i</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">k_O2</span> <span class="o">/</span> <span class="n">O2_x</span><span class="p">))</span>
+
+    <span class="c1">###### F0F1-ATPase ######</span>
+    <span class="c1"># ADP3-_x + HPO42-_x + H+_x + n_A*H+_i &lt;-&gt; ATP4- + H2O + n_A*H+_x</span>
+    
+    <span class="c1"># Gibbs energy (J mol**(-1))</span>
+    <span class="n">DrGo_F</span> <span class="o">=</span> <span class="mi">4990</span> 
+    <span class="n">DrGapp_F</span> <span class="o">=</span> <span class="n">DrGo_F</span> <span class="o">+</span> <span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">H_x</span> <span class="o">*</span> <span class="n">PATP_x</span> <span class="o">/</span> <span class="p">(</span><span class="n">PADP_x</span> <span class="o">*</span> <span class="n">PPi_x</span><span class="p">))</span>
+    
+    <span class="c1"># Apparent equilibrium constant</span>
+    <span class="n">Kapp_F</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="p">(</span><span class="n">DrGapp_F</span> <span class="o">+</span> <span class="n">n_F</span> <span class="o">*</span> <span class="n">F</span> <span class="o">*</span> <span class="n">DPsi</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_c</span> <span class="o">/</span> <span class="n">H_x</span><span class="p">)</span><span class="o">**</span><span class="n">n_F</span>
+    
+    <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
+    <span class="n">J_F</span> <span class="o">=</span> <span class="n">X_F</span> <span class="o">*</span> <span class="p">(</span><span class="n">Kapp_F</span> <span class="o">*</span> <span class="n">sumADP_x</span> <span class="o">*</span> <span class="n">sumPi_x</span> <span class="o">-</span> <span class="n">sumATP_x</span><span class="p">)</span>
+    
+    <span class="c1">###### ANT ######</span>
+    <span class="c1"># ATP4-_x + ADP3-_i &lt;-&gt; ATP4-_i + ADP3-_x</span>
+    
+    <span class="c1"># Constants </span>
+    <span class="n">del_D</span>   <span class="o">=</span> <span class="mf">0.0167</span>
+    <span class="n">del_T</span>   <span class="o">=</span> <span class="mf">0.0699</span>
+    <span class="n">k2o_ANT</span> <span class="o">=</span> <span class="mf">9.54</span><span class="o">/</span><span class="mi">60</span>      <span class="c1"># s**(-1)</span>
+    <span class="n">k3o_ANT</span> <span class="o">=</span> <span class="mf">30.05</span><span class="o">/</span><span class="mi">60</span>     <span class="c1"># s**(-1)</span>
+    <span class="n">K0o_D</span>   <span class="o">=</span> <span class="mf">38.89e-6</span>     <span class="c1"># mol (L cuvette water)**(-1)</span>
+    <span class="n">K0o_T</span>   <span class="o">=</span> <span class="mf">56.05e-6</span>     <span class="c1"># mol (L cuvette water)**(-1)</span>
+    <span class="n">A</span>       <span class="o">=</span> <span class="o">+</span><span class="mf">0.2829</span>
+    <span class="n">B</span>       <span class="o">=</span> <span class="o">-</span><span class="mf">0.2086</span>
+    <span class="n">C</span>       <span class="o">=</span> <span class="o">+</span><span class="mf">0.2372</span>
+    
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">F</span> <span class="o">*</span> <span class="n">DPsi</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span>
+    
+    <span class="c1"># Reaction rates</span>
+    <span class="n">k2_ANT</span> <span class="o">=</span> <span class="n">k2o_ANT</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">C</span><span class="p">)</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span>
+    <span class="n">k3_ANT</span> <span class="o">=</span> <span class="n">k3o_ANT</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">C</span><span class="p">)</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span>
+    
+    <span class="c1"># Dissociation constants</span>
+    <span class="n">K0_D</span> <span class="o">=</span> <span class="n">K0o_D</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">del_D</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span>
+    <span class="n">K0_T</span> <span class="o">=</span> <span class="n">K0o_T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">del_T</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span>
+    
+    <span class="n">q</span>     <span class="o">=</span> <span class="n">k3_ANT</span> <span class="o">*</span> <span class="n">K0_D</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">k2_ANT</span> <span class="o">*</span> <span class="n">K0_T</span><span class="p">)</span>
+    <span class="n">term1</span> <span class="o">=</span> <span class="n">k2_ANT</span> <span class="o">*</span> <span class="n">ATP_x</span> <span class="o">*</span> <span class="n">ADP_c</span> <span class="o">*</span> <span class="n">q</span> <span class="o">/</span> <span class="n">K0_D</span>
+    <span class="n">term2</span> <span class="o">=</span> <span class="n">k3_ANT</span> <span class="o">*</span> <span class="n">ADP_x</span> <span class="o">*</span> <span class="n">ATP_c</span> <span class="o">/</span> <span class="n">K0_T</span>
+    <span class="n">num</span>   <span class="o">=</span> <span class="n">term1</span> <span class="o">-</span> <span class="n">term2</span>
+    <span class="n">den</span>   <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">ATP_c</span><span class="o">/</span><span class="n">K0_T</span> <span class="o">+</span> <span class="n">ADP_c</span><span class="o">/</span><span class="n">K0_D</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">ADP_x</span> <span class="o">+</span> <span class="n">ATP_x</span> <span class="o">*</span> <span class="n">q</span><span class="p">)</span>
+    
+    <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
+    <span class="n">J_ANT</span> <span class="o">=</span> <span class="n">E_ANT</span> <span class="o">*</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span>
+    
+    <span class="c1">###### H+-PI2 cotransporter ######</span>
+    <span class="c1"># H2PO42-_x + H+_x = H2PO42-_c + H+_c</span>
+    
+    <span class="c1"># Constant</span>
+    <span class="n">k_PiC</span> <span class="o">=</span> <span class="mf">1.61e-3</span>  <span class="c1"># mol (L cuvette)**(-1)</span>
+    
+    <span class="c1"># H2P04- species</span>
+    <span class="n">HPi_c</span> <span class="o">=</span> <span class="n">Pi_c</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_c</span> <span class="o">/</span> <span class="n">K_HPi</span><span class="p">)</span>
+    <span class="n">HPi_x</span> <span class="o">=</span> <span class="n">Pi_x</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_x</span> <span class="o">/</span> <span class="n">K_HPi</span><span class="p">)</span>
+    
+    <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
+    <span class="n">J_PiC</span> <span class="o">=</span> <span class="n">E_PiC</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_c</span> <span class="o">*</span> <span class="n">HPi_c</span> <span class="o">-</span> <span class="n">H_x</span> <span class="o">*</span> <span class="n">HPi_x</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_PiC</span> <span class="o">+</span> <span class="n">HPi_c</span><span class="p">)</span>
+
+    <span class="c1">###### H+ leak ######</span>
+    
+    <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
+    <span class="n">J_H</span> <span class="o">=</span> <span class="n">X_H</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_c</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">phi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">H_x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">phi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    
+    <span class="c1">###### ATPase ######</span>
+    <span class="c1"># ATP4- + H2O = ADP3- + PI2- + H+</span>
+    
+    <span class="c1">#Flux (mol (s * L cyto)**(-1))</span>
+    <span class="n">J_AtC</span> <span class="o">=</span> <span class="n">X_AtC</span> <span class="o">/</span> <span class="n">V_c</span>
+
+    <span class="c1">###### Differential equations (equation 23) ######</span>
+    <span class="c1"># Membrane potential</span>
+    <span class="n">dDPsi</span> <span class="o">=</span> <span class="p">(</span><span class="n">n_C1</span> <span class="o">*</span> <span class="n">J_C1</span> <span class="o">+</span> <span class="n">n_C3</span> <span class="o">*</span> <span class="n">J_C3</span> <span class="o">+</span> <span class="n">n_C4</span> <span class="o">*</span> <span class="n">J_C4</span> <span class="o">-</span> <span class="n">n_F</span> <span class="o">*</span> <span class="n">J_F</span> <span class="o">-</span> <span class="n">J_ANT</span> <span class="o">-</span> <span class="n">J_H</span><span class="p">)</span> <span class="o">/</span> <span class="n">Cm</span>
+
+    <span class="c1"># Matrix species</span>
+    <span class="n">dATP_x</span>  <span class="o">=</span> <span class="p">(</span><span class="n">J_F</span>  <span class="o">-</span> <span class="n">J_ANT</span><span class="p">)</span> <span class="o">/</span> <span class="n">W_x</span>
+    <span class="n">dADP_x</span>  <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">J_F</span> <span class="o">+</span> <span class="n">J_ANT</span><span class="p">)</span> <span class="o">/</span> <span class="n">W_x</span>
+    <span class="n">dPi_x</span>   <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">J_F</span> <span class="o">+</span> <span class="n">J_PiC</span><span class="p">)</span> <span class="o">/</span> <span class="n">W_x</span>
+    <span class="n">dNADH_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">J_DH</span>  <span class="o">-</span> <span class="n">J_C1</span><span class="p">)</span>  <span class="o">/</span> <span class="n">W_x</span>
+    <span class="n">dQH2_x</span>  <span class="o">=</span> <span class="p">(</span><span class="n">J_C1</span>  <span class="o">-</span> <span class="n">J_C3</span><span class="p">)</span>  <span class="o">/</span> <span class="n">W_x</span>
+    
+    <span class="c1"># IMS species</span>
+    <span class="n">dcred_i</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">J_C3</span> <span class="o">-</span> <span class="n">J_C4</span><span class="p">)</span> <span class="o">/</span> <span class="n">W_i</span>
+    
+    <span class="c1"># Buffer species</span>
+    <span class="n">dATP_c</span> <span class="o">=</span> <span class="p">(</span> <span class="n">V_m2c</span> <span class="o">*</span> <span class="n">J_ANT</span> <span class="o">-</span> <span class="n">J_AtC</span> <span class="p">)</span> <span class="o">/</span> <span class="n">W_c</span>
+    <span class="n">dADP_c</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">V_m2c</span> <span class="o">*</span> <span class="n">J_ANT</span> <span class="o">+</span> <span class="n">J_AtC</span> <span class="p">)</span> <span class="o">/</span> <span class="n">W_c</span>
+    <span class="n">dPi_c</span>  <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">V_m2c</span> <span class="o">*</span> <span class="n">J_PiC</span> <span class="o">+</span> <span class="n">J_AtC</span><span class="p">)</span> <span class="o">/</span> <span class="n">W_c</span>
+
+    <span class="n">dX</span> <span class="o">=</span> <span class="p">[</span><span class="n">dDPsi</span><span class="p">,</span> <span class="n">dATP_x</span><span class="p">,</span> <span class="n">dADP_x</span><span class="p">,</span> <span class="n">dPi_x</span><span class="p">,</span> <span class="n">dNADH_x</span><span class="p">,</span> <span class="n">dQH2_x</span><span class="p">,</span> <span class="n">dcred_i</span><span class="p">,</span> <span class="n">dATP_c</span><span class="p">,</span> <span class="n">dADP_c</span><span class="p">,</span> <span class="n">dPi_c</span><span class="p">]</span>
+    
+    <span class="c1"># Calculate state-dependent quantities after model is solved. </span>
+    <span class="k">if</span> <span class="n">solve_ode</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">dX</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">PATP_x</span><span class="p">,</span> <span class="n">PADP_x</span><span class="p">,</span> <span class="n">PPi_x</span><span class="p">,</span> <span class="n">PATP_c</span><span class="p">,</span> <span class="n">PADP_c</span><span class="p">,</span> <span class="n">PPi_c</span><span class="p">,</span> <span class="n">J_DH</span><span class="p">,</span> <span class="n">J_C1</span><span class="p">,</span> <span class="n">J_C3</span><span class="p">,</span> <span class="n">J_C4</span><span class="p">,</span> <span class="n">J_F</span><span class="p">,</span> <span class="n">J_ANT</span><span class="p">,</span> <span class="n">J_PiC</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">dX</span><span class="p">,</span> <span class="n">J</span>
+
+<span class="c1">### Four State Model ###</span>
+<span class="c1"># State 1 - no substrates</span>
+<span class="n">t_1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">25</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">X_AtC</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">X_DH</span> <span class="o">=</span> <span class="mf">0.001</span> <span class="c1"># Kept non-zero for solver stability</span>
+<span class="n">activity_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">X_DH</span><span class="p">,</span> <span class="n">X_C1</span><span class="p">,</span> <span class="n">X_C3</span><span class="p">,</span> <span class="n">X_C4</span><span class="p">,</span> <span class="n">X_F</span><span class="p">,</span> <span class="n">E_ANT</span><span class="p">,</span> <span class="n">E_PiC</span><span class="p">,</span> <span class="n">X_H</span><span class="p">,</span> <span class="n">X_AtC</span><span class="p">])</span>
+<span class="n">state_1_results</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">dXdt</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">25</span><span class="p">],</span> <span class="n">X_0</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;Radau&#39;</span><span class="p">,</span> <span class="n">t_eval</span> <span class="o">=</span> <span class="n">t_1</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">activity_array</span><span class="p">,</span><span class="mi">1</span><span class="p">,))</span>
+
+<span class="c1"># State 2 - Add substrate (i.e. turn on X_DH)</span>
+<span class="n">t_2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="mi">75</span><span class="p">,(</span><span class="mi">75</span> <span class="o">-</span> <span class="mi">25</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">X_DH</span> <span class="o">=</span> <span class="mf">0.0866</span> <span class="o">*</span> <span class="mi">2</span>
+<span class="n">activity_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">X_DH</span><span class="p">,</span> <span class="n">X_C1</span><span class="p">,</span> <span class="n">X_C3</span><span class="p">,</span> <span class="n">X_C4</span><span class="p">,</span> <span class="n">X_F</span><span class="p">,</span> <span class="n">E_ANT</span><span class="p">,</span> <span class="n">E_PiC</span><span class="p">,</span> <span class="n">X_H</span><span class="p">,</span> <span class="n">X_AtC</span><span class="p">])</span>
+<span class="n">state_2_results</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">dXdt</span><span class="p">,</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span><span class="mi">75</span><span class="p">],</span> <span class="n">state_1_results</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;Radau&#39;</span><span class="p">,</span> <span class="n">t_eval</span> <span class="o">=</span> <span class="n">t_2</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">activity_array</span><span class="p">,</span><span class="mi">1</span><span class="p">,))</span>
+
+<span class="c1"># State 3 and 4 - Add ADP</span>
+<span class="n">t_3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span><span class="mi">200</span><span class="p">,(</span><span class="mi">200</span> <span class="o">-</span> <span class="mi">75</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">state_2_results</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mf">0.375e-3</span> <span class="c1"># Molar</span>
+<span class="n">state_3_results</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">dXdt</span><span class="p">,</span> <span class="p">[</span><span class="mi">75</span><span class="p">,</span><span class="mi">200</span><span class="p">],</span> <span class="n">state_2_results</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;Radau&#39;</span><span class="p">,</span> <span class="n">t_eval</span> <span class="o">=</span> <span class="n">t_3</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">activity_array</span><span class="p">,</span><span class="mi">1</span><span class="p">,))</span>
+
+<span class="c1"># Concatenate Results</span>
+<span class="c1"># Note: remove redundant time points </span>
+<span class="n">all_results</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">((</span><span class="n">state_1_results</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">state_2_results</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span><span class="n">state_3_results</span><span class="o">.</span><span class="n">y</span><span class="p">))</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">state_1_results</span><span class="o">.</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">state_2_results</span><span class="o">.</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">state_3_results</span><span class="o">.</span><span class="n">t</span><span class="p">))</span>
+
+<span class="n">DPsi</span><span class="p">,</span> <span class="n">sumATP_x</span><span class="p">,</span> <span class="n">sumADP_x</span><span class="p">,</span> <span class="n">sumPi_x</span><span class="p">,</span> <span class="n">NADH_x</span><span class="p">,</span> <span class="n">QH2_x</span><span class="p">,</span> <span class="n">cred_i</span><span class="p">,</span> <span class="n">sumATP_c</span><span class="p">,</span> <span class="n">sumADP_c</span><span class="p">,</span> <span class="n">sumPi_c</span> <span class="o">=</span> <span class="n">all_results</span>
+
+
+<span class="c1"># Calculate complex IV Flux</span>
+<span class="n">J_C4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)):</span>
+    <span class="n">dX</span><span class="p">,</span> <span class="n">J</span> <span class="o">=</span> <span class="n">dXdt</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">all_results</span><span class="p">[:,</span><span class="n">i</span><span class="p">],</span> <span class="n">activity_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="n">J_C4</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span>
+
+<span class="c1"># Convert complex IV flux to oxygen flux in nmol O2 / U citrate synthase</span>
+<span class="n">JO2</span> <span class="o">=</span> <span class="n">J_C4</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mf">1e9</span> <span class="o">*</span> <span class="mf">0.0000012232</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /Users/Ben/opt/anaconda3/lib/python3.7/site-packages (1.4.1)
+Requirement already satisfied: numpy&gt;=1.13.3 in /Users/Ben/opt/anaconda3/lib/python3.7/site-packages (from scipy) (1.18.1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_full-width docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">30</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">205</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">205</span><span class="p">),</span><span class="s1">&#39;k:&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">25</span><span class="p">,</span><span class="mi">25</span><span class="p">),(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">205</span><span class="p">),</span><span class="s1">&#39;k:&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">75</span><span class="p">,</span><span class="mi">75</span><span class="p">),(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">205</span><span class="p">),</span><span class="s1">&#39;k:&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span><span class="mi">150</span><span class="p">),(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">205</span><span class="p">),</span><span class="s1">&#39;k:&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">JO2</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">205</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">205</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">190</span><span class="p">,</span> <span class="s1">&#39;State 1&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">190</span><span class="p">,</span> <span class="s1">&#39;State 2&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">112.5</span><span class="p">,</span> <span class="mi">190</span><span class="p">,</span> <span class="s1">&#39;State 3&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">175</span><span class="p">,</span> <span class="mi">190</span><span class="p">,</span> <span class="s1">&#39;State 4&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Times (s)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;OCR (nmol O$_2$ min$^{-1}$ U CS$^{-1}$)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">205</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;k:&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">25</span><span class="p">,</span><span class="mi">25</span><span class="p">),(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;k:&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">75</span><span class="p">,</span><span class="mi">75</span><span class="p">),(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;k:&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span><span class="mi">150</span><span class="p">),(</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="s1">&#39;k:&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">NADH_x</span><span class="o">/</span><span class="n">NAD_tot</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.05</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">205</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">,</span> <span class="s1">&#39;State 1&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="o">.</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;State 2&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">112.5</span><span class="p">,</span> <span class="o">.</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;State 3&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">175</span><span class="p">,</span> <span class="o">.</span><span class="mi">9</span><span class="p">,</span> <span class="s1">&#39;State 4&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Times (s)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;[NADH]$_x$ (mM)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">75</span><span class="p">,</span><span class="mi">210</span><span class="p">),</span><span class="s1">&#39;k:&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">25</span><span class="p">,</span><span class="mi">25</span><span class="p">),(</span><span class="mi">75</span><span class="p">,</span><span class="mi">210</span><span class="p">),</span><span class="s1">&#39;k:&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">75</span><span class="p">,</span><span class="mi">75</span><span class="p">),(</span><span class="mi">75</span><span class="p">,</span><span class="mi">210</span><span class="p">),</span><span class="s1">&#39;k:&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">((</span><span class="mi">150</span><span class="p">,</span><span class="mi">150</span><span class="p">),(</span><span class="mi">75</span><span class="p">,</span><span class="mi">210</span><span class="p">),</span><span class="s1">&#39;k:&#39;</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mf">1.75</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">DPsi</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="mi">75</span><span class="p">,</span><span class="mi">210</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">205</span><span class="p">])</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">12.5</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;State 1&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;State 2&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">112.5</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;State 3&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">175</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="s1">&#39;State 4&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">verticalalignment</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Times (s)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$\Delta \Psi$ (mV)&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">15</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/InVitroModel_3_0.png" src="_images/InVitroModel_3_0.png" />
+</div>
+</div>
+<p><strong>Figure 8:</strong> Simulation of respiratory control for (a) the oxygen consumption rate (OCR), (b) matrix NADH concentration (<span class="math notranslate nohighlight">\([\text{NADH}]_x\)</span>), and (c) membrane potential (<span class="math notranslate nohighlight">\(\Delta \Psi\)</span>) using the conditions listed in Table <a class="reference internal" href="#table-invitro"><span class="std std-numref">Table 5</span></a>.</p>
+<p>The first panel in the above figures shows oxygen consumption rate (OCR), which represents the oxidative flux necessary to balance proton leak across the IMM. In this study, we quantify OCR in units <span class="math notranslate nohighlight">\(\text{nmol O}_2 \text{ min}^{-1} \text{ U CS}^{-1}\)</span> proportional to the flux of complex IV, that is,</p>
+<div class="math notranslate nohighlight">
+\[    J_\text{O2} = \Bigg( J_\text{C4} \ \dfrac{\text{mol}}{\text{s (L mito)}} \Bigg) \Bigg(60 \ \dfrac{\text{s}}{\text{min}} \Bigg)\Bigg(1\text{e}9 \ \dfrac{\text{nmol}}{\text{mol}}\Bigg)\Bigg(1.22\text{e-6} \ \dfrac{\text{L mito}}{\text{U CS}}\Bigg). \]</div>
+<p>The factor <span class="math notranslate nohighlight">\(1.22\text{e-}6 \text{ (L mito) (U CS)}^{-1}\)</span> corresponds to roughly <span class="math notranslate nohighlight">\(740 \text{ (U CS) (mL mito)}^{-1}\)</span>, reported by Vinnakota et al. <a class="bibtex reference internal" href="References.html#vinnakota2016-2" id="id2">[17]</a>. Note that this approximation for <span class="math notranslate nohighlight">\(J_\text{O2}\)</span> is valid for constant partial pressure of <span class="math notranslate nohighlight">\(\text{O}_2\)</span>, and hence, we do not model hypoxic or hyperoxic conditions. During the leak states, NADH and <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> are maintained at a maximal values. During state 3 (oxidative phosphorylation), the OCR markedly increases while the magnitudes of NADH and <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> are temporarily decreased. This simple model overestimates the degree to which the NADH becomes depleted during state 3.</p>
+<p>Predictions of the in vitro model may also be compared to quasi-steady state data on OCRs, phosphate metabolite levels, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, NADH, and cytochrome c redox state, analyzed by Bazil et al. <a class="bibtex reference internal" href="References.html#bazil2016" id="id3">[1]</a>. In their experiments, several steady state ATP demand levels were achieved by titrating ATP hydrolyzing enzymes into the respiration buffer. We simulate this experiment with our model by varying the rate of the external ATP consuming process, <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span>. We vary <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span> by adjusting the ATP consumption rate <span class="math notranslate nohighlight">\(X_\text{AtC}\)</span> from <span class="math notranslate nohighlight">\(0\)</span> to <span class="math notranslate nohighlight">\(60 \ \text{mol s}^{-1} \ \text{(L cell)}^{-1}\)</span>. Experiments were conducted under conditions of two different approximately constant external phosphate concentrations (1 and 5 mM) and with external <span class="math notranslate nohighlight">\(\text{TAN} = 5 \ \text{mM}\)</span>. The following code computes the steady state of the in vitro model at different levels of <span class="math notranslate nohighlight">\(J_\text{AtC}\)</span> and compares the measured data on OCR, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>, NADH, cytochrome c redox state, and buffer ADP concentration to data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">!</span>pip install scipy
+<span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">solve_ivp</span>
+
+<span class="c1">###### Constants defining metabolite pools ######</span>
+<span class="c1"># Volume fractions and water space fractions</span>
+<span class="n">V_c</span> <span class="o">=</span> <span class="mf">1.0</span>          <span class="c1"># buffer volume fraction        # L buffer (L cuvette)**(-1)</span>
+<span class="n">V_m</span> <span class="o">=</span> <span class="mf">0.0005</span>       <span class="c1"># mitochondrial volume fraction # L mito (L cuvette)**(-1)</span>
+<span class="n">V_m2c</span> <span class="o">=</span> <span class="n">V_m</span> <span class="o">/</span> <span class="n">V_c</span>  <span class="c1"># mito to cyto volume ratio     # L mito (L cuvette)**(-1)</span>
+<span class="n">W_c</span> <span class="o">=</span> <span class="mf">1.0</span>          <span class="c1"># buffer water space            # L buffer water (L buffer)**(-1)</span>
+<span class="n">W_m</span> <span class="o">=</span> <span class="mf">0.7238</span>       <span class="c1"># mitochondrial water space     # L mito water (L mito)**(-1)</span>
+<span class="n">W_x</span> <span class="o">=</span> <span class="mf">0.9</span><span class="o">*</span><span class="n">W_m</span>      <span class="c1"># matrix water space            # L matrix water (L mito)**(-1)</span>
+<span class="n">W_i</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">W_m</span>      <span class="c1"># intermembrane water space     # L IM water (L mito)**(-1)</span>
+
+<span class="c1"># Total pool concentrations</span>
+<span class="n">NAD_tot</span> <span class="o">=</span> <span class="mf">2.97e-3</span>  <span class="c1"># NAD+ and NADH conc            # mol (L matrix water)**(-1)</span>
+<span class="n">Q_tot</span>   <span class="o">=</span> <span class="mf">1.35e-3</span>  <span class="c1"># Q and QH2 conc                # mol (L matrix water)**(-1)</span>
+<span class="n">c_tot</span>   <span class="o">=</span> <span class="mf">2.7e-3</span>   <span class="c1"># cytochrome c ox and red conc  # mol (L IM water)**(-1)</span>
+
+<span class="c1"># Membrane capacitance</span>
+<span class="n">Cm</span> <span class="o">=</span> <span class="mf">3.1e-3</span>
+
+<span class="c1">###### Set fixed pH, cation concentrations, and O2 partial pressure ######</span>
+<span class="c1"># pH</span>
+<span class="n">pH_x</span> <span class="o">=</span> <span class="mf">7.40</span>
+<span class="n">pH_c</span> <span class="o">=</span> <span class="mf">7.20</span>
+
+<span class="c1"># K+ concentrations</span>
+<span class="n">K_x</span>  <span class="o">=</span> <span class="mf">100e-3</span>      <span class="c1"># mol (L matrix water)**(-1)</span>
+<span class="n">K_c</span>  <span class="o">=</span> <span class="mf">140e-3</span>      <span class="c1"># mol (L cyto water)**(-1)</span>
+
+<span class="c1"># Mg2+ concentrations</span>
+<span class="n">Mg_x</span> <span class="o">=</span> <span class="mf">1.0e-3</span>        <span class="c1"># mol (L matrix water)**(-1)</span>
+<span class="n">Mg_c</span> <span class="o">=</span> <span class="mf">1.0e-3</span>        <span class="c1"># mol (L cyto water)**(-1)</span>
+
+<span class="c1"># Oxygen partial pressure</span>
+<span class="n">PO2</span> <span class="o">=</span> <span class="mi">25</span> <span class="c1"># mmHg</span>
+
+<span class="n">conc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">pH_x</span><span class="p">,</span> <span class="n">pH_c</span><span class="p">,</span> <span class="n">K_x</span><span class="p">,</span> <span class="n">K_c</span><span class="p">,</span> <span class="n">Mg_x</span><span class="p">,</span> <span class="n">Mg_c</span><span class="p">,</span> <span class="n">PO2</span><span class="p">])</span>
+
+<span class="c1">###### Parameter vector ###### </span>
+<span class="n">X_DH</span>  <span class="o">=</span> <span class="mf">0.1732</span>
+<span class="n">X_C1</span>  <span class="o">=</span> <span class="mf">1.0e4</span>
+<span class="n">X_C3</span>  <span class="o">=</span> <span class="mf">1.0e6</span>
+<span class="n">X_C4</span>  <span class="o">=</span> <span class="mf">0.0125</span>
+<span class="n">X_F</span>   <span class="o">=</span> <span class="mf">1.0e3</span>
+<span class="n">E_ANT</span> <span class="o">=</span> <span class="mf">0.325</span>
+<span class="n">E_PiC</span> <span class="o">=</span> <span class="mf">5.0e6</span>
+<span class="n">X_H</span>   <span class="o">=</span> <span class="mf">1.0e3</span>
+<span class="n">X_AtC</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="n">activity_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">X_DH</span><span class="p">,</span> <span class="n">X_C1</span><span class="p">,</span> <span class="n">X_C3</span><span class="p">,</span> <span class="n">X_C4</span><span class="p">,</span> <span class="n">X_F</span><span class="p">,</span> <span class="n">E_ANT</span><span class="p">,</span> <span class="n">E_PiC</span><span class="p">,</span> <span class="n">X_H</span><span class="p">,</span> <span class="n">X_AtC</span><span class="p">])</span>
+
+<span class="k">def</span> <span class="nf">dXdt</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">activity_array</span><span class="p">,</span> <span class="n">solve_ode</span><span class="p">):</span>
+    <span class="c1"># Unpack variables </span>
+    <span class="n">DPsi</span><span class="p">,</span> <span class="n">sumATP_x</span><span class="p">,</span><span class="n">sumADP_x</span><span class="p">,</span> <span class="n">sumPi_x</span><span class="p">,</span> <span class="n">NADH_x</span><span class="p">,</span> <span class="n">QH2_x</span><span class="p">,</span> <span class="n">cred_i</span><span class="p">,</span> <span class="n">sumATP_c</span><span class="p">,</span> <span class="n">sumADP_c</span><span class="p">,</span> <span class="n">sumPi_c</span> <span class="o">=</span> <span class="n">X</span>
+    <span class="n">X_DH</span><span class="p">,</span> <span class="n">X_C1</span><span class="p">,</span> <span class="n">X_C3</span><span class="p">,</span> <span class="n">X_C4</span><span class="p">,</span> <span class="n">X_F</span><span class="p">,</span> <span class="n">E_ANT</span><span class="p">,</span> <span class="n">E_PiC</span><span class="p">,</span> <span class="n">X_H</span><span class="p">,</span> <span class="n">X_AtC</span> <span class="o">=</span> <span class="n">activity_array</span>
+
+    <span class="c1"># Hydrogen ion concentration</span>
+    <span class="n">H_x</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">pH_x</span><span class="p">)</span> <span class="c1"># mol (L matrix water)**(-1)</span>
+    <span class="n">H_c</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="n">pH_c</span><span class="p">)</span> <span class="c1"># mol (L cuvette water)**(-1)</span>
+
+    <span class="c1"># Oxygen concentration</span>
+    <span class="n">a_3</span>  <span class="o">=</span> <span class="mf">1.74e-6</span>   <span class="c1"># oxygen solubility in cuvette   # mol (L matrix water * mmHg)**(-1)</span>
+    <span class="n">O2_x</span> <span class="o">=</span> <span class="n">a_3</span><span class="o">*</span><span class="n">PO2</span>   <span class="c1"># mol (L matrix water)**(-1)</span>
+
+    <span class="c1"># Thermochemical constants</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span>          <span class="c1"># J (mol K)**(-1)</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="mi">37</span> <span class="o">+</span> <span class="mf">273.15</span>    <span class="c1"># K</span>
+    <span class="n">F</span> <span class="o">=</span> <span class="mi">96485</span>          <span class="c1"># C mol**(-1)</span>
+    
+    <span class="c1"># Proton motive force parameters (dimensionless)</span>
+    <span class="n">n_F</span>  <span class="o">=</span> <span class="mi">8</span><span class="o">/</span><span class="mi">3</span>
+    <span class="n">n_C1</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">n_C3</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">n_C4</span> <span class="o">=</span> <span class="mi">4</span>
+    
+    <span class="c1"># Dissociation constants</span>
+    <span class="n">K_MgATP</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">3.88</span><span class="p">)</span>
+    <span class="n">K_HATP</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">6.33</span><span class="p">)</span>
+    <span class="n">K_KATP</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">1.02</span><span class="p">)</span>
+    <span class="n">K_MgADP</span> <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">3.00</span><span class="p">)</span>
+    <span class="n">K_HADP</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">6.26</span><span class="p">)</span>
+    <span class="n">K_KADP</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.89</span><span class="p">)</span>
+    <span class="n">K_MgPi</span>  <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">1.66</span><span class="p">)</span>
+    <span class="n">K_HPi</span>   <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">6.62</span><span class="p">)</span>
+    <span class="n">K_KPi</span>   <span class="o">=</span> <span class="mi">10</span><span class="o">**</span><span class="p">(</span><span class="o">-</span><span class="mf">0.42</span><span class="p">)</span>
+
+    <span class="c1">## Other concentrations computed from the state variables:</span>
+    <span class="n">NAD_x</span> <span class="o">=</span> <span class="n">NAD_tot</span> <span class="o">-</span> <span class="n">NADH_x</span>  <span class="c1"># mol (L matrix water)**(-1)</span>
+    <span class="n">Q_x</span>   <span class="o">=</span> <span class="n">Q_tot</span> <span class="o">-</span> <span class="n">QH2_x</span>     <span class="c1"># mol (L matrix water)**(-1)</span>
+    <span class="n">cox_i</span> <span class="o">=</span> <span class="n">c_tot</span> <span class="o">-</span> <span class="n">cred_i</span>    <span class="c1"># mol (L matrix water)**(-1)</span>
+
+    <span class="c1">## Binding polynomials</span>
+    <span class="c1"># Matrix species # mol (L mito water)**(-1)</span>
+    <span class="n">PATP_x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_x</span><span class="o">/</span><span class="n">K_HATP</span> <span class="o">+</span> <span class="n">Mg_x</span><span class="o">/</span><span class="n">K_MgATP</span> <span class="o">+</span> <span class="n">K_x</span><span class="o">/</span><span class="n">K_KATP</span>
+    <span class="n">PADP_x</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_x</span><span class="o">/</span><span class="n">K_HADP</span> <span class="o">+</span> <span class="n">Mg_x</span><span class="o">/</span><span class="n">K_MgADP</span> <span class="o">+</span> <span class="n">K_x</span><span class="o">/</span><span class="n">K_KADP</span>
+    <span class="n">PPi_x</span>  <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_x</span><span class="o">/</span><span class="n">K_HPi</span>  <span class="o">+</span> <span class="n">Mg_x</span><span class="o">/</span><span class="n">K_MgPi</span>  <span class="o">+</span> <span class="n">K_x</span><span class="o">/</span><span class="n">K_KPi</span>
+    
+    <span class="c1"># Cytosol species # mol (L cuvette water)**(-1)</span>
+    <span class="n">PATP_c</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_c</span><span class="o">/</span><span class="n">K_HATP</span> <span class="o">+</span> <span class="n">Mg_c</span><span class="o">/</span><span class="n">K_MgATP</span> <span class="o">+</span> <span class="n">K_c</span><span class="o">/</span><span class="n">K_KATP</span>
+    <span class="n">PADP_c</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_c</span><span class="o">/</span><span class="n">K_HADP</span> <span class="o">+</span> <span class="n">Mg_c</span><span class="o">/</span><span class="n">K_MgADP</span> <span class="o">+</span> <span class="n">K_c</span><span class="o">/</span><span class="n">K_KADP</span>
+    <span class="n">PPi_c</span>  <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">H_c</span><span class="o">/</span><span class="n">K_HPi</span>  <span class="o">+</span> <span class="n">Mg_c</span><span class="o">/</span><span class="n">K_MgPi</span>  <span class="o">+</span> <span class="n">K_c</span><span class="o">/</span><span class="n">K_KPi</span>
+    
+    <span class="c1">## Unbound species</span>
+    <span class="c1"># Matrix species</span>
+    <span class="n">ATP_x</span> <span class="o">=</span> <span class="n">sumATP_x</span> <span class="o">/</span> <span class="n">PATP_x</span> <span class="c1"># [ATP4-]_x</span>
+    <span class="n">ADP_x</span> <span class="o">=</span> <span class="n">sumADP_x</span> <span class="o">/</span> <span class="n">PADP_x</span> <span class="c1"># [ADP3-]_x</span>
+    <span class="n">Pi_x</span>  <span class="o">=</span> <span class="n">sumPi_x</span>  <span class="o">/</span> <span class="n">PPi_x</span>  <span class="c1"># [HPO42-]_x</span>
+    
+    <span class="c1"># Cytosol species</span>
+    <span class="n">ATP_c</span> <span class="o">=</span> <span class="n">sumATP_c</span> <span class="o">/</span> <span class="n">PATP_c</span> <span class="c1"># [ATP4-]_c</span>
+    <span class="n">ADP_c</span> <span class="o">=</span> <span class="n">sumADP_c</span> <span class="o">/</span> <span class="n">PADP_c</span> <span class="c1"># [ADP3-]_c</span>
+    <span class="n">Pi_c</span>  <span class="o">=</span> <span class="n">sumPi_c</span>  <span class="o">/</span> <span class="n">PPi_c</span>  <span class="c1"># [HPO42-]_c</span>
+    
+    
+    <span class="c1">###### NADH Dehydrogenase ######</span>
+    <span class="c1"># Constants</span>
+    <span class="n">r</span>      <span class="o">=</span> <span class="mf">6.8385</span>
+    <span class="n">k_Pi1</span>  <span class="o">=</span> <span class="mf">4.659e-4</span>    <span class="c1"># mol (L matrix water)**(-1)</span>
+    <span class="n">k_Pi2</span>  <span class="o">=</span> <span class="mf">6.578e-4</span>    <span class="c1"># mol (L matrix water)**(-1)</span>
+    
+    <span class="c1"># Flux</span>
+    <span class="n">J_DH</span> <span class="o">=</span> <span class="n">X_DH</span> <span class="o">*</span> <span class="p">(</span><span class="n">r</span> <span class="o">*</span> <span class="n">NAD_x</span> <span class="o">-</span> <span class="n">NADH_x</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="mi">1</span> <span class="o">+</span> <span class="n">sumPi_x</span> <span class="o">/</span> <span class="n">k_Pi1</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">sumPi_x</span> <span class="o">/</span> <span class="n">k_Pi2</span><span class="p">))</span>
+
+    <span class="c1">###### Complex I ######</span>
+    <span class="c1"># NADH_x + Q_x + 5H+_x &lt;-&gt; NAD+_x + QH2_x + 4H+_i + 4DPsi</span>
+    
+    <span class="c1"># Gibbs energy (J mol**(-1))</span>
+    <span class="n">DrGo_C1</span> <span class="o">=</span> <span class="o">-</span><span class="mi">109680</span> 
+    <span class="n">DrGapp_C1</span> <span class="o">=</span> <span class="n">DrGo_C1</span> <span class="o">-</span> <span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">H_x</span><span class="p">)</span> 
+    
+    <span class="c1"># Apparent equilibrium constant</span>
+    <span class="n">Kapp_C1</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="o">-</span><span class="p">(</span><span class="n">DrGapp_C1</span> <span class="o">+</span> <span class="n">n_C1</span> <span class="o">*</span> <span class="n">F</span> <span class="o">*</span> <span class="n">DPsi</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span><span class="p">))</span> <span class="o">*</span> <span class="p">((</span><span class="n">H_x</span> <span class="o">/</span> <span class="n">H_c</span><span class="p">)</span><span class="o">**</span><span class="n">n_C1</span><span class="p">)</span>
+    
+    <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
+    <span class="n">J_C1</span> <span class="o">=</span> <span class="n">X_C1</span> <span class="o">*</span> <span class="p">(</span><span class="n">Kapp_C1</span> <span class="o">*</span> <span class="n">NADH_x</span> <span class="o">*</span> <span class="n">Q_x</span> <span class="o">-</span> <span class="n">NAD_x</span> <span class="o">*</span> <span class="n">QH2_x</span><span class="p">)</span>
+    
+    <span class="c1">###### Complex III ######</span>
+    <span class="c1"># QH2_x + 2cuvetteC(ox)3+_i + 2H+_x &lt;-&gt; Q_x + 2cuvetteC(red)2+_i + 4H+_i + 2DPsi</span>
+    
+    <span class="c1"># Gibbs energy (J mol**(-1))</span>
+    <span class="n">DrGo_C3</span> <span class="o">=</span> <span class="mi">46690</span>
+    <span class="n">DrGapp_C3</span> <span class="o">=</span> <span class="n">DrGo_C3</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">H_c</span><span class="p">)</span> 
+    
+    <span class="c1"># Apparent equilibrium constant</span>
+    <span class="n">Kapp_C3</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">DrGapp_C3</span> <span class="o">+</span> <span class="n">n_C3</span> <span class="o">*</span> <span class="n">F</span> <span class="o">*</span> <span class="n">DPsi</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_x</span> <span class="o">/</span> <span class="n">H_c</span><span class="p">)</span><span class="o">**</span><span class="n">n_C3</span> 
+    
+    <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
+    <span class="n">J_C3</span> <span class="o">=</span> <span class="n">X_C3</span> <span class="o">*</span> <span class="p">(</span><span class="n">Kapp_C3</span> <span class="o">*</span> <span class="n">cox_i</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">QH2_x</span> <span class="o">-</span> <span class="n">cred_i</span><span class="o">**</span><span class="mi">2</span> <span class="o">*</span> <span class="n">Q_x</span><span class="p">)</span>
+
+    <span class="c1">###### Complex IV ######</span>
+    <span class="c1"># 2 cytoC(red)2+_i + 0.5O2_x + 4H+_x &lt;-&gt; cytoC(ox)3+_x + H2O_x + 2H+_i + 2DPsi</span>
+    
+    <span class="c1"># Constants</span>
+    <span class="n">k_O2</span> <span class="o">=</span> <span class="mf">1.2e-4</span>      <span class="c1"># mol (L matrix water)**(-1)</span>
+    
+    <span class="c1"># Gibbs energy (J mol**(-1))</span>
+    <span class="n">DrGo_C4</span> <span class="o">=</span> <span class="o">-</span><span class="mi">202160</span>  <span class="c1"># J mol**(-1)</span>
+    <span class="n">DrGapp_C4</span> <span class="o">=</span> <span class="n">DrGo_C4</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">H_c</span><span class="p">)</span>
+    
+    <span class="c1"># Apparent equilibrium constant</span>
+    <span class="n">Kapp_C4</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">(</span><span class="n">DrGapp_C4</span> <span class="o">+</span> <span class="n">n_C4</span> <span class="o">*</span> <span class="n">F</span> <span class="o">*</span> <span class="n">DPsi</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_x</span> <span class="o">/</span> <span class="n">H_c</span><span class="p">)</span><span class="o">**</span><span class="n">n_C4</span>
+    
+    <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
+    <span class="n">J_C4</span> <span class="o">=</span> <span class="n">X_C4</span> <span class="o">*</span><span class="p">(</span><span class="n">Kapp_C4</span><span class="o">**</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">cred_i</span> <span class="o">*</span> <span class="n">O2_x</span><span class="o">**</span><span class="mf">0.25</span> <span class="o">-</span> <span class="n">cox_i</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">k_O2</span> <span class="o">/</span> <span class="n">O2_x</span><span class="p">))</span>
+
+    <span class="c1">###### F0F1-ATPase ######</span>
+    <span class="c1"># ADP3-_x + HPO42-_x + H+_x + n_A*H+_i &lt;-&gt; ATP4- + H2O + n_A*H+_x</span>
+    
+    <span class="c1"># Gibbs energy (J mol**(-1))</span>
+    <span class="n">DrGo_F</span> <span class="o">=</span> <span class="mi">4990</span> 
+    <span class="n">DrGapp_F</span> <span class="o">=</span> <span class="n">DrGo_F</span> <span class="o">+</span> <span class="n">R</span> <span class="o">*</span> <span class="n">T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span> <span class="n">H_x</span> <span class="o">*</span> <span class="n">PATP_x</span> <span class="o">/</span> <span class="p">(</span><span class="n">PADP_x</span> <span class="o">*</span> <span class="n">PPi_x</span><span class="p">))</span>
+    
+    <span class="c1"># Apparent equilibrium constant</span>
+    <span class="n">Kapp_F</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span> <span class="p">(</span><span class="n">DrGapp_F</span> <span class="o">+</span> <span class="n">n_F</span> <span class="o">*</span> <span class="n">F</span> <span class="o">*</span> <span class="n">DPsi</span> <span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_c</span> <span class="o">/</span> <span class="n">H_x</span><span class="p">)</span><span class="o">**</span><span class="n">n_F</span>
+    
+    <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
+    <span class="n">J_F</span> <span class="o">=</span> <span class="n">X_F</span> <span class="o">*</span> <span class="p">(</span><span class="n">Kapp_F</span> <span class="o">*</span> <span class="n">sumADP_x</span> <span class="o">*</span> <span class="n">sumPi_x</span> <span class="o">-</span> <span class="n">sumATP_x</span><span class="p">)</span>
+    
+    <span class="c1">###### ANT ######</span>
+    <span class="c1"># ATP4-_x + ADP3-_i &lt;-&gt; ATP4-_i + ADP3-_x</span>
+    
+    <span class="c1"># Constants</span>
+    <span class="n">del_D</span>   <span class="o">=</span> <span class="mf">0.0167</span>
+    <span class="n">del_T</span>   <span class="o">=</span> <span class="mf">0.0699</span>
+    <span class="n">k2o_ANT</span> <span class="o">=</span> <span class="mf">9.54</span><span class="o">/</span><span class="mi">60</span>      <span class="c1"># s**(-1)</span>
+    <span class="n">k3o_ANT</span> <span class="o">=</span> <span class="mf">30.05</span><span class="o">/</span><span class="mi">60</span>     <span class="c1"># s**(-1)</span>
+    <span class="n">K0o_D</span>   <span class="o">=</span> <span class="mf">38.89e-6</span>     <span class="c1"># mol (L cuvette water)**(-1)</span>
+    <span class="n">K0o_T</span>   <span class="o">=</span> <span class="mf">56.05e-6</span>     <span class="c1"># mol (L cuvette water)**(-1)</span>
+    <span class="n">A</span>       <span class="o">=</span> <span class="o">+</span><span class="mf">0.2829</span>
+    <span class="n">B</span>       <span class="o">=</span> <span class="o">-</span><span class="mf">0.2086</span>
+    <span class="n">C</span>       <span class="o">=</span> <span class="o">+</span><span class="mf">0.2372</span>
+    
+    <span class="n">phi</span> <span class="o">=</span> <span class="n">F</span> <span class="o">*</span> <span class="n">DPsi</span> <span class="o">/</span> <span class="p">(</span><span class="n">R</span> <span class="o">*</span> <span class="n">T</span><span class="p">)</span>
+    
+    <span class="c1"># Reaction rates</span>
+    <span class="n">k2_ANT</span> <span class="o">=</span> <span class="n">k2o_ANT</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">C</span><span class="p">)</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span>
+    <span class="n">k3_ANT</span> <span class="o">=</span> <span class="n">k3o_ANT</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">((</span><span class="n">A</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="n">C</span><span class="p">)</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span>
+    
+    <span class="c1"># Dissociation constants</span>
+    <span class="n">K0_D</span> <span class="o">=</span> <span class="n">K0o_D</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">del_D</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span>
+    <span class="n">K0_T</span> <span class="o">=</span> <span class="n">K0o_T</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">del_T</span><span class="o">*</span><span class="n">phi</span><span class="p">)</span>
+    
+    <span class="n">q</span>     <span class="o">=</span> <span class="n">k3_ANT</span> <span class="o">*</span> <span class="n">K0_D</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">k2_ANT</span> <span class="o">*</span> <span class="n">K0_T</span><span class="p">)</span>
+    <span class="n">term1</span> <span class="o">=</span> <span class="n">k2_ANT</span> <span class="o">*</span> <span class="n">ATP_x</span> <span class="o">*</span> <span class="n">ADP_c</span> <span class="o">*</span> <span class="n">q</span> <span class="o">/</span> <span class="n">K0_D</span>
+    <span class="n">term2</span> <span class="o">=</span> <span class="n">k3_ANT</span> <span class="o">*</span> <span class="n">ADP_x</span> <span class="o">*</span> <span class="n">ATP_c</span> <span class="o">/</span> <span class="n">K0_T</span>
+    <span class="n">num</span>   <span class="o">=</span> <span class="n">term1</span> <span class="o">-</span> <span class="n">term2</span>
+    <span class="n">den</span>   <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">ATP_c</span><span class="o">/</span><span class="n">K0_T</span> <span class="o">+</span> <span class="n">ADP_c</span><span class="o">/</span><span class="n">K0_D</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">ADP_x</span> <span class="o">+</span> <span class="n">ATP_x</span> <span class="o">*</span> <span class="n">q</span><span class="p">)</span>
+    
+    <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
+    <span class="n">J_ANT</span> <span class="o">=</span> <span class="n">E_ANT</span> <span class="o">*</span> <span class="n">num</span> <span class="o">/</span> <span class="n">den</span>
+    
+    <span class="c1">###### H+-PI2 cotransporter ######</span>
+    <span class="c1"># H2PO42-_x + H+_x = H2PO42-_c + H+_c</span>
+    
+    <span class="c1"># Constant</span>
+    <span class="n">k_PiC</span> <span class="o">=</span> <span class="mf">1.61e-3</span>  <span class="c1"># mol (L cuvette)**(-1)</span>
+    
+    <span class="c1"># H2P04- species</span>
+    <span class="n">HPi_c</span> <span class="o">=</span> <span class="n">Pi_c</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_c</span> <span class="o">/</span> <span class="n">K_HPi</span><span class="p">)</span>
+    <span class="n">HPi_x</span> <span class="o">=</span> <span class="n">Pi_x</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_x</span> <span class="o">/</span> <span class="n">K_HPi</span><span class="p">)</span>
+    
+    <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
+    <span class="n">J_PiC</span> <span class="o">=</span> <span class="n">E_PiC</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_c</span> <span class="o">*</span> <span class="n">HPi_c</span> <span class="o">-</span> <span class="n">H_x</span> <span class="o">*</span> <span class="n">HPi_x</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">k_PiC</span> <span class="o">+</span> <span class="n">HPi_c</span><span class="p">)</span>
+
+    <span class="c1">###### H+ leak ######</span>
+    
+    <span class="c1"># Flux (mol (s * L mito)**(-1))</span>
+    <span class="n">J_H</span> <span class="o">=</span> <span class="n">X_H</span> <span class="o">*</span> <span class="p">(</span><span class="n">H_c</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">phi</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">-</span> <span class="n">H_x</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">phi</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+    
+    <span class="c1">###### ATPase ######</span>
+    <span class="c1"># ATP4- + H2O = ADP3- + PI2- + H+</span>
+    
+    <span class="c1">#Flux (mol (s * L cyto)**(-1))</span>
+    <span class="n">J_AtC</span> <span class="o">=</span> <span class="n">X_AtC</span> <span class="o">/</span> <span class="n">V_c</span>
+
+    <span class="c1">###### Differential equations (equation 23) ######</span>
+    <span class="c1"># Membrane potential</span>
+    <span class="n">dDPsi</span> <span class="o">=</span> <span class="p">(</span><span class="n">n_C1</span> <span class="o">*</span> <span class="n">J_C1</span> <span class="o">+</span> <span class="n">n_C3</span> <span class="o">*</span> <span class="n">J_C3</span> <span class="o">+</span> <span class="n">n_C4</span> <span class="o">*</span> <span class="n">J_C4</span> <span class="o">-</span> <span class="n">n_F</span> <span class="o">*</span> <span class="n">J_F</span> <span class="o">-</span> <span class="n">J_ANT</span> <span class="o">-</span> <span class="n">J_H</span><span class="p">)</span> <span class="o">/</span> <span class="n">Cm</span>
+
+    <span class="c1"># Matrix species</span>
+    <span class="n">dATP_x</span>  <span class="o">=</span> <span class="p">(</span><span class="n">J_F</span>  <span class="o">-</span> <span class="n">J_ANT</span><span class="p">)</span> <span class="o">/</span> <span class="n">W_x</span>
+    <span class="n">dADP_x</span>  <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">J_F</span> <span class="o">+</span> <span class="n">J_ANT</span><span class="p">)</span> <span class="o">/</span> <span class="n">W_x</span>
+    <span class="n">dPi_x</span>   <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">J_F</span> <span class="o">+</span> <span class="n">J_PiC</span><span class="p">)</span> <span class="o">/</span> <span class="n">W_x</span>
+    <span class="n">dNADH_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">J_DH</span>  <span class="o">-</span> <span class="n">J_C1</span><span class="p">)</span>  <span class="o">/</span> <span class="n">W_x</span>
+    <span class="n">dQH2_x</span>  <span class="o">=</span> <span class="p">(</span><span class="n">J_C1</span>  <span class="o">-</span> <span class="n">J_C3</span><span class="p">)</span>  <span class="o">/</span> <span class="n">W_x</span>
+    
+    <span class="c1"># IMS species</span>
+    <span class="n">dcred_i</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">J_C3</span> <span class="o">-</span> <span class="n">J_C4</span><span class="p">)</span> <span class="o">/</span> <span class="n">W_i</span>
+    
+    <span class="c1"># Buffer species</span>
+    <span class="n">dATP_c</span> <span class="o">=</span> <span class="p">(</span> <span class="n">V_m2c</span> <span class="o">*</span> <span class="n">J_ANT</span> <span class="o">-</span> <span class="n">J_AtC</span> <span class="p">)</span> <span class="o">/</span> <span class="n">W_c</span>
+    <span class="n">dADP_c</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">V_m2c</span> <span class="o">*</span> <span class="n">J_ANT</span> <span class="o">+</span> <span class="n">J_AtC</span> <span class="p">)</span> <span class="o">/</span> <span class="n">W_c</span>
+    <span class="n">dPi_c</span>  <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">V_m2c</span> <span class="o">*</span> <span class="n">J_PiC</span> <span class="o">+</span> <span class="n">J_AtC</span><span class="p">)</span> <span class="o">/</span> <span class="n">W_c</span>
+
+    <span class="n">dX</span> <span class="o">=</span> <span class="p">[</span><span class="n">dDPsi</span><span class="p">,</span> <span class="n">dATP_x</span><span class="p">,</span> <span class="n">dADP_x</span><span class="p">,</span> <span class="n">dPi_x</span><span class="p">,</span> <span class="n">dNADH_x</span><span class="p">,</span> <span class="n">dQH2_x</span><span class="p">,</span> <span class="n">dcred_i</span><span class="p">,</span> <span class="n">dATP_c</span><span class="p">,</span> <span class="n">dADP_c</span><span class="p">,</span> <span class="n">dPi_c</span><span class="p">]</span>
+    
+    <span class="c1"># Calculate state-dependent quantities after model is solved.</span>
+    <span class="k">if</span> <span class="n">solve_ode</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">dX</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">J</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">PATP_x</span><span class="p">,</span> <span class="n">PADP_x</span><span class="p">,</span> <span class="n">PPi_x</span><span class="p">,</span> <span class="n">PATP_c</span><span class="p">,</span> <span class="n">PADP_c</span><span class="p">,</span> <span class="n">PPi_c</span><span class="p">,</span> <span class="n">J_DH</span><span class="p">,</span> <span class="n">J_C1</span><span class="p">,</span> <span class="n">J_C3</span><span class="p">,</span> <span class="n">J_C4</span><span class="p">,</span> <span class="n">J_F</span><span class="p">,</span> <span class="n">J_ANT</span><span class="p">,</span> <span class="n">J_PiC</span><span class="p">])</span>
+        <span class="k">return</span> <span class="n">dX</span><span class="p">,</span> <span class="n">J</span>
+
+
+<span class="c1">###### Run Low Pi experiments ######</span>
+
+<span class="c1"># Membrane potential</span>
+<span class="n">DPsi_0</span> <span class="o">=</span> <span class="mi">175</span><span class="o">*</span><span class="mf">1e-3</span>
+
+<span class="c1"># Matrix species</span>
+<span class="n">ATP_x_0</span>  <span class="o">=</span> <span class="mf">0.5e-3</span>
+<span class="n">ADP_x_0</span>  <span class="o">=</span> <span class="mf">9.5e-3</span>
+<span class="n">Pi_x_0</span>   <span class="o">=</span> <span class="mf">0.3e-3</span>
+<span class="n">NADH_x_0</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">NAD_tot</span>
+<span class="n">QH2_x_0</span>  <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">Q_tot</span>
+
+<span class="c1"># IMS species</span>
+<span class="n">cred_i_0</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">c_tot</span>
+
+<span class="c1"># Cytosol species</span>
+<span class="n">ATP_c_0</span> <span class="o">=</span> <span class="mf">5.0e-3</span>
+<span class="n">ADP_c_0</span> <span class="o">=</span> <span class="mf">0.0e-3</span>
+<span class="n">Pi_c_0</span>  <span class="o">=</span> <span class="mf">1.0e-3</span>
+
+<span class="n">X_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">DPsi_0</span><span class="p">,</span> <span class="n">ATP_x_0</span><span class="p">,</span> <span class="n">ADP_x_0</span><span class="p">,</span> <span class="n">Pi_x_0</span><span class="p">,</span> <span class="n">NADH_x_0</span><span class="p">,</span> <span class="n">QH2_x_0</span><span class="p">,</span> <span class="n">cred_i_0</span><span class="p">,</span> <span class="n">ATP_c_0</span><span class="p">,</span> <span class="n">ADP_c_0</span><span class="p">,</span> <span class="n">Pi_c_0</span> <span class="p">])</span>
+
+<span class="c1"># Range of ATP consumption rates</span>
+<span class="n">X_AtC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">6e-6</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>   
+<span class="n">steady_state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">X_AtC</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_0</span><span class="p">)))</span>
+<span class="n">JO2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_AtC</span><span class="p">))</span>
+
+<span class="c1"># Looping through different ATP consumptions states</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_AtC</span><span class="p">)):</span>
+   <span class="n">activity_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">X_DH</span><span class="p">,</span> <span class="n">X_C1</span><span class="p">,</span> <span class="n">X_C3</span><span class="p">,</span> <span class="n">X_C4</span><span class="p">,</span> <span class="n">X_F</span><span class="p">,</span> <span class="n">E_ANT</span><span class="p">,</span> <span class="n">E_PiC</span><span class="p">,</span> <span class="n">X_H</span><span class="p">,</span> <span class="n">X_AtC</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+   <span class="c1"># run for long time to acheive steady-state</span>
+   <span class="n">steady_state_temp_results</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">dXdt</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3000</span><span class="p">],</span> <span class="n">X_0</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;Radau&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">activity_array</span><span class="p">,</span><span class="mi">1</span><span class="p">,))</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+   <span class="n">steady_state</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">steady_state_temp_results</span>
+   <span class="n">f</span><span class="p">,</span><span class="n">J</span> <span class="o">=</span> <span class="n">dXdt</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span><span class="n">steady_state_temp_results</span><span class="p">,</span> <span class="n">activity_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+   <span class="n">J_C4</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="c1"># oxygen flux in mol O / sec / (L mito)</span>
+
+   <span class="c1"># convert to units of nmol / min / UCS</span>
+   <span class="c1"># using the conversion factor 0.0012232 mL of mito per UCS</span>
+   <span class="n">JO2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">J_C4</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mf">1e9</span> <span class="o">*</span> <span class="mf">0.0000012232</span>
+
+<span class="n">DPsi_low_pi</span><span class="p">,</span> <span class="n">ATP_x_low_pi</span><span class="p">,</span> <span class="n">ADP_x_low_pi</span><span class="p">,</span> <span class="n">Pi_x_low_pi</span><span class="p">,</span> <span class="n">NADH_x_low_pi</span><span class="p">,</span> <span class="n">QH2_x_low_pi</span><span class="p">,</span> <span class="n">cred_i_low_pi</span><span class="p">,</span> <span class="n">ATP_c_low_pi</span><span class="p">,</span> <span class="n">ADP_c_low_pi</span><span class="p">,</span> <span class="n">Pi_c_low_pi</span> <span class="o">=</span> <span class="n">steady_state</span><span class="o">.</span><span class="n">T</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Low Pi Plotting  Plotting</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">JO2</span><span class="p">,</span> <span class="n">NADH_x_low_pi</span><span class="o">/</span><span class="n">NAD_tot</span><span class="p">,</span> <span class="s1">&#39;C0&#39;</span><span class="p">)</span>   <span class="c1"># NADH</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">JO2</span><span class="p">,</span> <span class="n">DPsi_low_pi</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;1 mM Pi Model&#39;</span><span class="p">)</span>      <span class="c1"># Membrane Potential</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">JO2</span><span class="p">,</span> <span class="n">cred_i_low_pi</span><span class="o">/</span><span class="n">c_tot</span><span class="p">,</span><span class="s1">&#39;C0&#39;</span><span class="p">)</span>      <span class="c1"># Cytochrome C</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">JO2</span><span class="p">,</span> <span class="n">ADP_c_low_pi</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;C0&#39;</span><span class="p">)</span>     <span class="c1"># ADP</span>
+
+<span class="c1">###### Running High Pi experiments ######</span>
+ 
+<span class="c1"># Membrane potential</span>
+<span class="n">DPsi_0</span> <span class="o">=</span> <span class="mi">175</span><span class="o">*</span><span class="mf">1e-3</span>
+
+<span class="c1"># Matrix species</span>
+<span class="n">ATP_x_0</span>  <span class="o">=</span> <span class="mf">0.5e-3</span>
+<span class="n">ADP_x_0</span>  <span class="o">=</span> <span class="mf">9.5e-3</span>
+<span class="n">Pi_x_0</span>   <span class="o">=</span> <span class="mf">0.3e-3</span>
+<span class="n">NADH_x_0</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">NAD_tot</span>
+<span class="n">QH2_x_0</span>  <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">Q_tot</span>
+
+<span class="c1"># IM species</span>
+<span class="n">cred_i_0</span> <span class="o">=</span> <span class="mf">0.1</span> <span class="o">*</span> <span class="n">c_tot</span>
+
+<span class="c1"># Cytosol species</span>
+<span class="n">ATP_c_0</span> <span class="o">=</span> <span class="mf">5.0e-3</span>
+<span class="n">ADP_c_0</span> <span class="o">=</span> <span class="mf">0.0e-3</span>
+<span class="n">Pi_c_0</span>  <span class="o">=</span> <span class="mf">5.0e-3</span>
+
+<span class="n">X_0</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">DPsi_0</span><span class="p">,</span> <span class="n">ATP_x_0</span><span class="p">,</span> <span class="n">ADP_x_0</span><span class="p">,</span> <span class="n">Pi_x_0</span><span class="p">,</span> <span class="n">NADH_x_0</span><span class="p">,</span> <span class="n">QH2_x_0</span><span class="p">,</span> <span class="n">cred_i_0</span><span class="p">,</span> <span class="n">ATP_c_0</span><span class="p">,</span> <span class="n">ADP_c_0</span><span class="p">,</span> <span class="n">Pi_c_0</span> <span class="p">])</span>
+
+<span class="c1"># Range of ATP consumption rates</span>
+<span class="n">X_AtC</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">6e-6</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>   
+<span class="n">steady_state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">X_AtC</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="n">X_0</span><span class="p">)))</span>
+<span class="n">JO2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_AtC</span><span class="p">))</span>
+
+<span class="c1"># Looping through different ATP consumptions states</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X_AtC</span><span class="p">)):</span>
+   <span class="n">activity_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">X_DH</span><span class="p">,</span> <span class="n">X_C1</span><span class="p">,</span> <span class="n">X_C3</span><span class="p">,</span> <span class="n">X_C4</span><span class="p">,</span> <span class="n">X_F</span><span class="p">,</span> <span class="n">E_ANT</span><span class="p">,</span> <span class="n">E_PiC</span><span class="p">,</span> <span class="n">X_H</span><span class="p">,</span> <span class="n">X_AtC</span><span class="p">[</span><span class="n">i</span><span class="p">]])</span>
+   <span class="c1"># run for long time to acheive steady-state</span>
+   <span class="n">steady_state_temp_results</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">dXdt</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3000</span><span class="p">],</span> <span class="n">X_0</span><span class="p">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s1">&#39;Radau&#39;</span><span class="p">,</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">activity_array</span><span class="p">,</span><span class="mi">1</span><span class="p">,))</span><span class="o">.</span><span class="n">y</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+   <span class="n">steady_state</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">steady_state_temp_results</span>
+   <span class="n">f</span><span class="p">,</span><span class="n">J</span> <span class="o">=</span> <span class="n">dXdt</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span><span class="n">steady_state_temp_results</span><span class="p">,</span> <span class="n">activity_array</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+   <span class="n">J_C4</span> <span class="o">=</span> <span class="n">J</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span> <span class="c1"># oxygen flux in mol O / sec / (L mito)</span>
+
+   <span class="c1"># convert to units of nmol / min / UCS</span>
+   <span class="c1"># using the conversion factor 0.0012232 mL of mito per UCS</span>
+   <span class="n">JO2</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">J_C4</span><span class="o">/</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">60</span> <span class="o">*</span> <span class="mf">1e9</span> <span class="o">*</span> <span class="mf">0.0000012232</span>
+
+<span class="n">DPsi_hi_pi</span><span class="p">,</span> <span class="n">ATP_x_hi_pi</span><span class="p">,</span> <span class="n">ADP_x_hi_pi</span><span class="p">,</span> <span class="n">Pi_x_hi_pi</span><span class="p">,</span> <span class="n">NADH_x_hi_pi</span><span class="p">,</span> <span class="n">QH2_x_hi_pi</span><span class="p">,</span> <span class="n">cred_i_hi_pi</span><span class="p">,</span> <span class="n">ATP_c_hi_pi</span><span class="p">,</span> <span class="n">ADP_c_hi_pi</span><span class="p">,</span> <span class="n">Pi_c_hi_pi</span> <span class="o">=</span> <span class="n">steady_state</span><span class="o">.</span><span class="n">T</span>
+
+<span class="c1"># High Pi Plotting  Plotting</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">JO2</span><span class="p">,</span> <span class="n">NADH_x_hi_pi</span><span class="o">/</span><span class="n">NAD_tot</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>   <span class="c1"># NADH</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">JO2</span><span class="p">,</span> <span class="n">DPsi_hi_pi</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;5 mM Pi Model&#39;</span><span class="p">)</span>      <span class="c1"># Membrane Potential</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">JO2</span><span class="p">,</span> <span class="n">cred_i_hi_pi</span><span class="o">/</span><span class="n">c_tot</span><span class="p">,</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>      <span class="c1"># Cytochrome C</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">JO2</span><span class="p">,</span> <span class="n">ADP_c_hi_pi</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">,</span>  <span class="s1">&#39;red&#39;</span><span class="p">)</span>     <span class="c1"># ADP</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">([</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">0.8</span><span class="p">])</span>
+
+<span class="c1"># Plot experimental data</span>
+
+<span class="c1"># NADH data</span>
+<span class="n">data_NADH</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10.494</span><span class="p">,</span>      <span class="mf">0.7284</span><span class="p">,</span>                <span class="mf">14.509</span><span class="p">,</span> <span class="mf">0.6642</span><span class="p">,</span>
+       <span class="mf">51.927</span><span class="p">,</span>        <span class="mf">0.4879</span><span class="p">,</span>                <span class="mf">53.625</span><span class="p">,</span> <span class="mf">0.4821</span><span class="p">,</span>
+       <span class="mf">71.967</span><span class="p">,</span>        <span class="mf">0.4241</span><span class="p">,</span>                <span class="mf">77.07</span><span class="p">,</span>    <span class="mf">0.3901</span><span class="p">,</span>
+       <span class="mf">86.95</span><span class="p">,</span>          <span class="mf">0.4063</span><span class="p">,</span>                <span class="mf">108.57</span><span class="p">,</span> <span class="mf">0.3688</span><span class="p">,</span>
+       <span class="mf">105.62</span><span class="p">,</span>        <span class="mf">0.3964</span><span class="p">,</span>                <span class="mf">144.36</span><span class="p">,</span> <span class="mf">0.3695</span><span class="p">]</span>
+<span class="n">data_NADH</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data_NADH</span><span class="p">,(</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_NADH</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">data_NADH</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_NADH</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">data_NADH</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;NADH (normalized)&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Membrane potential data</span>
+<span class="n">data_DPsi</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10.494</span><span class="p">,</span> <span class="mf">183.2317</span><span class="p">,</span>                         <span class="mf">14.509</span><span class="p">,</span> <span class="mf">183.4706</span><span class="p">,</span>
+        <span class="mf">51.927</span><span class="p">,</span>       <span class="mf">167.5529</span><span class="p">,</span>                         <span class="mf">53.625</span><span class="p">,</span> <span class="mf">167.9643</span><span class="p">,</span>
+        <span class="mf">105.62</span><span class="p">,</span>       <span class="mf">162.3817</span><span class="p">,</span>                         <span class="mf">144.36</span><span class="p">,</span> <span class="mf">156.2841</span><span class="p">]</span>
+
+<span class="n">data_DPsi</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data_DPsi</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_DPsi</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">data_DPsi</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;1 mM Pi Exp&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_DPsi</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">data_DPsi</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;5 mM Pi Exp&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Membrane Potential $\Delta\Psi$ (mV)&#39;</span><span class="p">)</span>
+
+
+<span class="c1"># Cytochrome C</span>
+<span class="n">data_cred</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10.494</span><span class="p">,</span> <span class="mf">0.1862</span><span class="p">,</span>                <span class="mf">14.509</span><span class="p">,</span> <span class="mf">0.1931</span><span class="p">,</span>
+        <span class="mf">51.927</span><span class="p">,</span>       <span class="mf">0.2658</span><span class="p">,</span>                <span class="mf">53.625</span><span class="p">,</span> <span class="mf">0.2576</span><span class="p">,</span>
+        <span class="mf">105.62</span><span class="p">,</span>       <span class="mf">0.3147</span><span class="p">,</span>                <span class="mf">144.36</span><span class="p">,</span> <span class="mf">0.2959</span><span class="p">];</span>
+
+<span class="n">data_cred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data_cred</span><span class="p">,(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_cred</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">data_cred</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_cred</span><span class="p">[:,</span><span class="mi">2</span><span class="p">],</span> <span class="n">data_cred</span><span class="p">[:,</span><span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;OCR (nmol O$_2$ min$^{-1}$ U CS$^{-1}$)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Cyt c$^{2+}$ (Normalized)&#39;</span><span class="p">)</span>
+
+<span class="c1"># Buffer ADP</span>
+<span class="n">data_ADP</span> <span class="o">=</span> <span class="p">[</span><span class="mf">10.494</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">14.509</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="mf">51.927</span><span class="p">,</span> <span class="mf">0.0561</span><span class="p">,</span> <span class="mf">53.625</span><span class="p">,</span> <span class="mf">0.0049</span><span class="p">,</span>
+            <span class="mf">71.967</span><span class="p">,</span> <span class="mf">0.1827</span><span class="p">,</span> <span class="mf">77.07</span><span class="p">,</span>    <span class="mf">0.0578</span><span class="p">,</span>
+            <span class="mf">86.95</span><span class="p">,</span> <span class="mf">0.3589</span><span class="p">,</span> <span class="mf">108.57</span><span class="p">,</span> <span class="mf">0.1648</span><span class="p">,</span>
+            <span class="mf">105.62</span><span class="p">,</span> <span class="mf">0.6622</span><span class="p">,</span> <span class="mf">144.36</span><span class="p">,</span> <span class="mf">0.4716</span><span class="p">]</span>
+
+<span class="n">data_ADP</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">data_ADP</span><span class="p">,</span> <span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_ADP</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">data_ADP</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>  <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">data_ADP</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">data_ADP</span><span class="p">[:,</span> <span class="mi">3</span><span class="p">],</span>  <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;OCR (nmol O$_2$ min$^{-1}$ U CS$^{-1}$)&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Buffer ADP (Normalized)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">ax</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /Users/Ben/opt/anaconda3/lib/python3.7/site-packages (1.4.1)
+Requirement already satisfied: numpy&gt;=1.13.3 in /Users/Ben/opt/anaconda3/lib/python3.7/site-packages (from scipy) (1.18.1)
+</pre></div>
+</div>
+<img alt="_images/InVitroModel_6_1.png" src="_images/InVitroModel_6_1.png" />
+</div>
+</div>
+<p><strong>Figure 9:</strong> Comparison of oxygen consumption rate (OCR) simulations to data from <a class="bibtex reference internal" href="References.html#bazil2016" id="id4">[1]</a>.</p>
+<p>The match to the data is remarkably good considering how much simpler the model developed here is compared to the model of Bazil et al. <a class="bibtex reference internal" href="References.html#bazil2016" id="id5">[1]</a>. The Bazil et al. model accounts for the mechanisms underlying oxidative phosphorylation and associated side reactions at a deeper level of detail, and thus, finds broader applications. Yet the basic frameworks of our models are equivalent.</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "beards-lab/QAMAS_book",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="BuildingModel.html" title="previous page">Building a model of oxidative ATP synthesis from energetic components</a>
+    <a class='right-next' id="next-link" href="InVivoModel.html" title="next page">Simulation of cardiac energetics in vivo</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Randall, Hock, Lopez, Marzban, Marshall, & Beard supported by NIH grant HL144657<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="_static/js/index.js"></script>
+    
+  </body>
+</html>
