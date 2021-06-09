@@ -278,7 +278,7 @@
 <p>where</p>
 <div class="math notranslate nohighlight">
 \[    \Delta_r G'^\circ_\text{CK} = \Delta_r G^\circ_\text{CK} + R \text{T} \ln \left( \dfrac{P_\text{ADP}}{P_\text{ATP} [\text{H}^{+}]_c} \right).\]</div>
-<p>Here, <span class="math notranslate nohighlight">\(\Delta_r G^\circ_\text{CK} = -R\text{T} \ln(K_{eq,\text{CK}})\)</span> for experimental equilibrium constant <span class="math notranslate nohighlight">\(K_{eq,\text{CK}} = 3.5 \times 10^8\)</span> <span id="id1">[<a class="reference internal" href="References.html#id14">3</a>]</span>. The apparent equilibrium of the reaction in Equation <a class="reference internal" href="#equation-creatine">(31)</a> is</p>
+<p>Here, <span class="math notranslate nohighlight">\(\Delta_r G^\circ_\text{CK} = -R\text{T} \ln(K_{eq,\text{CK}})\)</span> for experimental equilibrium constant <span class="math notranslate nohighlight">\(K_{eq,\text{CK}} = 3.5 \times 10^8\)</span> <span id="id1">[<a class="reference internal" href="References.html#id15">3</a>]</span>. The apparent equilibrium of the reaction in Equation <a class="reference internal" href="#equation-creatine">(31)</a> is</p>
 <div class="math notranslate nohighlight">
 \[    K'_{eq,\text{CK}} = \left( \dfrac{ [\Sigma \text{ATP}]_c [\text{Cr}]_c }{ [\Sigma \text{ADP}]_c [\text{CrP}^{2-}]_c } \right)_{eq} = \exp \left\{ \dfrac{-\Delta_r G'^\circ_\text{CK} }{R \text{T}} \right\}.   \]</div>
 <p>We simulate creatine kinase flux, <span class="math notranslate nohighlight">\(J_\text{CK} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})\)</span>, via mass-action kinetics as</p>
@@ -330,26 +330,26 @@
 <td><p>mol s<span class="math notranslate nohighlight">\(^{-1}\)</span> (L cyto)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Creatine kinase activity</p></td>
 <td><p><span class="math notranslate nohighlight">\(10^7\)</span></p></td>
-<td><p><span id="id2">[<a class="reference internal" href="References.html#id11">1</a>]</span></p></td>
+<td><p><span id="id2">[<a class="reference internal" href="References.html#id12">1</a>]</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\([\text{Cr}]_{tot}\)</span></p></td>
 <td><p>mmol (L cell)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Total creatine pool in the cell</p></td>
 <td><p><span class="math notranslate nohighlight">\(40\)</span></p></td>
-<td><p><span id="id3">[<a class="reference internal" href="References.html#id20">10</a>]</span></p></td>
+<td><p><span id="id3">[<a class="reference internal" href="References.html#id21">10</a>]</span></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="simulation-of-respiratory-control-in-vivo">
 <h2>Simulation of respiratory control in vivo<a class="headerlink" href="#simulation-of-respiratory-control-in-vivo" title="Permalink to this headline">¶</a></h2>
-<p>Previous investigations (<span id="id4">[<a class="reference internal" href="References.html#id20">10</a>, <a class="reference internal" href="References.html#id6">20</a>]</span>) have revealed that the certain cytosolic metabolite pools influence the phosphate metabolite levels in the myocardium in vivo. These metabolite pools are the total adenine nucleotide (<span class="math notranslate nohighlight">\(\text{TAN}\)</span>, <span class="math notranslate nohighlight">\(\text{mmol (L cell)}^{-1}\)</span>), total exchangeable phosphate (<span class="math notranslate nohighlight">\(\text{TEP}\)</span>, <span class="math notranslate nohighlight">\(\text{mmol (L cell)}^{-1}\)</span>), and total creatine (<span class="math notranslate nohighlight">\([\text{Cr}]_{tot}\)</span>, <span class="math notranslate nohighlight">\( \text{mmol (L cell)}^{-1}\)</span>) pool, which may be computed from our model variables via</p>
+<p>Previous investigations (<span id="id4">[<a class="reference internal" href="References.html#id21">10</a>, <a class="reference internal" href="References.html#id7">21</a>]</span>) have revealed that the certain cytosolic metabolite pools influence the phosphate metabolite levels in the myocardium in vivo. These metabolite pools are the total adenine nucleotide (<span class="math notranslate nohighlight">\(\text{TAN}\)</span>, <span class="math notranslate nohighlight">\(\text{mmol (L cell)}^{-1}\)</span>), total exchangeable phosphate (<span class="math notranslate nohighlight">\(\text{TEP}\)</span>, <span class="math notranslate nohighlight">\(\text{mmol (L cell)}^{-1}\)</span>), and total creatine (<span class="math notranslate nohighlight">\([\text{Cr}]_{tot}\)</span>, <span class="math notranslate nohighlight">\( \text{mmol (L cell)}^{-1}\)</span>) pool, which may be computed from our model variables via</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}    \text{TAN} &amp;= (V_{c}W_{c} + V_{m}W_{i}) ([\text{ATP}]_{c} + [\text{ADP}]_{c}) + V_{m}W_{x} ([\text{ATP}]_{x} + [\text{ADP}]_{x}), \nonumber \\
     \text{TEP} &amp;= (V_{c}W_{c} + V_m W_i) (2[\text{ATP}]_{c} + [\text{ADP}]_{c}+ [\text{Pi}]_{c}+[\text{CrP}]_{c}) \nonumber + V_{m}W_{x} ([\text{ATP}]_{x} + [\text{ADP}]_x + [\text{Pi}]_{x}), \quad \text{and} \nonumber\\
     \text{Cr}_{tot} &amp;= V_{c}W_{c} ([\text{Cr}]_{c}+[\text{CrP}]_{c}).  \end{split}\]</div>
 <p>To simulate healthy normal conditions, these pools are set as <span class="math notranslate nohighlight">\(\text{TAN} = 7.6\)</span>, <span class="math notranslate nohighlight">\(\text{TEP} = 27.5\)</span>, and <span class="math notranslate nohighlight">\([\text{Cr}]_{tot} = 40 \ \text{mM (L cell)}^{-1}\)</span>. The levels of these metabolite pools have been shown to decrease in heart failure compared to normal physiological conditions. In the simulations below we explore the predicted effects of altering these metabolite pool levels.</p>
-<p>The code below computes the steady-state behavior of the in vivo model over a range of ATP consumption rates, representing myocardial ATP demand levels associated with resting and exercise conditions. The resting state is associated with a myocardial ATP consumption rate of approximately <span class="math notranslate nohighlight">\(0.4 \ \text{mmol s}^{-1} \ \text{(L cell)}^{-1}\)</span> while under vigorous exercise conditions the ATP consumption rate is approximately <span class="math notranslate nohighlight">\(1.2 \ \text{mmol s}^{-1} \ \text{(L cell)}^{-1}\)</span> <span id="id5">[<a class="reference internal" href="References.html#id15">8</a>]</span>. Here, the myocardial ATP consumption rate is varied over the range of <span class="math notranslate nohighlight">\(0.4\)</span> to <span class="math notranslate nohighlight">\(1.2 \ \text{mmol s}^{-1} \ \text{(L cell)}^{-1}\)</span>, corresponding to a range of myocardial oxygen consumption rate of approximately <span class="math notranslate nohighlight">\(4\)</span> to <span class="math notranslate nohighlight">\(12 \ \mu\text{mol O}_2 \text{ min}^{-1} \ \text{(g tissue)}^{-1}\)</span>.</p>
+<p>The code below computes the steady-state behavior of the in vivo model over a range of ATP consumption rates, representing myocardial ATP demand levels associated with resting and exercise conditions. The resting state is associated with a myocardial ATP consumption rate of approximately <span class="math notranslate nohighlight">\(0.4 \ \text{mmol s}^{-1} \ \text{(L cell)}^{-1}\)</span> while under vigorous exercise conditions the ATP consumption rate is approximately <span class="math notranslate nohighlight">\(1.2 \ \text{mmol s}^{-1} \ \text{(L cell)}^{-1}\)</span> <span id="id5">[<a class="reference internal" href="References.html#id16">8</a>]</span>. Here, the myocardial ATP consumption rate is varied over the range of <span class="math notranslate nohighlight">\(0.4\)</span> to <span class="math notranslate nohighlight">\(1.2 \ \text{mmol s}^{-1} \ \text{(L cell)}^{-1}\)</span>, corresponding to a range of myocardial oxygen consumption rate of approximately <span class="math notranslate nohighlight">\(4\)</span> to <span class="math notranslate nohighlight">\(12 \ \mu\text{mol O}_2 \text{ min}^{-1} \ \text{(g tissue)}^{-1}\)</span>.</p>
 <table class="table" id="table-metabolitepools">
 <caption><span class="caption-number">Table 7 </span><span class="caption-text">In vivo metabolite pool concentrations.</span><a class="headerlink" href="#table-metabolitepools" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -364,7 +364,7 @@
 <th class="head"><p>Units</p></th>
 <th class="head"><p>Description</p></th>
 <th class="head"><p>Healthy</p></th>
-<th class="head"><p>Heart failure <span id="id6">[<a class="reference internal" href="References.html#id20">10</a>]</span></p></th>
+<th class="head"><p>Heart failure <span id="id6">[<a class="reference internal" href="References.html#id21">10</a>]</span></p></th>
 </tr>
 </thead>
 <tbody>

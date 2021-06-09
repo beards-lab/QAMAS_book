@@ -306,7 +306,7 @@
 <div class="math notranslate nohighlight">
 \[	(\text{ATP}^{4-})_x + (\text{ADP}^{3-})_c \rightleftharpoons (\text{ATP}^{4-})_c + (\text{ADP}^{3-})_x \, ,\]</div>
 <p>is catalyzed by the ANT. Here, we assume rapid transport of species between the cytosol and the IMS, and therefore, equate IMS and cytosol species concentrations.</p>
-<p>To simulate the kinetics of this process, we use the Metelkin et al. model <span id="id1">[<a class="reference internal" href="References.html#id17">11</a>]</span>, which accounts for pH and electrochemical dependencies. (Kinetic parameter value estimates for this model were updated by Wu et al. <span id="id2">[<a class="reference internal" href="References.html#id25">22</a>]</span>.) The steady-state flux of ANT is expressed</p>
+<p>To simulate the kinetics of this process, we use the Metelkin et al. model <span id="id1">[<a class="reference internal" href="References.html#id18">11</a>]</span>, which accounts for pH and electrochemical dependencies. (Kinetic parameter value estimates for this model were updated by Wu et al. <span id="id2">[<a class="reference internal" href="References.html#id26">23</a>]</span>.) The steady-state flux of ANT is expressed</p>
 <div class="math notranslate nohighlight" id="equation-j-ant">
 <span class="eqno">(14)<a class="headerlink" href="#equation-j-ant" title="Permalink to this equation">¶</a></span>\[	J_{\text{ANT}} = E_{\text{ANT}}  \dfrac{  \dfrac{ k_2^{\text{ANT}} q }{ K_o^D }  [ \text{ATP}^{4-} ]_x [ \text{ADP}^{3-}]_c  - \dfrac{ k_3^{\text{ANT}} }{ K_o^T } [ \text{ADP}^{3-} ]_x [ \text{ATP}^{4-} ]_c }{ \left(1 + \dfrac{ [ \text{ATP}^{4-} ]_c }{ K_o^T } + \dfrac{ [ \text{ADP}^{3-} ]_c }{ K_o^D } \right)( [ \text{ADP}^{3-} ]_x + [ \text{ATP}^{4-} ]_x q) }, \]</div>
 <p>where <span class="math notranslate nohighlight">\(E_{\text{ANT}} \ \text{(mol (L mito)}^{-1})\)</span> is the total ANT content of the mitochondria and</p>
@@ -317,7 +317,7 @@
 	K_o^T &amp;=&amp; K_o^{T,0} e^{4 \delta_T \phi}, \nonumber \\ 
 	q &amp;=&amp; \dfrac{ k_3^\text{ANT} K_o^D }{ k_2^\text{ANT} K_o^T } e^\phi, \quad \text{and} \nonumber \\
 	\phi &amp;=&amp; F \Delta \Psi / R{\rm T}.  \end{split}\]</div>
-<p>All parameter values and units can be found in <a class="reference internal" href="#table-ant"><span class="std std-numref">Table 3</span></a>, reproduced from <span id="id3">[<a class="reference internal" href="References.html#id11">1</a>]</span>.</p>
+<p>All parameter values and units can be found in <a class="reference internal" href="#table-ant"><span class="std std-numref">Table 3</span></a>, reproduced from <span id="id3">[<a class="reference internal" href="References.html#id12">1</a>]</span>.</p>
 <table class="table" id="table-ant">
 <caption><span class="caption-number">Table 3 </span><span class="caption-text">Adenine nucleotide translocase (ANT) parameters.</span><a class="headerlink" href="#table-ant" title="Permalink to this table">¶</a></caption>
 <colgroup>
@@ -600,7 +600,7 @@
 <p>During active ATP synthesis, mitochondrial Pi is replenished via the activity of the phosphate-proton cotransporter (PiC), catalyzing the electroneutral cotransport of protonated inorganic phosphate, <span class="math notranslate nohighlight">\(\text{H}_2\text{PO}_4^{-}\)</span>, and <span class="math notranslate nohighlight">\(\text{H}^{+}\)</span> across the membrane. Again, we assume rapid transport between the cytoplasm and intermembrane space, and hence, we have</p>
 <div class="math notranslate nohighlight">
 \[    (\text{H}_2\text{PO}_4^{-})_c + (\text{H}^{+})_c \rightleftharpoons (\text{H}_2\text{PO}_4^{-})_x + (\text{H}^{+})_x.\]</div>
-<p>Adopting the flux equation from Bazil et al. <span id="id4">[<a class="reference internal" href="References.html#id11">1</a>]</span>, we have</p>
+<p>Adopting the flux equation from Bazil et al. <span id="id4">[<a class="reference internal" href="References.html#id12">1</a>]</span>, we have</p>
 <div class="math notranslate nohighlight" id="equation-j-pic">
 <span class="eqno">(17)<a class="headerlink" href="#equation-j-pic" title="Permalink to this equation">¶</a></span>\[    J_\text{PiC} = E_{\text{PiC}} \dfrac{ [\text{H}^{+} ]_{c} [\text{H}_2\text{PO}_4^{-}]_{c} - [\text{H}^{+}]_{x} [\text{H}_2\text{PO}_4^{-}]_{x} }{ [\text{H}_2\text{PO}_4^{-}]_c + k_{\text{PiC}} }, \]</div>
 <p>where <span class="math notranslate nohighlight">\(E_{\text{PiC}} \ \text{(L matrix water) s}^{-1} \text{ (L mito)}^{-1}\)</span> is the PiC activity rate and <span class="math notranslate nohighlight">\(k_{\text{PiC}} = 1.61\)</span> mM is an effective Michaelis-Menten constant. The <span class="math notranslate nohighlight">\(\text{H}_2\text{PO}_4^{-}\)</span> concentrations in the matrix and cytosol are computed via the relationship</p>
@@ -891,10 +891,12 @@ Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /Users/Ben/opt/ana
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /Users/Ben/opt/anaconda3/envs/qe-mini-example/lib/python3.8/site-packages (1.6.3)
-Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /Users/Ben/opt/anaconda3/envs/qe-mini-example/lib/python3.8/site-packages (from scipy) (1.20.2)
 </pre></div>
 </div>
-<img alt="_images/BuildingModel_13_1.png" src="_images/BuildingModel_13_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /Users/Ben/opt/anaconda3/envs/qe-mini-example/lib/python3.8/site-packages (from scipy) (1.20.2)
+</pre></div>
+</div>
+<img alt="_images/BuildingModel_13_2.png" src="_images/BuildingModel_13_2.png" />
 </div>
 </div>
 <p><strong>Figure 6:</strong> Simulation of concentration versus <span class="math notranslate nohighlight">\(\Delta \Psi\)</span> for Equation <a class="reference internal" href="#equation-system-atp-ant-pic">(18)</a> for the (a) matrix and (b) cytosol species with <span class="math notranslate nohighlight">\(\Delta \Psi\)</span> from <span class="math notranslate nohighlight">\(100\)</span> to <span class="math notranslate nohighlight">\(250\)</span> mV.</p>
@@ -969,21 +971,21 @@ Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /Users/Ben/opt/ana
 <span class="eqno">(27)<a class="headerlink" href="#equation-j-c4" title="Permalink to this equation">¶</a></span>\[    J_{\text{C4}} = X_{\text{C4}} \left( \dfrac{1}{1 + \frac{k_{\text{O}_2}}{[\text{O}_2]
     }} \right) \left( \left(K_{eq,\text{C4}}^\prime\right)^{1/2} [\text{c}_{red}^{2+}]_i [\text{O}_2]_x^{1/4} - [\text{c}_{ox}^{3+}]_i \right),\]</div>
 <p>where <span class="math notranslate nohighlight">\(X_{\text{C4}} \ \text{(mol s}^{-1} \text{ (L mito)}^{-1})\)</span> is the rate constant and <span class="math notranslate nohighlight">\(k_{\text{O}_2}\)</span> is the <span class="math notranslate nohighlight">\(\text{O}_2\)</span> binding constant (\ref{table-ETC}). For this study, we assume a partial pressure of <span class="math notranslate nohighlight">\(\text{O}_2\)</span> at <span class="math notranslate nohighlight">\(25 \ \text{mmHg}\)</span>.</p>
-<p>The apparent equilibrium constants for the <span class="math notranslate nohighlight">\(\text{F}_0\text{F}_1\)</span> ATPase (Equation <a class="reference internal" href="Principles.html#equation-kapp-f">(11)</a>), complex I (Equation <a class="reference internal" href="#equation-kapp-c1">(20)</a>), complex III (Equation <a class="reference internal" href="#equation-kapp-c3">(23)</a>), and complex IV (Equation <a class="reference internal" href="#equation-kapp-c4">(26)</a>) depend on <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>. In the model developed in this section, since <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> is a variable, these apparent equilibrium constants are also variables. Thus, the flux expressions in Equations <a class="reference internal" href="Principles.html#equation-j-f">(12)</a>, <a class="reference internal" href="#equation-j-c1">(21)</a>, <a class="reference internal" href="#equation-j-c3">(24)</a>, and <a class="reference internal" href="#equation-j-c4">(27)</a> depend on <span class="math notranslate nohighlight">\(\Delta \Psi\)</span>. These expressions may be compared to a generalized formulation of rate laws for reversible enzyme-catalyzed reactions <span id="id5">[<a class="reference internal" href="References.html#id10">14</a>]</span>, where in this case the saturating dependence of flux on substrate concentrations is not accounted for. These expressions may also be compared to the more detailed representations of the underlying catalytic mechanisms used by Bazil et al. <span id="id6">[<a class="reference internal" href="References.html#id11">1</a>]</span>. The Bazil et al. model also accounts for side reactions generating reactive oxygen species that are not accounted for here.</p>
+<p>The apparent equilibrium constants for the <span class="math notranslate nohighlight">\(\text{F}_0\text{F}_1\)</span> ATPase (Equation <a class="reference internal" href="Principles.html#equation-kapp-f">(11)</a>), complex I (Equation <a class="reference internal" href="#equation-kapp-c1">(20)</a>), complex III (Equation <a class="reference internal" href="#equation-kapp-c3">(23)</a>), and complex IV (Equation <a class="reference internal" href="#equation-kapp-c4">(26)</a>) depend on <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>. In the model developed in this section, since <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> is a variable, these apparent equilibrium constants are also variables. Thus, the flux expressions in Equations <a class="reference internal" href="Principles.html#equation-j-f">(12)</a>, <a class="reference internal" href="#equation-j-c1">(21)</a>, <a class="reference internal" href="#equation-j-c3">(24)</a>, and <a class="reference internal" href="#equation-j-c4">(27)</a> depend on <span class="math notranslate nohighlight">\(\Delta \Psi\)</span>. These expressions may be compared to a generalized formulation of rate laws for reversible enzyme-catalyzed reactions <span id="id5">[<a class="reference internal" href="References.html#id11">14</a>]</span>, where in this case the saturating dependence of flux on substrate concentrations is not accounted for. These expressions may also be compared to the more detailed representations of the underlying catalytic mechanisms used by Bazil et al. <span id="id6">[<a class="reference internal" href="References.html#id12">1</a>]</span>. The Bazil et al. model also accounts for side reactions generating reactive oxygen species that are not accounted for here.</p>
 </div>
 <div class="section" id="dehydrogenase-activity">
 <h3>Dehydrogenase activity<a class="headerlink" href="#dehydrogenase-activity" title="Permalink to this headline">¶</a></h3>
 <p>In this model, we do not explicitly simulate the reactions of the TCA cycle or beta oxidation,   but rather the combined action of NADH-producing reactions, that is,</p>
 <div class="math notranslate nohighlight">
 \[    (\text{NAD}^{-})_x \rightleftharpoons (\text{NADH}^{2-})_x + (\text{H}^{+})_x\]</div>
-<p>From Beard <span id="id7">[<a class="reference internal" href="References.html#id13">2</a>]</span>, we represent a Pi dependence of NADH production using the following phenomenological expression</p>
+<p>From Beard <span id="id7">[<a class="reference internal" href="References.html#id14">2</a>]</span>, we represent a Pi dependence of NADH production using the following phenomenological expression</p>
 <div class="math notranslate nohighlight" id="equation-j-dh">
 <span class="eqno">(28)<a class="headerlink" href="#equation-j-dh" title="Permalink to this equation">¶</a></span>\[    J_{\text{DH}} = X_{\text{DH}} \left( r [\text{NAD}^-] - [\text{NADH}^{2-}] \right) \left( \dfrac{ 1 + [\Sigma \text{Pi}]_x/k_{\text{Pi},1} }{ 1 + [\Sigma \text{Pi}]_x/k_{\text{Pi},2} } \right),\]</div>
 <p>where <span class="math notranslate nohighlight">\(X_\text{DH} \text{ (mol s}^{-1} \text{ (L mito)}^{-1})\)</span> is the dehydrogenase activity and <span class="math notranslate nohighlight">\(r\)</span> (dimensionless), <span class="math notranslate nohighlight">\(k_{\text{Pi},1} \ \text{(mol (L matrix water)}^{-1})\)</span>, and <span class="math notranslate nohighlight">\(k_{\text{Pi},2} \ \text{(mol (L matrix water)}^{-1})\)</span> are constants. Parameter values are listed in Table <a class="reference internal" href="#table-etc"><span class="std std-numref">Table 4</span></a>. The dependence of NADH production on Pi reflects the Pi-dependence of the substrate-level phosphorylation step of the TCA cycle (the succinyl coenzyme-A synthetase reaction) and the fact that Pi drives substrate oxidation via the dicarboxylate carrier.</p>
 </div>
 <div class="section" id="proton-leak">
 <h3>Proton leak<a class="headerlink" href="#proton-leak" title="Permalink to this headline">¶</a></h3>
-<p>To simulate proton leak across the IMM, we adopt the Goldman-Hodgkins-Katz formulation from Wu et al. <span id="id8">[<a class="reference internal" href="References.html#id25">22</a>]</span>,</p>
+<p>To simulate proton leak across the IMM, we adopt the Goldman-Hodgkins-Katz formulation from Wu et al. <span id="id8">[<a class="reference internal" href="References.html#id26">23</a>]</span>,</p>
 <div class="math notranslate nohighlight" id="equation-j-h">
 <span class="eqno">(29)<a class="headerlink" href="#equation-j-h" title="Permalink to this equation">¶</a></span>\[    J_{\text{H}} = X_\text{H} \left( [\text{H}^{+}]_c \ e^{\phi/2} - [\text{H}^{+}]_x \ e^{-\phi/2} \right) \]</div>
 <p>where <span class="math notranslate nohighlight">\(X_\text{H} = 1000 \ \text{mol s}^{-1} \text{ (L mito)}^{-1}\)</span> is the proton leak activity and <span class="math notranslate nohighlight">\(\phi\)</span> is given in Equation <a class="reference internal" href="#equation-phi">(15)</a>. Even though the kinetic constants <span class="math notranslate nohighlight">\(X_\text{F}\)</span> and <span class="math notranslate nohighlight">\(X_\text{H}\)</span> attain equal values here, under the ATP-producing conditions the proton flux through the <span class="math notranslate nohighlight">\(\text{F}_0\text{F}_1\)</span> ATPase (<span class="math notranslate nohighlight">\(J_\text{F}\)</span>, Equation <a class="reference internal" href="Principles.html#equation-j-f">(12)</a>) is an order of magnitude greater than the proton leak flux (<span class="math notranslate nohighlight">\(J_\text{H}\)</span>, Equation <a class="reference internal" href="#equation-j-h">(29)</a>).</p>
@@ -1009,19 +1011,19 @@ Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /Users/Ben/opt/ana
 <td></td>
 <td><p>Protons translocated by complex I</p></td>
 <td><p><span class="math notranslate nohighlight">\(4 \)</span></p></td>
-<td><p><span id="id9">[<a class="reference internal" href="References.html#id21">13</a>]</span></p></td>
+<td><p><span id="id9">[<a class="reference internal" href="References.html#id22">13</a>]</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(n_{\text{C}3}\)</span></p></td>
 <td></td>
 <td><p>Protons translocated by complex III</p></td>
 <td><p><span class="math notranslate nohighlight">\(2 \)</span></p></td>
-<td><p><span id="id10">[<a class="reference internal" href="References.html#id21">13</a>]</span></p></td>
+<td><p><span id="id10">[<a class="reference internal" href="References.html#id22">13</a>]</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(n_{\text{C}4}\)</span></p></td>
 <td></td>
 <td><p>Protons translocated by complex IV</p></td>
 <td><p><span class="math notranslate nohighlight">\(4 \)</span></p></td>
-<td><p><span id="id11">[<a class="reference internal" href="References.html#id21">13</a>]</span></p></td>
+<td><p><span id="id11">[<a class="reference internal" href="References.html#id22">13</a>]</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(X_\text{C1}\)</span></p></td>
 <td><p>mol s<span class="math notranslate nohighlight">\(^{-1}\)</span> (L mito)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
@@ -1075,49 +1077,49 @@ Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /Users/Ben/opt/ana
 <td><p>mmol (L cell)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>PiC constant</p></td>
 <td><p><span class="math notranslate nohighlight">\(1.61\)</span></p></td>
-<td><p><span id="id12">[<a class="reference internal" href="References.html#id11">1</a>]</span></p></td>
+<td><p><span id="id12">[<a class="reference internal" href="References.html#id12">1</a>]</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(k_{\text{O}_2}\)</span></p></td>
 <td><p><span class="math notranslate nohighlight">\(\mu\)</span>mol (L matrix water)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>O<span class="math notranslate nohighlight">\(_2\)</span> binding constant</p></td>
 <td><p><span class="math notranslate nohighlight">\(120\)</span></p></td>
-<td><p><span id="id13">[<a class="reference internal" href="References.html#id24">21</a>]</span></p></td>
+<td><p><span id="id13">[<a class="reference internal" href="References.html#id25">22</a>]</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Delta_r G^o_\text{C1}\)</span></p></td>
 <td><p>kJ mol<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Gibbs energy of reaction for complex I</p></td>
 <td><p><span class="math notranslate nohighlight">\( -109.7 \)</span></p></td>
-<td><p><span id="id14">[<a class="reference internal" href="References.html#id19">9</a>]</span></p></td>
+<td><p><span id="id14">[<a class="reference internal" href="References.html#id20">9</a>]</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(\Delta_r G^o_\text{C3}\)</span></p></td>
 <td><p>kJ mol<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Gibbs energy of reaction for complex III</p></td>
 <td><p><span class="math notranslate nohighlight">\(46.7 \)</span></p></td>
-<td><p><span id="id15">[<a class="reference internal" href="References.html#id19">9</a>]</span></p></td>
+<td><p><span id="id15">[<a class="reference internal" href="References.html#id20">9</a>]</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(\Delta_r G^o_\text{C4}\)</span></p></td>
 <td><p>kJ mol<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Gibbs energy of reaction for complex IV</p></td>
 <td><p><span class="math notranslate nohighlight">\( -202.2 \)</span></p></td>
-<td><p><span id="id16">[<a class="reference internal" href="References.html#id19">9</a>]</span></p></td>
+<td><p><span id="id16">[<a class="reference internal" href="References.html#id20">9</a>]</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\([\text{NAD}]_{tot}\)</span></p></td>
 <td><p>mmol (L matrix water)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Total NAD pool in the matrix</p></td>
 <td><p><span class="math notranslate nohighlight">\(2.97\)</span></p></td>
-<td><p><span id="id17">[<a class="reference internal" href="References.html#id24">21</a>]</span></p></td>
+<td><p><span id="id17">[<a class="reference internal" href="References.html#id25">22</a>]</span></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\([\text{Q}]_{tot}\)</span></p></td>
 <td><p>mmol (L matrix water)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Total Q pool in the matrix</p></td>
 <td><p><span class="math notranslate nohighlight">\(1.35\)</span></p></td>
-<td><p><span id="id18">[<a class="reference internal" href="References.html#id24">21</a>]</span></p></td>
+<td><p><span id="id18">[<a class="reference internal" href="References.html#id25">22</a>]</span></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\([\text{c}]_{tot}\)</span></p></td>
 <td><p>mmol (L IM water)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Total cytochrome c pool in the IMS</p></td>
 <td><p><span class="math notranslate nohighlight">\(2.70\)</span></p></td>
-<td><p><span id="id19">[<a class="reference internal" href="References.html#id24">21</a>]</span></p></td>
+<td><p><span id="id19">[<a class="reference internal" href="References.html#id25">22</a>]</span></p></td>
 </tr>
 </tbody>
 </table>
