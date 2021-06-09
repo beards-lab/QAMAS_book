@@ -26,7 +26,7 @@
 # -   A kinetic and thermodynamic framework for mitochondrial energetics is developed.
 # -   The framework is applied to simulate ATP synthesis and respiratory control.
 # -   We illustrate how respiratory control in vitro translates to energetics in vivo.
-# -   Computer codes are available at DOI: 10.5281/zenodo.4915567. 
+# -   Computer codes are available at DOI: 10.5281/zenodo.4919564. 
 # 
 # 
 # ## Funding 
