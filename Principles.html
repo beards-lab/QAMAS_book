@@ -1,47 +1,33 @@
 
+
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Basic chemical, electrical, and thermodynamic principles &#8212; Quantitative analysis of mitochondrial ATP synthesis</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
-
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
-    
-      
-
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
-
+    <link rel="stylesheet" type="text/css" href="_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
+    <link rel="stylesheet" type="text/css" href="_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -49,20 +35,18 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Building a model of oxidative ATP synthesis from energetic components" href="BuildingModel.html" />
     <link rel="prev" title="Introduction" href="Introduction.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
-
     
 
     <div class="container-xl">
@@ -71,27 +55,30 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      <img src="_static/mito.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Quantitative analysis of mitochondrial ATP synthesis</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/mito.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Quantitative analysis of mitochondrial ATP synthesis</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Abstract.html">
    Title Page
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Abbreviations.html">
    Abbreviations
@@ -134,8 +121,9 @@
  </li>
 </ul>
 
-    </div>
-</nav> <!-- To handle the deprecated key -->
+</nav>
+
+ <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -150,25 +138,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
+    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -180,9 +168,9 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
+    
 </div>
-
-            <!-- Source interaction buttons -->
+        <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -200,14 +188,13 @@
     </div>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
+        <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -222,6 +209,11 @@
         
         
         
+        <a class="colab-button" href="https://colab.research.google.com/github/beards-lab/QAMAS_book/blob/master/QAMAS/Principles.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
         <button type="button" class="btn btn-secondary topbarbtn"
             onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
@@ -229,16 +221,15 @@
     </div>
 </div>
 
-        </div>
+    </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#mitochondrial-anatomy">
    Mitochondrial anatomy
@@ -283,8 +274,7 @@
  </li>
 </ul>
 
-            </nav>
-        </div>
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -297,18 +287,18 @@
 <p>To develop a quantitative understanding of how these processes work, we start with a set of definitions of the some quantities and concepts with which we are concerned. Specifically, this section reviews basic biochemical, thermodynamic, and related concepts that are particularly relevant to the quantitative analysis of mitochondrial ATP synthesis.</p>
 <div class="figure align-default" id="mitofig">
 <img alt="_images/Figure1.png" src="_images/Figure1.png" />
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Diagram of a mitochondrion with the cytosol, intermembrane space (IMS), and matrix indicated. <em>Inset from left to right:</em> Protein channels and complexes associated with oxidative phosphorylation in the cristae of the mitochondrion. Complex I (C1) catalyzes the oxidation of NADH<span class="math notranslate nohighlight">\(^{2-}\)</span> to NAD<span class="math notranslate nohighlight">\(^{-}\)</span> and reduction of ubiquinone (Q) to QH<span class="math notranslate nohighlight">\(_2\)</span>. Complex II (C2) catalyzes the oxidation of FADH<span class="math notranslate nohighlight">\(_2\)</span> to FAD coupled to the reduction of Q. Complex III (C3) catalyzes the oxidation of QH<span class="math notranslate nohighlight">\(_2\)</span> coupled to the reduction of cytochrome c (Cyt c). Complex IV (C4) catalyzes the oxidation of Cyt c coupled to the reduction of oxygen to water. These redox transfers drive pumping of H<span class="math notranslate nohighlight">\(^+\)</span> ions out of the matrix, establishing the proton motive force across the inner mitochondrial membrane (IMM) that drives ATP synthesis at complex V, or the F<span class="math notranslate nohighlight">\(_0\)</span>F<span class="math notranslate nohighlight">\(_1\)</span>-ATPase (F<span class="math notranslate nohighlight">\(_0\)</span>F<span class="math notranslate nohighlight">\(_1\)</span>). The adenine nucleotide translocase (ANT) exchanges matrix ATP for IMS ADP. The inorganic phosphate cotransporter (PiC) brings protons and Pi from the IMS to the matrix. Lastly, there is a passive H<span class="math notranslate nohighlight">\(^{+}\)</span> leak across the IMM. (Figure created with <a class="reference external" href="http://Biorender.com">Biorender.com</a>.)</span><a class="headerlink" href="#mitofig" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Diagram of a mitochondrion with the cytosol, intermembrane space (IMS), and matrix indicated. <em>Inset from left to right:</em> Protein channels and complexes associated with oxidative phosphorylation in the cristae of the mitochondrion. Complex I (C1) catalyzes the oxidation of NADH<span class="math notranslate nohighlight">\(^{2-}\)</span> to NAD<span class="math notranslate nohighlight">\(^{-}\)</span> and reduction of ubiquinone (Q) to QH<span class="math notranslate nohighlight">\(_2\)</span>. Complex II (C2) catalyzes the oxidation of FADH<span class="math notranslate nohighlight">\(_2\)</span> to FAD coupled to the reduction of Q. Complex III (C3) catalyzes the oxidation of QH<span class="math notranslate nohighlight">\(_2\)</span> coupled to the reduction of cytochrome c (Cyt c). Complex IV (C4) catalyzes the oxidation of Cyt c coupled to the reduction of oxygen to water. These redox transfers drive pumping of H<span class="math notranslate nohighlight">\(^+\)</span> ions out of the matrix, establishing the proton motive force across the inner mitochondrial membrane (IMM) that drives ATP synthesis at complex V, or the F<span class="math notranslate nohighlight">\(_0\)</span>F<span class="math notranslate nohighlight">\(_1\)</span>-ATPase (F<span class="math notranslate nohighlight">\(_0\)</span>F<span class="math notranslate nohighlight">\(_1\)</span>). The adenine nucleotide translocase (ANT) exchanges matrix ATP for IMS ADP. The inorganic phosphate cotransporter (PiC) brings protons and Pi from the IMS to the matrix. Lastly, there is a passive H<span class="math notranslate nohighlight">\(^{+}\)</span> leak across the IMM. (Figure created with Biorender.com.)</span><a class="headerlink" href="#mitofig" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="mitochondrial-anatomy">
 <h2>Mitochondrial anatomy<a class="headerlink" href="#mitochondrial-anatomy" title="Permalink to this headline">¶</a></h2>
-<p>The mitochondrion is a membrane-bound, rod-shaped organelle that is responsible for generating most of the chemical energy needed to power the cell’s biochemical reactions by respiration <span id="id1">[<a class="reference internal" href="References.html#id22">13</a>]</span>. Mitochondria are comprised of an outer and inner membrane that are separated by the intermembrane space (IMS) (<a class="reference internal" href="#mitofig"><span class="std std-numref">Fig. 1</span></a>). The outer mitochondrial membrane is freely permeable to small molecules and ions. The IMM folds inward to make cristae that extend into the matrix. Transmembrane channels called porins and the respiratory complexes involved in oxidative phosphorylation and ATP synthesis allow for more selective IMM permeability. The IMM encloses the mitochondrial matrix, which contains mitochondrial deoxyribonucleic acid (DNA), the majority of mitochondrial proteins, soluble metabolic intermediates including ATP, ADP, and Pi, and the enzymes catalyzing the tricarboxylic acid (TCA) cycle and <span class="math notranslate nohighlight">\(\beta\)</span>-oxidation.</p>
+<p>The mitochondrion is a membrane-bound, rod-shaped organelle that is responsible for generating most of the chemical energy needed to power the cell’s biochemical reactions by respiration <a class="bibtex reference internal" href="References.html#nicholls2013" id="id1">[14]</a>. Mitochondria are comprised of an outer and inner membrane that are separated by the intermembrane space (IMS) (<a class="reference internal" href="#mitofig"><span class="std std-numref">Fig. 1</span></a>). The outer mitochondrial membrane is freely permeable to small molecules and ions. The IMM folds inward to make cristae that extend into the matrix. Transmembrane channels called porins and the respiratory complexes involved in oxidative phosphorylation and ATP synthesis allow for more selective IMM permeability. The IMM encloses the mitochondrial matrix, which contains mitochondrial deoxyribonucleic acid (DNA), the majority of mitochondrial proteins, soluble metabolic intermediates including ATP, ADP, and Pi, and the enzymes catalyzing the tricarboxylic acid (TCA) cycle and <span class="math notranslate nohighlight">\(\beta\)</span>-oxidation.</p>
 </div>
 <div class="section" id="imm-capacitance">
 <h2>IMM capacitance<a class="headerlink" href="#imm-capacitance" title="Permalink to this headline">¶</a></h2>
 <p>The IMM acts as an electrical capacitor to store energy in an electrostatic potential difference between the milieu on each side. Electrical capacitance of a membrane (<span class="math notranslate nohighlight">\(C_m\)</span>) is the proportionality between the rate of charge transport across the membrane, i.e. current (<span class="math notranslate nohighlight">\(I\)</span>), to the rate of membrane potential (<span class="math notranslate nohighlight">\(\Delta \Psi\)</span>) change, that is,</p>
 <div class="math notranslate nohighlight">
 \[    C_m \dfrac{ {\rm d} {\Delta\Psi}}{{\rm d} t} = I.\]</div>
-<p>In the model and associated calculations presented below, we express fluxes in units of moles per unit time per unit volume of mitochondria. Thus, it is convenient to obtain an estimate of <span class="math notranslate nohighlight">\(C_m\)</span> in units of mole per volt per volume of mitochondria. Mitochondria take on a roughly ellipsoid shape in vivo, and a more spherical morphometry in suspension of purified mitochondria <span id="id2">[<a class="reference internal" href="References.html#id24">15</a>]</span>. To estimate the mitochondrial surface area-to-volume ratio, we take a representative mitochondrion as a sphere with radius <span class="math notranslate nohighlight">\(r = 1 \ \mu\text{m}\)</span> and obtain a surface area-to-volume ratio of <span class="math notranslate nohighlight">\(3 \ \mu\text{m}^{-1}\)</span>.   Furthermore, we estimate that the IMM has ten-fold greater surface area than the outer membrane, yielding a surface area to volume ratio of <span class="math notranslate nohighlight">\(30 \ \mu\text{m}^{-1}\)</span> for the IMM. Since the capacitance density of biological membranes ranges from <span class="math notranslate nohighlight">\(0.5\text{-}1.0 \mu\text{F cm}^{-2}\)</span>, or <span class="math notranslate nohighlight">\(0.5 \text{-} 1.0 \times \ 10^{-8} \ \mu\text{F} \ \mu\text{m}^{-2}\)</span> <span id="id3">[<a class="reference internal" href="References.html#id22">13</a>]</span>, <span class="math notranslate nohighlight">\(C_m\)</span> is approximately <span class="math notranslate nohighlight">\(30 \times 10^{-8} \ \mu\text{F} \ \mu\text{m}^{-3} = 300 \ \text{F (L mito)}^{-1}\)</span>. To convert to the units used in the calculations below, we have</p>
+<p>In the model and associated calculations presented below, we express fluxes in units of moles per unit time per unit volume of mitochondria. Thus, it is convenient to obtain an estimate of <span class="math notranslate nohighlight">\(C_m\)</span> in units of mole per volt per volume of mitochondria. Mitochondria take on a roughly ellipsoid shape in vivo, and a more spherical morphometry in suspension of purified mitochondria <a class="bibtex reference internal" href="References.html#picard2011" id="id2">[16]</a>. To estimate the mitochondrial surface area-to-volume ratio, we take a representative mitochondrion as a sphere with radius <span class="math notranslate nohighlight">\(r = 1 \ \mu\text{m}\)</span> and obtain a surface area-to-volume ratio of <span class="math notranslate nohighlight">\(3 \ \mu\text{m}^{-1}\)</span>.   Furthermore, we estimate that the IMM has ten-fold greater surface area than the outer membrane, yielding a surface area to volume ratio of <span class="math notranslate nohighlight">\(30 \ \mu\text{m}^{-1}\)</span> for the IMM. Since the capacitance density of biological membranes ranges from <span class="math notranslate nohighlight">\(0.5\text{-}1.0 \mu\text{F cm}^{-2}\)</span>, or <span class="math notranslate nohighlight">\(0.5 \text{-} 1.0 \times \ 10^{-8} \ \mu\text{F} \ \mu\text{m}^{-2}\)</span> <a class="bibtex reference internal" href="References.html#nicholls2013" id="id3">[14]</a>, <span class="math notranslate nohighlight">\(C_m\)</span> is approximately <span class="math notranslate nohighlight">\(30 \times 10^{-8} \ \mu\text{F} \ \mu\text{m}^{-3} = 300 \ \text{F (L mito)}^{-1}\)</span>. To convert to the units used in the calculations below, we have</p>
 <div class="math notranslate nohighlight">
 \[  C_m = 300 \ \frac{\rm F}{\rm L \ mito} = 300 \ \frac{\rm C}{\rm V \cdot L \, mito}\cdot 
     \frac{1}{F}\, \frac{\rm mol}{\rm C} =
@@ -318,7 +308,7 @@
 </div>
 <div class="section" id="gibbs-free-energy">
 <h2>Gibbs free energy<a class="headerlink" href="#gibbs-free-energy" title="Permalink to this headline">¶</a></h2>
-<p>A <em>free energy</em> is a thermodynamic quantity that relates a change in the thermodynamic state of a system to an associated change in total entropy of the system plus its environment. Chemical reaction processes necessarily proceed in the direction associated with a reduction in free energy <span id="id4">[<a class="reference internal" href="References.html#id22">13</a>]</span>. When free energy of a system is reduced, total entropy (of the universe) is increased. The form of free energy that is operative in constant-temperature and constant-pressure systems (most relevant for biochemistry) is the Gibbs free energy, or simply the <em>Gibbs energy</em>.</p>
+<p>A <em>free energy</em> is a thermodynamic quantity that relates a change in the thermodynamic state of a system to an associated change in total entropy of the system plus its environment. Chemical reaction processes necessarily proceed in the direction associated with a reduction in free energy <a class="bibtex reference internal" href="References.html#nicholls2013" id="id4">[14]</a>. When free energy of a system is reduced, total entropy (of the universe) is increased. The form of free energy that is operative in constant-temperature and constant-pressure systems (most relevant for biochemistry) is the Gibbs free energy, or simply the <em>Gibbs energy</em>.</p>
 <p>For a chemical reaction of reactants <span class="math notranslate nohighlight">\(A_i\)</span> and products <span class="math notranslate nohighlight">\(B_j\)</span>,</p>
 <div class="math notranslate nohighlight">
 \[    \sum_{i = 1}^M m_i A_i \rightleftharpoons \sum_{j = 1}^N n_j B_j\]</div>
@@ -333,11 +323,11 @@
 </div>
 <div class="section" id="membrane-potential-and-proton-motive-force">
 <h2>Membrane potential and proton motive force<a class="headerlink" href="#membrane-potential-and-proton-motive-force" title="Permalink to this headline">¶</a></h2>
-<p>Free energy associated with the oxidation of primary fuels is transduced to generate the chemical potential across the IMM known as the {\em proton motive force}, which is used to synthesize ATP in the matrix and transport ATP out of the matrix to the cytosol <span id="id5">[<a class="reference internal" href="References.html#id22">13</a>]</span>. The thermodynamic driving force for translocation of hydrogen ions (<span class="math notranslate nohighlight">\(\text{H}^{+}\)</span>) across the IMM has two components: the difference in electrostatic potential across the membrane, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> (V), and the difference in <span class="math notranslate nohighlight">\(\text{H}^{+}\)</span> concentration (or activity) between the media on either side of the membrane, <span class="math notranslate nohighlight">\(\Delta\text{pH}\)</span>, that is</p>
+<p>Free energy associated with the oxidation of primary fuels is transduced to generate the chemical potential across the IMM known as the {\em proton motive force}, which is used to synthesize ATP in the matrix and transport ATP out of the matrix to the cytosol <a class="bibtex reference internal" href="References.html#nicholls2013" id="id5">[14]</a>. The thermodynamic driving force for translocation of hydrogen ions (<span class="math notranslate nohighlight">\(\text{H}^{+}\)</span>) across the IMM has two components: the difference in electrostatic potential across the membrane, <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> (V), and the difference in <span class="math notranslate nohighlight">\(\text{H}^{+}\)</span> concentration (or activity) between the media on either side of the membrane, <span class="math notranslate nohighlight">\(\Delta\text{pH}\)</span>, that is</p>
 <div class="math notranslate nohighlight" id="equation-dg-h">
 <span class="eqno">(2)<a class="headerlink" href="#equation-dg-h" title="Permalink to this equation">¶</a></span>\[\begin{split}    \Delta G_{\rm H} &amp;=&amp; -F\Delta\Psi + R{\rm T}\ln\left( [{\rm H}^+]_x/[{\rm H}^+]_c \right)  \nonumber \\
     &amp;=&amp;  -F\Delta\Psi - 2.3 R{\rm T} \, \Delta{\rm pH},\end{split}\]</div>
-<p>where the subscripts <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(c\)</span> indicate matrix and external (cytosol) spaces. <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> is defined as the cytosolic potential minus matrix potential, yielding a negative change in free energy for a positive potential. Membrane potential in respiring mitochondria is approximately <span class="math notranslate nohighlight">\(150 \text{-} 200 \ \text{mV}\)</span>, yielding a contribution to <span class="math notranslate nohighlight">\(\Delta G_{\rm H}\)</span> on the order of <span class="math notranslate nohighlight">\(15 \text{-} 20 \ \text{kJ mol}^{-1}\)</span> <span id="id6">[<a class="reference internal" href="References.html#id12">1</a>]</span>. Under in vitro conditions, <span class="math notranslate nohighlight">\(\Delta\text{pH}\)</span> between the matrix and external buffer is on the order of <span class="math notranslate nohighlight">\(0.1 \ \text{pH}\)</span> units <span id="id7">[<a class="reference internal" href="References.html#id12">1</a>]</span>. Thus, the contribution to proton motive force from a pH difference is less than <span class="math notranslate nohighlight">\(1 \ \text{kJ mol}^{-1}\)</span> and substantially smaller than that from <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>.</p>
+<p>where the subscripts <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(c\)</span> indicate matrix and external (cytosol) spaces. <span class="math notranslate nohighlight">\(\Delta\Psi\)</span> is defined as the cytosolic potential minus matrix potential, yielding a negative change in free energy for a positive potential. Membrane potential in respiring mitochondria is approximately <span class="math notranslate nohighlight">\(150 \text{-} 200 \ \text{mV}\)</span>, yielding a contribution to <span class="math notranslate nohighlight">\(\Delta G_{\rm H}\)</span> on the order of <span class="math notranslate nohighlight">\(15 \text{-} 20 \ \text{kJ mol}^{-1}\)</span> <a class="bibtex reference internal" href="References.html#bazil2016" id="id6">[1]</a>. Under in vitro conditions, <span class="math notranslate nohighlight">\(\Delta\text{pH}\)</span> between the matrix and external buffer is on the order of <span class="math notranslate nohighlight">\(0.1 \ \text{pH}\)</span> units <a class="bibtex reference internal" href="References.html#bazil2016" id="id7">[1]</a>. Thus, the contribution to proton motive force from a pH difference is less than <span class="math notranslate nohighlight">\(1 \ \text{kJ mol}^{-1}\)</span> and substantially smaller than that from <span class="math notranslate nohighlight">\(\Delta\Psi\)</span>.</p>
 </div>
 <div class="section" id="thermodynamics-of-atp-synthesis-hydrolysis">
 <h2>Thermodynamics of ATP synthesis/hydrolysis<a class="headerlink" href="#thermodynamics-of-atp-synthesis-hydrolysis" title="Permalink to this headline">¶</a></h2>
@@ -350,7 +340,7 @@
 <span class="eqno">(4)<a class="headerlink" href="#equation-drg-atp" title="Permalink to this equation">¶</a></span>\[	\Delta_r G_{\rm ATP} = \Delta_r G^o_\text{ATP} + R{\rm T} \ln 
 	\left( \frac{ [\text{ADP}^{3-}] [\text{HPO}_4^{2-}] [{\rm H}^{+}] }
 	{ [\text{ATP}^{4-}] }\right),\]</div>
-<p>where the Gibbs energy for ATP hydrolysis under physiological conditions is approximately <span class="math notranslate nohighlight">\(\Delta_r G^o_\text{ATP} = 4.99 \ \text{kJ mol}^{-1}\)</span> <span id="id8">[<a class="reference internal" href="References.html#id20">9</a>]</span>.   Using the convention that all concentrations are formally defined as measured relative to 1 Molar, the argument of the logarithm in Equation <a class="reference internal" href="#equation-drg-atp">(4)</a> is unitless.</p>
+<p>where the Gibbs energy for ATP hydrolysis under physiological conditions is approximately <span class="math notranslate nohighlight">\(\Delta_r G^o_\text{ATP} = 4.99 \ \text{kJ mol}^{-1}\)</span> <a class="bibtex reference internal" href="References.html#li2011" id="id8">[9]</a>.   Using the convention that all concentrations are formally defined as measured relative to 1 Molar, the argument of the logarithm in Equation <a class="reference internal" href="#equation-drg-atp">(4)</a> is unitless.</p>
 <div class="section" id="calculation-of-the-atp-hydrolysis-potential">
 <h3>Calculation of the ATP hydrolysis potential<a class="headerlink" href="#calculation-of-the-atp-hydrolysis-potential" title="Permalink to this headline">¶</a></h3>
 <p>Equation <a class="reference internal" href="#equation-drg-atp">(4)</a> expresses the Gibbs energy of chemical Equation <a class="reference internal" href="#equation-atp1">(3)</a> in terms of its <em>chemical species</em>. In practice, biochemistry typically deals with biochemical <em>reactants</em>, which are comprised of sums of rapidly interconverting chemical species. We calculate the total ATP concentration, <span class="math notranslate nohighlight">\([\Sigma \text{ATP}]\)</span>, in terms of its bound and unbound species, that is,</p>
@@ -359,7 +349,7 @@
 	&amp;= [\text{ATP}^{4-}] + \frac{[\text{Mg}^{2+}] [\text{ATP}^{4-}]}{K_{\text{MgATP}}} + \frac{ [\text{H}^{+}] [\text{ATP}^{4-}]}{K_{\text{HATP}}} + \frac{ [\text{K}^{+}] [\text{ATP}^{4-}]}{K_{\text{KATP}}} \nonumber \\
 	&amp;= [\text{ATP}^{4-}] \left( 1 + \frac{[\text{Mg}^{2+}]}{K_{\text{MgATP}}} + \frac{ [\text{H}^{+}]}{K_{\text{HATP}}} + \frac{ [\text{K}^{+}]}{K_{\text{KATP}}} \right) \nonumber \\
 	&amp;= [\text{ATP}^{4-}] P_{\text{ATP}},\end{split}\]</div>
-<p>where <span class="math notranslate nohighlight">\(P_{\text{ATP}}\)</span> is a <em>binding polynomial</em>. Here, we we account for only the single cation-bound species. (Free <span class="math notranslate nohighlight">\(\text{H}^+\)</span> in solution associates with water to form <span class="math notranslate nohighlight">\(\text{H}_3\text{O}^+\)</span>. Here we use [<span class="math notranslate nohighlight">\(\text{H}^+\)</span>] to indicate hydrogen ion activity, which is equal to <span class="math notranslate nohighlight">\(10^{-\text{pH}}\)</span>.)  <a class="reference internal" href="#table-dissociationconstants"><span class="std std-numref">Table 1</span></a> lists the dissociation constants used in this study from <span id="id9">[<a class="reference internal" href="References.html#id20">9</a>]</span>. Similarly, total ADP, [<span class="math notranslate nohighlight">\(\Sigma \text{ADP}\)</span>], and inorganic phosphate, [<span class="math notranslate nohighlight">\(\Sigma \text{Pi}\)</span>], concentrations are</p>
+<p>where <span class="math notranslate nohighlight">\(P_{\text{ATP}}\)</span> is a <em>binding polynomial</em>. Here, we we account for only the single cation-bound species. (Free <span class="math notranslate nohighlight">\(\text{H}^+\)</span> in solution associates with water to form <span class="math notranslate nohighlight">\(\text{H}_3\text{O}^+\)</span>. Here we use [<span class="math notranslate nohighlight">\(\text{H}^+\)</span>] to indicate hydrogen ion activity, which is equal to <span class="math notranslate nohighlight">\(10^{-\text{pH}}\)</span>.)  <a class="reference internal" href="#table-dissociationconstants"><span class="std std-numref">Table 1</span></a> lists the dissociation constants used in this study from <a class="bibtex reference internal" href="References.html#li2011" id="id9">[9]</a>. Similarly, total ADP, [<span class="math notranslate nohighlight">\(\Sigma \text{ADP}\)</span>], and inorganic phosphate, [<span class="math notranslate nohighlight">\(\Sigma \text{Pi}\)</span>], concentrations are</p>
 <div class="math notranslate nohighlight" id="equation-sumadp">
 <span class="eqno">(6)<a class="headerlink" href="#equation-sumadp" title="Permalink to this equation">¶</a></span>\[\begin{split}    [\Sigma {\rm ADP} ] &amp;= [{\rm ADP}^{3-}]\left( 1 + \frac{[{\rm Mg}^{2+}]}{K_{\rm MgADP}} + \frac{ [{\rm H}^{+}]}{K_{\rm HADP}} + \frac{ [{\rm K}^{+}]}{K_{\rm KADP}} \right) \nonumber \\
     &amp;= [{\rm ADP}^{3-}]P_{\rm ADP} \end{split}\]</div>
@@ -549,7 +539,7 @@
 <td></td>
 <td><p>Protons translocated</p></td>
 <td><p><span class="math notranslate nohighlight">\(8/3 \)</span></p></td>
-<td><p><span id="id10">[<a class="reference internal" href="References.html#id22">13</a>]</span></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#nicholls2013" id="id10">[14]</a></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(X_\text{F}\)</span></p></td>
 <td><p>mol s<span class="math notranslate nohighlight">\(^{-1}\)</span> (L mito)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
@@ -561,7 +551,7 @@
 <td><p>kJ mol<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Reference Gibbs energy</p></td>
 <td><p><span class="math notranslate nohighlight">\(4.99 \)</span></p></td>
-<td><p><span id="id11">[<a class="reference internal" href="References.html#id20">9</a>]</span></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#li2011" id="id11">[9]</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Biophysical constants</p></td>
 <td></td>
@@ -591,7 +581,7 @@
 <td><p>mol V<span class="math notranslate nohighlight">\(^{-1}\)</span> (L mito)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>IMM capacitance</p></td>
 <td><p><span class="math notranslate nohighlight">\(3.1\text{e-}3\)</span></p></td>
-<td><p><span id="id12">[<a class="reference internal" href="References.html#id14">2</a>]</span></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#beard2005" id="id12">[2]</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Volume ratios</p></td>
 <td></td>
@@ -603,13 +593,13 @@
 <td><p>(L cyto) (L cell)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Cyto to cell ratio</p></td>
 <td><p><span class="math notranslate nohighlight">\(0.6601\)</span></p></td>
-<td><p><span id="id13">[<a class="reference internal" href="References.html#id12">1</a>]</span></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id13">[1]</a></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(V_m\)</span></p></td>
 <td><p>(L mito) (L cell)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Mito to cell ratio</p></td>
 <td><p><span class="math notranslate nohighlight">\(0.2882\)</span></p></td>
-<td><p><span id="id14">[<a class="reference internal" href="References.html#id12">1</a>]</span></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id14">[1]</a></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(V_{m2c}\)</span></p></td>
 <td><p>(L mito) (L cyto)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
@@ -621,25 +611,25 @@
 <td><p>(L cyto water) (L cyto)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Cyto water space ratio</p></td>
 <td><p><span class="math notranslate nohighlight">\(0.8425\)</span></p></td>
-<td><p><span id="id15">[<a class="reference internal" href="References.html#id12">1</a>]</span></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id15">[1]</a></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(W_m\)</span></p></td>
 <td><p>(L mito water) (L mito)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Mito water space ratio</p></td>
 <td><p><span class="math notranslate nohighlight">\(0.7238 \)</span></p></td>
-<td><p><span id="id16">[<a class="reference internal" href="References.html#id12">1</a>]</span></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id16">[1]</a></p></td>
 </tr>
 <tr class="row-odd"><td><p><span class="math notranslate nohighlight">\(W_x\)</span></p></td>
 <td><p>(L matrix water) (L mito)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>Mito matrix water space ratio</p></td>
 <td><p><span class="math notranslate nohighlight">\(0.9\)</span> <span class="math notranslate nohighlight">\(W_m\)</span></p></td>
-<td><p><span id="id17">[<a class="reference internal" href="References.html#id12">1</a>]</span></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id17">[1]</a></p></td>
 </tr>
 <tr class="row-even"><td><p><span class="math notranslate nohighlight">\(W_i\)</span></p></td>
 <td><p>(L IM water) (L mito)<span class="math notranslate nohighlight">\(^{-1}\)</span></p></td>
 <td><p>IMS water space ratio</p></td>
 <td><p><span class="math notranslate nohighlight">\(0.1\)</span> <span class="math notranslate nohighlight">\(W_m\)</span></p></td>
-<td><p><span id="id18">[<a class="reference internal" href="References.html#id12">1</a>]</span></p></td>
+<td><p><a class="bibtex reference internal" href="References.html#bazil2016" id="id18">[1]</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -744,11 +734,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /Users/Ben/opt/anaconda3/envs/qe-mini-example/lib/python3.8/site-packages (1.6.3)
-Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /Users/Ben/opt/anaconda3/envs/qe-mini-example/lib/python3.8/site-packages (from scipy) (1.20.2)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: scipy in /Users/Ben/opt/anaconda3/lib/python3.7/site-packages (1.4.1)
 </pre></div>
 </div>
-<img alt="_images/Principles_15_1.png" src="_images/Principles_15_1.png" />
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Requirement already satisfied: numpy&gt;=1.13.3 in /Users/Ben/opt/anaconda3/lib/python3.7/site-packages (from scipy) (1.18.1)
+</pre></div>
+</div>
+<img alt="_images/Principles_15_2.png" src="_images/Principles_15_2.png" />
 </div>
 </div>
 <p><strong>Figure 2:</strong> Steady state solution from Equation <a class="reference internal" href="#equation-system-atpase">(13)</a> for <span class="math notranslate nohighlight">\(\Delta \Psi = 175\)</span> mV, <span class="math notranslate nohighlight">\(\text{pH}_x = 7.4\)</span>, and <span class="math notranslate nohighlight">\(\text{pH}_c = 7.2\)</span>.</p>
@@ -823,15 +815,15 @@ Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /Users/Ben/opt/ana
 
               </div>
               
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
         
-        <div class='prev-next-bottom'>
-            
     <a class='left-prev' id="prev-link" href="Introduction.html" title="previous page">Introduction</a>
     <a class='right-next' id="next-link" href="BuildingModel.html" title="next page">Building a model of oxidative ATP synthesis from energetic components</a>
 
-        </div>
-        
-        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -839,7 +831,7 @@ Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /Users/Ben/opt/ana
         
           By Randall, Hock, Lopez, Marzban, Marshall, & Beard supported by NIH grant HL144657<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; Copyright 2020.<br/>
       </p>
     </div>
   </footer>
@@ -848,9 +840,8 @@ Requirement already satisfied: numpy&lt;1.23.0,&gt;=1.16.5 in /Users/Ben/opt/ana
 
       </div>
     </div>
-  
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  
+    <script src="_static/js/index.js"></script>
+    
   </body>
 </html>

@@ -1,47 +1,33 @@
 
+
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Introduction &#8212; Quantitative analysis of mitochondrial ATP synthesis</title>
-    
-  <link href="_static/css/theme.css" rel="stylesheet" />
-  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
-
-    
-  <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
-
-    
-      
-
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="_static/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
-
+    <link rel="stylesheet" type="text/css" href="_static/spanels-index--0afa1ebdab0bb23b98b56d34c23d9f57.css" />
+    <link rel="stylesheet" type="text/css" href="_static/spanels-variables--ffc7f74dcb1b9eecba2dbcbc22818714.css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <script src="_static/togglebutton.js"></script>
     <script src="_static/clipboard.min.js"></script>
     <script src="_static/copybutton.js"></script>
+    <script src="_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -49,20 +35,18 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Basic chemical, electrical, and thermodynamic principles" href="Principles.html" />
     <link rel="prev" title="Abbreviations" href="Abbreviations.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+
   </head>
   <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
-    <div class="container-fluid" id="banner"></div>
-
     
 
     <div class="container-xl">
@@ -71,27 +55,30 @@
 <div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
     
         <div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
-      
-      <img src="_static/mito.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">Quantitative analysis of mitochondrial ATP synthesis</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/mito.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Quantitative analysis of mitochondrial ATP synthesis</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-    <div class="bd-toc-item active">
-        <ul class="nav bd-sidenav">
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Abstract.html">
    Title Page
   </a>
  </li>
 </ul>
-<ul class="current nav bd-sidenav">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="Abbreviations.html">
    Abbreviations
@@ -134,8 +121,9 @@
  </li>
 </ul>
 
-    </div>
-</nav> <!-- To handle the deprecated key -->
+</nav>
+
+ <!-- To handle the deprecated key -->
 
 <div class="navbar_extra_footer">
   Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
@@ -150,25 +138,25 @@
           
 <main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="topbar container-xl fixed-top">
-    <div class="topbar-contents row">
-        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
-        <div class="col pl-md-4 topbar-main">
-            
-            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-                <i class="fas fa-bars"></i>
-                <i class="fas fa-arrow-left"></i>
-                <i class="fas fa-arrow-up"></i>
-            </button>
-            
-            
-<div class="dropdown-buttons-trigger">
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
             class="fas fa-download"></i></button>
 
+    
     <div class="dropdown-buttons">
         <!-- ipynb file if we had a myst markdown file -->
         
@@ -180,9 +168,9 @@
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
+    
 </div>
-
-            <!-- Source interaction buttons -->
+        <!-- Source interaction buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -200,14 +188,13 @@
     </div>
 </div>
 
-            <!-- Full screen (wrap in <a> to have style consistency -->
 
-<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-        title="Fullscreen mode"><i
-            class="fas fa-expand"></i></button></a>
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
 
-            <!-- Launch buttons -->
+        <!-- Launch buttons -->
 
 <div class="dropdown-buttons-trigger">
     <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
@@ -222,6 +209,11 @@
         
         
         
+        <a class="colab-button" href="https://colab.research.google.com/github/beards-lab/QAMAS_book/blob/master/QAMAS/Introduction.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
         <button type="button" class="btn btn-secondary topbarbtn"
             onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
@@ -229,12 +221,16 @@
     </div>
 </div>
 
-        </div>
+    </div>
 
-        <!-- Table of contents -->
-        <div class="d-none d-md-block col-md-2 bd-toc show">
-            
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
         </div>
+        <nav id="bd-toc-nav">
+            
+        </nav>
     </div>
 </div>
     <div id="main-content" class="row">
@@ -244,9 +240,9 @@
                 
   <div class="section" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>Acquired in the initiating event in the origin of eukaryotes, mitochondria are a defining feature of eukaryotic organisms <span id="id1">[<a class="reference internal" href="References.html#id3">7</a>]</span>. They serve as a central hub for eukaryotic energy metabolism, oxidizing carbohydrates, fats, and ketones, producing the reducing equivalents to drive the proton pumps of the respiratory complexes, and synthesizing the majority of adenosine triphosphate (ATP) needed to drive essential cell functions in high metabolic demand tissues (e.g., heart, brain, kidney). Since oxygen (O<span class="math notranslate nohighlight">\(_2\)</span>) is the final electron acceptor of the respiratory chain, mitochondrial respiration is the primary reason why vertebrate animals need a heart and vascular system to deliver oxygen to within diffusional distances of nearly every cell in the body. In other words, mitochondria are, in large part, the reason why the mammalian heart must beat continuously throughout the life of the organism. Mitochondria are also the source of the ATP hydrolysis potential that drives the mechanical pumping of the heart. Thus, at a basic level, mitochondria are both the ends and the means of cardiovascular physiology.</p>
-<p>In oxidizing primary substrates and synthesizing ATP, mitochondria transduce free energy through a multi-step process: (i) reduced cofactors nicotinamide adenine dinucleotide (NADH) and flavin adenine dinucleotide (FADH<span class="math notranslate nohighlight">\(_2\)</span>) are synthesized via the oxidation of fuels such as pyruvate and fatty acids; (ii) oxidation of NADH and FADH<span class="math notranslate nohighlight">\(_2\)</span> drives the proton pumps of the respiratory chain, generating an electrostatic potential across the inner mitochondrial membrane (IMM); and (iii) that electrostatic potential, in turn, drives the phosphorylation of adenosine diphosphate (ADP) to ATP and the electrogenic exchange of a mitochondrial matrix ATP<span class="math notranslate nohighlight">\(^{4-}\)</span> for a cytosolic ADP<span class="math notranslate nohighlight">\(^{3-}\)</span>. Thus, substrate oxidation drives the transduction of free energy of chemical reactions to free energy in an electrochemical transport gradient, and the electrochemical gradient is transduced back to chemical reaction free energy in the form of the ATP hydrolysis potential. The idea that chemical synthesis of ATP is thermodynamically coupled to the movement of ions across the electrochemical gradient of the mitochondrial membrane was introduced by Peter Mitchell, for which he was awarded the Nobel Prize in 1978 <span id="id2">[<a class="reference internal" href="References.html#id9">12</a>]</span>.</p>
-<p>We aim to develop a computational framework to help understand how these electrochemical processes operate. Kinetic models of mitochondrial ATP synthesis date back to Chance and Williams <span id="id3">[<a class="reference internal" href="References.html#id27">5</a>]</span>, who observed a Michaelis-Menten type dependence of ATP synthesis on ADP concentration, yielding a phenomenological approach that is able to effectively describe mitochondrial ATP synthesis in human skeletal muscle in vivo <span id="id4">[<a class="reference internal" href="References.html#id28">4</a>]</span>. While our approach is to analyze the component processes of oxidative phosphorylation with more mechanistic and thermodynamic fidelity, ultimately our models are in agreement with the overall dependence of ATP synthesis on the concentration of the products of ATP hydrolysis, namely ADP and inorganic phosphate (Pi). Ultimately, we follow the approach of Chance et al. <span id="id5">[<a class="reference internal" href="References.html#id28">4</a>]</span> of first using in vitro data to identify a mitochondrial model, and then using the identified model to predict and analyze in vivo energetics.</p>
+<p>Acquired in the initiating event in the origin of eukaryotes, mitochondria are a defining feature of eukaryotic organisms <a class="bibtex reference internal" href="References.html#friedman2014" id="id1">[6]</a>. They serve as a central hub for eukaryotic energy metabolism, oxidizing carbohydrates, fats, and ketones, producing the reducing equivalents to drive the proton pumps of the respiratory complexes, and synthesizing the majority of adenosine triphosphate (ATP) needed to drive essential cell functions in high metabolic demand tissues (e.g., heart, brain, kidney). Since oxygen (O<span class="math notranslate nohighlight">\(_2\)</span>) is the final electron acceptor of the respiratory chain, mitochondrial respiration is the primary reason why vertebrate animals need a heart and vascular system to deliver oxygen to within diffusional distances of nearly every cell in the body. In other words, mitochondria are, in large part, the reason why the mammalian heart must beat continuously throughout the life of the organism. Mitochondria are also the source of the ATP hydrolysis potential that drives the mechanical pumping of the heart. Thus, at a basic level, mitochondria are both the ends and the means of cardiovascular physiology.</p>
+<p>In oxidizing primary substrates and synthesizing ATP, mitochondria transduce free energy through a multi-step process: (i) reduced cofactors nicotinamide adenine dinucleotide (NADH) and flavin adenine dinucleotide (FADH<span class="math notranslate nohighlight">\(_2\)</span>) are synthesized via the oxidation of fuels such as pyruvate and fatty acids; (ii) oxidation of NADH and FADH<span class="math notranslate nohighlight">\(_2\)</span> drives the proton pumps of the respiratory chain, generating an electrostatic potential across the inner mitochondrial membrane (IMM); and (iii) that electrostatic potential, in turn, drives the phosphorylation of adenosine diphosphate (ADP) to ATP and the electrogenic exchange of a mitochondrial matrix ATP<span class="math notranslate nohighlight">\(^{4-}\)</span> for a cytosolic ADP<span class="math notranslate nohighlight">\(^{3-}\)</span>. Thus, substrate oxidation drives the transduction of free energy of chemical reactions to free energy in an electrochemical transport gradient, and the electrochemical gradient is transduced back to chemical reaction free energy in the form of the ATP hydrolysis potential. The idea that chemical synthesis of ATP is thermodynamically coupled to the movement of ions across the electrochemical gradient of the mitochondrial membrane was introduced by Peter Mitchell, for which he was awarded the Nobel Prize in 1978 <a class="bibtex reference internal" href="References.html#mitchell1961" id="id2">[13]</a>.</p>
+<p>We aim to develop a computational framework to help understand how these electrochemical processes operate. Kinetic models of mitochondrial ATP synthesis date back to Chance and Williams <a class="bibtex reference internal" href="References.html#chance1955" id="id3">[5]</a>, who observed a Michaelis-Menten type dependence of ATP synthesis on ADP concentration, yielding a phenomenological approach that is able to effectively describe mitochondrial ATP synthesis in human skeletal muscle in vivo <a class="bibtex reference internal" href="References.html#chance1985" id="id4">[4]</a>. While our approach is to analyze the component processes of oxidative phosphorylation with more mechanistic and thermodynamic fidelity, ultimately our models are in agreement with the overall dependence of ATP synthesis on the concentration of the products of ATP hydrolysis, namely ADP and inorganic phosphate (Pi). Ultimately, we follow the approach of Chance et al. <a class="bibtex reference internal" href="References.html#chance1985" id="id5">[4]</a> of first using in vitro data to identify a mitochondrial model, and then using the identified model to predict and analyze in vivo energetics.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -271,15 +267,15 @@
 
               </div>
               
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
         
-        <div class='prev-next-bottom'>
-            
     <a class='left-prev' id="prev-link" href="Abbreviations.html" title="previous page">Abbreviations</a>
     <a class='right-next' id="next-link" href="Principles.html" title="next page">Basic chemical, electrical, and thermodynamic principles</a>
 
-        </div>
-        
-        </div>
     </div>
     <footer class="footer mt-5 mt-md-0">
     <div class="container">
@@ -287,7 +283,7 @@
         
           By Randall, Hock, Lopez, Marzban, Marshall, & Beard supported by NIH grant HL144657<br/>
         
-            &copy; Copyright 2021.<br/>
+            &copy; Copyright 2020.<br/>
       </p>
     </div>
   </footer>
@@ -296,9 +292,8 @@
 
       </div>
     </div>
-  
-  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
 
-  
+    <script src="_static/js/index.js"></script>
+    
   </body>
 </html>
