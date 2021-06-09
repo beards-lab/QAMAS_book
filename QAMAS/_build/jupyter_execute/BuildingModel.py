@@ -318,7 +318,7 @@ plt.show()
 
 # The following code simulates the synthesis of ATP from ADP and Pi and their translocation across the IMM under physiological conditions.
 
-# In[2]:
+# In[5]:
 
 
 import numpy as np
@@ -529,7 +529,7 @@ plt.show()
 # 
 # The final matrix and cytosol ATP and ADP concentrations depend not only on the membrane potential, but also on the total amount of exchangeable phosphate in the system. Here these simulations start with $[\text{Pi}]_c = 10 \ \text{mM}$ and $[\text{Pi}]_x = 1 \ \text{mM}$. The initial $10 \ \text{mM}$ of ADP in the cytosol becomes almost entirely phosphorylated to ATP, leaving $0.32 \ \text{mM}$ of inorganic phosphate in the cytosol in the final steady state. To explore how these steady states depend on $\Delta\Psi$, the following code simulates the steady-state behavior of this system for a range of $\Delta\Psi$ from $100$ to $200 \ \text{mV}$. These simulations, based on a simple, thermodynamically constrained model, show that it is not possible to synthesize ATP at physiological free energy levels for values of $\Delta\Psi$ of lower than approximately $160 \ \text{mV}$.  
 
-# In[3]:
+# In[6]:
 
 
 get_ipython().system('pip install scipy')
@@ -1176,7 +1176,7 @@ plt.show()
 
 # The above simulations reach a final steady state where the phosphate metabolite concentrations are $[\text{ATP}]_x = 0.9 \ \text{mM}$, $[\text{ADP}]_x = 9.1 \ \text{mM} $, $[\text{Pi}]_x = 0.4 \ \text{mM}$, $[\text{ATP}]_c = 9.9 \ \text{mM}$, $[\text{ADP}]_c = 0.1 \ \text{mM}$, $[\text{Pi}]_c = 0.2 \ \text{mM}$, and the membrane potential is $186 \ \text{mV}$. This state represents a *resting* energetic state with no ATP hydrolysis in the cytosol. The Gibbs energy of ATP hydrolysis associated with this predicted state is $\Delta G_{\rm ATP} = \text{-}70 \ \text{kJ mol}^{-1}$, as calculated below. 
 
-# In[5]:
+# In[3]:
 
 
 sumATP_c_ss = sumATP_c[-1]

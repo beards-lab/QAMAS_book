@@ -1,0 +1,17 @@
+file: CONDUCT
+sections:
+- file: CONTRIBUTING
+- file: README
+- file: QAMAS/Abbreviations
+  sections:
+  - file: QAMAS/Abstract
+  - file: QAMAS/BuildingModel
+  - file: QAMAS/Introduction
+  - file: QAMAS/InVitroModel
+  - file: QAMAS/InVivoModel
+  - file: QAMAS/Principles
+  - file: QAMAS/References
+  - file: QAMAS/Summary
+- file: Tellurium_code/in_vitro_correct_stoicheometry
+  sections:
+  - file: Tellurium_code/in_vivo_correct_stoicheometry

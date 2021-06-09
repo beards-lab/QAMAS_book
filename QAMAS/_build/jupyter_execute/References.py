@@ -3,6 +3,6 @@
 
 # # References
 # 
-# ```{bibliography} /references.bib
+# ```{bibliography} ./references.bib
 # :style: plain
 # ```
